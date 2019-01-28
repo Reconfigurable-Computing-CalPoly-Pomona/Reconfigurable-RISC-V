@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1548652977">
+  <File Type="BITSTR-BMM" Name="mc_top_wrapper_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="mc_top_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="mc_top_wrapper_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="mc_top_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="mc_top_wrapper.tcl"/>
+  <File Type="OPT-TIMING" Name="mc_top_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="mc_top_wrapper_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="mc_top_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="mc_top_wrapper_reports.tcl"/>
+  <File Type="OPT-DRC" Name="mc_top_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="mc_top_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="mc_top_wrapper_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="mc_top_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="mc_top_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="mc_top_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="mc_top_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="mc_top_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="mc_top_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="mc_top_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="mc_top_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="mc_top_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="mc_top_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="mc_top_wrapper.bgn"/>
+  <File Type="PLACE-TIMING" Name="mc_top_wrapper_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="mc_top_wrapper_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="mc_top_wrapper.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="mc_top_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="mc_top_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="mc_top_wrapper_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="mc_top_wrapper.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="mc_top_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="mc_top_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="mc_top_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="mc_top_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="mc_top_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="mc_top_wrapper_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="mc_top_wrapper.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="mc_top_wrapper_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="mc_top_wrapper.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="mc_top_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="mc_top_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="mc_top_wrapper.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="mc_top_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="mc_top_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="mc_top_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="mc_top_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="mc_top_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="mc_top_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="mc_top_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="mc_top_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="mc_top_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="mc_top_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="mc_top_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="mc_top_wrapper_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mc_top_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mc_top_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mc_top_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mc_top_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mc_top_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="mc_top_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="mc_top_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="mc_top_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="mc_top_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="mc_top_wrapper.rbt"/>
+  <File Type="BITSTR-NKY" Name="mc_top_wrapper.nky"/>
+  <File Type="BG-DRC" Name="mc_top_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="mc_top_wrapper.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../rtl/reset_bridge.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/verilog_wrappers/reset_bridge_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../rtl/inv_ff.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/mc_top/mc_top.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/mc_top/hdl/mc_top_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/mc_top/ip/mc_top_mig_7series_0_0/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="mc_top_mig_7series_0_0"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="mc_top_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../constraints/fpga.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../constraints/fpga.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_jtag_axi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_inv_ff_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_mig_7series_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_reset_bridge_wrapper_0_0"/>
+</GenRun>

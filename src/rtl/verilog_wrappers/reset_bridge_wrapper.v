@@ -23,14 +23,14 @@
 
 module reset_bridge_wrapper(
     input i_aclk,
-    input i_reset,
-    output o_areset_n
+    input i_rst,
+    output o_rst_n
     );
 
 
   reset_bridge reset_bridge_inst(
     .i_aclk(i_aclk),
-    .i_reset(i_reset),
-    .o_areset_n(o_areset_n)
+    .i_rst(i_rst),
+    .o_rst_n(o_rst_n)
   );
 endmodule

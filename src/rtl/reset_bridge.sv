@@ -23,21 +23,21 @@
 
 module reset_bridge(
   input logic i_aclk,
-  input logic i_reset,
-  output logic o_areset_n
+  input logic i_rst,
+  output logic o_rst_n
 );
 
 // The output of the first flip flop
 logic meta_reset_n;
 
-always_ff @(posedge i_aclk or negedge i_reset) begin : proc_seq
-  if(i_reset) begin
+always_ff @(posedge i_aclk or negedge i_rst) begin : proc_seq
+  if(~i_rst) begin
     // Asynchronous Reset
-    {meta_reset_n, o_areset_n} <= '0;
+    {meta_reset_n, o_rst_n} <= '0;
   end else begin
     // Synchronous flip flops
     meta_reset_n <= 1;
-    o_areset_n <= meta_reset_n;
+    o_rst_n <= meta_reset_n;
   end
 end
 endmodule

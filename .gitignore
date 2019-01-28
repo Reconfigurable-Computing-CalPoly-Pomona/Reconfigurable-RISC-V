@@ -10,6 +10,7 @@
 !src/rtl*
 !src/constraints*
 !src/test*
+!src/builds*
 !.gitignore
 ###########################################################################
 ##	VIVADO
