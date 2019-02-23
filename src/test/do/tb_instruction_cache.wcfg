@@ -14,14 +14,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="20000000001fs"></ZoomEndTime>
-      <Cursor1Time time="889621000fs"></Cursor1Time>
+      <ZoomEndTime time="555000001fs"></ZoomEndTime>
+      <Cursor1Time time="555000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="143"></NameColumnWidth>
-      <ValueColumnWidth column_width="135"></ValueColumnWidth>
+      <NameColumnWidth column_width="198"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
+   <WVObjectSize size="7" />
    <wvobject fp_name="group460" type="group">
       <obj_property name="label">AXI</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -69,6 +69,7 @@
    <wvobject fp_name="group482" type="group">
       <obj_property name="label">Cache Ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/i_addr" type="array">
          <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
          <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
@@ -78,20 +79,20 @@
          <obj_property name="ObjectShortName">i_req</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/i_line" type="array">
-         <obj_property name="ElementShortName">i_line[1:0][273:0]</obj_property>
-         <obj_property name="ObjectShortName">i_line[1:0][273:0]</obj_property>
+         <obj_property name="ElementShortName">i_line[1:0][275:0]</obj_property>
+         <obj_property name="ObjectShortName">i_line[1:0][275:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/o_we" type="array">
          <obj_property name="ElementShortName">o_we[1:0]</obj_property>
          <obj_property name="ObjectShortName">o_we[1:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/o_line" type="array">
-         <obj_property name="ElementShortName">o_line[273:0]</obj_property>
-         <obj_property name="ObjectShortName">o_line[273:0]</obj_property>
+         <obj_property name="ElementShortName">o_line[275:0]</obj_property>
+         <obj_property name="ObjectShortName">o_line[275:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/o_addr" type="array">
-         <obj_property name="ElementShortName">o_addr[9:0]</obj_property>
-         <obj_property name="ObjectShortName">o_addr[9:0]</obj_property>
+         <obj_property name="ElementShortName">o_addr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_addr[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/o_instr_valid" type="logic">
          <obj_property name="ElementShortName">o_instr_valid</obj_property>
@@ -110,12 +111,12 @@
          <obj_property name="ObjectShortName">next_state[1:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/tag" type="array">
-         <obj_property name="ElementShortName">tag[16:0]</obj_property>
-         <obj_property name="ObjectShortName">tag[16:0]</obj_property>
+         <obj_property name="ElementShortName">tag[18:0]</obj_property>
+         <obj_property name="ObjectShortName">tag[18:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/index" type="array">
-         <obj_property name="ElementShortName">index[9:0]</obj_property>
-         <obj_property name="ObjectShortName">index[9:0]</obj_property>
+         <obj_property name="ElementShortName">index[7:0]</obj_property>
+         <obj_property name="ObjectShortName">index[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/word" type="array">
          <obj_property name="ElementShortName">word[2:0]</obj_property>
@@ -130,8 +131,8 @@
          <obj_property name="ObjectShortName">cache_wline</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/address" type="array">
-         <obj_property name="ElementShortName">address[9:0]</obj_property>
-         <obj_property name="ObjectShortName">address[9:0]</obj_property>
+         <obj_property name="ElementShortName">address[7:0]</obj_property>
+         <obj_property name="ObjectShortName">address[7:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/hit" type="array">
          <obj_property name="ElementShortName">hit[1:0]</obj_property>
@@ -141,5 +142,85 @@
          <obj_property name="ElementShortName">miss</obj_property>
          <obj_property name="ObjectShortName">miss</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/cache_controller/lru" type="array">
+         <obj_property name="ElementShortName">lru[0:0]</obj_property>
+         <obj_property name="ObjectShortName">lru[0:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group69" type="group">
+      <obj_property name="label">PLRU RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /i_clk" type="logic">
+         <obj_property name="ElementShortName">i_clk</obj_property>
+         <obj_property name="ObjectShortName">i_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /i_addr" type="array">
+         <obj_property name="ElementShortName">i_addr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /i_data" type="array">
+         <obj_property name="ElementShortName">i_data[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /i_we" type="logic">
+         <obj_property name="ElementShortName">i_we</obj_property>
+         <obj_property name="ObjectShortName">i_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /o_data" type="array">
+         <obj_property name="ElementShortName">o_data[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\plru_ram.genblk1.plru_cache /mem" type="array">
+         <obj_property name="ElementShortName">mem[0:255][1:0]</obj_property>
+         <obj_property name="ObjectShortName">mem[0:255][1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group402" type="group">
+      <obj_property name="label">Way 0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[0].instr_cache_set /i_addr" type="array">
+         <obj_property name="ElementShortName">i_addr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[0].instr_cache_set /i_data" type="array">
+         <obj_property name="ElementShortName">i_data[275:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[275:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[0].instr_cache_set /i_we" type="logic">
+         <obj_property name="ElementShortName">i_we</obj_property>
+         <obj_property name="ObjectShortName">i_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[0].instr_cache_set /o_data" type="array">
+         <obj_property name="ElementShortName">o_data[275:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[275:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group410" type="group">
+      <obj_property name="label">Way 1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[1].instr_cache_set /i_addr" type="array">
+         <obj_property name="ElementShortName">i_addr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[1].instr_cache_set /i_data" type="array">
+         <obj_property name="ElementShortName">i_data[275:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data[275:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[1].instr_cache_set /i_we" type="logic">
+         <obj_property name="ElementShortName">i_we</obj_property>
+         <obj_property name="ObjectShortName">i_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_instruction_cache/dut/\way_gen[1].instr_cache_set /o_data" type="array">
+         <obj_property name="ElementShortName">o_data[275:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[275:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_instruction_cache/dut/wline" type="array">
+      <obj_property name="ElementShortName">wline</obj_property>
+      <obj_property name="ObjectShortName">wline</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instruction_cache/dut/rline" type="array">
+      <obj_property name="ElementShortName">rline[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rline[1:0]</obj_property>
    </wvobject>
 </wave_config>

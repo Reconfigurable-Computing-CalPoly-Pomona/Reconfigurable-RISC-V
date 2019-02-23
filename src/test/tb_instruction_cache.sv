@@ -61,6 +61,9 @@ module tb_instruction_cache();
   // The instruction from the DUT after requesting
   logic [INST_SIZE - 1:0] instruction;
 
+  // The expected instruction, to compare to the real instruction
+  logic [INST_SIZE - 1:0] exp_instruction;
+
 
   //---------------------------------------------------------------------------
   // DUT
@@ -94,9 +97,28 @@ module tb_instruction_cache();
   always #CLK_PER clk = ~clk;
 
   initial begin : stimulus
-    {axi.r, axi.arready, axi.awready, axi.wready} = 0;
+    {req, pc} = 0;
+    {axi.r, axi.arready, axi.awready, axi.wready, axi.b.valid} = 0;
     #RESET_HIGH areset_n = 1;
+    req = 1;
+    @(posedge(clk));
+    axi.arready = 1;
+    wait(axi.ar.valid == 1); @(posedge(clk));
+    axi.arready = 0;
+    // Generate a random instruction
+    exp_instruction = $urandom();
+    for (int i=0; i < WORDS_PER_LINE; i++) begin
+      axi.r.valid = 1;
+      if (i == WORDS_PER_LINE - 1) axi.r.last = 1;
+      else axi.r.last = 0;
+      axi.r.data = exp_instruction + i;
+      wait(axi.rready == 1); @(posedge(clk));
+    end
+    axi.r.valid = 0;
+    wait(instr_valid == 1) @(posedge(clk));
+    req = 0;
 
-
+    repeat(5) @(posedge(clk));
+    $display("Test Completed!"); $stop;
   end : stimulus
 endmodule

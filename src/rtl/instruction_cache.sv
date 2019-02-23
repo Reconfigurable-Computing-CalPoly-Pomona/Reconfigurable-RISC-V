@@ -80,6 +80,12 @@ module instruction_cache #(
   // The width used for the block RAM including instructions, tags, and valids
   localparam CACHE_WIDTH = 1 + TAG_BITS + INST_SIZE * WORDS_PER_LINE;
 
+  typedef struct packed {
+    logic valid;
+    logic [TAG_BITS - 1:0] tag;
+    logic [WORDS_PER_LINE - 1:0] [INST_SIZE - 1:0] data;
+  } inst_blk_t;
+
   /////////////////////////////////////////////////////////////////
   // Signal list
   /////////////////////////////////////////////////////////////////
@@ -92,10 +98,19 @@ module instruction_cache #(
   logic [$clog2(CACHE_DEPTH) - 1:0] cache_addr;
 
   // The data that may be written to one way at a time
-  logic [CACHE_WIDTH - 1:0] wline;
+  inst_blk_t wline;
 
   // The instruction(s), valid, and tag returned from the way
-  logic [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] rline;
+  inst_blk_t [BLK_PER_SET - 1:0] rline;
+
+  // The Pseudo-LRU bits, one hot encoded indicates usage
+  logic [BLK_PER_SET - 1:0] rlru;
+
+  // The new Pseudo-LRU, one hot encoded indicates usage
+  logic [BLK_PER_SET - 1:0] wlru;
+
+  // The LRU cache write enable
+  logic we_lru;
 
 
   // Generate each of the ways
@@ -146,11 +161,32 @@ module instruction_cache #(
 
     // Return instruction to fetch
     .o_instr_valid(o_instr_valid),
-    .o_instruction(o_instruction)
+    .o_instruction(o_instruction),
+
+    // LRU block RAM I/O
+    .i_rlru(rlru),
+    .o_we_lru(we_lru),
+    .o_wlru(wlru)
   );
 
 
-  // TODO : Add least recently used RAM
-
+  // Generate a RAM to store only the Pseudo-LRU bits
+  generate begin : plru_ram
+    if (BLK_PER_SET > 1) begin
+      ram #(
+        // Each element of the cache contains a word
+        .DEPTH(CACHE_DEPTH),
+        // Valid + Tag + Data payload
+        .DATA_WIDTH(BLK_PER_SET)
+      ) plru_cache (
+        .i_clk(i_aclk),
+        .i_addr(cache_addr),
+        .i_data(wlru),
+        .i_we(we_lru),
+        .o_data(rlru)
+      );
+    end
+  end
+  endgenerate
 
 endmodule

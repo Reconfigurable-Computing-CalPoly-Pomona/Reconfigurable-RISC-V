@@ -9,7 +9,7 @@
 // Target Devices: 
 // Tool Versions: 
 // Description:
-// Creates a synchronous RAM block under mode "Read first"
+// Creates a synchronous RAM block under mode "Write first"
 // 
 // Dependencies: 
 // 
@@ -38,8 +38,12 @@ module ram
   logic [DATA_WIDTH - 1:0] mem [0:DEPTH - 1];
 
   always_ff @(posedge i_clk) begin : proc_ram
-    o_data <= mem[i_addr];
-    if (i_we) mem[i_addr] <= i_data;
+    if (i_we) begin 
+      mem[i_addr] <= i_data;
+      o_data <= i_data;
+    end else begin
+      o_data <= mem[i_addr];
+    end
   end
 
 endmodule

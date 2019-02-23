@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1548652977">
-  <File Type="BITSTR-BMM" Name="mc_top_wrapper_bd.bmm"/>
   <File Type="PA-TCL" Name="mc_top_wrapper.tcl"/>
-  <File Type="OPT-DCP" Name="mc_top_wrapper_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="mc_top_wrapper_bd.bmm"/>
   <File Type="REPORTS-TCL" Name="mc_top_wrapper_reports.tcl"/>
+  <File Type="OPT-DCP" Name="mc_top_wrapper_opt.dcp"/>
   <File Type="OPT-HWDEF" Name="mc_top_wrapper.hwdef"/>
+  <File Type="BG-BGN" Name="mc_top_wrapper.bgn"/>
   <File Type="PWROPT-DCP" Name="mc_top_wrapper_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="mc_top_wrapper_placed.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="mc_top_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="mc_top_wrapper.bgn"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="mc_top_wrapper_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="mc_top_wrapper.bin"/>
   <File Type="PHYSOPT-DCP" Name="mc_top_wrapper_physopt.dcp"/>

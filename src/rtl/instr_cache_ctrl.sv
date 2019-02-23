@@ -46,13 +46,13 @@ module instr_cache_ctrl #(
   input logic i_req,
 
   // Valid + Tag + Payload from cache
-  input logic [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] i_line,
+  input [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] i_line,
 
   // Write to each individual way
   output logic [BLK_PER_SET - 1:0] o_we,
 
   // The output valid + tag + payload for cache
-  output logic [CACHE_WIDTH - 1:0] o_line,
+  output [CACHE_WIDTH - 1:0] o_line,
 
   // The output address to each of the ways
   output logic [$clog2(CACHE_DEPTH) - 1:0] o_addr,
@@ -61,7 +61,16 @@ module instr_cache_ctrl #(
   output logic o_instr_valid,
 
   // The output instruction to the fetch stage
-  output logic [INST_SIZE - 1:0] o_instruction
+  output logic [INST_SIZE - 1:0] o_instruction,
+
+  // The Pseudo-LRU bits indicating a pointer to a least recently used way
+  input logic [BLK_PER_SET - 1:0] i_rlru,
+
+  // The new Pseudo-LRU updated value after a hit or miss
+  output logic [BLK_PER_SET - 1:0] o_wlru,
+
+  // The LRU cache write enable
+  output logic [BLK_PER_SET - 1:0] o_we_lru
 );
 
   // AXI master
@@ -81,7 +90,7 @@ module instr_cache_ctrl #(
   typedef struct packed {
     logic valid;
     logic [TAG_BITS - 1:0] tag;
-    logic [WORD_BITS - 1:0] [INST_SIZE - 1:0] data;
+    logic [WORDS_PER_LINE - 1:0] [INST_SIZE - 1:0] data;
   } inst_blk_t;
 
   // Most signficant bits of address, which are compared for a hit or miss
@@ -93,11 +102,8 @@ module instr_cache_ctrl #(
   // The index that determines the particular word within the line that is sent as the instruction
   logic [WORD_BITS - 1:0] word;
 
-  // Indicates that the memory location is valid can be compared
-  //logic [BLK_PER_SET - 1:0] cache_valid;
-//
-  //// Most signficant bits of address, which are compared for a hit or miss
-  //logic [TAG_BITS - 1:0] cache_tag [0:BLK_PER_SET - 1];
+  // Determines the least recently used way
+  logic [$clog2(BLK_PER_SET) - 1:0] lru;
 
   // The each of the individual lines from the different ways
   inst_blk_t [BLK_PER_SET - 1:0] cache_rline;
@@ -182,6 +188,9 @@ module instr_cache_ctrl #(
   always_comb begin : proc_comb
     // By default, don't write to the cache
     o_we = 0;
+    hit = 0;
+    o_we_lru = 0;
+    o_wlru = i_rlru;
     o_instr_valid = 0;
     o_instruction = 'x;
     cache_wline = 'x;
@@ -189,7 +198,8 @@ module instr_cache_ctrl #(
     // Default AXI
     axi.aw = 'x;
     axi.w = 'x;
-    o_addr = 'x;
+    // Set the appropriate index
+    o_addr = i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
 
     // Control signals for AXI lines is held zero by default
     {axi.ar.valid, axi.rready, axi.aw.valid, axi.w.valid, axi.bready} = 0;
@@ -208,12 +218,14 @@ module instr_cache_ctrl #(
       FLUSH: begin
         // Set all of the way caches to be not valid
         o_we = '1;
+        o_we_lru = 1;
         o_addr = address;
         cache_wline.valid = 0;
+        // Reset the LRU bits
+        o_wlru = 0;
       end
       IDLE: begin
         // Enable each of the way caches
-        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
       end
       CHK_TAG: begin
         // Check the TAG bits in parallel for each way
@@ -224,31 +236,100 @@ module instr_cache_ctrl #(
           if (cache_rline[w].valid && cache_rline[w].tag == tag) begin
             hit[w] = 1;
             o_instr_valid = 1;
+            // Reset the PLRU table if it is full
+            if (i_rlru == '1) o_wlru = 0;
+            // Mark the bit as recently used
+            o_wlru[w] = 1;
+            o_we_lru = 1;
           end
         end
         axi.ar.valid = ~|hit;
-        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
       end
 
       MISS_R: begin
         // The write enable to the way that has been selected based on LRU
-        o_we[0] = 1;
+        o_we[lru] = 1;
+
         cache_wline.valid = 1;
+        // Default the cache line to be equal to its current value
+        cache_wline.data = cache_rline[lru].data;
         cache_wline.data[address[WORD_BITS - 1:0]] = axi.r.data;
         cache_wline.tag = tag;
+
         axi.rready = 1;
-        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
+        // If on the last transaction, mark the least recently used bit as recently used
+        if (axi.r.valid && axi.r.last) begin
+          // Reset the PLRU table if it is full
+          if (i_rlru == '1) o_wlru = 0;
+          o_wlru[lru] = 1;
+          o_we_lru = 1;
+        end
       end
       default:;
     endcase
   
   end : proc_comb
 
-  // Generate the least recently used selected way
-  //generate
-  //  for (genvar g = 0; g < BLK_PER_SET; g++) begin : way_gen
-  //    if (cache_rline[g].lru == BLK_PER_SET - 1) assign lru = g;
-  //  end
-  //endgenerate
+  // Determines the Pseudo-LRU way for replacement
+  always_comb begin : proc_lru
+    // Default the least recently used to zero in case the recently used table is all 1s
+    lru = 0;
+    for(int unsigned w=0; w < BLK_PER_SET; w++) if (~i_rlru[w]) lru = w;
+  end
+
+/* Tree LRU
+  generate
+
+
+    if (BLK_PER_SET == 1) begin
+      lru = 0;
+      invalid = 0;
+    end else if (BLK_PER_SET == 2) begin
+      assign invalid = {cache_rline[1].valid, cache_rline[0].valid};
+      if (~&invalid) begin
+        case (invalid)
+          00: lru = 0;
+          01: lru = 1;
+          10: lru = 0;
+        endcase
+      end else begin
+        lru = i_lru[0];
+      end
+    end else if (BLK_PER_SET == 4) begin
+      always_comb begin : proc_lru
+        for(int unsigned w=0; w < BLK_PER_SET; w++) begin
+          if (cache_rline[w].valid == 0) begin
+            invalid = 1;
+            lru = w;
+          end
+        end
+        if (!invalid) begin
+          lru = i_lru[2] ? (i_lru[0] ? 3:2) : (i_lru[1] ? 1:0);
+        end
+        o_wlru = ref_line
+          unique case(ref_line)
+            00: o_wlru = {2'b11, lru[0]};
+            01: o_wlru = {2'b10, lru[0]};
+            10: o_wlru = {1'b0, lru[1], 1'b1};
+            default: o_wlru = {1'b0, lru[1], 1'b0};
+          endcase
+      end
+      //end else begin
+      //  case (i_lru)
+      //    000: lru = 0;
+      //    001: lru = 0;
+      //    010: lru = 1;
+      //    011: lru = 1;
+      //    100: lru = 2;
+      //    101: lru = 3;
+      //    110: lru = 2;
+      //    111: lru = 3;
+      //  endcase
+      //end
+    end else if (BLK_PER_SET == 8) begin
+      assign invalid = {cache_rline[7].valid, cache_rline[6].valid, cache_rline[5].valid,
+                        cache_rline[4].valid, cache_rline[3].valid, cache_rline[2].valid,
+                        cache_rline[1].valid, cache_rline[0].valid};
+    end */
 
 endmodule
