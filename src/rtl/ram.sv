@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Benjamin Kueffler
@@ -23,8 +22,8 @@
 
 module ram
 #(
-  parameter DEPTH,
-  parameter DATA_WIDTH
+  parameter DEPTH = 2**16,
+  parameter DATA_WIDTH = 32
 )
 (
   input logic i_clk,
@@ -38,7 +37,7 @@ module ram
   // The memory, which may be generated using block RAM or distributed RAM
   logic [DATA_WIDTH - 1:0] mem [0:DEPTH - 1];
 
-  always_ff @(posedge clk) begin : proc_ram
+  always_ff @(posedge i_clk) begin : proc_ram
     o_data <= mem[i_addr];
     if (i_we) mem[i_addr] <= i_data;
   end

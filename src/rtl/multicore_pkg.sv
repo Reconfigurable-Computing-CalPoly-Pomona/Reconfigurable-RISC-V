@@ -27,15 +27,15 @@ package multicore_pkg;
   localparam INST_SIZE = 32;
 
   // The size of the cache sets in # of lines
-  localparam LINES_PER_BLK = 256;
+  localparam WORDS_PER_LINE = 8;
 
-  // The size (bits) of each line per set
-  localparam LINE_SIZE = 32;
+  // The size in bytes of each line
+  localparam LINE_SIZE = WORDS_PER_LINE * INST_SIZE / 8;
 
-  // The byte offset, given minimum size
-  localparam OFFSET = $clog2(LINE_SIZE / 8);
+  // The byte offset per each word, given minimum size
+  localparam OFFSET = $clog2(INST_SIZE / 8);
 
-  // The size of the set in bytes
-  localparam BLOCK_SIZE = LINES_PER_BLK * LINE_SIZE / 8;
+  // The bits required for each word within each line
+  localparam WORD_BITS = $clog2(LINE_SIZE) - OFFSET;
 
 endpackage : multicore_pkg

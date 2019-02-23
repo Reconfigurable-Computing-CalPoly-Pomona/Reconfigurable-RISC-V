@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -26,7 +25,7 @@ import multicore_pkg::*;
 module instruction_cache #(
   // The size of the accessible address space
   parameter ADDR_SIZE = 32,
-  // The size of the cache desired
+  // The size of the cache desired in bytes
   parameter CACHE_SIZE = 2**14,
   // Associativity factor (1- Direct Mapped, N - N way set associative)
   parameter BLK_PER_SET = 2
@@ -35,6 +34,9 @@ module instruction_cache #(
   // System clock and reset
   input logic i_aclk,
   input logic i_areset_n,
+
+  // AXI Master
+  axi_inf.master axi,
 
   // Request for instruction by instruction fetch stage
   input logic i_req,
@@ -54,7 +56,7 @@ module instruction_cache #(
   /////////////////////////////////////////////////////////////////
 
   // The number of blocks in the cache, given constant block size 
-  localparam NUM_BLOCKS = CACHE_SIZE / BLOCK_SIZE;
+  localparam NUM_BLOCKS = CACHE_SIZE / LINE_SIZE;
 
   // The block RAM size to represent the particular way of each set
   localparam WAY_SIZE = CACHE_SIZE / BLK_PER_SET;
@@ -65,51 +67,51 @@ module instruction_cache #(
   // ...
   //localparam WAY_SEL= $clog2(BLK_PER_SET);
 
-  // Includes the offset (1:0) for 32 bit numbers
-  // as well as the index, which includes the block #
-  localparam INDEX_BITS = $clog2(WAY_SIZE);
+  // Index for the block # that the address is referring to
+  localparam INDEX_BITS = $clog2(WAY_SIZE) - WORD_BITS - OFFSET;
 
   // The bits dedicated to storing the tag
   // ADDR_SIZE minus the other bits represents the tag, the MSbits of the address
-  // log2(NUM_BLOCKS) - Devoted to Block number - depends on CACHE_SIZE
-  // 10 bits - WAY bits (Size of block * Num Blocks)
-  localparam TAG_BITS = ADDR_SIZE - INDEX_BITS;
+  localparam TAG_BITS = ADDR_SIZE - INDEX_BITS - WORD_BITS - OFFSET;
 
   // The number of elements in the cache
-  localparam CACHE_DEPTH = WAY_SIZE / (INST_SIZE / 8);
+  localparam CACHE_DEPTH = WAY_SIZE / (WORDS_PER_LINE * INST_SIZE / 8);
+
+  // The width used for the block RAM including instructions, tags, and valids
+  localparam CACHE_WIDTH = 1 + TAG_BITS + INST_SIZE * WORDS_PER_LINE;
 
   /////////////////////////////////////////////////////////////////
   // Signal list
   /////////////////////////////////////////////////////////////////
 
   // The write enable for each way in case a miss occurs
-  logic [BLK_PER_SET - 1:0] we [0:BLK_PER_SET - 1];
+  logic [BLK_PER_SET - 1:0] we;
 
   // The address to look up into each way for a particular TAG
   // As associativity increases, this address will fanout to more WAYs
   logic [$clog2(CACHE_DEPTH) - 1:0] cache_addr;
 
   // The data that may be written to one way at a time
-  logic [INST_SIZE - 1:0] data;
+  logic [CACHE_WIDTH - 1:0] wline;
 
-  // The instruction, valid, and tag returned from the way
-  logic [TAG_BITS + INDEX_BITS:0] way_contents [0:BLK_PER_SET - 1];
+  // The instruction(s), valid, and tag returned from the way
+  logic [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] rline;
 
 
+  // Generate each of the ways
   generate
     for (genvar g = 0; g < BLK_PER_SET; g++) begin : way_gen
-      ram
-      #(
+      ram #(
         // Each element of the cache contains a word
         .DEPTH(CACHE_DEPTH),
         // Valid + Tag + Data payload
-        .DATA_WIDTH(1 + TAG_BITS + INST_SIZE)
+        .DATA_WIDTH(CACHE_WIDTH)
       ) instr_cache_set (
         .i_clk(i_aclk),
-        .i_addr(cache_addr[CACHE_DEPTH - 1:0]),
-        .i_data(data),
+        .i_addr(cache_addr),
+        .i_data(wline),
         .i_we(we[g]),
-        .o_data(way_contents[g])
+        .o_data(rline[g])
       );
     end
   endgenerate
@@ -117,27 +119,29 @@ module instruction_cache #(
   // Instantiates a cache controlller
   // Which handles each of the cache ways and compares the TAG bits
   // Carries out memory reads in the case of misses, or data outputs in cases of hits
-  instr_cache_ctrl
-  #(
+  instr_cache_ctrl #(
     .ADDR_SIZE(ADDR_SIZE),
     .BLK_PER_SET(BLK_PER_SET),
     .TAG_BITS(TAG_BITS),
     .INDEX_BITS(INDEX_BITS),
+    .CACHE_WIDTH(CACHE_WIDTH),
     .CACHE_DEPTH(CACHE_DEPTH)
   ) cache_controller(
   
     .i_clk(i_aclk),
+    .i_areset_n(i_areset_n),
+    .axi(axi),
 
     // Request from fetch
     .i_addr(i_addr),
     .i_req(i_req),
 
     // Read from caches
-    .i_data(way_contents[g]),
+    .i_line(rline),
 
     // Write to caches
-    .o_we(we[g]),
-    .o_data(data),
+    .o_we(we),
+    .o_line(wline),
     .o_addr(cache_addr),
 
     // Return instruction to fetch

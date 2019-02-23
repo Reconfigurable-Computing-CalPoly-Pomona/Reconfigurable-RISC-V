@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -23,22 +22,22 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+import multicore_pkg::*;
 
 module instr_cache_ctrl #(
   parameter ADDR_SIZE = 32,
   parameter BLK_PER_SET = 2,
-  parameter TAG BITS,
-  parameter INDEX_BITS,
-  parameter CACHE_DEPTH
+  parameter TAG_BITS = 0,
+  parameter INDEX_BITS = 0,
+  parameter CACHE_WIDTH = 0,
+  parameter CACHE_DEPTH = 0
   )(
   // System Clock and Reset
   input logic i_clk,
   input logic i_areset_n,
 
-  // AXI types for read memory access
-  input axi_slave_t i_axi,
-  output axi_master_t o_axi,
+  // AXI interface for read memory access
+  axi_inf.master axi,
 
   // Address from fetch stage
   input logic [ADDR_SIZE - 1:0] i_addr,
@@ -47,13 +46,13 @@ module instr_cache_ctrl #(
   input logic i_req,
 
   // Valid + Tag + Payload from cache
-  input logic [TAG_BITS + INDEX_BITS:0] i_data [0:BLK_PER_SET - 1],
+  input logic [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] i_line,
 
   // Write to each individual way
   output logic [BLK_PER_SET - 1:0] o_we,
 
   // The output valid + tag + payload for cache
-  output logic [TAG_BITS + INDEX_BITS:0] o_data,
+  output logic [CACHE_WIDTH - 1:0] o_line,
 
   // The output address to each of the ways
   output logic [$clog2(CACHE_DEPTH) - 1:0] o_addr,
@@ -79,22 +78,32 @@ module instr_cache_ctrl #(
     MISS_R = 3
   } curr_state, next_state;
 
-
+  typedef struct packed {
+    logic valid;
+    logic [TAG_BITS - 1:0] tag;
+    logic [WORD_BITS - 1:0] [INST_SIZE - 1:0] data;
+  } inst_blk_t;
 
   // Most signficant bits of address, which are compared for a hit or miss
   logic [TAG_BITS - 1:0] tag;
 
   // The index which determines which index of the cache RAM will contain the value
-  logic [INDEX_BITS - 1:$clog2(ADDR_SIZE / 8)] index;
+  logic [INDEX_BITS - 1:0] index;
+
+  // The index that determines the particular word within the line that is sent as the instruction
+  logic [WORD_BITS - 1:0] word;
 
   // Indicates that the memory location is valid can be compared
-  logic [BLK_PER_SET - 1:0] cache_valid;
+  //logic [BLK_PER_SET - 1:0] cache_valid;
+//
+  //// Most signficant bits of address, which are compared for a hit or miss
+  //logic [TAG_BITS - 1:0] cache_tag [0:BLK_PER_SET - 1];
 
-  // Most signficant bits of address, which are compared for a hit or miss
-  logic [TAG_BITS - 1:0] cache_tag [0:BLK_PER_SET - 1];
+  // The each of the individual lines from the different ways
+  inst_blk_t [BLK_PER_SET - 1:0] cache_rline;
 
-  // The way that contains the hit at the output of the multiplexer
-  logic [$clog2(BLK_PER_SET) - 1:0] sel_way;
+  // The lines to write to the cache
+  inst_blk_t cache_wline;
 
   // The address flip flop to determine where to write to
   logic [$clog2(CACHE_DEPTH) - 1:0] address;
@@ -108,10 +117,10 @@ module instr_cache_ctrl #(
   // The index bits, which is used  
   always_ff @(posedge i_clk or negedge i_areset_n) begin : proc_seq_ff
     if(~i_areset_n) begin
-      curr_state = FLUSH;
+      curr_state <= FLUSH;
       address <= 0;
     end else begin
-      curr_state = next_state;
+      curr_state <= next_state;
       unique case(curr_state)
         FLUSH: begin
           // During flush, the valid bits are cleared one index every cycle
@@ -126,7 +135,7 @@ module instr_cache_ctrl #(
         end
         MISS_R: begin
           // As the lines come in, increment the index
-          address <= address + i_axi.r.valid;
+          address <= address + axi.r.valid;
         end
         default:;
       endcase
@@ -140,18 +149,18 @@ module instr_cache_ctrl #(
 
     unique case(curr_state)
       FLUSH:
-        // If at the last address
-        if (o_addr == '1) next_state = IDLE;
+        // If at the last address, exit the flush state
+        if (address == '1) next_state = IDLE;
       IDLE:
         // Wait for a request 
         if (i_req) next_state = CHK_TAG;
       CHK_TAG:
         // Determine if a hit has occured by reading the BRAM
         if (~miss) next_state = IDLE;
-        else if (i_arready) next_state = MISS_R;
+        else if (axi.arready) next_state = MISS_R;
       MISS_R:
         // Accept reads until finished
-        if (i_axi.r.valid && address == LINES_PER_BLK - 1) next_state = IDLE;
+        if (axi.r.valid && axi.r.last) next_state = IDLE;
       default:;
     endcase
   
@@ -162,68 +171,84 @@ module instr_cache_ctrl #(
   // If no hit occurs on any of the ways, set the miss bit
   assign miss = ~|hit;
   //assign valid = i_data[TAG_BITS + INDEX_BITS];
-  assign tag = i_addr[TAG_BITS + INDEX_BITS - 1:INDEX_BITS];
-  assign index = i_addr[INDEX_BITS - 1:$clog2(ADDR_SIZE / 8)];
+  assign tag = i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
+  assign index = i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+  assign word = i_addr[WORD_BITS + OFFSET - 1:OFFSET];
 
-  // Assign the instruction to be the data payload
-  assign o_instruction = i_data[sel_way][TAG_BITS + INDEX_BITS - 1:0];
-  
+  // Assign the line data structure to be equal to the input data
+  assign cache_rline = i_line;
+  assign o_line = cache_wline;
 
-  always_comb begin : proc_state
+  always_comb begin : proc_comb
     // By default, don't write to the cache
     o_we = 0;
     o_instr_valid = 0;
-    o_data = 'x;
+    o_instruction = 'x;
+    cache_wline = 'x;
 
     // Default AXI
-    o_axi = 'x;
+    axi.aw = 'x;
+    axi.w = 'x;
     o_addr = 'x;
-    sel_way = 'x;
+
     // Control signals for AXI lines is held zero by default
-    {o_axi.ar.valid, o_axi.rready, o_axi.aw.valid, o_axi.w.valid} = 0;
+    {axi.ar.valid, axi.rready, axi.aw.valid, axi.w.valid, axi.bready} = 0;
 
     // The AXI address always takes the tag, with the LSB set to zero
     // This is the first address in the block to read from memory
-    o_axi.ar.addr = '{tag, default:0};
+    axi.ar.addr = 0;
+    axi.ar.addr[$size(axi.ar.addr) - 1:WORD_BITS + OFFSET] = {tag, index};
     // The length of the burst will be equal to the size of the block
-    o_axi.ar.len = LINES_PER_BLK - 1;
+    axi.ar.len = WORDS_PER_LINE - 1;
+    // Send 32 bit data at incrementing addresses
+    axi.ar.size = 2;
+    axi.ar.burst = INCR;
 
     unique case(curr_state)
       FLUSH: begin
         // Set all of the way caches to be not valid
         o_we = '1;
         o_addr = address;
-        for (int unsigned w; w < BLK_PER_SET; W++) o_data[w][$size(o_data) - 1] = 0;
+        cache_wline.valid = 0;
       end
       IDLE: begin
         // Enable each of the way caches
-        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:$clog2(ADDR_SIZE / 8)];
+        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
       end
       CHK_TAG: begin
         // Check the TAG bits in parallel for each way
         // Verify the Tag and valid bit
         for(int unsigned w=0; w < BLK_PER_SET; w++) begin
           // Compare the valid bit and the cache tag, compare to address tag
-          if (cache_valid[w] && cache_tag[w] == tag) begin
+          o_instruction = cache_rline[w].data[word];
+          if (cache_rline[w].valid && cache_rline[w].tag == tag) begin
             hit[w] = 1;
             o_instr_valid = 1;
-            // Sel_way contains the output of the multiplexer
-            // It contains the way that has the hit, if a hit exists
-            sel_way = w;
           end
         end
-        o_axi.ar.valid = ~|hit;
-        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:$clog2(ADDR_SIZE / 8)];
+        axi.ar.valid = ~|hit;
+        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
       end
 
       MISS_R: begin
-        o_we[sel_way] = 1;
-        o_axi.rready = 1;
-        o_addr = address;
+        // The write enable to the way that has been selected based on LRU
+        o_we[0] = 1;
+        cache_wline.valid = 1;
+        cache_wline.data[address[WORD_BITS - 1:0]] = axi.r.data;
+        cache_wline.tag = tag;
+        axi.rready = 1;
+        o_addr = i_addr[$clog2(CACHE_DEPTH) - 1:WORD_BITS + OFFSET];
       end
       default:;
     endcase
   
-  end : proc_state
+  end : proc_comb
+
+  // Generate the least recently used selected way
+  //generate
+  //  for (genvar g = 0; g < BLK_PER_SET; g++) begin : way_gen
+  //    if (cache_rline[g].lru == BLK_PER_SET - 1) assign lru = g;
+  //  end
+  //endgenerate
 
 endmodule
