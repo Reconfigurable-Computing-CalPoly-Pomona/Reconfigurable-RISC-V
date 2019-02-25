@@ -232,9 +232,9 @@ module instr_cache_ctrl #(
         // Verify the Tag and valid bit
         for(int unsigned w=0; w < BLK_PER_SET; w++) begin
           // Compare the valid bit and the cache tag, compare to address tag
-          o_instruction = cache_rline[w].data[word];
           if (cache_rline[w].valid && cache_rline[w].tag == tag) begin
             hit[w] = 1;
+            o_instruction = cache_rline[w].data[word];
             o_instr_valid = 1;
             // Reset the PLRU table if it is full
             if (i_rlru == '1) o_wlru = 0;
@@ -273,7 +273,7 @@ module instr_cache_ctrl #(
   // Determines the Pseudo-LRU way for replacement
   always_comb begin : proc_lru
     // Default the least recently used to zero in case the recently used table is all 1s
-    lru = 0;
+    lru = BLK_PER_SET - 1;
     for(int unsigned w=0; w < BLK_PER_SET; w++) if (~i_rlru[w]) lru = w;
   end
 
