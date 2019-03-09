@@ -29,7 +29,7 @@ module tb_instruction_cache();
   localparam ADDR_SIZE = 32;
 
   // Sets the clock speed used for the test
-  localparam CLK_PER = 1ns;
+  localparam CLK_PER = 10ns;
 
   // Sets the time that the reset is deasserted at the start of the test
   localparam RESET_HIGH = 10.1ns;
@@ -84,6 +84,9 @@ module tb_instruction_cache();
   // The request to send into the instruction cache
   logic req;
 
+  // The cache ready to accept a new address
+  logic req_ready;
+
   // The program counter stimulating the instruction cache
   logic [31:0] pc;
 
@@ -134,6 +137,8 @@ module tb_instruction_cache();
     .axi(axi),
     // Request for instruction by instruction fetch stage
     .i_req(req),
+    // Cache is ready for a new request
+    .o_req_ready(req_ready),
     // Program counter stimulus
     .i_addr(pc),
     // Indicates that o_instruction is valid
@@ -154,12 +159,7 @@ module tb_instruction_cache();
     {axi.r, axi.arready, axi.awready, axi.wready, axi.b.valid} = 0;
     #RESET_HIGH areset_n = 1;
     for (int addr=0; addr < CACHE_SIZE * 2; addr=addr+4) begin
-      req = 1;
-      hit = 0;
-      
-      if (addr == 0) $display("Test 1: Incrementing PC in ideal fashion.");
-      else if (addr == CACHE_SIZE) $display("Test 2: Random PC addresses");
-
+      hit = 0; #1
       // Test 1, address is incrementing in an ideal fashion
       if (addr < CACHE_SIZE) pc = addr;
       // Test 2, randomly target addresses
@@ -168,9 +168,18 @@ module tb_instruction_cache();
       // a few of the tag bits to be randomized
       else pc[$size(pc) - TAG_BITS - 1 + 2:0] = $urandom();
 
+      // Randomly de-assert request
+      do begin
+        req = $urandom(); @(posedge(clk));
+      end while(~req);
+
+      if (addr == 0) $display("Test 1: Incrementing PC in ideal fashion.");
+      else if (addr == CACHE_SIZE) $display("Test 2: Random PC addresses");
+
       index = pc[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
       tag = pc[$size(pc) - 1:INDEX_BITS + WORD_BITS + OFFSET];
       @(posedge(clk));
+
       for (int w=0; w < BLK_PER_SET; w++) begin
         if (model_cache[index][w].valid && model_cache[index][w].tag == tag) begin
           hit[w] = 1;
@@ -188,6 +197,9 @@ module tb_instruction_cache();
         for (int w=0; w < BLK_PER_SET; w++) begin
           if (model_plru[index][w] == 0) sel_way = w;
         end
+        // As the DUT cache is filled, fill the model cache
+        if (model_plru[index] == '1) model_plru[index] = 0;
+        model_plru[index][sel_way] = 1;
         axi.arready = 1;
         wait(axi.ar.valid == 1); @(posedge(clk));
         axi_addr = 0;
@@ -202,21 +214,21 @@ module tb_instruction_cache();
           if (i == WORDS_PER_LINE - 1) axi.r.last = 1;
           else axi.r.last = 0;
           axi.r.data = exp_instruction + 4*i;
-          // As the DUT cache is filled, fill the model cache
-          if (model_plru[index] == '1) model_plru[index] = 0;
-          model_plru[index][sel_way] = 1;
           model_cache[index][sel_way].valid = 1;
           model_cache[index][sel_way].tag = tag;
           model_cache[index][sel_way].data[i] = exp_instruction + 4*i;
-          wait(axi.rready == 1); @(posedge(clk));
+          wait(axi.rready == 1) @(posedge(clk));
         end
-      end
+      end 
+
       axi.r.valid = 0;
-      wait(instr_valid == 1) @(posedge(clk));
+      wait(instr_valid == 1)
+
       assert (instruction == model_cache[index][sel_way].data[pc[WORD_BITS + OFFSET - 1:OFFSET]]) else
         $fatal(1,"Instruction was %h, expected %h!", instruction, exp_instruction + pc[WORD_BITS + OFFSET - 1:0]);
-      req = 0;
+
     end
+    req = 0;
 
     repeat(5) @(posedge(clk));
     $display("Tests Completed!"); $stop;

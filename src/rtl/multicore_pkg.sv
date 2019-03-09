@@ -26,6 +26,9 @@ package multicore_pkg;
   // The size of the instructions
   localparam INST_SIZE = 32;
 
+  // The size of the data in the processor
+  localparam DATA_SIZE = 32;
+
   // The size of the cache sets in # of lines
   localparam WORDS_PER_LINE = 8;
 
