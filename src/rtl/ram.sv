@@ -52,7 +52,8 @@ module ram
       if (i_addr_a != i_addr_b || ~i_we_b) mem[i_addr_a] <= i_data_a;
       o_data_a <= i_data_a;
     end else begin
-      o_data_a <= mem[i_addr_a];
+      if (i_we_b && i_addr_a == i_addr_b) o_data_a <= i_data_b;
+      else o_data_a <= mem[i_addr_a];
     end
 
   end
@@ -65,7 +66,8 @@ module ram
       if (i_addr_b != i_addr_a || ~i_we_a) mem[i_addr_b] <= i_data_b;
       o_data_b <= i_data_b;
     end else begin
-      o_data_b <= mem[i_addr_b];
+      if (i_we_a && i_addr_b == i_addr_a) o_data_b <= i_data_a;
+      else o_data_b <= mem[i_addr_b];
     end
 
   end

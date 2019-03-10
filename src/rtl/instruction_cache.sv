@@ -21,6 +21,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 import multicore_pkg::*;
+import axi_defines::*;
 
 module instruction_cache #(
   // The size of the accessible address space
@@ -138,7 +139,7 @@ module instruction_cache #(
         .i_we_b('0),
         .o_data_b()
       );
-    end
+    end : way_gen
   endgenerate
 
   // Instantiates a cache controlller
@@ -202,7 +203,7 @@ module instruction_cache #(
         .o_data_b()
       );
     end
-  end
+  end : plru_ram
   endgenerate
 
 endmodule

@@ -21,6 +21,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 import multicore_pkg::*;
+import axi_defines::*;
 
 module data_cache #(
   // The size of the accessible address space
@@ -38,15 +39,25 @@ module data_cache #(
   // AXI Master
   axi_inf.master axi,
 
-  // Request for data store/load by memory access stage
+  // Request to access data cache by memory access stage
   input logic i_req,
-  // Address for the data from the PC
+
+  // Indicates the request is a write (1) or read
+  input logic i_req_write,
+
+  // When high, indicates the request will start processing if i_req is high
+  output logic o_req_ready,
+
+  // Address for the data store or load
   input logic [ADDR_SIZE - 1:0] i_addr,
 
-  // Indicates that the data has been stored or loaded
-  output logic o_dvalid,
+  // The data to store in the cache during a write
+  input logic [DATA_SIZE - 1:0] i_store_data,
 
-  // The data loaded, to be returned to the memory access stage
+  // Indicates that o_data is valid
+  output logic o_data_valid,
+
+  // The data to return to the memory access stage
   output logic [DATA_SIZE - 1:0] o_data
 
 );
@@ -76,10 +87,11 @@ module data_cache #(
   // The number of elements in the cache
   localparam CACHE_DEPTH = WAY_SIZE / (WORDS_PER_LINE * DATA_SIZE / 8);
 
-  // The width used for the block RAM including data, tags, valid, and dirty bit
+  // The width used for the block RAM including datas, tags, valid, and dirty
   localparam CACHE_WIDTH = 1 + 1 + TAG_BITS + DATA_SIZE * WORDS_PER_LINE;
 
   typedef struct packed {
+  	logic dirty;
     logic valid;
     logic [TAG_BITS - 1:0] tag;
     logic [WORDS_PER_LINE - 1:0] [DATA_SIZE - 1:0] data;
@@ -94,7 +106,14 @@ module data_cache #(
 
   // The address to look up into each way for a particular TAG
   // As associativity increases, this address will fanout to more WAYs
-  logic [$clog2(CACHE_DEPTH) - 1:0] cache_addr;
+  logic [$clog2(CACHE_DEPTH) - 1:0] cache_raddr;
+
+  // The address to look up into each way for a particular TAG
+  // As associativity increases, this address will fanout to more WAYs
+  logic [$clog2(CACHE_DEPTH) - 1:0] cache_waddr;
+
+  // The address to read and store least recently used bits
+  logic [$clog2(CACHE_DEPTH) - 1:0] lru_addr;
 
   // The data that may be written to one way at a time
   data_blk_t wline;
@@ -120,12 +139,16 @@ module data_cache #(
         .DEPTH(CACHE_DEPTH),
         // Valid + Tag + Data payload
         .DATA_WIDTH(CACHE_WIDTH)
-      ) instr_cache_set (
+      ) data_cache_set (
         .i_clk(i_aclk),
-        .i_addr(cache_addr),
-        .i_data(wline),
-        .i_we(we[g]),
-        .o_data(rline[g])
+        .i_addr_a(cache_raddr),
+        .i_data_a('0),
+        .i_we_a('0),
+        .o_data_a(rline[g]),
+        .i_addr_b(cache_waddr),
+        .i_data_b(wline),
+        .i_we_b(we[g]),
+        .o_data_b()
       );
     end
   endgenerate
@@ -146,20 +169,25 @@ module data_cache #(
     .i_areset_n(i_areset_n),
     .axi(axi),
 
-    // Request from memory access
+    // Request for memory access
     .i_addr(i_addr),
+    .i_store_data(i_store_data),
     .i_req(i_req),
-
+    .i_req_write(i_req_write),
+    .o_req_ready(o_req_ready),
+    
     // Read from caches
     .i_line(rline),
+    .o_raddr(cache_raddr),
 
     // Write to caches
     .o_we(we),
     .o_line(wline),
-    .o_addr(cache_addr),
+    .o_waddr(cache_waddr),
+    .o_lru_addr(lru_addr),
 
-    // Return data to memory access
-    .o_dvalid(o_dvalid),
+    // The data is valid in the cache, and if this was read request, the data is retrieved
+    .o_data_valid(o_data_valid),
     .o_data(o_data),
 
     // LRU block RAM I/O
@@ -179,10 +207,14 @@ module data_cache #(
         .DATA_WIDTH(BLK_PER_SET)
       ) plru_cache (
         .i_clk(i_aclk),
-        .i_addr(cache_addr),
-        .i_data(wlru),
-        .i_we(we_lru),
-        .o_data(rlru)
+        .i_addr_a(cache_raddr),
+        .i_data_a('0),
+        .i_we_a('0),
+        .o_data_a(rlru),
+        .i_addr_b(lru_addr),
+        .i_data_b(wlru),
+        .i_we_b(we_lru),
+        .o_data_b()
       );
     end
   end

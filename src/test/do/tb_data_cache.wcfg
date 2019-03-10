@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_data_cache_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_defines" />
+            <top_module name="glbl" />
+            <top_module name="multicore_pkg" />
+            <top_module name="tb_data_cache" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="353562200000fs"></ZoomStartTime>
+      <ZoomEndTime time="353734600001fs"></ZoomEndTime>
+      <Cursor1Time time="353624200000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="247"></NameColumnWidth>
+      <ValueColumnWidth column_width="487"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="group460" type="group">
+      <obj_property name="label">AXI</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_data_cache/axi/aw" type="array">
+         <obj_property name="ElementShortName">aw</obj_property>
+         <obj_property name="ObjectShortName">aw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/ar" type="array">
+         <obj_property name="ElementShortName">ar</obj_property>
+         <obj_property name="ObjectShortName">ar</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/w" type="array">
+         <obj_property name="ElementShortName">w</obj_property>
+         <obj_property name="ObjectShortName">w</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/r" type="array">
+         <obj_property name="ElementShortName">r</obj_property>
+         <obj_property name="ObjectShortName">r</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/b" type="array">
+         <obj_property name="ElementShortName">b</obj_property>
+         <obj_property name="ObjectShortName">b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/awready" type="logic">
+         <obj_property name="ElementShortName">awready</obj_property>
+         <obj_property name="ObjectShortName">awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/arready" type="logic">
+         <obj_property name="ElementShortName">arready</obj_property>
+         <obj_property name="ObjectShortName">arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/rready" type="logic">
+         <obj_property name="ElementShortName">rready</obj_property>
+         <obj_property name="ObjectShortName">rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/wready" type="logic">
+         <obj_property name="ElementShortName">wready</obj_property>
+         <obj_property name="ObjectShortName">wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi/bready" type="logic">
+         <obj_property name="ElementShortName">bready</obj_property>
+         <obj_property name="ObjectShortName">bready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group482" type="group">
+      <obj_property name="label">Cache Ctrl</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_addr" type="array">
+         <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_store_data" type="array">
+         <obj_property name="ElementShortName">i_store_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_store_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_req" type="logic">
+         <obj_property name="ElementShortName">i_req</obj_property>
+         <obj_property name="ObjectShortName">i_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_req_write" type="logic">
+         <obj_property name="ElementShortName">i_req_write</obj_property>
+         <obj_property name="ObjectShortName">i_req_write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_line" type="array">
+         <obj_property name="ElementShortName">i_line[1:0][276:0]</obj_property>
+         <obj_property name="ObjectShortName">i_line[1:0][276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_we" type="array">
+         <obj_property name="ElementShortName">o_we[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_we[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_line" type="array">
+         <obj_property name="ElementShortName">o_line[276:0]</obj_property>
+         <obj_property name="ObjectShortName">o_line[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_raddr" type="array">
+         <obj_property name="ElementShortName">o_raddr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_raddr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_waddr" type="array">
+         <obj_property name="ElementShortName">o_waddr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_waddr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_lru_addr" type="array">
+         <obj_property name="ElementShortName">o_lru_addr[7:0]</obj_property>
+         <obj_property name="ObjectShortName">o_lru_addr[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_data_valid" type="logic">
+         <obj_property name="ElementShortName">o_data_valid</obj_property>
+         <obj_property name="ObjectShortName">o_data_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_req_ready" type="logic">
+         <obj_property name="ElementShortName">o_req_ready</obj_property>
+         <obj_property name="ObjectShortName">o_req_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_data" type="array">
+         <obj_property name="ElementShortName">o_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/i_rlru" type="array">
+         <obj_property name="ElementShortName">i_rlru[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_rlru[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_wlru" type="array">
+         <obj_property name="ElementShortName">o_wlru[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wlru[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/o_we_lru" type="logic">
+         <obj_property name="ElementShortName">o_we_lru</obj_property>
+         <obj_property name="ObjectShortName">o_we_lru</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /mem[203]" type="array">
+         <obj_property name="ElementShortName">[203][1:0]</obj_property>
+         <obj_property name="ObjectShortName">[203][1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/model_plru[203]" type="array">
+         <obj_property name="ElementShortName">[203][1:0]</obj_property>
+         <obj_property name="ObjectShortName">[203][1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/curr_state" type="array">
+         <obj_property name="ElementShortName">curr_state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">curr_state[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/next_state" type="array">
+         <obj_property name="ElementShortName">next_state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">next_state[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/tag" type="array">
+         <obj_property name="ElementShortName">tag[18:0]</obj_property>
+         <obj_property name="ObjectShortName">tag[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/index" type="array">
+         <obj_property name="ElementShortName">index[7:0]</obj_property>
+         <obj_property name="ObjectShortName">index[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/word" type="array">
+         <obj_property name="ElementShortName">word[2:0]</obj_property>
+         <obj_property name="ObjectShortName">word[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/lru" type="array">
+         <obj_property name="ElementShortName">lru[0:0]</obj_property>
+         <obj_property name="ObjectShortName">lru[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline" type="array">
+         <obj_property name="ElementShortName">cache_rline[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cache_rline[1:0]</obj_property>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1]" type="array">
+            <obj_property name="ElementShortName">[1]</obj_property>
+            <obj_property name="ObjectShortName">[1]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].dirty" type="logic">
+               <obj_property name="ElementShortName">.dirty</obj_property>
+               <obj_property name="ObjectShortName">.dirty</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].valid" type="logic">
+               <obj_property name="ElementShortName">.valid</obj_property>
+               <obj_property name="ObjectShortName">.valid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].tag" type="array">
+               <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+               <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].data" type="array">
+               <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+               <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+               <obj_property name="isExpanded"></obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].dirty" type="logic">
+               <obj_property name="ElementShortName">.dirty</obj_property>
+               <obj_property name="ObjectShortName">.dirty</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].valid" type="logic">
+               <obj_property name="ElementShortName">.valid</obj_property>
+               <obj_property name="ObjectShortName">.valid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].tag" type="array">
+               <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+               <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1].data" type="array">
+               <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+               <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[0]" type="array">
+            <obj_property name="ElementShortName">[0]</obj_property>
+            <obj_property name="ObjectShortName">[0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[1]" type="array">
+            <obj_property name="ElementShortName">[1]</obj_property>
+            <obj_property name="ObjectShortName">[1]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_rline[0]" type="array">
+            <obj_property name="ElementShortName">[0]</obj_property>
+            <obj_property name="ObjectShortName">[0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/line_sel" type="array">
+         <obj_property name="ElementShortName">line_sel</obj_property>
+         <obj_property name="ObjectShortName">line_sel</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline" type="array">
+         <obj_property name="ElementShortName">cache_wline</obj_property>
+         <obj_property name="ObjectShortName">cache_wline</obj_property>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.dirty" type="logic">
+            <obj_property name="ElementShortName">.dirty</obj_property>
+            <obj_property name="ObjectShortName">.dirty</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.valid" type="logic">
+            <obj_property name="ElementShortName">.valid</obj_property>
+            <obj_property name="ObjectShortName">.valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.tag" type="array">
+            <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+            <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.data" type="array">
+            <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.dirty" type="logic">
+            <obj_property name="ElementShortName">.dirty</obj_property>
+            <obj_property name="ObjectShortName">.dirty</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.valid" type="logic">
+            <obj_property name="ElementShortName">.valid</obj_property>
+            <obj_property name="ObjectShortName">.valid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.tag" type="array">
+            <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+            <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_data_cache/dut/cache_controller/cache_wline.data" type="array">
+            <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+            <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/address" type="array">
+         <obj_property name="ElementShortName">address[7:0]</obj_property>
+         <obj_property name="ObjectShortName">address[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/hit" type="array">
+         <obj_property name="ElementShortName">hit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/miss" type="logic">
+         <obj_property name="ElementShortName">miss</obj_property>
+         <obj_property name="ObjectShortName">miss</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/dirty" type="logic">
+         <obj_property name="ElementShortName">dirty</obj_property>
+         <obj_property name="ObjectShortName">dirty</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/write" type="logic">
+         <obj_property name="ElementShortName">write</obj_property>
+         <obj_property name="ObjectShortName">write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/cache_controller/store_data" type="array">
+         <obj_property name="ElementShortName">store_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">store_data[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group69" type="group">
+      <obj_property name="label">PLRU RAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_addr_a" type="array">
+         <obj_property name="ElementShortName">i_addr_a[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_a[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_data_a" type="array">
+         <obj_property name="ElementShortName">i_data_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_we_a" type="logic">
+         <obj_property name="ElementShortName">i_we_a</obj_property>
+         <obj_property name="ObjectShortName">i_we_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /o_data_a" type="array">
+         <obj_property name="ElementShortName">o_data_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_addr_b" type="array">
+         <obj_property name="ElementShortName">i_addr_b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_b[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_data_b" type="array">
+         <obj_property name="ElementShortName">i_data_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /i_we_b" type="logic">
+         <obj_property name="ElementShortName">i_we_b</obj_property>
+         <obj_property name="ObjectShortName">i_we_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /o_data_b" type="array">
+         <obj_property name="ElementShortName">o_data_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\plru_ram.genblk1.plru_cache /mem" type="array">
+         <obj_property name="ElementShortName">mem[0:255][1:0]</obj_property>
+         <obj_property name="ObjectShortName">mem[0:255][1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group402" type="group">
+      <obj_property name="label">Way 0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_addr_a" type="array">
+         <obj_property name="ElementShortName">i_addr_a[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_a[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_data_a" type="array">
+         <obj_property name="ElementShortName">i_data_a[276:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_a[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_we_a" type="logic">
+         <obj_property name="ElementShortName">i_we_a</obj_property>
+         <obj_property name="ObjectShortName">i_we_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /o_data_a" type="array">
+         <obj_property name="ElementShortName">o_data_a[276:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_a[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_addr_b" type="array">
+         <obj_property name="ElementShortName">i_addr_b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_b[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_data_b" type="array">
+         <obj_property name="ElementShortName">i_data_b[276:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_b[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /i_we_b" type="logic">
+         <obj_property name="ElementShortName">i_we_b</obj_property>
+         <obj_property name="ObjectShortName">i_we_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[0].data_cache_set /o_data_b" type="array">
+         <obj_property name="ElementShortName">o_data_b[276:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_b[276:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group410" type="group">
+      <obj_property name="label">Way 1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_addr_a" type="array">
+         <obj_property name="ElementShortName">i_addr_a[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_a[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_data_a" type="array">
+         <obj_property name="ElementShortName">i_data_a[276:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_a[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_we_a" type="logic">
+         <obj_property name="ElementShortName">i_we_a</obj_property>
+         <obj_property name="ObjectShortName">i_we_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /o_data_a" type="array">
+         <obj_property name="ElementShortName">o_data_a[276:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_a[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_addr_b" type="array">
+         <obj_property name="ElementShortName">i_addr_b[7:0]</obj_property>
+         <obj_property name="ObjectShortName">i_addr_b[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_data_b" type="array">
+         <obj_property name="ElementShortName">i_data_b[276:0]</obj_property>
+         <obj_property name="ObjectShortName">i_data_b[276:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /i_we_b" type="logic">
+         <obj_property name="ElementShortName">i_we_b</obj_property>
+         <obj_property name="ObjectShortName">i_we_b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/dut/\way_gen[1].data_cache_set /o_data_b" type="array">
+         <obj_property name="ElementShortName">o_data_b[276:0]</obj_property>
+         <obj_property name="ObjectShortName">o_data_b[276:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group116" type="group">
+      <obj_property name="label">Stimulus</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_data_cache/req" type="logic">
+         <obj_property name="ElementShortName">req</obj_property>
+         <obj_property name="ObjectShortName">req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/req_store" type="logic">
+         <obj_property name="ElementShortName">req_store</obj_property>
+         <obj_property name="ObjectShortName">req_store</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/req_ready" type="logic">
+         <obj_property name="ElementShortName">req_ready</obj_property>
+         <obj_property name="ObjectShortName">req_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/data_addr" type="array">
+         <obj_property name="ElementShortName">data_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/data_valid" type="logic">
+         <obj_property name="ElementShortName">data_valid</obj_property>
+         <obj_property name="ObjectShortName">data_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/data" type="array">
+         <obj_property name="ElementShortName">data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/exp_data" type="array">
+         <obj_property name="ElementShortName">exp_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exp_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/store_data" type="array">
+         <obj_property name="ElementShortName">store_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">store_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/tag" type="array">
+         <obj_property name="ElementShortName">tag[18:0]</obj_property>
+         <obj_property name="ObjectShortName">tag[18:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/index" type="array">
+         <obj_property name="ElementShortName">index[7:0]</obj_property>
+         <obj_property name="ObjectShortName">index[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/axi_addr" type="array">
+         <obj_property name="ElementShortName">axi_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">axi_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/model_plru" type="array">
+         <obj_property name="ElementShortName">model_plru[255:0][1:0]</obj_property>
+         <obj_property name="ObjectShortName">model_plru[255:0][1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/hit" type="array">
+         <obj_property name="ElementShortName">hit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/sel_way" type="array">
+         <obj_property name="ElementShortName">sel_way[0:0]</obj_property>
+         <obj_property name="ObjectShortName">sel_way[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/ADDR_SIZE" type="array">
+         <obj_property name="ElementShortName">ADDR_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADDR_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/CLK_PER" type="other">
+         <obj_property name="ElementShortName">CLK_PER</obj_property>
+         <obj_property name="ObjectShortName">CLK_PER</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/RESET_HIGH" type="other">
+         <obj_property name="ElementShortName">RESET_HIGH</obj_property>
+         <obj_property name="ObjectShortName">RESET_HIGH</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/CACHE_SIZE" type="array">
+         <obj_property name="ElementShortName">CACHE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CACHE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/BLK_PER_SET" type="array">
+         <obj_property name="ElementShortName">BLK_PER_SET[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BLK_PER_SET[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/NUM_BLOCKS" type="array">
+         <obj_property name="ElementShortName">NUM_BLOCKS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">NUM_BLOCKS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/WAY_SIZE" type="array">
+         <obj_property name="ElementShortName">WAY_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">WAY_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/INDEX_BITS" type="array">
+         <obj_property name="ElementShortName">INDEX_BITS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INDEX_BITS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/TAG_BITS" type="array">
+         <obj_property name="ElementShortName">TAG_BITS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">TAG_BITS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/CACHE_DEPTH" type="array">
+         <obj_property name="ElementShortName">CACHE_DEPTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CACHE_DEPTH[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_data_cache/CACHE_WIDTH" type="array">
+         <obj_property name="ElementShortName">CACHE_WIDTH[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CACHE_WIDTH[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_data_cache/model_cache" type="array">
+      <obj_property name="ElementShortName">model_cache[255:0][1:0]</obj_property>
+      <obj_property name="ObjectShortName">model_cache[255:0][1:0]</obj_property>
+   </wvobject>
+</wave_config>

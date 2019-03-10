@@ -23,6 +23,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 import multicore_pkg::*;
+import axi_defines::*;
 
 module instr_cache_ctrl #(
   parameter ADDR_SIZE = 32,
@@ -76,7 +77,7 @@ module instr_cache_ctrl #(
   output logic [BLK_PER_SET - 1:0] o_wlru,
 
   // The LRU cache write enable
-  output logic [BLK_PER_SET - 1:0] o_we_lru
+  output logic o_we_lru
 );
 
   // AXI master
@@ -85,6 +86,7 @@ module instr_cache_ctrl #(
   // IDLE - Waits for an incoming request from the instruction fetch
   // CHK_TAG - Compares the tag from each way in parallel to move to the appropriate state
   // Memory access states (miss only):
+  // MISS_AR - Waits for the ARready signal from the AXI slave after a miss
   // MISS_R - Reads an entire block from memory and writes to a particular way cache
   enum logic [2:0] {
     FLUSH = 0,
@@ -206,9 +208,6 @@ module instr_cache_ctrl #(
 
   // If no hit occurs on any of the ways, set the miss bit
   assign miss = ~|hit;
-  //assign tag = address[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
-  //assign index = address[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-  //assign word = address[WORD_BITS + OFFSET - 1:OFFSET];
 
   // Assign the line data structure to be equal to the input data
   assign cache_rline = i_line;
@@ -280,6 +279,7 @@ module instr_cache_ctrl #(
         axi.ar.valid = ~|hit;
       end
       MISS_AR: begin
+        // Wait for AR to be ready
         axi.ar.valid = 1;
       end
 
@@ -293,19 +293,8 @@ module instr_cache_ctrl #(
         cache_wline.data[address[WORD_BITS - 1:0]] = axi.r.data;
         cache_wline.tag = tag;
         o_addr = index;
-
+        // Accept reads in this state
         axi.rready = 1;
-        // If on the last transaction, mark the least recently used bit as recently used
-        //f (axi.r.valid && axi.r.last) begin
-        // // Reset the PLRU table if it is full
-        // if (i_rlru == '1) o_wlru = 0;
-        // o_wlru[lru] = 1;
-        // o_we_lru = 1;
-        //nd
-
-        // When the instruction comes in that was missed originally, send it out as soon as it comes in
-        //o_instruction = axi.r.data;
-        //if (address == index) o_instr_valid = 1;
       end
       default:;
     endcase
@@ -318,15 +307,5 @@ module instr_cache_ctrl #(
     lru = BLK_PER_SET - 1;
     for(int unsigned w=0; w < BLK_PER_SET; w++) if (~i_rlru[w]) lru = w;
   end : proc_lru
-
-  //always_ff @(posedge i_clk or negedge i_areset_n) begin : proc_lru
-  //  if(~i_areset_n) begin
-  //    lru <= 0;
-  //  end else begin
-  //    if (i_req && o_req_ready) begin
-  //      for(int unsigned w=0; w < BLK_PER_SET; w++) if (~i_rlru[w]) lru = w;
-  //    end
-  //  end
-  //end
 
 endmodule
