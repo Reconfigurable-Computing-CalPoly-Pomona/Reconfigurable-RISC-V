@@ -39,7 +39,7 @@ module tb_data_cache();
   localparam CACHE_SIZE = 2**14;
 
   // The associativity to test
-  localparam BLK_PER_SET = 2;
+  localparam BLK_PER_SET = 1;
 
   /////////////////////////////////////////////////////////////////
   // Local parameters for data cache test
@@ -170,10 +170,8 @@ module tb_data_cache();
     {axi.r, axi.arready, axi.awready, axi.wready, axi.b.valid} = 0;
     #RESET_HIGH areset_n = 1;
     for (int addr=0; addr < CACHE_SIZE * 2; addr=addr+4) begin
+      req = 0;
       hit = 0; #1
-      //#1
-      //req = 0;
-      //@(posedge(clk));
       // Test 1, address is incrementing in an ideal fashion
       if (addr < CACHE_SIZE) data_addr = addr;
       // Test 2, randomly target addresses
@@ -182,7 +180,6 @@ module tb_data_cache();
       // a few of the tag bits to be randomized
       else data_addr[$size(data_addr) - TAG_BITS - 1 + 2:0] = $urandom();
       do begin
-        
         req_store = $urandom();
         store_data = $urandom();
         req = $urandom(); @(posedge(clk));
@@ -192,15 +189,6 @@ module tb_data_cache();
 
       index = data_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
       tag = data_addr[$size(data_addr) - 1:INDEX_BITS + WORD_BITS + OFFSET];
-      @(posedge(clk));
-      //req = 0;
-      //req = 0;
-      //req = 0;
-      //do begin
-      //  req = $urandom(); @(posedge(clk));
-      //end while(~req);
-      //@(posedge(clk));
-      //req = 0;
 
       for (int w=0; w < BLK_PER_SET; w++) begin
         if (model_cache[index][w].valid && model_cache[index][w].tag == tag) begin
@@ -277,6 +265,7 @@ module tb_data_cache();
       end 
       axi.r.valid = 0;
       wait(data_valid == 1);
+      #1
       if (~req_store) begin
         assert (data == model_cache[index][sel_way].data[data_addr[WORD_BITS + OFFSET - 1:OFFSET]]) else
           $fatal(1,"data was %h, expected %h!", data, exp_data + data_addr[WORD_BITS + OFFSET - 1:0]);
