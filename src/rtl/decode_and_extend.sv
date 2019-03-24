@@ -25,6 +25,9 @@ module decode_and_extend(
   // The instruction
   input logic [INST_SIZE - 1:0] i_instr,
 
+  // The register used in the jump and link register instruction
+  input signed [DATA_SIZE - 1:0] i_jalr_reg,
+
   // The output immediate value
   output signed [DATA_SIZE - 1:0] o_immediate
 
@@ -44,11 +47,11 @@ module decode_and_extend(
       STORES:   o_immediate = {i_instr[31:25], i_instr[11:7]};
       ALC_I:    o_immediate = i_instr[31:20];
       BRANCHES: o_immediate = {i_instr[31], i_instr[7], i_instr[30:25], i_instr[11:8], 1'b0};
-      LUI:      o_immediate = {i_instr[31:12], 11'b0};
-      AUIPC:    o_immediate = {i_instr[31:12], 11'b0};
+      LUI:      o_immediate = {i_instr[31:12], 12'h0};
+      AUIPC:    o_immediate = {i_instr[31:12], 12'h0};
       JAL:      o_immediate = {i_instr[31], i_instr[19:12], i_instr[20], i_instr[30:21], 1'b0};
       JALR:     o_immediate = i_instr[31:20];
-
+      
       // If the immediate is not used, set to be don't care
       default:  o_immediate = 'x;
     endcase

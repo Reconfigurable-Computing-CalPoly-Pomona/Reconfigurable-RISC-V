@@ -1,0 +1,328 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: Ben Kueffler
+// 
+// Create Date: 03/23/2019 10:55:31 PM
+// Design Name: 
+// Module Name: execute_unit
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// The execution unit contains the logic neccessary to determine arithmetic operation,
+// branch evaluation, and the target address for JALR jumps
+// JALR are calculated from immediate and id_op1
+// Branch target is from ID, branch comparison is done in branch comparison unit
+// Arithmetic operations are performed in the ALU
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+import multicore_pkg::*;
+
+module execute_unit(
+  // System clock
+  input logic i_aclk,
+
+  // Asynchronous reset
+  input logic i_areset_n,
+
+  // Enables the incoming instruction from the ID stage as valid
+  // If this is low, then NoOPs are used
+  input logic i_en,
+
+  // The address of the current program counter for this stage, used for AUIPC in this stage
+  input logic [INST_SIZE - 1:0] i_pc,
+
+  // The address of the program counter + 4, to be pipelined to later stage for JAL/JALR linkage
+  input logic [INST_SIZE - 1:0] i_pcplus4,
+
+  // The address of the program counter + 4, to be pipelined to later stage for JAL/JALR linkage
+  output logic [INST_SIZE - 1:0] o_pcplus4,
+
+  // Takes the calculated branch address from the decode stage, to be passed to fetch if the branch is valid
+  input logic [ADDR_SIZE - 1:0] i_branch_addr,
+
+  // Denotes if the branch address from the execute stage is valid (branch taken or JALR)
+  output logic o_branch_valid,
+
+  // The output branch or jump (JALR) address to take when o_branch_valid is asserted
+  output logic [ADDR_SIZE - 1:0] o_branch_addr,
+
+  // The write back destination
+  input logic [$clog2(NUM_REGS) -1:0] i_rdest,
+
+  // The write back destination
+  output logic [$clog2(NUM_REGS) -1:0] o_rdest,
+
+  // The hazard unit requesting that the operator a can be obtained via forwarding
+  // 00 - No forwarding
+  // 01 - Forward Memory access stage
+  // 10 - Forward write back stage
+  input logic [1:0] i_forward_a,
+
+  // The hazard unit requesting that the operator b can be obtained via forwarding
+  // 00 - No forwarding
+  // 01 - Forward Memory access stage
+  // 10 - Forward write back stag
+  input logic [1:0] i_forward_b,
+
+  // The data obtained from forward/register file register a
+  input signed [DATA_SIZE - 1:0] i_id_op1,
+
+  // The data obtained from forward/register file register b
+  input signed [DATA_SIZE - 1:0] i_id_op2,
+
+  // The forward data for register a
+  input signed [DATA_SIZE - 1:0] i_ma_op1,
+
+  // The forward data for register b
+  input signed [DATA_SIZE - 1:0] i_ma_op2,
+
+  // The forward data for register a
+  input signed [DATA_SIZE - 1:0] i_wb_op1,
+
+  // The forward data for register b
+  input signed [DATA_SIZE - 1:0] i_wb_op2,
+
+  // The immediate data from the decode stage
+  input signed [DATA_SIZE - 1:0] i_immediate,
+
+  // Pipelined control signal to determine if reg file should be written at the end of instruction
+  input logic i_cu_regwrite,
+
+  // Pipelined control signal to determine if pc, mem, or alu output will go to the register file
+  input logic [1:0] i_cu_memtoreg,
+
+  // Determines if dmem will be written to
+  input logic i_cu_memwrite,
+
+  // Determines the alu operation
+  input logic i_cu_aluop,
+
+  // Determines the source of operator A for the alu
+  input logic i_cu_alu_srca,
+
+  // Determines the source of operator B for the alu
+  input logic i_cu_alu_srcb,
+
+  // Indicates if the branch comparison unit should be used in the execute stage
+  input t_exe_unit i_cu_exe_unit,
+
+  // The branch comparison units operation from the decoding
+  input t_brop i_cu_brop,
+
+  // The system operation from decoding
+  input t_sysop i_cu_sysop,
+
+  // Indicates if the new target address should be calculated in the execution stage
+  input logic i_cu_jalr,
+
+  // Memory access stage outputs
+
+  // The output of the calculation units
+  output logic [DATA_SIZE - 1:0] o_exe_calc,
+
+  // The write data to pass to the data memory
+  output logic [DATA_SIZE - 1:0] o_exe_wdata,
+
+  // Pipelined control signal to determine if reg file should be written at the end of instruction
+  output logic o_cu_regwrite,
+
+  // Pipelined control signal to determine if pc, mem, or alu output will go to the register file
+  output logic [1:0] o_cu_memtoreg,
+
+  // Determines if dmem will be written to
+  output logic o_cu_memwrite
+
+);
+
+  // Registered control unit signals
+
+  // When asserted, JALR is the instruction
+  logic cu_jalr;
+
+  // Registered view of which unit will be used
+  t_exe_unit cu_exe_unit;
+
+  // The ALU operation to perfrom
+  t_aluop cu_aluop;
+
+  // The branch operation to perform
+  t_brop cu_brop;
+
+  // The system operation to perform
+  t_sysop cu_sysop;
+
+  // Pipelined control signal to determine if reg file should be written at the end of instruction
+  logic cu_regwrite;
+
+  // Pipelined control signal to determine if pc, mem, or alu output will go to the register file
+  logic [1:0] cu_memtoreg;
+
+  // Determines if dmem will be written to
+  logic cu_memwrite;
+
+  // Determines the source of operator A for the alu
+  logic cu_alu_srca;
+
+  // Determines the source of operator B for the alu
+  logic cu_alu_srcb;
+
+  // Indicates that the branch comparison was true
+  logic branch_true;
+
+  // The data obtained from the ID register a
+  signed [DATA_SIZE - 1:0] id_op1;
+
+  // The data obtained from the ID register b
+  signed [DATA_SIZE - 1:0] id_op2;
+
+  // The address of the current program counter for this stage, used for AUIPC in this stage
+  logic [INST_SIZE - 1:0] pc;
+
+  // The address of the program counter + 4, to be pipelined to later stage for JAL/JALR linkage
+  logic [INST_SIZE - 1:0] pcplus4;
+
+  // Takes the calculated branch address from the decode stage, to be passed to fetch if the branch is valid
+  logic [ADDR_SIZE - 1:0] branch_addr;
+
+  // The immediate data from the decode stage
+  signed [DATA_SIZE - 1:0] immediate;
+
+  // The calculated jump and link address
+  logic [ADDR_SIZE - 1:0] jalr_addr;
+
+  // The data obtained from forward/register file register a
+  signed [DATA_SIZE - 1:0] op_b;
+
+  // The data obtained from forward/register file register b
+  signed [DATA_SIZE - 1:0] op_a;
+
+  // The data obtained after muxing the operator A with the PC to determine ALU operator A
+  signed [DATA_SIZE - 1:0] alu_op_a;
+
+  // The data obtained after muxing operator B with the immediate to determine ALU operator B
+  signed [DATA_SIZE - 1:0] alu_op_b;
+
+  // Performs the branch comparisons
+  branch_compare #() br_compare(
+    .i_funct(cu_brop),
+    .i_r1(op_a),
+    .i_r2(op_b),
+    .o_true(branch_true)
+  );
+
+  // Performs arithmetic logic
+  alu #() alu_exe(
+    .i_funct(cu_aluop),
+    .i_op_a(alu_op_a),
+    .i_op_b(alu_op_b),
+    .o_result(alu_calc)
+  );
+
+  // Performs system operations
+  system_exe_unit #(.TIME_CNT_PER(1024))
+  sys_unit(
+    .i_aclk(i_aclk),
+    .i_areset_n(i_areset_n),
+    .i_op(cu_sysop),
+    .o_result(sys_calc)
+  );
+
+  // Determines the operations to use based on forwarding
+  always_comb begin : proc_forwarding
+
+    // Assign operator A
+    unique case(i_forward_a)
+      'b00: op_a = id_op1;
+      'b01: op_a = i_ma_op1;
+      'b10: op_a = i_wb_op1;
+      default: op_a = 'x;
+    endcase
+
+    // Assign operator B
+    unique case(i_forward_b)
+      'b00: op_b = id_op2;
+      'b01: op_b = i_ma_op2;
+      'b10: op_b = i_wb_op2;
+      default: op_b = 'x;
+    endcase
+  
+  end
+
+  // Determines the ALU operators
+  always_comb begin : proc_alu_operators
+
+    // Assign operator A
+    unique case(cu_alu_srca)
+      'b0: alu_op_a = op_a;
+      // For AUIPC instruction
+      'b1: alu_op_a = pc;
+      default: alu_op_a = 'x;
+    endcase
+
+    // Assign operator B
+    unique case(cu_alu_srcb)
+      'b0: alu_op_b = op_b;
+      'b1: alu_op_b = immediate;
+      default: alu_op_b = 'x;
+    endcase
+  
+  end
+
+  // Returns the output result from the execution units
+  assign o_exe_calc = (cu_exe_unit == SYSTEM) ? sys_calc : alu_calc;
+
+  // The write data to go to the data memory
+  assign o_exe_wdata = alu_op_b;
+
+  // The jump and link calculation unit
+  assign jalr_addr = immediate;
+
+  // The branch address/valid will take either the branch (if correct and valid) or JALR address
+  assign o_branch_valid = (branch_true & (cu_exe_unit == BRANCH)) | cu_jalr;
+  assign o_branch_addr = (cu_exe_unit == BRANCH) ? branch_addr : jalr_addr;
+
+  // Processes pipeline registers that should be reset
+  always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_register
+    if(~i_areset_n) begin
+      {cu_jalr, o_cu_regwrite, o_cu_memwrite} <= 0;
+      cu_exe_unit <= ALU;
+    end else begin
+      if (i_en) begin
+        cu_exe_unit <= i_cu_exe_unit;
+        cu_jalr <= i_cu_jalr;
+        o_cu_regwrite <= i_cu_regwrite;
+        o_cu_memwrite <= i_cu_memwrite;
+      end else begin
+        {cu_jalr, o_cu_regwrite, o_cu_memwrite} <= 0;
+        cu_exe_unit <= ALU;
+      end
+    end
+  end
+
+  // Processes pipeline registers that do not need to be reset
+  always_ff @(posedge i_aclk) begin : proc_register_no_rst
+    pc <= i_pc;
+    pcplus4 <= i_pcplus4;
+    branch_addr <= i_branch_addr;
+    immediate <= i_immediate;
+    id_op1 <= i_id_op1;
+    id_op2 <= i_id_op2;
+    cu_brop <= i_cu_brop;
+    cu_aluop <= i_cu_aluop;
+    cu_sysop <= i_cu_sysop;
+    cu_alu_srca <= i_cu_alu_srca;
+    cu_alu_srcb <= i_cu_alu_srcb;
+    o_cu_memtoreg <= i_cu_memtoreg;
+    o_rdest <= i_rdest;
+    o_pcplus4 <= i_pcplus4;
+  end
+  
+
+endmodule

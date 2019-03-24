@@ -21,7 +21,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+import multicore_pkg::*;
 
 module instr_decode(
   // System clock
@@ -37,10 +37,13 @@ module instr_decode(
   // The instruction to return to the instruction fetch stage
   input logic [INST_SIZE - 1:0] i_instruction,
 
+  // The address of the current program counter for this stage, used in AUIPC in the ALU stage
+  input logic [INST_SIZE - 1:0] i_pc,
+
   // The address of the program counter + 4, to be used in branch/jump calculations
   input logic [INST_SIZE - 1:0] i_pcplus4,
 
-  // If the branch/jump is valid, then this address will become the new address to fetch
+  // Calculates a new branch address in case the branch or jump is taken
   output logic [ADDR_SIZE - 1:0] o_branch_addr,
 
   // Denotes if the branch address from the decode stage is valid (branch taken/jump)
@@ -76,9 +79,47 @@ module instr_decode(
   // The data obtained from forward/register file register a
   output signed [DATA_SIZE - 1:0] o_rd2,
 
-  // The sign-extended immediate data
-  output signed [DATA_SIZE - 1:0] o_immediate
+  // The destination register
+  output [$clog2(NUM_REGS) - 1:0] o_rdest,
 
+  // The sign-extended immediate data
+  output signed [DATA_SIZE - 1:0] o_immediate,
+
+  // The current program counter, to be used for the AUIPC instruction
+  output logic [INST_SIZE - 1:0] o_pc,
+
+  // The PC + 4 to be passed through to the write back stage for JAL/JALR linkage to register
+  output logic [INST_SIZE - 1:0] o_pcplus4,
+
+  // Pipelined control signal to determine if reg file should be written at the end of instruction
+  output logic o_cu_regwrite,
+
+  // Pipelined control signal to determine if pc, mem, or alu output will go to the register file
+  output logic [1:0] o_cu_memtoreg,
+
+  // Determines if dmem will be written to
+  output logic o_cu_memwrite,
+
+  // Determines the alu operation
+  output logic o_cu_aluop,
+
+  // Determines the source of operator A for the alu
+  output logic o_cu_alu_srca,
+
+  // Determines the source of operator B for the alu
+  output logic o_cu_alu_srcb,
+
+  // Indicates if the branch comparison unit, ALU, or system unit should be used in the execute stage
+  output t_exe_unit o_cu_exe_unit,
+
+  // The branch comparison units operation from the decoding
+  output t_brop o_cu_brop,
+
+  // The system operation task from decoding
+  output t_sysop o_cu_sysop,
+
+  // Indicates if the new target address should be calculated in the execution stage
+  output logic o_cu_jalr
 );
 
   // The register file which holds the registers
@@ -86,6 +127,9 @@ module instr_decode(
 
   // The registered instruction from fetch
   logic [INST_SIZE - 1:0] instruction;
+
+  // The registered program counter plus 4
+  logic [ADDR_SIZE - 1:0] pcplus4;
 
   // The registered source address for register A
   logic [$clog2(NUM_REGS) - 1:0] rs1;
@@ -105,23 +149,58 @@ module instr_decode(
   // The registered function7 corresponding to R type opcodes
   logic [6:0] funct7;
 
+  // Control unit signal, indicates if opcode/funct corresponds to branch
+  logic branch;
+
+  // Control unit signal, indiciates if opcode/funct corresponds to jump
+  logic jump;
+
+  // Output of branch comparison, valid if the opcode is a branch
+  logic compare_true;
+
   // Create the decoder/sign extender for any immediates, given certain opcodes
   decode_and_extend #() dsign_extend(
     .i_instr(instruction),
+    .i_jalr_reg(o_rd1),
     .o_immediate(o_immediate)
   );
 
+  // Sets the controls for other stages in the pipeline based on the operatoin
+  control_unit #() control_u(
+    .i_op(opcode),
+    .i_funct7(funct7),
+    .i_funct3(funct3),
+    .i_csr(instruction[31:20]),
+    .o_regwrite(o_cu_regwrite),
+    .o_memtoreg(o_cu_memtoreg),
+    .o_memwrite(o_cu_memwrite),
+    .o_alu_ctrl(o_cu_alu_ctrl),
+    .o_alu_srca(o_cu_alu_srca),
+    .o_alu_srcb(o_cu_alu_srcb),
+    .o_exe_unit(o_cu_exe_unit),
+    .o_brop(o_cu_brop),
+    .o_sysop(o_cu_sysop),
+    .o_jalr(o_cu_jalr)
+  );
+
+  // If a JAL instruction occurs, then the new branch address can be given to the IF stage
+  // This is also where a branch predictor could deliver its prediction
+  assign o_branch_valid = opcode == JAL;
+
   // Assign the wires connecting to the registered instruction
-  assign opcode = instruction[6:0];
-  assign rd     = instruction[11:7];
-  assign funct3 = instruction[14:12];
-  assign rs1    = instruction[19:15];
-  assign rs2    = instruction[24:20];
-  assign funct7 = instruction[31:25];
+  assign opcode  = instruction[6:0];
+  assign o_rdest = instruction[11:7];
+  assign funct3  = instruction[14:12];
+  assign rs1     = instruction[19:15];
+  assign rs2     = instruction[24:20];
+  assign funct7  = instruction[31:25];
 
   // Multiplex the read data between the forwarded data and the register file
   assign o_rd1 = i_forward_a ? i_fdata_a : reg_file[rs1];
   assign o_rd2 = i_forward_b ? i_fdata_b : reg_file[rs2];
+
+  // Assign the predicted branch or jal address to go back to the fetch state
+  assign o_branch_addr = o_pcplus4 + (o_immediate << 2);
 
 
   // Latch the instruction from the fetch stage, as long as the enable is asserted
@@ -140,6 +219,11 @@ module instr_decode(
     end
   end
 
+  // Register the pc + 4 address
+  always_ff @(posedge i_aclk) begin : proc_pcplus4
+    o_pcplus4 <= i_pcplus4;
+    o_pc <= i_pc;
+  end
 
   // Create a register file which holds register zero + GPRs
   // If data is received from the WB stage, it gets written and immediately forwarded

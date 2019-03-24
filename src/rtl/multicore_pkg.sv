@@ -1,7 +1,6 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Ben Kueffler
 // 
 // Create Date: 02/16/2019 03:48:47 PM
 // Design Name: 
@@ -64,5 +63,49 @@ package multicore_pkg;
     SYNCH      = 'b0001111,
     SYSTEM     = 'b1110011
   } t_opcode;
+
+
+  // Defines the different execution units that are present in the execute stage
+  typedef enum logic [1:0] {
+    ALU    = 'b00,
+    BRANCH = 'b01,
+    SYSTEM = 'b10
+  } t_exe_unit;
+
+  // Defines the alu code types for the alu implemented
+  typedef enum logic [2:0] {
+    ADD  = 'b0000,
+    SUB  = 'b1000,
+    SLL  = 'b0001,
+    SLT  = 'b0010,
+    SLTU = 'b0011,
+    XOR  = 'b0100,
+    SRL  = 'b0101,
+    SRA  = 'b1101,
+    OR   = 'b0110,
+    AND  = 'b0111
+  } t_aluop;
+
+  // Defines the branch opcode types for the branch compare in the execute stage, includes JALR
+  typedef enum logic [2:0] {
+    BEQ = 'b000,
+    BNE = 'b001,
+    BLT = 'b100,
+    BGE = 'b101,
+    BLTU = 'b110,
+    BGEU = 'b111
+  } t_brop;
+
+  // Defines the system opcode types for the system unit in the execute stage
+  typedef enum logic [2:0] {
+    RDCYCLE    = 'b000,
+    RDCYCLEH   = 'b001,
+    RDTIMEH    = 'b010,
+    RDTIMEH    = 'b011,
+    RDINSTRET  = 'b100,
+    RDINSTRETH = 'b101,
+    SCALL      = 'b110,
+    SBREAK     = 'b111
+  } t_sysop;
 
 endpackage : multicore_pkg
