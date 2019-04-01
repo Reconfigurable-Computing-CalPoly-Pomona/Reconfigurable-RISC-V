@@ -40,20 +40,20 @@ module system_exe_unit #(
 
   // The counter that increments every cycle, returns to 0 on reset
   // This counter does not roll over in practice
-  logic cycle_cnt [63:0];
+  logic [63:0] cycle_cnt;
 
   // This counter keeps a count of the wall clock time, the smallest unit of time is given by the generic
-  logic time_cnt [63:0];
+  logic [63:0] time_cnt;
 
   // Counter to determine when the time_cnt should increment
-  logic subtime_cnt [$clog2(TIME_CNT_PER) - 1:0];
+  logic [$clog2(TIME_CNT_PER) - 1:0]subtime_cnt;
 
   // Increment time next cycle
   logic time_cnt_incr;
 
   // This counter keeps a count of all instructions retired by this hardware thread
   // Currently this counter is unused, and will return the same result as the cycle_cnt
-  logic instret_cnt [63:0];
+  logic [63:0] instret_cnt;
 
   // Increment the counters
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_counters

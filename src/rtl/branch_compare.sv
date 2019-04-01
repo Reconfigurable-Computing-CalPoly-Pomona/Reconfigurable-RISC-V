@@ -24,8 +24,8 @@ import multicore_pkg::*;
 
 module branch_compare(
   input t_brop i_funct,
-  input signed [DATA_SIZE - 1:0] i_r1,
-  input signed [DATA_SIZE - 1:0] i_r2,
+  input logic signed [DATA_SIZE - 1:0] i_r1,
+  input logic signed [DATA_SIZE - 1:0] i_r2,
   output logic o_true
 );
 

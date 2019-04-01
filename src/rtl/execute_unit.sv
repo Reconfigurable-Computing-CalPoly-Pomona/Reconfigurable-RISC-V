@@ -45,13 +45,13 @@ module execute_unit(
   output logic [INST_SIZE - 1:0] o_pcplus4,
 
   // Takes the calculated branch address from the decode stage, to be passed to fetch if the branch is valid
-  input logic [ADDR_SIZE - 1:0] i_branch_addr,
+  input logic [INST_SIZE - 1:0] i_branch_addr,
 
   // Denotes if the branch address from the execute stage is valid (branch taken or JALR)
   output logic o_branch_valid,
 
   // The output branch or jump (JALR) address to take when o_branch_valid is asserted
-  output logic [ADDR_SIZE - 1:0] o_branch_addr,
+  output logic [INST_SIZE - 1:0] o_branch_addr,
 
   // The write back destination
   input logic [$clog2(NUM_REGS) -1:0] i_rdest,
@@ -72,25 +72,25 @@ module execute_unit(
   input logic [1:0] i_forward_b,
 
   // The data obtained from forward/register file register a
-  input signed [DATA_SIZE - 1:0] i_id_op1,
+  input logic signed [DATA_SIZE - 1:0] i_id_op1,
 
   // The data obtained from forward/register file register b
-  input signed [DATA_SIZE - 1:0] i_id_op2,
+  input logic signed [DATA_SIZE - 1:0] i_id_op2,
 
   // The forward data for register a
-  input signed [DATA_SIZE - 1:0] i_ma_op1,
+  input logic signed [DATA_SIZE - 1:0] i_ma_op1,
 
   // The forward data for register b
-  input signed [DATA_SIZE - 1:0] i_ma_op2,
+  input logic signed [DATA_SIZE - 1:0] i_ma_op2,
 
   // The forward data for register a
-  input signed [DATA_SIZE - 1:0] i_wb_op1,
+  input logic signed [DATA_SIZE - 1:0] i_wb_op1,
 
   // The forward data for register b
-  input signed [DATA_SIZE - 1:0] i_wb_op2,
+  input logic signed [DATA_SIZE - 1:0] i_wb_op2,
 
   // The immediate data from the decode stage
-  input signed [DATA_SIZE - 1:0] i_immediate,
+  input logic signed [DATA_SIZE - 1:0] i_immediate,
 
   // Pipelined control signal to determine if reg file should be written at the end of instruction
   input logic i_cu_regwrite,
@@ -102,7 +102,7 @@ module execute_unit(
   input logic i_cu_memwrite,
 
   // Determines the alu operation
-  input logic i_cu_aluop,
+  input t_aluop i_cu_aluop,
 
   // Determines the source of operator A for the alu
   input logic i_cu_alu_srca,
@@ -121,6 +121,12 @@ module execute_unit(
 
   // Indicates if the new target address should be calculated in the execution stage
   input logic i_cu_jalr,
+
+  // The data to forward to the execute stage
+  output logic signed [DATA_SIZE - 1:0] o_forward_op1,
+
+  // The data to forward to the execute stage
+  output logic signed [DATA_SIZE - 1:0] o_forward_op2,
 
   // Memory access stage outputs
 
@@ -177,10 +183,10 @@ module execute_unit(
   logic branch_true;
 
   // The data obtained from the ID register a
-  signed [DATA_SIZE - 1:0] id_op1;
+  logic signed [DATA_SIZE - 1:0] id_op1;
 
   // The data obtained from the ID register b
-  signed [DATA_SIZE - 1:0] id_op2;
+  logic signed [DATA_SIZE - 1:0] id_op2;
 
   // The address of the current program counter for this stage, used for AUIPC in this stage
   logic [INST_SIZE - 1:0] pc;
@@ -189,25 +195,31 @@ module execute_unit(
   logic [INST_SIZE - 1:0] pcplus4;
 
   // Takes the calculated branch address from the decode stage, to be passed to fetch if the branch is valid
-  logic [ADDR_SIZE - 1:0] branch_addr;
+  logic [INST_SIZE - 1:0] branch_addr;
 
   // The immediate data from the decode stage
-  signed [DATA_SIZE - 1:0] immediate;
+  logic signed [DATA_SIZE - 1:0] immediate;
 
   // The calculated jump and link address
-  logic [ADDR_SIZE - 1:0] jalr_addr;
+  logic [INST_SIZE - 1:0] jalr_addr;
 
   // The data obtained from forward/register file register a
-  signed [DATA_SIZE - 1:0] op_b;
+  logic signed [DATA_SIZE - 1:0] op_b;
 
   // The data obtained from forward/register file register b
-  signed [DATA_SIZE - 1:0] op_a;
+  logic signed [DATA_SIZE - 1:0] op_a;
 
   // The data obtained after muxing the operator A with the PC to determine ALU operator A
-  signed [DATA_SIZE - 1:0] alu_op_a;
+  logic signed [DATA_SIZE - 1:0] alu_op_a;
 
   // The data obtained after muxing operator B with the immediate to determine ALU operator B
-  signed [DATA_SIZE - 1:0] alu_op_b;
+  logic signed [DATA_SIZE - 1:0] alu_op_b;
+
+  // The data from the ALUnit calculation
+  logic signed [DATA_SIZE - 1:0] alu_calc;
+
+  // The data from the system unit calculation
+  logic [DATA_SIZE - 1:0] sys_calc;
 
   // Performs the branch comparisons
   branch_compare #() br_compare(
@@ -275,8 +287,12 @@ module execute_unit(
   
   end
 
+  // Forward incoming data to the execute stage
+  assign o_forward_op1 = id_op1;
+  assign o_forward_op2 = id_op2;
+
   // Returns the output result from the execution units
-  assign o_exe_calc = (cu_exe_unit == SYSTEM) ? sys_calc : alu_calc;
+  assign o_exe_calc = (cu_exe_unit == SYSTEM_UNIT) ? sys_calc : alu_calc;
 
   // The write data to go to the data memory
   assign o_exe_wdata = alu_op_b;

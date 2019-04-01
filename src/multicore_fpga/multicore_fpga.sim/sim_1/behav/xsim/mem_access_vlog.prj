@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../rtl/multicore_pkg.sv" \
+"../../../../../rtl/axi_defines.sv" \
+"../../../../../rtl/axi_interface.sv" \
+"../../../../../rtl/data_cache.sv" \
+"../../../../../rtl/data_cache_ctrl.sv" \
+"../../../../../rtl/ram.sv" \
+"../../../../../rtl/mem_access.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

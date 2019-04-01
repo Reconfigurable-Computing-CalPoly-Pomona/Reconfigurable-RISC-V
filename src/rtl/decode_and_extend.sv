@@ -25,24 +25,20 @@ module decode_and_extend(
   // The instruction
   input logic [INST_SIZE - 1:0] i_instr,
 
+  // The opcode as apart of the instruction
+  input t_opcode i_op,
+
   // The register used in the jump and link register instruction
-  input signed [DATA_SIZE - 1:0] i_jalr_reg,
+  input logic signed [DATA_SIZE - 1:0] i_jalr_reg,
 
   // The output immediate value
-  output signed [DATA_SIZE - 1:0] o_immediate
+  output logic signed [DATA_SIZE - 1:0] o_immediate
 
 );
 
-  // The opcode from the input instruction
-  t_opcode opcode;
-
-
-  // Find the opcode from the input instruction
-  assign opcode = i_instr[6:0];
-
   // Decode and sign extend, depending on opcode
   always_comb begin : proc_dextend
-    unique case(opcode)
+    unique case(i_op)
       LOADS:    o_immediate = i_instr[31:20];
       STORES:   o_immediate = {i_instr[31:25], i_instr[11:7]};
       ALC_I:    o_immediate = i_instr[31:20];

@@ -43,6 +43,9 @@ module data_cache_ctrl #(
   // Data to be written to the cache in the case of a write
   input logic [DATA_SIZE - 1:0] i_store_data,
 
+  // The byte strobe to accompany the store data
+  input logic [3:0] i_wstrb,
+
   // Request from memory access stage
   input logic i_req,
 

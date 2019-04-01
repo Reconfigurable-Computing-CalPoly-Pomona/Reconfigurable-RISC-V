@@ -67,13 +67,13 @@ package multicore_pkg;
 
   // Defines the different execution units that are present in the execute stage
   typedef enum logic [1:0] {
-    ALU    = 'b00,
-    BRANCH = 'b01,
-    SYSTEM = 'b10
+    ALU         = 'b00,
+    BRANCH      = 'b01,
+    SYSTEM_UNIT = 'b10
   } t_exe_unit;
 
   // Defines the alu code types for the alu implemented
-  typedef enum logic [2:0] {
+  typedef enum logic [3:0] {
     ADD  = 'b0000,
     SUB  = 'b1000,
     SLL  = 'b0001,
@@ -100,7 +100,7 @@ package multicore_pkg;
   typedef enum logic [2:0] {
     RDCYCLE    = 'b000,
     RDCYCLEH   = 'b001,
-    RDTIMEH    = 'b010,
+    RDTIME    = 'b010,
     RDTIMEH    = 'b011,
     RDINSTRET  = 'b100,
     RDINSTRETH = 'b101,

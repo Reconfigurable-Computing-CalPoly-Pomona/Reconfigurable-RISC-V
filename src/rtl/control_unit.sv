@@ -154,14 +154,9 @@ module control_unit(
           'b111: o_aluop = AND;
         endcase
       end
-      BRANCHES: o_aluop = 'x;
       LUI: o_aluop = ADD;
       AUIPC: o_aluop = ADD;
-      JAL: o_aluop = 'x;
-      JALR: o_aluop = 'x;
-      SYNCH: o_aluop = 'x;
-      SYSTEM: o_aluop = 'x;
-      default: o_aluop = 'x;
+      default: o_aluop = ADD;
     endcase;
   end
 
@@ -179,13 +174,13 @@ module control_unit(
               'b110010000001: o_sysop = RDTIMEH;
               'b110000000010: o_sysop = RDINSTRET;
               'b110010000010: o_sysop = RDINSTRETH;
-              default: o_sysop = 'x;
+              default: o_sysop = RDCYCLE;
             endcase
           end
-          default: o_sysop = 'x;
+          default: o_sysop = RDCYCLE;
         endcase
       end
-      default: o_sysop = 'x;
+      default: o_sysop = RDCYCLE;
     endcase;
   end
 
@@ -203,13 +198,23 @@ module control_unit(
       JAL: o_exe_unit = ALU;
       JALR: o_exe_unit = ALU;
       SYNCH: o_exe_unit = ALU;
-      SYSTEM: o_exe_unit = SYSTEM;
+      SYSTEM: o_exe_unit = SYSTEM_UNIT;
       default: o_exe_unit = ALU;
     endcase;
   end
 
   // If a branch instruction is decoded, then the execute stage will determine if it is taken or not taken
-  assign o_brop = i_funct3;
+  always_comb begin : proc_branch_unit
+    unique case(i_funct3)
+      'b000: o_brop = BEQ;
+      'b001: o_brop = BNE;
+      'b100: o_brop = BLT;
+      'b101: o_brop = BGE;
+      'b110: o_brop = BLTU;
+      'b111: o_brop = BGEU;
+      default: o_brop = BEQ;
+    endcase;
+  end
 
   // If a JALR instruction is decoded, then it will be taken during the execution stage
   assign o_jalr = i_op == JALR;

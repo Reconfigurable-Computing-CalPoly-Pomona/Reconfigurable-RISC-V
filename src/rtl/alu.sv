@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Ben Kueffler
 // 
 // Create Date: 03/24/2019 10:29:37 AM
 // Design Name: 
@@ -9,6 +9,7 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
+// The arthimetic logic unit to handle simple operations between two registers
 // 
 // Dependencies: 
 // 
@@ -21,9 +22,9 @@ import multicore_pkg::*;
 
 module alu(
   input t_aluop i_funct,
-  input signed [DATA_SIZE - 1:0] i_op_a,
-  input signed [DATA_SIZE - 1:0] i_op_b,
-  input signed [DATA_SIZE - 1:0] o_result
+  input logic signed [DATA_SIZE - 1:0] i_op_a,
+  input logic signed [DATA_SIZE - 1:0] i_op_b,
+  output logic signed [DATA_SIZE - 1:0] o_result
 );
 
   always_comb begin : proc_calculate

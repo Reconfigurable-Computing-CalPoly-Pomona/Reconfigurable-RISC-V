@@ -44,7 +44,7 @@ module instr_decode(
   input logic [INST_SIZE - 1:0] i_pcplus4,
 
   // Calculates a new branch address in case the branch or jump is taken
-  output logic [ADDR_SIZE - 1:0] o_branch_addr,
+  output logic [INST_SIZE - 1:0] o_branch_addr,
 
   // Denotes if the branch address from the decode stage is valid (branch taken/jump)
   output logic o_branch_valid,
@@ -53,7 +53,7 @@ module instr_decode(
   input logic i_wb,
 
   // The write back data from the write back stage, updates the register file
-  input signed [DATA_SIZE - 1:0] i_wb_data,
+  input logic signed [DATA_SIZE - 1:0] i_wb_data,
 
   // The address to write to the register file
   input logic [$clog2(NUM_REGS) - 1:0] i_wb_addr,
@@ -65,10 +65,10 @@ module instr_decode(
   input logic i_forward_b,
 
   // The forward data for register a
-  input signed [DATA_SIZE - 1:0] i_fdata_a,
+  input logic signed [DATA_SIZE - 1:0] i_fdata_a,
 
   // The forward data for register b
-  input signed [DATA_SIZE - 1:0] i_fdata_b,
+  input logic signed [DATA_SIZE - 1:0] i_fdata_b,
 
 
   // The outputs to the execute stage
@@ -83,7 +83,7 @@ module instr_decode(
   output [$clog2(NUM_REGS) - 1:0] o_rdest,
 
   // The sign-extended immediate data
-  output signed [DATA_SIZE - 1:0] o_immediate,
+  output logic signed [DATA_SIZE - 1:0] o_immediate,
 
   // The current program counter, to be used for the AUIPC instruction
   output logic [INST_SIZE - 1:0] o_pc,
@@ -101,7 +101,7 @@ module instr_decode(
   output logic o_cu_memwrite,
 
   // Determines the alu operation
-  output logic o_cu_aluop,
+  output t_aluop o_cu_aluop,
 
   // Determines the source of operator A for the alu
   output logic o_cu_alu_srca,
@@ -129,7 +129,7 @@ module instr_decode(
   logic [INST_SIZE - 1:0] instruction;
 
   // The registered program counter plus 4
-  logic [ADDR_SIZE - 1:0] pcplus4;
+  logic [INST_SIZE - 1:0] pcplus4;
 
   // The registered source address for register A
   logic [$clog2(NUM_REGS) - 1:0] rs1;
@@ -161,6 +161,7 @@ module instr_decode(
   // Create the decoder/sign extender for any immediates, given certain opcodes
   decode_and_extend #() dsign_extend(
     .i_instr(instruction),
+    .i_op(opcode),
     .i_jalr_reg(o_rd1),
     .o_immediate(o_immediate)
   );
@@ -174,7 +175,7 @@ module instr_decode(
     .o_regwrite(o_cu_regwrite),
     .o_memtoreg(o_cu_memtoreg),
     .o_memwrite(o_cu_memwrite),
-    .o_alu_ctrl(o_cu_alu_ctrl),
+    .o_aluop(o_cu_aluop),
     .o_alu_srca(o_cu_alu_srca),
     .o_alu_srcb(o_cu_alu_srcb),
     .o_exe_unit(o_cu_exe_unit),
@@ -187,8 +188,26 @@ module instr_decode(
   // This is also where a branch predictor could deliver its prediction
   assign o_branch_valid = opcode == JAL;
 
+
+  // Convert to opcode enumeration
+  always_comb begin : op_enumerate
+    unique case(instruction[6:0])
+      'b0000011: opcode = LOADS;
+      'b0100011: opcode = STORES;
+      'b0010011: opcode = ALC_I;
+      'b0110011: opcode = ALC_R;
+      'b1100011: opcode = BRANCHES;
+      'b0110111: opcode = LUI;
+      'b0010111: opcode = AUIPC;
+      'b1101111: opcode = JAL;
+      'b1100111: opcode = JALR;
+      'b0001111: opcode = SYNCH;
+      'b1110011: opcode = SYSTEM;
+      default:   opcode = ALC_I;
+    endcase
+  end
+
   // Assign the wires connecting to the registered instruction
-  assign opcode  = instruction[6:0];
   assign o_rdest = instruction[11:7];
   assign funct3  = instruction[14:12];
   assign rs1     = instruction[19:15];
