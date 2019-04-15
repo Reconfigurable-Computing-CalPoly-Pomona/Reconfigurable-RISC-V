@@ -36,7 +36,9 @@ module control_unit(
   output logic o_jalr,
   output t_brop o_brop,
   output t_sysop o_sysop,
-  output t_exe_unit o_exe_unit
+  output t_exe_unit o_exe_unit,
+  output t_ldop o_ldop,
+  output t_sop o_sop
 );
 
 
@@ -218,5 +220,27 @@ module control_unit(
 
   // If a JALR instruction is decoded, then it will be taken during the execution stage
   assign o_jalr = i_op == JALR;
+
+  // Assign which bytes will be written in the memory access state
+  always_comb begin : proc_load_types
+    unique case(i_funct3)
+      'b000: o_ldop = LB;
+      'b001: o_ldop = LH;
+      'b010: o_ldop = LW;
+      'b100: o_ldop = LBU;
+      'b101: o_ldop = LHU;
+      default: o_ldop = LW;
+    endcase;
+  end
+
+  // Assign how many bytes will be stored in the register map
+  always_comb begin : proc_store_types
+    unique case(i_funct3)
+      'b000: o_sop = SB;
+      'b001: o_sop = SH;
+      'b010: o_sop = SW;
+      default: o_sop = SW;
+    endcase;
+  end
 
 endmodule

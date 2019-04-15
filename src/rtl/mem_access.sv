@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Ben Kueffler
 // 
 // Create Date: 03/24/2019 03:32:12 PM
 // Design Name: 
@@ -9,6 +9,7 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
+// The memory access stage of the pipeline, which handle data loads and stores from memory
 // 
 // Dependencies: 
 // 
@@ -65,6 +66,12 @@ module mem_access#(
 
   // Pass through control signals
 
+  // The size of the load operation
+  input t_ldop i_ldop,
+
+  // The size of the store operation
+  input t_sop i_sop,
+
   // Pipelined control signal to determine if reg file should be written at the end of instruction
   input logic i_cu_regwrite,
 
@@ -108,7 +115,12 @@ module mem_access#(
     .i_req_write(i_mem_we),
     // Cache is ready for a new request
     .o_req_ready(o_cache_ready),
+    // The data to store
     .i_store_data(i_mem_wdata),
+    // The size of the data to store (word, half, byte)
+    .i_sop(i_sop),
+    // The size and sign of the data to read
+    .i_ldop(i_ldop),
     // The address of the data to access
     .i_addr(i_exe_out),
     // Indicates that o_instruction is valid

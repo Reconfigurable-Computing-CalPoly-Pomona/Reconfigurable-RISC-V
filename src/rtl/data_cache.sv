@@ -54,6 +54,12 @@ module data_cache #(
   // The data to store in the cache during a write
   input logic [DATA_SIZE - 1:0] i_store_data,
 
+  // The size of the data to write
+  input t_sop i_sop,
+
+  // The size and sign of the data to read
+  input t_ldop i_ldop,
+
   // Indicates that o_data is valid
   output logic o_data_valid,
 
@@ -172,6 +178,7 @@ module data_cache #(
     // Request for memory access
     .i_addr(i_addr),
     .i_store_data(i_store_data),
+    .i_sop(i_sop),
     .i_req(i_req),
     .i_req_write(i_req_write),
     .o_req_ready(o_req_ready),

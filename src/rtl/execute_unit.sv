@@ -119,6 +119,12 @@ module execute_unit(
   // The system operation from decoding
   input t_sysop i_cu_sysop,
 
+  // The size of the load operation
+  input t_ldop i_ldop,
+
+  // The size of the store operation
+  input t_sop i_sop,
+
   // Indicates if the new target address should be calculated in the execution stage
   input logic i_cu_jalr,
 
@@ -143,7 +149,14 @@ module execute_unit(
   output logic [1:0] o_cu_memtoreg,
 
   // Determines if dmem will be written to
-  output logic o_cu_memwrite
+  output logic o_cu_memwrite,
+
+  // The size of the load operation
+  output t_ldop o_ldop,
+
+  // The size of the store operation
+  output t_sop o_sop
+
 
 );
 
@@ -338,6 +351,8 @@ module execute_unit(
     o_cu_memtoreg <= i_cu_memtoreg;
     o_rdest <= i_rdest;
     o_pcplus4 <= i_pcplus4;
+    o_ldop <= i_ldop;
+    o_sop <= i_sop;
   end
   
 

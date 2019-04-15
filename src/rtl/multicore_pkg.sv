@@ -108,4 +108,20 @@ package multicore_pkg;
     SBREAK     = 'b111
   } t_sysop;
 
+  // Defines the control unit types for the different types of loads (byte, half, word, unsigned variants)
+  typedef enum logic [2:0] {
+    LB  = 'b000,
+    LH  = 'b001,
+    LW  = 'b010,
+    LBU = 'b100,
+    LHU = 'b101
+  } t_ldop;
+
+  // Defines the control unit types for the different types of stores (byte, half, word)
+  typedef enum logic [1:0] {
+    SB = 'b00,
+    SH = 'b01,
+    SW = 'b10
+  } t_sop;
+
 endpackage : multicore_pkg

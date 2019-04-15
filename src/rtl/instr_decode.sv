@@ -118,6 +118,12 @@ module instr_decode(
   // The system operation task from decoding
   output t_sysop o_cu_sysop,
 
+  // The size of the load operation
+  output t_ldop o_ldop,
+
+  // The size of the store operation
+  output t_sop o_sop,
+
   // Indicates if the new target address should be calculated in the execution stage
   output logic o_cu_jalr
 );
@@ -181,6 +187,8 @@ module instr_decode(
     .o_exe_unit(o_cu_exe_unit),
     .o_brop(o_cu_brop),
     .o_sysop(o_cu_sysop),
+    .o_ldop(o_ldop),
+    .o_sop(o_sop),
     .o_jalr(o_cu_jalr)
   );
 

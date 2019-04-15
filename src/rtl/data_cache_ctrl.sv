@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Ben Kueffler
 // 
 // Create Date: 03/03/2019 04:12:00 PM
 // Design Name: 
@@ -42,6 +42,12 @@ module data_cache_ctrl #(
 
   // Data to be written to the cache in the case of a write
   input logic [DATA_SIZE - 1:0] i_store_data,
+
+  // The size of the data to write
+  input t_sop i_sop,
+
+  // The size and sign of the data to read
+  input t_ldop i_ldop,
 
   // The byte strobe to accompany the store data
   input logic [3:0] i_wstrb,
@@ -126,6 +132,9 @@ module data_cache_ctrl #(
   // The index that determines the particular word within the line that is sent as the instruction
   logic [WORD_BITS - 1:0] word;
 
+  // The byte offset
+  logic [OFFSET - 1:0] offset;
+
   // Determines the least recently used way
   logic [$clog2(BLK_PER_SET) - 1:0] lru;
 
@@ -137,6 +146,12 @@ module data_cache_ctrl #(
 
   // The lines to write to the cache
   data_blk_t cache_wline;
+
+  // The size (byte, half, word) to store in the cache
+  t_sop store_size;
+
+  // The size and sign to load from the cache
+  t_ldop load_operation;
 
   // The address flip flop to determine where to write to
   logic [$clog2(CACHE_DEPTH) - 1:0] address;
@@ -176,7 +191,10 @@ module data_cache_ctrl #(
           tag <= i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
           index <= i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
           word <= i_addr[WORD_BITS + OFFSET - 1:OFFSET];
+          offset <= i_addr[OFFSET - 1:0];
           store_data <= i_store_data;
+          store_size <= i_sop;
+          load_operation <= i_ldop;
           write = i_req_write;
         end
         CHK_TAG: begin
@@ -188,16 +206,16 @@ module data_cache_ctrl #(
             tag <= i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
             index <= i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
             word <= i_addr[WORD_BITS + OFFSET - 1:OFFSET];
+            offset <= i_addr[OFFSET - 1:0];
             store_data <= i_store_data;
+            store_size <= i_sop;
+            load_operation <= i_ldop;
             write = i_req_write;
           end
         end
-        //WB_AW: ;
         WB_W: begin
           address <= address + axi.wready;
         end
-        //WB_B: ;
-        //MISS_AR: ;
         MISS_R: begin
           // As the lines come in, increment the index to rewrite the cache
           // On the final line, send the old cache address to re-check the tag
@@ -226,12 +244,7 @@ module data_cache_ctrl #(
         // Otherwise, go back to idle.
         if (~miss && ~i_req) next_state = IDLE;
         else if (~miss) next_state = CHK_TAG;
-        //else if (cache_rline[lru].dirty) next_state = WB_AW;
         else next_state = CHK_DIRTY;
-        //else if (axi.arready) next_state = MISS_R;
-        //else next_state = MISS_AR;
-      //WB_AW:
-      //  if (axi.awready) next_state = WB_W;
       WB_W: if (axi.w.last && axi.wready) next_state = WB_B;
       WB_B: if (axi.b.valid) next_state = MISS_AR;
       MISS_AR: if (axi.arready) next_state = MISS_R;
@@ -318,13 +331,27 @@ module data_cache_ctrl #(
           if (cache_rline[r].valid && cache_rline[r].tag == tag) begin
             hit[r] = 1;
             line_sel = cache_rline[r];
-            o_data = line_sel.data[word];
             o_data_valid = 1;
             // Reset the PLRU table if it is full
             if (i_rlru == '1) o_wlru = 0;
             // Mark the bit as recently used
             o_wlru[r] = 1;
             o_we_lru = 1;
+
+            // Choose the data to load from the cache (Word, Half, or Byte) and sign
+            unique case(load_operation)
+              // Sign extend 8 bit assignment
+              LB: o_data = {{(DATA_SIZE - 8){line_sel.data[word][8*offset + 7]}}, line_sel.data[word][8*offset +: 8]};
+              // Sign extend 16 bit assignmnet
+              LH: o_data = {{(DATA_SIZE - 16){line_sel.data[word][16*(offset >> 1) + 15]}}, line_sel.data[word][16*(offset >> 1) +: 16]};
+              // Whole word assignment
+              LW: o_data = line_sel.data[word];
+              // Extend with zeros
+              LBU: o_data = line_sel.data[word][8*offset +: 8];
+              // Extend with zeros
+              LHU: o_data = line_sel.data[word][16*(offset >> 1) +: 16];
+              default: o_data = line_sel.data[word];
+            endcase;
 
             // If this is a hit, and it's a write command last cycle, write
             // to the cache and make it dirty
@@ -334,20 +361,22 @@ module data_cache_ctrl #(
               cache_wline.valid = 1;
               // Default the cache line to be equal to its current value
               cache_wline.data = cache_rline[r].data;
-              cache_wline.data[word] = store_data;
               cache_wline.tag = tag;
+
+              // Choose the data to store to the cache (Word, Half, or Byte)
+              unique case(store_size)
+                SB: cache_wline.data[word][8*offset +: 8] = store_data[7:0];
+                SH: cache_wline.data[word][16*(offset >> 1) +: 16] = store_data[15:0];
+                SW: cache_wline.data[word] = store_data;
+                default: cache_wline.data[word] = store_data;
+              endcase;
+
             end
 
           end
         end
         o_req_ready = o_data_valid;
-        //if (~cache_rline[lru].dirty) axi.ar.valid = ~|hit;
       end
-      //WB_AW: begin
-      //  // Wait for AW to be ready
-      //  axi.aw.valid = 1;
-      //  o_raddr = index;
-      //end
       CHK_DIRTY: begin
         axi.aw.valid = cache_rline[lru].dirty;
         axi.ar.valid = ~cache_rline[lru].dirty;

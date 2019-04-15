@@ -148,6 +148,10 @@ module tb_data_cache();
     .i_req_write(req_store),
     // The data to store during a store request
     .i_store_data(store_data),
+    // The size of the data to store (word, half, byte)
+    .i_sop(SW),
+    // The size and sign of the data to read
+    .i_ldop(LW),
     // Cache is ready for a new request
     .o_req_ready(req_ready),
     // Program counter stimulus
