@@ -59,7 +59,10 @@ module instr_fetch #(
   output logic o_instr_valid,
 
   // The address of the program counter + 4, to be used in calculations in decode stage
-  output logic [INST_SIZE - 1:0] o_pcplus4
+  output logic [ADDR_SIZE - 1:0] o_pcplus4,
+
+  // The address of the program counter corresponding to the instruction
+  output logic [ADDR_SIZE - 1:0] o_pc
 );
 
 
@@ -73,7 +76,8 @@ module instr_fetch #(
   logic pc_fetch;
 
   // The program counter calculated from the incoming branch and pcplus4
-  logic pc;
+  logic [ADDR_SIZE - 1:0] pc;
+  logic [ADDR_SIZE - 1:0] pcplus4;
 
 
 
@@ -102,20 +106,20 @@ module instr_fetch #(
     // Program counter stimulus
     .i_addr(pc_fetch),
     // Indicates that o_instruction is valid
-    .o_instr_valid(cache_valid),
+    .o_instr_valid(o_instr_valid),
     // The instruction obtained from the cache DUT
     .o_instruction(o_instruction)
   );
 
   // Program counter is incremented by four
-  assign o_pcplus4 = pc + INST_SIZE / 8;
+  assign pcplus4 = pc_fetch + INST_SIZE / 8;
 
   // Multiplexer decides if decode address should be taken or next instruction
-  assign pc = i_branch_valid ? i_branch_addr : o_pcplus4;
+  assign pc = i_branch_valid ? i_branch_addr : pcplus4;
 
   // Enables the decode stage to use the address in its next decode
   // If left invalid, then the decode stage should disable by using No-Ops as its decode
-  assign o_instr_valid = cache_valid & ~i_branch_valid;
+  //assign o_instr_valid = cache_valid & ~i_branch_valid;
 
   // Update the program counter register controlling cache access
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_pc
@@ -124,12 +128,18 @@ module instr_fetch #(
       pc_fetch <= PC_BASE_ADDR;
     end else begin
       // Program counter only increments when cache is ready and pipeline is not stalled
-      if (~i_stall && cache_ready) begin
+      if (cache_ready && cache_req) begin
+        o_pc <= pc_fetch;
+        o_pcplus4 <= pcplus4;
+        pc_fetch <= pc;
+        cache_req <= 1;
+      end else if (~i_stall) begin
         pc_fetch <= pc;
         cache_req <= 1;
       end else begin
         cache_req <= 0;
       end
+
     end
   end
 

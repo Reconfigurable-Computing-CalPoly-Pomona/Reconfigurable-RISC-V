@@ -30,9 +30,8 @@ module instr_decode(
   // Asynchronous reset
   input logic i_areset_n,
 
-  // Enables the incoming instruction from the fetch stage as valid
-  // If this is low, then NoOPs are used
-  input logic i_en,
+  // Flushes the decode stage, making the input instruction a No-Op
+  input logic i_flush,
 
   // The instruction to return to the instruction fetch stage
   input logic [INST_SIZE - 1:0] i_instruction,
@@ -58,26 +57,28 @@ module instr_decode(
   // The address to write to the register file
   input logic [$clog2(NUM_REGS) - 1:0] i_wb_addr,
 
-  // The hazard unit requesting that the register data be obtained via forwarding
-  input logic i_forward_a,
+  // The hazard unit requesting that the operator a can be obtained via forwarding
+  // 00 - No forwarding
+  // 01 - Forward Memory access stage (after alu computation)
+  // 10 - Forward write back stage
+  input logic [1:0] i_forward_a,
 
-  // The hazard unit requesting that the register b data be obtained via forwarding
-  input logic i_forward_b,
+  // The hazard unit requesting that the operator b can be obtained via forwarding
+  // 00 - No forwarding
+  // 01 - Forward Memory access stage (after alu computation)
+  // 10 - Forward write back stag
+  input logic [1:0] i_forward_b,
 
-  // The forward data for register a
-  input logic signed [DATA_SIZE - 1:0] i_fdata_a,
-
-  // The forward data for register b
-  input logic signed [DATA_SIZE - 1:0] i_fdata_b,
-
+  // The forward data for register a from memory address stage
+  input logic signed [DATA_SIZE - 1:0] i_fdata_ma,
 
   // The outputs to the execute stage
 
   // The data obtained from forward/register file register a
-  output signed [DATA_SIZE - 1:0] o_rd1,
+  output logic signed [DATA_SIZE - 1:0] o_rd1,
 
   // The data obtained from forward/register file register a
-  output signed [DATA_SIZE - 1:0] o_rd2,
+  output logic signed [DATA_SIZE - 1:0] o_rd2,
 
   // The destination register
   output [$clog2(NUM_REGS) - 1:0] o_rdest,
@@ -99,6 +100,9 @@ module instr_decode(
 
   // Determines if dmem will be written to
   output logic o_cu_memwrite,
+
+  // Determines if the data memory will be accessed
+  output logic o_cu_memaccess,
 
   // Determines the alu operation
   output t_aluop o_cu_aluop,
@@ -181,6 +185,7 @@ module instr_decode(
     .o_regwrite(o_cu_regwrite),
     .o_memtoreg(o_cu_memtoreg),
     .o_memwrite(o_cu_memwrite),
+    .o_memaccess(o_cu_memaccess),
     .o_aluop(o_cu_aluop),
     .o_alu_srca(o_cu_alu_srca),
     .o_alu_srcb(o_cu_alu_srcb),
@@ -223,8 +228,25 @@ module instr_decode(
   assign funct7  = instruction[31:25];
 
   // Multiplex the read data between the forwarded data and the register file
-  assign o_rd1 = i_forward_a ? i_fdata_a : reg_file[rs1];
-  assign o_rd2 = i_forward_b ? i_fdata_b : reg_file[rs2];
+  always_comb begin : proc_forwarding
+
+    // Assign operator A
+    unique case(i_forward_a)
+      'b00: o_rd1 = reg_file[rs1];
+      'b01: o_rd1 = i_fdata_ma;
+      'b10: o_rd1 = i_wb_data;
+      default: o_rd1 = 'x;
+    endcase
+
+    // Assign operator B
+    unique case(i_forward_b)
+      'b00: o_rd2 = reg_file[rs2];
+      'b01: o_rd2 = i_fdata_ma;
+      'b10: o_rd2 = i_wb_data;
+      default: o_rd2 = 'x;
+    endcase
+  
+  end
 
   // Assign the predicted branch or jal address to go back to the fetch state
   assign o_branch_addr = o_pcplus4 + (o_immediate << 2);
@@ -237,11 +259,11 @@ module instr_decode(
       instruction <= 0;
       instruction[6:0] <= NOOP_CODE;
     end else begin
-      if (i_en) begin
-        instruction <= i_instruction;
-      end else begin
+      if (i_flush) begin
         instruction <= 0;
         instruction[6:0] <= NOOP_CODE;
+      end else begin
+        instruction <= i_instruction;
       end
     end
   end

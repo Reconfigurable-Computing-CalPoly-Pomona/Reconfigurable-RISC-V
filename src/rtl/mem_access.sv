@@ -61,8 +61,8 @@ module mem_access#(
   // Determines if dmem will be written to
   input logic i_mem_we,
 
-  // Determines if the dcache will be accessed for a read or write
-  input logic i_dcache_access,
+  // Determines if the dmem will be accessed
+  input logic i_cu_memaccess,
 
   // Pass through control signals
 
@@ -94,9 +94,6 @@ module mem_access#(
 
   // Indicates the cache is ready. This should be sent to the control unit in order to determine if a stall is neccessary
   output o_cache_ready
-
-
-
 );
 
   data_cache #(
@@ -110,7 +107,7 @@ module mem_access#(
     // AXI
     .axi(axi),
     // Request for data; only ld/store will request this memory
-    .i_req(i_dcache_access),
+    .i_req(i_cu_memaccess),
     // Request is a write request, only stores will request this write enable
     .i_req_write(i_mem_we),
     // Cache is ready for a new request

@@ -30,6 +30,7 @@ module control_unit(
   output logic o_regwrite,
   output logic [1:0] o_memtoreg,
   output logic o_memwrite,
+  output logic o_memaccess,
   output t_aluop o_aluop,
   output logic o_alu_srca,
   output logic o_alu_srcb,
@@ -96,6 +97,14 @@ module control_unit(
     endcase;
   end
 
+  // Determines if an operation will request access to the data memory
+  always_comb begin : proc_memaccess
+    unique case(i_op)
+      STORES: o_memaccess = 1;
+      LOADS : o_memaccess = 1;
+      default: o_memaccess = 0;
+    endcase;
+  end
 
   // ALU Controls
 

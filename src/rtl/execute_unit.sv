@@ -77,17 +77,11 @@ module execute_unit(
   // The data obtained from forward/register file register b
   input logic signed [DATA_SIZE - 1:0] i_id_op2,
 
-  // The forward data for register a
-  input logic signed [DATA_SIZE - 1:0] i_ma_op1,
+  // The forward data from memory access
+  input logic signed [DATA_SIZE - 1:0] i_ma_op,
 
-  // The forward data for register b
-  input logic signed [DATA_SIZE - 1:0] i_ma_op2,
-
-  // The forward data for register a
-  input logic signed [DATA_SIZE - 1:0] i_wb_op1,
-
-  // The forward data for register b
-  input logic signed [DATA_SIZE - 1:0] i_wb_op2,
+  // The forward data from write back stage
+  input logic signed [DATA_SIZE - 1:0] i_wb_op,
 
   // The immediate data from the decode stage
   input logic signed [DATA_SIZE - 1:0] i_immediate,
@@ -100,6 +94,9 @@ module execute_unit(
 
   // Determines if dmem will be written to
   input logic i_cu_memwrite,
+
+  // Determines if the dmem will be accessed
+  input logic i_cu_memaccess,
 
   // Determines the alu operation
   input t_aluop i_cu_aluop,
@@ -128,12 +125,6 @@ module execute_unit(
   // Indicates if the new target address should be calculated in the execution stage
   input logic i_cu_jalr,
 
-  // The data to forward to the execute stage
-  output logic signed [DATA_SIZE - 1:0] o_forward_op1,
-
-  // The data to forward to the execute stage
-  output logic signed [DATA_SIZE - 1:0] o_forward_op2,
-
   // Memory access stage outputs
 
   // The output of the calculation units
@@ -150,6 +141,9 @@ module execute_unit(
 
   // Determines if dmem will be written to
   output logic o_cu_memwrite,
+
+  // Determines if the dmem will be accessed
+  output logic o_cu_memaccess,
 
   // The size of the load operation
   output t_ldop o_ldop,
@@ -265,16 +259,16 @@ module execute_unit(
     // Assign operator A
     unique case(i_forward_a)
       'b00: op_a = id_op1;
-      'b01: op_a = i_ma_op1;
-      'b10: op_a = i_wb_op1;
+      'b01: op_a = i_ma_op;
+      'b10: op_a = i_wb_op;
       default: op_a = 'x;
     endcase
 
     // Assign operator B
     unique case(i_forward_b)
       'b00: op_b = id_op2;
-      'b01: op_b = i_ma_op2;
-      'b10: op_b = i_wb_op2;
+      'b01: op_b = i_ma_op;
+      'b10: op_b = i_wb_op;
       default: op_b = 'x;
     endcase
   
@@ -300,10 +294,6 @@ module execute_unit(
   
   end
 
-  // Forward incoming data to the execute stage
-  assign o_forward_op1 = id_op1;
-  assign o_forward_op2 = id_op2;
-
   // Returns the output result from the execution units
   assign o_exe_calc = (cu_exe_unit == SYSTEM_UNIT) ? sys_calc : alu_calc;
 
@@ -320,7 +310,7 @@ module execute_unit(
   // Processes pipeline registers that should be reset
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_register
     if(~i_areset_n) begin
-      {cu_jalr, o_cu_regwrite, o_cu_memwrite} <= 0;
+      {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
       cu_exe_unit <= ALU;
     end else begin
       if (i_en) begin
@@ -328,8 +318,9 @@ module execute_unit(
         cu_jalr <= i_cu_jalr;
         o_cu_regwrite <= i_cu_regwrite;
         o_cu_memwrite <= i_cu_memwrite;
+        o_cu_memaccess <= i_cu_memaccess;
       end else begin
-        {cu_jalr, o_cu_regwrite, o_cu_memwrite} <= 0;
+        {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
         cu_exe_unit <= ALU;
       end
     end
