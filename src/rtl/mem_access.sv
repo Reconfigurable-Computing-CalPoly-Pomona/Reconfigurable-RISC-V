@@ -87,7 +87,7 @@ module mem_access#(
   // Write back signals
 
   // The write data to pass to the data cache
-  input logic signed [DATA_SIZE - 1:0] o_mem_data,
+  output logic signed [DATA_SIZE - 1:0] o_mem_data,
 
   // The data to forward to the ALU and write back stages, originally came from execution unit
   output logic signed [DATA_SIZE - 1:0] o_exe_data,
@@ -120,9 +120,9 @@ module mem_access#(
     .i_ldop(i_ldop),
     // The address of the data to access
     .i_addr(i_exe_out),
-    // Indicates that o_instruction is valid
-    .o_instr_valid(),
-    // The instruction obtained from the cache DUT
+    // Indicates that o_data is valid
+    .o_data_valid(),
+    // The data obtained from the cache DUT
     .o_data(o_mem_data)
   );
 
@@ -130,7 +130,7 @@ module mem_access#(
   // The hazard unit shall handle this
   // The write back will naturally also stall, but the last write back once the data is valid shall be valid
 
-  // REgisters apart of the pipeline that must be reset
+  // Registers apart of the pipeline that must be reset
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_pipe_rst
     if(~i_areset_n) begin
       o_cu_regwrite <= 0;

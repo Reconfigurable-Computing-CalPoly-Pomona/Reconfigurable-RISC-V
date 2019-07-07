@@ -71,6 +71,18 @@ module execute_unit(
   // 10 - Forward write back stag
   input logic [1:0] i_forward_b,
 
+  // The source location for the first register data
+  input logic [$clog2(NUM_REGS) -1:0] i_id_rs1,
+
+  // The source location for the second register data
+  input logic [$clog2(NUM_REGS) -1:0] i_id_rs2,
+
+  // The registered location for the first register data
+  output logic [$clog2(NUM_REGS) -1:0] o_id_rs1,
+
+  // The registered location for the second register data
+  output logic [$clog2(NUM_REGS) -1:0] o_id_rs2,
+
   // The data obtained from forward/register file register a
   input logic signed [DATA_SIZE - 1:0] i_id_op1,
 
@@ -344,6 +356,8 @@ module execute_unit(
     o_pcplus4 <= i_pcplus4;
     o_ldop <= i_ldop;
     o_sop <= i_sop;
+    o_id_rs1 <= i_id_rs1;
+    o_id_rs2 <= i_id_rs2;
   end
   
 

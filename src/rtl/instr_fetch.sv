@@ -79,8 +79,6 @@ module instr_fetch #(
   logic [ADDR_SIZE - 1:0] pc;
   logic [ADDR_SIZE - 1:0] pcplus4;
 
-
-
   // The instruction is available from the rest of the cache
   logic cache_valid;
 

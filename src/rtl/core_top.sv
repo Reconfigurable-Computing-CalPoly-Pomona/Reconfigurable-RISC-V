@@ -71,11 +71,13 @@ module core_top #(
   // Decode to hazard
   logic [31:0] decode_to_hazard_branch_addr;
   logic decode_to_hazard_branch_valid;
+  logic [$clog2(NUM_REGS) -1:0] decode_to_hazard_rs1;
+  logic [$clog2(NUM_REGS) -1:0] decode_to_hazard_rs2;
 
   // Decode to execution unit
   logic [DATA_SIZE - 1:0] exe_rd1;
   logic [DATA_SIZE - 1:0] exe_rd2;
-  logic [$clog2(NUM_REGS) -1:0] exe_rdest;
+  logic [$clog2(NUM_REGS) - 1:0] exe_rdest;
   logic signed exe_immediate;
   logic [31:0] exe_pc;
   logic [31:0] exe_pcplus4;
@@ -96,6 +98,8 @@ module core_top #(
   // Execute to hazard
   logic [31:0] execute_to_hazard_branch_addr;
   logic execute_to_hazard_branch_valid;
+  logic [$clog2(NUM_REGS) - 1:0] exe_to_hazard_rs1;
+  logic [$clog2(NUM_REGS) - 1:0] exe_to_hazard_rs2;
 
   // Execute to memory access unit
   logic signed [DATA_SIZE - 1:0] ma_calc;
@@ -158,6 +162,8 @@ module core_top #(
     .i_pcplus4(decode_pcplus4),
     .o_branch_addr(decode_to_hazard_branch_addr),
     .o_branch_valid(decode_to_hazard_branch_valid),
+    .o_rs1(decode_to_hazard_rs1),
+    .o_rs2(decode_to_hazard_rs2),
 
     .i_wb(wb_cu_regwrite),
     .i_wb_data(decode_wreg),
@@ -210,6 +216,8 @@ module core_top #(
 
     .i_id_op1(exe_rd1),
     .i_id_op2(exe_rd2),
+    .o_id_rs1(exe_to_hazard_rs1),
+    .o_id_rs2(exe_to_hazard_rs2),
     .i_ma_op(wb_exe_data),
     .i_wb_op(decode_wreg),
 

@@ -72,7 +72,11 @@ module instr_decode(
   // The forward data for register a from memory address stage
   input logic signed [DATA_SIZE - 1:0] i_fdata_ma,
 
-  // The outputs to the execute stage
+  // The source address for port A
+  logic [$clog2(NUM_REGS) - 1:0] o_rs1,
+
+  // The source address for port B
+  logic [$clog2(NUM_REGS) - 1:0] o_rs2,
 
   // The data obtained from forward/register file register a
   output logic signed [DATA_SIZE - 1:0] o_rd1,
@@ -223,8 +227,8 @@ module instr_decode(
   // Assign the wires connecting to the registered instruction
   assign o_rdest = instruction[11:7];
   assign funct3  = instruction[14:12];
-  assign rs1     = instruction[19:15];
-  assign rs2     = instruction[24:20];
+  assign o_rs1   = instruction[19:15];
+  assign o_rs2   = instruction[24:20];
   assign funct7  = instruction[31:25];
 
   // Multiplex the read data between the forwarded data and the register file
