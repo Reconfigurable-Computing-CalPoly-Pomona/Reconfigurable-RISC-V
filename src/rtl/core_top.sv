@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -50,8 +51,8 @@ module core_top #(
 );
 
   // Hazard Unit
-  logic decode_flush;
-  logic fetch_stall;
+  logic decode_en;
+  logic fetch_en;
   logic exe_en;
   logic ma_en;
   logic fetch_branch_valid;
@@ -78,7 +79,7 @@ module core_top #(
   logic [DATA_SIZE - 1:0] exe_rd1;
   logic [DATA_SIZE - 1:0] exe_rd2;
   logic [$clog2(NUM_REGS) - 1:0] exe_rdest;
-  logic signed exe_immediate;
+  logic signed [DATA_SIZE - 1:0] exe_immediate;
   logic [31:0] exe_pc;
   logic [31:0] exe_pcplus4;
   logic exe_cu_regwrite;
@@ -107,7 +108,7 @@ module core_top #(
   logic [$clog2(NUM_REGS) -1:0] ma_rdest;
   logic [31:0] ma_pcplus4;
   logic ma_cu_regwrite;
-  logic ma_cu_memtoreg;
+  logic [1:0] ma_cu_memtoreg;
   logic ma_cu_memwrite;
   logic ma_cu_memaccess;
   t_ldop ma_ldop;
@@ -127,7 +128,7 @@ module core_top #(
   // Writeback to decode
   logic decode_cu_regwrite;
   logic signed [DATA_SIZE - 1:0] decode_wreg;
-  logic [31:0] decode_rdest;
+  logic [$clog2(NUM_REGS) - 1:0] decode_rdest;
 
   // The fetch unit, which increments the program counter and accepts a new instruction from the instruction cache
   instr_fetch #(
@@ -142,7 +143,7 @@ module core_top #(
     .axi(axi_instr),
     .i_branch_addr(fetch_branch_addr),
     .i_branch_valid(fetch_branch_valid),
-    .i_stall(fetch_stall),
+    .i_en(fetch_en),
 
     .o_instruction(decode_instruction),
     .o_instr_valid(decode_instr_valid),
@@ -155,7 +156,7 @@ module core_top #(
     .i_aclk(i_aclk),
     .i_areset_n(i_areset_n),
 
-    .i_flush(decode_flush),
+    .i_en(decode_en),
 
     .i_instruction(decode_instruction),
     .i_pc(decode_pc),
@@ -241,7 +242,7 @@ module core_top #(
     .o_cu_regwrite(ma_cu_regwrite),
     .o_cu_memtoreg(ma_cu_memtoreg),
     .o_cu_memwrite(ma_cu_memwrite),
-    .o_cu_memacess(ma_cu_memaccess),
+    .o_cu_memaccess(ma_cu_memaccess),
     .o_ldop(ma_ldop),
     .o_sop(ma_sop)
   );
@@ -299,6 +300,43 @@ module core_top #(
     .i_mem_data(wb_mem_data),
     .i_exe_data(wb_exe_data),
     .o_wb_result(decode_wreg)
+  );
+
+  // The hazard unit, which handles forwarding and pipeline control
+  hazard_unit #() hazard_unit(
+    .i_aclk(i_aclk),
+    .i_areset_n(i_areset_n),
+
+    .o_br_addr(fetch_branch_addr),
+    .o_br_valid(fetch_branch_valid),
+    .o_fetch_en(fetch_en),
+
+    .i_decode_br_addr(decode_to_hazard_branch_addr),
+    .i_decode_br_valid(decode_to_hazard_branch_valid),
+    .i_decode_pc(decode_pc),
+    .i_decode_rs1(decode_to_hazard_rs1),
+    .i_decode_rs2(decode_to_hazard_rs2),
+    .o_decode_fwd_a(hazard_to_decode_forward_a),
+    .o_decode_fwd_b(hazard_to_decode_forward_b),
+    .o_decode_en(decode_en),
+
+    .i_execute_br_addr(execute_to_hazard_branch_addr),
+    .i_execute_br_valid(execute_to_hazard_branch_valid),
+    .i_exe_rs1(exe_to_hazard_rs1),
+    .i_exe_rs2(exe_to_hazard_rs2),
+    .o_exe_fwd_a(hazard_to_exe_forward_a),
+    .o_exe_fwd_b(hazard_to_exe_forward_b),
+    .o_exe_en(exe_en),
+
+    .i_ma_cache_ready(ma_to_hazard_cache_ready),
+    .i_ma_memaccess(ma_cu_memaccess),
+    .i_ma_regwrite(ma_cu_regwrite),
+    .i_ma_memtoreg(ma_cu_memtoreg),
+    .i_ma_rdest(ma_rdest),
+    .o_ma_en(ma_en),
+
+    .i_wb_regwrite(wb_cu_regwrite),
+    .i_wb_rdest(wb_rdest)
   );
 
 endmodule

@@ -1,0 +1,48 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../test/tb_core_top/ipshared/85a3" --include "../../../../../test/tb_core_top/ipshared/ec67/hdl" \
+"../../../../../test/tb_clk_gen.v" \
+
+sv xil_defaultlib  --include "../../../../../test/tb_core_top/ipshared/85a3" --include "../../../../../test/tb_core_top/ipshared/ec67/hdl" \
+"../../../../../rtl/multicore_pkg.sv" \
+"../../../../../rtl/alu.sv" \
+"../../../../../rtl/axi_defines.sv" \
+"../../../../../rtl/axi_interface.sv" \
+"../../../../../rtl/branch_compare.sv" \
+"../../../../../rtl/control_unit.sv" \
+"../../../../../rtl/core_top.sv" \
+"../../../../../rtl/verilog_wrappers/core_top_intf_wrapper.sv" \
+"../../../../../rtl/data_cache.sv" \
+"../../../../../rtl/data_cache_ctrl.sv" \
+"../../../../../rtl/decode_and_extend.sv" \
+"../../../../../rtl/execute_unit.sv" \
+"../../../../../rtl/hazard_unit.sv" \
+"../../../../../rtl/instr_cache_ctrl.sv" \
+"../../../../../rtl/instr_decode.sv" \
+"../../../../../rtl/instr_fetch.sv" \
+"../../../../../rtl/instruction_cache.sv" \
+"../../../../../rtl/mem_access.sv" \
+"../../../../../rtl/ram.sv" \
+"../../../../../rtl/system_exe_unit.sv" \
+"../../../../../rtl/writeback.sv" \
+
+verilog xil_defaultlib  --include "../../../../../test/tb_core_top/ipshared/85a3" --include "../../../../../test/tb_core_top/ipshared/ec67/hdl" \
+"../../../../../rtl/verilog_wrappers/core_top_wrapper.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_0/sim/tb_core_top_blk_mem_gen_0_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0_clk_wiz.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_tb_clk_gen_0_0/sim/tb_core_top_tb_clk_gen_0_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_xbar_0/sim/tb_core_top_xbar_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_core_top_wrapper_0_0/sim/tb_core_top_core_top_wrapper_0_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_core_wrapper_0_1/sim/tb_core_top_core_wrapper_0_1.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/sim/tb_core_top.v" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_1/sim/tb_core_top_blk_mem_gen_0_1.v" \
+"../../../../../test/tb_core_top/hdl/tb_core_top_wrapper.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

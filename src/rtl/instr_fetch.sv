@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -48,8 +49,8 @@ module instr_fetch #(
   // Denotes if the branch address from the decode stage is valid (branch taken/jump)
   input logic i_branch_valid,
 
-  // If the hazard unit desires to stall the fetch from incrementing address
-  input logic i_stall,
+  // Controls when the fetch stage will grab another instruction, controlled by hazard unit
+  input logic i_en,
 
   // The instruction to return to the instruction fetch stage
   output logic [INST_SIZE - 1:0] o_instruction,
@@ -73,7 +74,7 @@ module instr_fetch #(
   logic cache_ready;
 
   // The current program counter that is being requested from the cache
-  logic pc_fetch;
+  logic [ADDR_SIZE - 1:0] pc_fetch;
 
   // The program counter calculated from the incoming branch and pcplus4
   logic [ADDR_SIZE - 1:0] pc;
@@ -131,8 +132,7 @@ module instr_fetch #(
         o_pcplus4 <= pcplus4;
         pc_fetch <= pc;
         cache_req <= 1;
-      end else if (~i_stall) begin
-        pc_fetch <= pc;
+      end else if (i_en) begin
         cache_req <= 1;
       end else begin
         cache_req <= 0;

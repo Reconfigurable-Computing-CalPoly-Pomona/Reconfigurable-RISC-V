@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -30,8 +31,8 @@ module instr_decode(
   // Asynchronous reset
   input logic i_areset_n,
 
-  // Flushes the decode stage, making the input instruction a No-Op
-  input logic i_flush,
+  // Enables or disables the decode from the hazard unit. Disabling will cause No-Ops to be inserted
+  input logic i_en,
 
   // The instruction to return to the instruction fetch stage
   input logic [INST_SIZE - 1:0] i_instruction,
@@ -263,11 +264,11 @@ module instr_decode(
       instruction <= 0;
       instruction[6:0] <= NOOP_CODE;
     end else begin
-      if (i_flush) begin
+      if (i_en) begin
+        instruction <= i_instruction;
+      end else begin
         instruction <= 0;
         instruction[6:0] <= NOOP_CODE;
-      end else begin
-        instruction <= i_instruction;
       end
     end
   end

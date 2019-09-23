@@ -1,0 +1,85 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace inst data_mem_ctrl -pg 1 -lvl 5 -y 600 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 4 -y 220 -defaultsOSRD
+preplace inst core_wrapper_0 -pg 1 -lvl 2 -y 470 -defaultsOSRD
+preplace inst instr_mem -pg 1 -lvl 6 -y 250 -defaultsOSRD
+preplace inst instr_mem_ctrl -pg 1 -lvl 5 -y 350 -defaultsOSRD
+preplace inst data_mem -pg 1 -lvl 6 -y 600 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 5 -y 190 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -y 1470 -defaultsOSRD
+preplace inst core_top_wrapper_0 -pg 1 -lvl 1 -y 1210 -defaultsOSRD
+preplace inst tb_clk_gen_0 -pg 1 -lvl 3 -y -60 -defaultsOSRD
+preplace netloc data_mem_ctrl_BRAM_PORTB 1 5 1 N
+preplace netloc core_top_wrapper_0_o_data_araddr 1 1 3 -200 1600 NJ 1600 1170J
+preplace netloc core_top_wrapper_0_o_instr_wlast 1 1 3 -100 960 NJ 960 NJ
+preplace netloc clk_wiz_locked 1 4 1 N
+preplace netloc axi_interconnect_0_S00_AXI_rdata 1 0 4 -730 820 -270J 830 NJ 830 1280J
+preplace netloc core_top_wrapper_0_o_instr_bready 1 1 3 -50 1090 NJ 1090 1190J
+preplace netloc core_top_wrapper_0_o_instr_wdata 1 1 3 -120 920 NJ 920 NJ
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 5 1 2290
+preplace netloc axi_interconnect_0_S01_AXI_wready 1 0 4 -670 1680 NJ 1680 N 1680 1300
+preplace netloc core_top_wrapper_0_o_data_bready 1 1 3 -270 1650 NJ 1650 1150J
+preplace netloc tb_clk_gen_0_o_clk 1 3 1 1240
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 5 1 2300
+preplace netloc core_wrapper_0_m_instr 1 2 2 930 710 1290J
+preplace netloc axi_interconnect_0_S01_AXI_rlast 1 0 4 -690 1980 NJ 1980 NJ 1980 NJ
+preplace netloc axi_interconnect_0_S01_AXI_rvalid 1 0 4 -730 2000 NJ 2000 NJ 2000 NJ
+preplace netloc axi_interconnect_0_S01_AXI_bvalid 1 0 4 -700 1700 NJ 1700 N 1700 N
+preplace netloc core_top_wrapper_0_o_instr_arvalid 1 1 3 N 990 NJ 990 1270J
+preplace netloc core_top_wrapper_0_o_instr_awlen 1 1 3 -220 760 NJ 760 NJ
+preplace netloc axi_interconnect_0_S01_AXI_bresp 1 0 4 -660 1690 NJ 1690 N 1690 1310
+preplace netloc core_top_wrapper_0_o_data_wstrb 1 1 3 -250 1630 NJ 1630 1310J
+preplace netloc core_top_wrapper_0_o_data_wvalid 1 1 3 -230 1610 NJ 1610 1230J
+preplace netloc axi_interconnect_0_S00_AXI_wready 1 0 4 -650 830 -280J 840 NJ 840 1150J
+preplace netloc core_top_wrapper_0_o_instr_arsize 1 1 3 -60 1060 NJ 1060 1160J
+preplace netloc core_top_wrapper_0_o_instr_awvalid 1 1 3 NJ 890 N 890 1200
+preplace netloc tb_clk_gen_0_o_areset_n 1 3 2 1290 150 1910J
+preplace netloc axi_interconnect_0_S01_AXI_rdata 1 0 4 -650 1960 NJ 1960 NJ 1960 NJ
+preplace netloc core_top_wrapper_0_o_data_arburst 1 1 3 -170 1570 NJ 1570 1220J
+preplace netloc core_top_wrapper_0_o_data_awaddr 1 1 3 -150 1440 NJ 1440 1300J
+preplace netloc axi_interconnect_0_S00_AXI_arready 1 0 4 -740 780 -200J 790 NJ 790 1300J
+preplace netloc axi_interconnect_0_S01_AXI_awready 1 0 4 -710 1670 NJ 1670 N 1670 1280
+preplace netloc axi_interconnect_0_S00_AXI_awready 1 0 4 -660 790 -230J 800 NJ 800 1190J
+preplace netloc core_top_wrapper_0_o_data_rready 1 1 3 -280 1660 NJ 1660 1130J
+preplace netloc core_top_wrapper_0_o_data_arsize 1 1 3 -180 1580 NJ 1580 1200J
+preplace netloc axi_interconnect_0_S00_AXI_bresp 1 0 4 -750 800 -240J 810 NJ 810 1310J
+preplace netloc core_top_wrapper_0_o_instr_arlen 1 1 3 -70 1070 NJ 1070 1250J
+preplace netloc core_top_wrapper_0_o_instr_awaddr 1 1 3 -250 750 NJ 750 1150J
+preplace netloc S00_AXI_awsize_1 1 1 3 -190 780 NJ 780 NJ
+preplace netloc core_top_wrapper_0_o_instr_awburst 1 1 3 -140 850 NJ 850 1200J
+preplace netloc axi_interconnect_0_M00_AXI 1 4 1 1910
+preplace netloc axi_interconnect_0_S01_AXI_arready 1 0 4 -740 1940 NJ 1940 N 1940 N
+preplace netloc core_top_wrapper_0_o_data_wlast 1 1 3 -240 1620 NJ 1620 NJ
+preplace netloc core_top_wrapper_0_o_data_arvalid 1 1 3 -160 1430 NJ 1430 1160J
+preplace netloc core_top_wrapper_0_o_data_awburst 1 1 3 -50 1380 NJ 1380 1170J
+preplace netloc core_top_wrapper_0_o_instr_araddr 1 1 3 -80 1080 NJ 1080 NJ
+preplace netloc axi_interconnect_0_M01_AXI 1 4 1 1940
+preplace netloc core_top_wrapper_0_o_data_wdata 1 1 3 -260 1640 NJ 1640 1210J
+preplace netloc core_top_wrapper_0_o_data_awsize 1 1 3 -60 1390 NJ 1390 1160J
+preplace netloc core_top_wrapper_0_o_data_awvalid 1 1 3 -60J 1220 N 1220 1190
+preplace netloc core_top_wrapper_0_o_instr_wstrb 1 1 3 -110 940 NJ 940 NJ
+preplace netloc core_top_wrapper_0_o_instr_arburst 1 1 3 -50 1050 NJ 1050 1260J
+preplace netloc core_wrapper_0_m_data 1 2 2 920 720 NJ
+preplace netloc core_top_wrapper_0_o_data_awlen 1 1 3 -140 1400 NJ 1400 NJ
+preplace netloc data_mem_ctrl_BRAM_PORTA 1 5 1 N
+preplace netloc core_top_wrapper_0_o_unused 1 1 3 -130 900 NJ 900 1180J
+preplace netloc core_top_wrapper_0_o_data_arlen 1 1 3 -190 1590 NJ 1590 1190J
+preplace netloc axi_interconnect_0_S00_AXI_rlast 1 0 4 -680 1590 -220J 1410 NJ 1410 1220J
+preplace netloc axi_interconnect_0_S00_AXI_rvalid 1 0 4 -720 1600 -210J 1420 NJ 1420 1150J
+preplace netloc axi_interconnect_0_S00_AXI_bvalid 1 0 4 -670 810 -260J 820 NJ 820 1160J
+preplace netloc core_top_wrapper_0_o_instr_rready 1 1 3 -50 1210 NJ 1210 1200J
+preplace netloc core_top_wrapper_0_o_instr_wvalid 1 1 3 -90 1000 NJ 1000 1130J
+preplace netloc tb_clk_gen_0_o_areset 1 3 1 1140
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 0 6 -680 740 -110J 740 NJ 740 1140J 660 1920J 430 2280
+preplace netloc clk_wiz_clk_out1 1 0 5 -720 730 -120 730 N 730 1240 600 1930
+levelinfo -pg 1 -770 -450 770 1030 1740 2110 2440 2590 -top -280 -bot 2840
+"
+}
+{
+   "da_axi4_cnt":"3",
+   "da_bram_cntlr_cnt":"2",
+   "da_clkrst_cnt":"2"
+}

@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -66,7 +67,7 @@ package axi_defines;
   typedef struct packed {
     logic valid;
     logic last;
-    logic [7:0] strb;
+    resp_t resp;
     logic [31:0] data;
   } r_t;
 

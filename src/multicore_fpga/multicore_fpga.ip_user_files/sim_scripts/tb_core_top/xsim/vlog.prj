@@ -1,0 +1,17 @@
+verilog xil_defaultlib --include "../../../../../test/tb_core_top/ipshared/85a3" --include "../../../../../test/tb_core_top/ipshared/ec67/hdl" \
+"../../../bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_0/sim/tb_core_top_blk_mem_gen_0_0.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0_clk_wiz.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_tb_clk_gen_0_0/sim/tb_core_top_tb_clk_gen_0_0.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_xbar_0/sim/tb_core_top_xbar_0.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_core_top_wrapper_0_0/sim/tb_core_top_core_top_wrapper_0_0.v" \
+"../../../bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v" \
+"../../../bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v" \
+"../../../bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_core_wrapper_0_1/sim/tb_core_top_core_wrapper_0_1.v" \
+"../../../bd/tb_core_top/sim/tb_core_top.v" \
+"../../../bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_1/sim/tb_core_top_blk_mem_gen_0_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

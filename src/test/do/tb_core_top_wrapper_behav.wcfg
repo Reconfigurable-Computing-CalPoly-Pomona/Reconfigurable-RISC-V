@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_core_top_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_bram_ctrl_funcs" />
+            <top_module name="axi_defines" />
+            <top_module name="glbl" />
+            <top_module name="multicore_pkg" />
+            <top_module name="tb_core_top_wrapper" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
+      <Cursor1Time time="795000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="247"></NameColumnWidth>
+      <ValueColumnWidth column_width="218"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="group131" type="group">
+      <obj_property name="label">Core Top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_en" type="logic">
+         <obj_property name="ElementShortName">decode_en</obj_property>
+         <obj_property name="ObjectShortName">decode_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_en" type="logic">
+         <obj_property name="ElementShortName">fetch_en</obj_property>
+         <obj_property name="ObjectShortName">fetch_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_en" type="logic">
+         <obj_property name="ElementShortName">exe_en</obj_property>
+         <obj_property name="ObjectShortName">exe_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_en" type="logic">
+         <obj_property name="ElementShortName">ma_en</obj_property>
+         <obj_property name="ObjectShortName">ma_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_branch_valid" type="logic">
+         <obj_property name="ElementShortName">fetch_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">fetch_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_branch_addr" type="array">
+         <obj_property name="ElementShortName">fetch_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fetch_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_to_exe_forward_a" type="array">
+         <obj_property name="ElementShortName">hazard_to_exe_forward_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hazard_to_exe_forward_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_to_exe_forward_b" type="array">
+         <obj_property name="ElementShortName">hazard_to_exe_forward_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hazard_to_exe_forward_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_to_decode_forward_a" type="array">
+         <obj_property name="ElementShortName">hazard_to_decode_forward_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hazard_to_decode_forward_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_to_decode_forward_b" type="array">
+         <obj_property name="ElementShortName">hazard_to_decode_forward_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">hazard_to_decode_forward_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_instr_valid" type="logic">
+         <obj_property name="ElementShortName">decode_instr_valid</obj_property>
+         <obj_property name="ObjectShortName">decode_instr_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_instruction" type="array">
+         <obj_property name="ElementShortName">decode_instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_pc" type="array">
+         <obj_property name="ElementShortName">decode_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_pcplus4" type="array">
+         <obj_property name="ElementShortName">decode_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_to_hazard_branch_addr" type="array">
+         <obj_property name="ElementShortName">decode_to_hazard_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_to_hazard_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_to_hazard_branch_valid" type="logic">
+         <obj_property name="ElementShortName">decode_to_hazard_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">decode_to_hazard_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_to_hazard_rs1" type="array">
+         <obj_property name="ElementShortName">decode_to_hazard_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_to_hazard_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_to_hazard_rs2" type="array">
+         <obj_property name="ElementShortName">decode_to_hazard_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_to_hazard_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_rd1" type="array">
+         <obj_property name="ElementShortName">exe_rd1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_rd1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_rd2" type="array">
+         <obj_property name="ElementShortName">exe_rd2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_rd2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_rdest" type="array">
+         <obj_property name="ElementShortName">exe_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_immediate" type="array">
+         <obj_property name="ElementShortName">exe_immediate[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_immediate[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_pc" type="array">
+         <obj_property name="ElementShortName">exe_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_pcplus4" type="array">
+         <obj_property name="ElementShortName">exe_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">exe_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">exe_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">exe_cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">exe_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_aluop" type="array">
+         <obj_property name="ElementShortName">exe_cu_aluop[3:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_aluop[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_alu_srca" type="logic">
+         <obj_property name="ElementShortName">exe_cu_alu_srca</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_alu_srca</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_alu_srcb" type="logic">
+         <obj_property name="ElementShortName">exe_cu_alu_srcb</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_alu_srcb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_exe_unit" type="array">
+         <obj_property name="ElementShortName">exe_cu_exe_unit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_exe_unit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_brop" type="array">
+         <obj_property name="ElementShortName">exe_cu_brop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_brop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_sysop" type="array">
+         <obj_property name="ElementShortName">exe_cu_sysop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_sysop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_ldop" type="array">
+         <obj_property name="ElementShortName">exe_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_sop" type="array">
+         <obj_property name="ElementShortName">exe_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_cu_jalr" type="logic">
+         <obj_property name="ElementShortName">exe_cu_jalr</obj_property>
+         <obj_property name="ObjectShortName">exe_cu_jalr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/execute_to_hazard_branch_addr" type="array">
+         <obj_property name="ElementShortName">execute_to_hazard_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">execute_to_hazard_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/execute_to_hazard_branch_valid" type="logic">
+         <obj_property name="ElementShortName">execute_to_hazard_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">execute_to_hazard_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_to_hazard_rs1" type="array">
+         <obj_property name="ElementShortName">exe_to_hazard_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_to_hazard_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_to_hazard_rs2" type="array">
+         <obj_property name="ElementShortName">exe_to_hazard_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_to_hazard_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_calc" type="array">
+         <obj_property name="ElementShortName">ma_calc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_calc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_wdata" type="array">
+         <obj_property name="ElementShortName">ma_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_rdest" type="array">
+         <obj_property name="ElementShortName">ma_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_pcplus4" type="array">
+         <obj_property name="ElementShortName">ma_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">ma_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">ma_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">ma_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">ma_cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">ma_cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">ma_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">ma_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_ldop" type="array">
+         <obj_property name="ElementShortName">ma_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_sop" type="array">
+         <obj_property name="ElementShortName">ma_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">ma_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/ma_to_hazard_cache_ready" type="logic">
+         <obj_property name="ElementShortName">ma_to_hazard_cache_ready</obj_property>
+         <obj_property name="ObjectShortName">ma_to_hazard_cache_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_pcplus4" type="array">
+         <obj_property name="ElementShortName">wb_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_rdest" type="array">
+         <obj_property name="ElementShortName">wb_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">wb_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">wb_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">wb_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_mem_data" type="array">
+         <obj_property name="ElementShortName">wb_mem_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_mem_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_exe_data" type="array">
+         <obj_property name="ElementShortName">wb_exe_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wb_exe_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">decode_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">decode_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_wreg" type="array">
+         <obj_property name="ElementShortName">decode_wreg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_wreg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_rdest" type="array">
+         <obj_property name="ElementShortName">decode_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">decode_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/PC_BASE_ADDR" type="array">
+         <obj_property name="ElementShortName">PC_BASE_ADDR[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_BASE_ADDR[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/INST_CACHE_SIZE" type="array">
+         <obj_property name="ElementShortName">INST_CACHE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INST_CACHE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/INST_ASSOCIATIVITY" type="array">
+         <obj_property name="ElementShortName">INST_ASSOCIATIVITY[31:0]</obj_property>
+         <obj_property name="ObjectShortName">INST_ASSOCIATIVITY[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/DATA_CACHE_SIZE" type="array">
+         <obj_property name="ElementShortName">DATA_CACHE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_CACHE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/DATA_ASSOCIATIVITY" type="array">
+         <obj_property name="ElementShortName">DATA_ASSOCIATIVITY[31:0]</obj_property>
+         <obj_property name="ObjectShortName">DATA_ASSOCIATIVITY[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group151" type="group">
+      <obj_property name="label">Fetch</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_branch_addr" type="array">
+         <obj_property name="ElementShortName">i_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_branch_valid" type="logic">
+         <obj_property name="ElementShortName">i_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">i_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_en" type="logic">
+         <obj_property name="ElementShortName">i_en</obj_property>
+         <obj_property name="ObjectShortName">i_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/o_instruction" type="array">
+         <obj_property name="ElementShortName">o_instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/o_instr_valid" type="logic">
+         <obj_property name="ElementShortName">o_instr_valid</obj_property>
+         <obj_property name="ObjectShortName">o_instr_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/o_pcplus4" type="array">
+         <obj_property name="ElementShortName">o_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/o_pc" type="array">
+         <obj_property name="ElementShortName">o_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/cache_req" type="logic">
+         <obj_property name="ElementShortName">cache_req</obj_property>
+         <obj_property name="ObjectShortName">cache_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/cache_ready" type="logic">
+         <obj_property name="ElementShortName">cache_ready</obj_property>
+         <obj_property name="ObjectShortName">cache_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch" type="array">
+         <obj_property name="ElementShortName">pc_fetch[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_fetch[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc" type="array">
+         <obj_property name="ElementShortName">pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pcplus4" type="array">
+         <obj_property name="ElementShortName">pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/cache_valid" type="logic">
+         <obj_property name="ElementShortName">cache_valid</obj_property>
+         <obj_property name="ObjectShortName">cache_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/PC_BASE_ADDR" type="array">
+         <obj_property name="ElementShortName">PC_BASE_ADDR[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_BASE_ADDR[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/ADDR_SIZE" type="array">
+         <obj_property name="ElementShortName">ADDR_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADDR_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/CACHE_SIZE" type="array">
+         <obj_property name="ElementShortName">CACHE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CACHE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/BLK_PER_SET" type="array">
+         <obj_property name="ElementShortName">BLK_PER_SET[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BLK_PER_SET[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group199" type="group">
+      <obj_property name="label">Decode</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_en" type="logic">
+         <obj_property name="ElementShortName">i_en</obj_property>
+         <obj_property name="ObjectShortName">i_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_instruction" type="array">
+         <obj_property name="ElementShortName">i_instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_pc" type="array">
+         <obj_property name="ElementShortName">i_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_pcplus4" type="array">
+         <obj_property name="ElementShortName">i_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_branch_addr" type="array">
+         <obj_property name="ElementShortName">o_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_branch_valid" type="logic">
+         <obj_property name="ElementShortName">o_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">o_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_wb" type="logic">
+         <obj_property name="ElementShortName">i_wb</obj_property>
+         <obj_property name="ObjectShortName">i_wb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_wb_data" type="array">
+         <obj_property name="ElementShortName">i_wb_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wb_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_wb_addr" type="array">
+         <obj_property name="ElementShortName">i_wb_addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wb_addr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_forward_a" type="array">
+         <obj_property name="ElementShortName">i_forward_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_forward_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_forward_b" type="array">
+         <obj_property name="ElementShortName">i_forward_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_forward_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_fdata_ma" type="array">
+         <obj_property name="ElementShortName">i_fdata_ma[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_fdata_ma[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_rs1" type="array">
+         <obj_property name="ElementShortName">o_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_rs2" type="array">
+         <obj_property name="ElementShortName">o_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_rd1" type="array">
+         <obj_property name="ElementShortName">o_rd1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rd1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_rd2" type="array">
+         <obj_property name="ElementShortName">o_rd2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rd2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_rdest" type="array">
+         <obj_property name="ElementShortName">o_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_immediate" type="array">
+         <obj_property name="ElementShortName">o_immediate[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_immediate[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_pc" type="array">
+         <obj_property name="ElementShortName">o_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_pcplus4" type="array">
+         <obj_property name="ElementShortName">o_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">o_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">o_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_aluop" type="array">
+         <obj_property name="ElementShortName">o_cu_aluop[3:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_aluop[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_alu_srca" type="logic">
+         <obj_property name="ElementShortName">o_cu_alu_srca</obj_property>
+         <obj_property name="ObjectShortName">o_cu_alu_srca</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_alu_srcb" type="logic">
+         <obj_property name="ElementShortName">o_cu_alu_srcb</obj_property>
+         <obj_property name="ObjectShortName">o_cu_alu_srcb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_exe_unit" type="array">
+         <obj_property name="ElementShortName">o_cu_exe_unit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_exe_unit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_brop" type="array">
+         <obj_property name="ElementShortName">o_cu_brop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_brop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_sysop" type="array">
+         <obj_property name="ElementShortName">o_cu_sysop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_sysop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_ldop" type="array">
+         <obj_property name="ElementShortName">o_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_sop" type="array">
+         <obj_property name="ElementShortName">o_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_cu_jalr" type="logic">
+         <obj_property name="ElementShortName">o_cu_jalr</obj_property>
+         <obj_property name="ObjectShortName">o_cu_jalr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/reg_file" type="array">
+         <obj_property name="ElementShortName">reg_file[4:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_file[4:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/instruction" type="array">
+         <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/pcplus4" type="array">
+         <obj_property name="ElementShortName">pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/rs1" type="array">
+         <obj_property name="ElementShortName">rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/rs2" type="array">
+         <obj_property name="ElementShortName">rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/rd" type="array">
+         <obj_property name="ElementShortName">rd[4:0]</obj_property>
+         <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/opcode" type="array">
+         <obj_property name="ElementShortName">opcode[6:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/funct3" type="array">
+         <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+         <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/funct7" type="array">
+         <obj_property name="ElementShortName">funct7[6:0]</obj_property>
+         <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/branch" type="logic">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/jump" type="logic">
+         <obj_property name="ElementShortName">jump</obj_property>
+         <obj_property name="ObjectShortName">jump</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/compare_true" type="logic">
+         <obj_property name="ElementShortName">compare_true</obj_property>
+         <obj_property name="ObjectShortName">compare_true</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group267" type="group">
+      <obj_property name="label">Execute</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_en" type="logic">
+         <obj_property name="ElementShortName">i_en</obj_property>
+         <obj_property name="ObjectShortName">i_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_pc" type="array">
+         <obj_property name="ElementShortName">i_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_pcplus4" type="array">
+         <obj_property name="ElementShortName">i_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_pcplus4" type="array">
+         <obj_property name="ElementShortName">o_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_branch_addr" type="array">
+         <obj_property name="ElementShortName">i_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_branch_valid" type="logic">
+         <obj_property name="ElementShortName">o_branch_valid</obj_property>
+         <obj_property name="ObjectShortName">o_branch_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_branch_addr" type="array">
+         <obj_property name="ElementShortName">o_branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_rdest" type="array">
+         <obj_property name="ElementShortName">i_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_rdest" type="array">
+         <obj_property name="ElementShortName">o_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_forward_a" type="array">
+         <obj_property name="ElementShortName">i_forward_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_forward_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_forward_b" type="array">
+         <obj_property name="ElementShortName">i_forward_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_forward_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_id_rs1" type="array">
+         <obj_property name="ElementShortName">i_id_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_id_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_id_rs2" type="array">
+         <obj_property name="ElementShortName">i_id_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_id_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_id_rs1" type="array">
+         <obj_property name="ElementShortName">o_id_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_id_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_id_rs2" type="array">
+         <obj_property name="ElementShortName">o_id_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_id_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_id_op1" type="array">
+         <obj_property name="ElementShortName">i_id_op1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_id_op1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_id_op2" type="array">
+         <obj_property name="ElementShortName">i_id_op2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_id_op2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_ma_op" type="array">
+         <obj_property name="ElementShortName">i_ma_op[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ma_op[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_wb_op" type="array">
+         <obj_property name="ElementShortName">i_wb_op[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wb_op[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_immediate" type="array">
+         <obj_property name="ElementShortName">i_immediate[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_immediate[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">i_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">i_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">i_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">i_cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">i_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_aluop" type="array">
+         <obj_property name="ElementShortName">i_cu_aluop[3:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_aluop[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_alu_srca" type="logic">
+         <obj_property name="ElementShortName">i_cu_alu_srca</obj_property>
+         <obj_property name="ObjectShortName">i_cu_alu_srca</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_alu_srcb" type="logic">
+         <obj_property name="ElementShortName">i_cu_alu_srcb</obj_property>
+         <obj_property name="ObjectShortName">i_cu_alu_srcb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_exe_unit" type="array">
+         <obj_property name="ElementShortName">i_cu_exe_unit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_exe_unit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_brop" type="array">
+         <obj_property name="ElementShortName">i_cu_brop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_brop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_sysop" type="array">
+         <obj_property name="ElementShortName">i_cu_sysop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_sysop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_ldop" type="array">
+         <obj_property name="ElementShortName">i_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_sop" type="array">
+         <obj_property name="ElementShortName">i_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_cu_jalr" type="logic">
+         <obj_property name="ElementShortName">i_cu_jalr</obj_property>
+         <obj_property name="ObjectShortName">i_cu_jalr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_exe_calc" type="array">
+         <obj_property name="ElementShortName">o_exe_calc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_exe_calc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_exe_wdata" type="array">
+         <obj_property name="ElementShortName">o_exe_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_exe_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">o_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">o_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_ldop" type="array">
+         <obj_property name="ElementShortName">o_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">o_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_sop" type="array">
+         <obj_property name="ElementShortName">o_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_jalr" type="logic">
+         <obj_property name="ElementShortName">cu_jalr</obj_property>
+         <obj_property name="ObjectShortName">cu_jalr</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_exe_unit" type="array">
+         <obj_property name="ElementShortName">cu_exe_unit[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_exe_unit[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_aluop" type="array">
+         <obj_property name="ElementShortName">cu_aluop[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_aluop[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_brop" type="array">
+         <obj_property name="ElementShortName">cu_brop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_brop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_sysop" type="array">
+         <obj_property name="ElementShortName">cu_sysop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_sysop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_memwrite" type="logic">
+         <obj_property name="ElementShortName">cu_memwrite</obj_property>
+         <obj_property name="ObjectShortName">cu_memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_alu_srca" type="logic">
+         <obj_property name="ElementShortName">cu_alu_srca</obj_property>
+         <obj_property name="ObjectShortName">cu_alu_srca</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/cu_alu_srcb" type="logic">
+         <obj_property name="ElementShortName">cu_alu_srcb</obj_property>
+         <obj_property name="ObjectShortName">cu_alu_srcb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/branch_true" type="logic">
+         <obj_property name="ElementShortName">branch_true</obj_property>
+         <obj_property name="ObjectShortName">branch_true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/id_op1" type="array">
+         <obj_property name="ElementShortName">id_op1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">id_op1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/id_op2" type="array">
+         <obj_property name="ElementShortName">id_op2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">id_op2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/pc" type="array">
+         <obj_property name="ElementShortName">pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/pcplus4" type="array">
+         <obj_property name="ElementShortName">pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/branch_addr" type="array">
+         <obj_property name="ElementShortName">branch_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">branch_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/immediate" type="array">
+         <obj_property name="ElementShortName">immediate[31:0]</obj_property>
+         <obj_property name="ObjectShortName">immediate[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/jalr_addr" type="array">
+         <obj_property name="ElementShortName">jalr_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">jalr_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/op_b" type="array">
+         <obj_property name="ElementShortName">op_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">op_b[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/op_a" type="array">
+         <obj_property name="ElementShortName">op_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">op_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/alu_op_a" type="array">
+         <obj_property name="ElementShortName">alu_op_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/alu_op_b" type="array">
+         <obj_property name="ElementShortName">alu_op_b[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_b[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/alu_calc" type="array">
+         <obj_property name="ElementShortName">alu_calc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_calc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/sys_calc" type="array">
+         <obj_property name="ElementShortName">sys_calc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sys_calc[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group291" type="group">
+      <obj_property name="label">Memory Access</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_en" type="logic">
+         <obj_property name="ElementShortName">i_en</obj_property>
+         <obj_property name="ObjectShortName">i_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_pcplus4" type="array">
+         <obj_property name="ElementShortName">i_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_pcplus4" type="array">
+         <obj_property name="ElementShortName">o_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_rdest" type="array">
+         <obj_property name="ElementShortName">i_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_rdest" type="array">
+         <obj_property name="ElementShortName">o_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_exe_out" type="array">
+         <obj_property name="ElementShortName">i_exe_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_exe_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_mem_wdata" type="array">
+         <obj_property name="ElementShortName">i_mem_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_mem_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_mem_we" type="logic">
+         <obj_property name="ElementShortName">i_mem_we</obj_property>
+         <obj_property name="ObjectShortName">i_mem_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_cu_memaccess" type="logic">
+         <obj_property name="ElementShortName">i_cu_memaccess</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_ldop" type="array">
+         <obj_property name="ElementShortName">i_ldop[2:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ldop[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_sop" type="array">
+         <obj_property name="ElementShortName">i_sop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_sop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">i_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">i_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">i_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">o_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_mem_data" type="array">
+         <obj_property name="ElementShortName">o_mem_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_mem_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_exe_data" type="array">
+         <obj_property name="ElementShortName">o_exe_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_exe_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_cache_ready" type="logic">
+         <obj_property name="ElementShortName">o_cache_ready</obj_property>
+         <obj_property name="ObjectShortName">o_cache_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/ADDR_SIZE" type="array">
+         <obj_property name="ElementShortName">ADDR_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ADDR_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/CACHE_SIZE" type="array">
+         <obj_property name="ElementShortName">CACHE_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CACHE_SIZE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/BLK_PER_SET" type="array">
+         <obj_property name="ElementShortName">BLK_PER_SET[31:0]</obj_property>
+         <obj_property name="ObjectShortName">BLK_PER_SET[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group307" type="group">
+      <obj_property name="label">Writeback</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_rdest" type="array">
+         <obj_property name="ElementShortName">i_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/o_rdest" type="array">
+         <obj_property name="ElementShortName">o_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">o_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">i_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">i_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">i_cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/o_cu_regwrite" type="logic">
+         <obj_property name="ElementShortName">o_cu_regwrite</obj_property>
+         <obj_property name="ObjectShortName">o_cu_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_pcplus4" type="array">
+         <obj_property name="ElementShortName">i_pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_mem_data" type="array">
+         <obj_property name="ElementShortName">i_mem_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_mem_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_exe_data" type="array">
+         <obj_property name="ElementShortName">i_exe_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_exe_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/o_wb_result" type="array">
+         <obj_property name="ElementShortName">o_wb_result[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_wb_result[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/pcplus4" type="array">
+         <obj_property name="ElementShortName">pcplus4[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pcplus4[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/mem_data" type="array">
+         <obj_property name="ElementShortName">mem_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/exe_data" type="array">
+         <obj_property name="ElementShortName">exe_data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">exe_data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/cu_memtoreg" type="array">
+         <obj_property name="ElementShortName">cu_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cu_memtoreg[1:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group336" type="group">
+      <obj_property name="label">Hazard</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_aclk" type="logic">
+         <obj_property name="ElementShortName">i_aclk</obj_property>
+         <obj_property name="ObjectShortName">i_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_areset_n" type="logic">
+         <obj_property name="ElementShortName">i_areset_n</obj_property>
+         <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_br_addr" type="array">
+         <obj_property name="ElementShortName">o_br_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">o_br_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_br_valid" type="logic">
+         <obj_property name="ElementShortName">o_br_valid</obj_property>
+         <obj_property name="ObjectShortName">o_br_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_fetch_en" type="logic">
+         <obj_property name="ElementShortName">o_fetch_en</obj_property>
+         <obj_property name="ObjectShortName">o_fetch_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_decode_br_addr" type="array">
+         <obj_property name="ElementShortName">i_decode_br_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_decode_br_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_decode_br_valid" type="logic">
+         <obj_property name="ElementShortName">i_decode_br_valid</obj_property>
+         <obj_property name="ObjectShortName">i_decode_br_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_decode_pc" type="array">
+         <obj_property name="ElementShortName">i_decode_pc[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_decode_pc[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_decode_rs1" type="array">
+         <obj_property name="ElementShortName">i_decode_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_decode_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_decode_rs2" type="array">
+         <obj_property name="ElementShortName">i_decode_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_decode_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_decode_fwd_a" type="array">
+         <obj_property name="ElementShortName">o_decode_fwd_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_decode_fwd_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_decode_fwd_b" type="array">
+         <obj_property name="ElementShortName">o_decode_fwd_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_decode_fwd_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_decode_en" type="logic">
+         <obj_property name="ElementShortName">o_decode_en</obj_property>
+         <obj_property name="ObjectShortName">o_decode_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_execute_br_addr" type="array">
+         <obj_property name="ElementShortName">i_execute_br_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i_execute_br_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_execute_br_valid" type="logic">
+         <obj_property name="ElementShortName">i_execute_br_valid</obj_property>
+         <obj_property name="ObjectShortName">i_execute_br_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_exe_rs1" type="array">
+         <obj_property name="ElementShortName">i_exe_rs1[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_exe_rs1[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_exe_rs2" type="array">
+         <obj_property name="ElementShortName">i_exe_rs2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_exe_rs2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_exe_fwd_a" type="array">
+         <obj_property name="ElementShortName">o_exe_fwd_a[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_exe_fwd_a[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_exe_fwd_b" type="array">
+         <obj_property name="ElementShortName">o_exe_fwd_b[1:0]</obj_property>
+         <obj_property name="ObjectShortName">o_exe_fwd_b[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_exe_en" type="logic">
+         <obj_property name="ElementShortName">o_exe_en</obj_property>
+         <obj_property name="ObjectShortName">o_exe_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_ma_cache_ready" type="logic">
+         <obj_property name="ElementShortName">i_ma_cache_ready</obj_property>
+         <obj_property name="ObjectShortName">i_ma_cache_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_ma_memaccess" type="logic">
+         <obj_property name="ElementShortName">i_ma_memaccess</obj_property>
+         <obj_property name="ObjectShortName">i_ma_memaccess</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_ma_regwrite" type="logic">
+         <obj_property name="ElementShortName">i_ma_regwrite</obj_property>
+         <obj_property name="ObjectShortName">i_ma_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_ma_memtoreg" type="array">
+         <obj_property name="ElementShortName">i_ma_memtoreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ma_memtoreg[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_ma_rdest" type="array">
+         <obj_property name="ElementShortName">i_ma_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_ma_rdest[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_ma_en" type="logic">
+         <obj_property name="ElementShortName">o_ma_en</obj_property>
+         <obj_property name="ObjectShortName">o_ma_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_wb_regwrite" type="logic">
+         <obj_property name="ElementShortName">i_wb_regwrite</obj_property>
+         <obj_property name="ObjectShortName">i_wb_regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_wb_rdest" type="array">
+         <obj_property name="ElementShortName">i_wb_rdest[4:0]</obj_property>
+         <obj_property name="ObjectShortName">i_wb_rdest[4:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group348" type="group">
+      <obj_property name="label">AXI Instr</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/aw" type="array">
+         <obj_property name="ElementShortName">aw</obj_property>
+         <obj_property name="ObjectShortName">aw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/ar" type="array">
+         <obj_property name="ElementShortName">ar</obj_property>
+         <obj_property name="ObjectShortName">ar</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/w" type="array">
+         <obj_property name="ElementShortName">w</obj_property>
+         <obj_property name="ObjectShortName">w</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/r" type="array">
+         <obj_property name="ElementShortName">r</obj_property>
+         <obj_property name="ObjectShortName">r</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/b" type="array">
+         <obj_property name="ElementShortName">b</obj_property>
+         <obj_property name="ObjectShortName">b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/awready" type="logic">
+         <obj_property name="ElementShortName">awready</obj_property>
+         <obj_property name="ObjectShortName">awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/arready" type="logic">
+         <obj_property name="ElementShortName">arready</obj_property>
+         <obj_property name="ObjectShortName">arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/rready" type="logic">
+         <obj_property name="ElementShortName">rready</obj_property>
+         <obj_property name="ObjectShortName">rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/wready" type="logic">
+         <obj_property name="ElementShortName">wready</obj_property>
+         <obj_property name="ObjectShortName">wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_instr/bready" type="logic">
+         <obj_property name="ElementShortName">bready</obj_property>
+         <obj_property name="ObjectShortName">bready</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group359" type="group">
+      <obj_property name="label">AXI Data</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/aw" type="array">
+         <obj_property name="ElementShortName">aw</obj_property>
+         <obj_property name="ObjectShortName">aw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/ar" type="array">
+         <obj_property name="ElementShortName">ar</obj_property>
+         <obj_property name="ObjectShortName">ar</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/w" type="array">
+         <obj_property name="ElementShortName">w</obj_property>
+         <obj_property name="ObjectShortName">w</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/r" type="array">
+         <obj_property name="ElementShortName">r</obj_property>
+         <obj_property name="ObjectShortName">r</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/b" type="array">
+         <obj_property name="ElementShortName">b</obj_property>
+         <obj_property name="ObjectShortName">b</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/awready" type="logic">
+         <obj_property name="ElementShortName">awready</obj_property>
+         <obj_property name="ObjectShortName">awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/arready" type="logic">
+         <obj_property name="ElementShortName">arready</obj_property>
+         <obj_property name="ObjectShortName">arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/rready" type="logic">
+         <obj_property name="ElementShortName">rready</obj_property>
+         <obj_property name="ObjectShortName">rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/wready" type="logic">
+         <obj_property name="ElementShortName">wready</obj_property>
+         <obj_property name="ObjectShortName">wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/bready" type="logic">
+         <obj_property name="ElementShortName">bready</obj_property>
+         <obj_property name="ObjectShortName">bready</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

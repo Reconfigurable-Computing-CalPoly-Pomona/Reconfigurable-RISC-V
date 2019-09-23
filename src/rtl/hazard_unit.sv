@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -150,6 +151,10 @@ module hazard_unit(
 
   // Flushes the execute stage when a branch has been mispredicted
   assign o_exe_en = i_decode_pc == i_execute_br_addr || ~i_execute_br_valid;
+
+  // TODO
+  assign o_fetch_en = 1;
+  assign o_decode_en = 1;
 
   // Decode stage forwarding - Mux A
   always_comb begin : proc_decode_fwd_a
