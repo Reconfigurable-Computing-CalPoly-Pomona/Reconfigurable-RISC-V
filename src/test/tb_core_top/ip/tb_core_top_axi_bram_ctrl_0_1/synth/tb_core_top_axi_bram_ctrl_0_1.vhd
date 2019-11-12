@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 LIBRARY axi_bram_ctrl_v4_1_0;
 USE axi_bram_ctrl_v4_1_0.axi_bram_ctrl;
 
-ENTITY tb_core_top_axi_bram_ctrl_0_0 IS
+ENTITY tb_core_top_axi_bram_ctrl_0_1 IS
   PORT (
     s_axi_aclk : IN STD_LOGIC;
     s_axi_aresetn : IN STD_LOGIC;
@@ -110,11 +110,11 @@ ENTITY tb_core_top_axi_bram_ctrl_0_0 IS
     bram_wrdata_b : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     bram_rddata_b : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
   );
-END tb_core_top_axi_bram_ctrl_0_0;
+END tb_core_top_axi_bram_ctrl_0_1;
 
-ARCHITECTURE tb_core_top_axi_bram_ctrl_0_0_arch OF tb_core_top_axi_bram_ctrl_0_0 IS
+ARCHITECTURE tb_core_top_axi_bram_ctrl_0_1_arch OF tb_core_top_axi_bram_ctrl_0_1 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF tb_core_top_axi_bram_ctrl_0_0_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF tb_core_top_axi_bram_ctrl_0_1_arch: ARCHITECTURE IS "yes";
   COMPONENT axi_bram_ctrl IS
     GENERIC (
       C_BRAM_INST_MODE : STRING;
@@ -210,11 +210,11 @@ ARCHITECTURE tb_core_top_axi_bram_ctrl_0_0_arch OF tb_core_top_axi_bram_ctrl_0_0
     );
   END COMPONENT axi_bram_ctrl;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF tb_core_top_axi_bram_ctrl_0_0_arch: ARCHITECTURE IS "axi_bram_ctrl,Vivado 2018.3";
+  ATTRIBUTE X_CORE_INFO OF tb_core_top_axi_bram_ctrl_0_1_arch: ARCHITECTURE IS "axi_bram_ctrl,Vivado 2018.3";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF tb_core_top_axi_bram_ctrl_0_0_arch : ARCHITECTURE IS "tb_core_top_axi_bram_ctrl_0_0,axi_bram_ctrl,{}";
+  ATTRIBUTE CHECK_LICENSE_TYPE OF tb_core_top_axi_bram_ctrl_0_1_arch : ARCHITECTURE IS "tb_core_top_axi_bram_ctrl_0_1,axi_bram_ctrl,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF tb_core_top_axi_bram_ctrl_0_0_arch: ARCHITECTURE IS "tb_core_top_axi_bram_ctrl_0_0,axi_bram_ctrl,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=0,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=1024,C_BRAM_ADDR_WIDTH=10,C_S_AXI_ADDR_WIDTH=12,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=2,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=0,C_FAMILY=spartan7,C_SELECT_XPM=1,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL" & 
+  ATTRIBUTE CORE_GENERATION_INFO OF tb_core_top_axi_bram_ctrl_0_1_arch: ARCHITECTURE IS "tb_core_top_axi_bram_ctrl_0_1,axi_bram_ctrl,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=0,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=1024,C_BRAM_ADDR_WIDTH=10,C_S_AXI_ADDR_WIDTH=12,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=2,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=0,C_FAMILY=spartan7,C_SELECT_XPM=1,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL" & 
 "_ADDR_WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
@@ -359,4 +359,4 @@ BEGIN
       bram_wrdata_b => bram_wrdata_b,
       bram_rddata_b => bram_rddata_b
     );
-END tb_core_top_axi_bram_ctrl_0_0_arch;
+END tb_core_top_axi_bram_ctrl_0_1_arch;

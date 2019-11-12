@@ -33,7 +33,7 @@ module control_unit(
   output logic o_memwrite,
   output logic o_memaccess,
   output t_aluop o_aluop,
-  output logic o_alu_srca,
+  output logic [1:0] o_alu_srca,
   output logic o_alu_srcb,
   output logic o_jalr,
   output t_brop o_brop,
@@ -110,11 +110,13 @@ module control_unit(
   // ALU Controls
 
   // Determines what data will source port A of the ALU
-  // Port A will always take register data (0), unless it is the AUIPC
+  // Port A will always take register data (0), unless it is the AUIPC or LUI
   // In the case of AUIPC, it will take the program counter (1)
+  // In the case of LUI, it will take zeroes for source A (2)
   always_comb begin : proc_alu_srca
     unique case(i_op)
       AUIPC: o_alu_srca = 1;
+      LUI: o_alu_srca = 2;
       default: o_alu_srca = 0;
     endcase;
   end
@@ -124,10 +126,10 @@ module control_unit(
     unique case(i_op)
       LOADS: o_alu_srcb = 0;
       STORES: o_alu_srcb = 1;
-      ALC_I: o_alu_srcb = 0;
-      ALC_R: o_alu_srcb = 1;
+      ALC_I: o_alu_srcb = 1;
+      ALC_R: o_alu_srcb = 0;
       BRANCHES: o_alu_srcb = 1;
-      LUI: o_alu_srcb = 0;
+      LUI: o_alu_srcb = 1;
       AUIPC: o_alu_srcb = 0;
       JAL: o_alu_srcb = 0;
       JALR: o_alu_srcb = 0;

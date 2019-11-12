@@ -33,20 +33,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="arty-s7-50"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="379"/>
+    <Option Name="WTXSimLaunchSim" Val="420"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="11"/>
-    <Option Name="WTModelSimExportSim" Val="11"/>
-    <Option Name="WTQuestaExportSim" Val="11"/>
-    <Option Name="WTIesExportSim" Val="11"/>
-    <Option Name="WTVcsExportSim" Val="11"/>
-    <Option Name="WTRivieraExportSim" Val="11"/>
-    <Option Name="WTActivehdlExportSim" Val="11"/>
+    <Option Name="WTXSimExportSim" Val="20"/>
+    <Option Name="WTModelSimExportSim" Val="20"/>
+    <Option Name="WTQuestaExportSim" Val="20"/>
+    <Option Name="WTIesExportSim" Val="20"/>
+    <Option Name="WTVcsExportSim" Val="20"/>
+    <Option Name="WTRivieraExportSim" Val="20"/>
+    <Option Name="WTActivehdlExportSim" Val="20"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -242,17 +242,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_reset_bridge_wrapper_0_0/mc_top_reset_bridge_wrapper_0_0.xci">
+          <Proxy FileSetName="mc_top_reset_bridge_wrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_inv_ff_0_0/mc_top_inv_ff_0_0.xci">
+          <Proxy FileSetName="mc_top_inv_ff_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0.xci">
           <Proxy FileSetName="mc_top_jtag_axi_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_mig_7series_0_0/mc_top_mig_7series_0_0.xci">
           <Proxy FileSetName="mc_top_mig_7series_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_inv_ff_0_0/mc_top_inv_ff_0_0.xci">
-          <Proxy FileSetName="mc_top_inv_ff_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_reset_bridge_wrapper_0_0/mc_top_reset_bridge_wrapper_0_0.xci">
-          <Proxy FileSetName="mc_top_reset_bridge_wrapper_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/mc_top/hdl/mc_top_wrapper.v">
@@ -274,6 +274,12 @@
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../test/asm/rv32i_compliance.coe">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -354,6 +360,7 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../test/do/tb_instruction_cache.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../test/do/tb_data_cache.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../test/do/tb_core_top_wrapper_behav.wcfg"/>
+        <Option Name="Incremental" Val="0"/>
         <Option Name="xsim.elaborate.relax" Val="false"/>
         <Option Name="xsim.elaborate.xelab.more_options" Val="-v 1"/>
       </Config>

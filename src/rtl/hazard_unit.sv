@@ -33,6 +33,9 @@ module hazard_unit(
   // Instruction unit
   ///////////////////////////////
 
+  // Indicates that the fetch instruction is valid
+  input logic i_fetch_instr_valid,
+
   // The address to send to the instruction unit
   output logic [31:0] o_br_addr,
 
@@ -154,16 +157,27 @@ module hazard_unit(
 
   // TODO
   assign o_fetch_en = 1;
-  assign o_decode_en = 1;
+  assign o_decode_en = i_fetch_instr_valid;
+
+  // Disable fetch and decode stage when forwarding cannot be performed
+  //always_comb begin : proc_en
+//
+  //  assign o_fetch_en = 1;
+  //  assign o_decode_en = 1;
+//
+  //  if (i_decode_rs1 == i_exe_rs1 && i_ma_regwrite)
+//
+  //  end
+  //end
 
   // Decode stage forwarding - Mux A
   always_comb begin : proc_decode_fwd_a
 
     // Determine the forwarding logic, either take the data from the decode stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_decode_rs1 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_decode_rs1 && i_decode_rs1 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the decode stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_decode_fwd_a = 'b01;
-    end else if (i_wb_rdest == i_decode_rs1 && i_wb_regwrite) begin
+    end else if (i_wb_rdest == i_decode_rs1 && i_decode_rs1 != 0 && i_wb_regwrite) begin
       // The write back unit will be writing to the register at the same time it is being read from this cycle, forward the data
       o_decode_fwd_a = 'b10; 
     end else begin
@@ -176,10 +190,10 @@ module hazard_unit(
   always_comb begin : proc_decode_fwd_b
 
     // Determine the forwarding logic, either take the data from the decode stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_decode_rs2 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_decode_rs2 && i_decode_rs2 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the decode stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_decode_fwd_b = 'b01;
-    end else if (i_wb_rdest == i_decode_rs2 && i_wb_regwrite) begin
+    end else if (i_wb_rdest == i_decode_rs2 && i_decode_rs2 != 0 && i_wb_regwrite) begin
       // The write back unit will be writing to the register at the same time it is being read from this cycle, forward the data
       o_decode_fwd_b = 'b10; 
     end else begin
@@ -192,10 +206,10 @@ module hazard_unit(
   always_comb begin : proc_exe_fwd_a
 
     // Determine the forwarding logic, either take the data from the execute stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_exe_rs1 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_exe_rs1 && i_exe_rs1 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the execute stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_exe_fwd_a = 'b01;
-    end else if (i_wb_rdest == i_exe_rs1 && i_wb_regwrite) begin
+    end else if (i_wb_rdest == i_exe_rs1 && i_exe_rs1 != 0 && i_wb_regwrite) begin
       // The write back unit will be writing to the register at the same time it is being read from this cycle, forward the data
       o_exe_fwd_a = 'b10; 
     end else begin
@@ -208,10 +222,10 @@ module hazard_unit(
   always_comb begin : proc_exe_fwd_b
 
     // Determine the forwarding logic, either take the data from the execute stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_exe_rs2 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_exe_rs2 && i_exe_rs2 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the execute stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_exe_fwd_b = 'b01;
-    end else if (i_wb_rdest == i_exe_rs2 && i_wb_regwrite) begin
+    end else if (i_wb_rdest == i_exe_rs2 && i_exe_rs2 != 0 && i_wb_regwrite) begin
       // The write back unit will be writing to the register at the same time it is being read from this cycle, forward the data
       o_exe_fwd_b = 'b10; 
     end else begin

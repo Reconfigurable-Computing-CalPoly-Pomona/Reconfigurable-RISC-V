@@ -87,7 +87,7 @@ module core_top #(
   logic exe_cu_memwrite;
   logic exe_cu_memaccess;
   t_aluop exe_cu_aluop;
-  logic exe_cu_alu_srca;
+  logic [1:0] exe_cu_alu_srca;
   logic exe_cu_alu_srcb;
   t_exe_unit exe_cu_exe_unit;
   t_brop exe_cu_brop;
@@ -166,7 +166,7 @@ module core_top #(
     .o_rs1(decode_to_hazard_rs1),
     .o_rs2(decode_to_hazard_rs2),
 
-    .i_wb(wb_cu_regwrite),
+    .i_wb(decode_cu_regwrite),
     .i_wb_data(decode_wreg),
     .i_wb_addr(decode_rdest),
 
@@ -217,6 +217,8 @@ module core_top #(
 
     .i_id_op1(exe_rd1),
     .i_id_op2(exe_rd2),
+    .i_id_rs1(decode_to_hazard_rs1),
+    .i_id_rs2(decode_to_hazard_rs2),
     .o_id_rs1(exe_to_hazard_rs1),
     .o_id_rs2(exe_to_hazard_rs2),
     .i_ma_op(wb_exe_data),
@@ -311,6 +313,7 @@ module core_top #(
     .o_br_valid(fetch_branch_valid),
     .o_fetch_en(fetch_en),
 
+    .i_fetch_instr_valid(decode_instr_valid),
     .i_decode_br_addr(decode_to_hazard_branch_addr),
     .i_decode_br_valid(decode_to_hazard_branch_valid),
     .i_decode_pc(decode_pc),
@@ -330,13 +333,23 @@ module core_top #(
 
     .i_ma_cache_ready(ma_to_hazard_cache_ready),
     .i_ma_memaccess(ma_cu_memaccess),
-    .i_ma_regwrite(ma_cu_regwrite),
-    .i_ma_memtoreg(ma_cu_memtoreg),
-    .i_ma_rdest(ma_rdest),
+    .i_ma_regwrite(wb_cu_regwrite),
+    .i_ma_memtoreg(wb_cu_memtoreg),
+    .i_ma_rdest(wb_rdest),
     .o_ma_en(ma_en),
+    
+    .i_wb_regwrite(decode_cu_regwrite),
+    .i_wb_rdest(decode_rdest)
 
-    .i_wb_regwrite(wb_cu_regwrite),
-    .i_wb_rdest(wb_rdest)
+    //.i_ma_cache_ready(ma_to_hazard_cache_ready),
+    //.i_ma_memaccess(ma_cu_memaccess),
+    //.i_ma_regwrite(ma_cu_regwrite),
+    //.i_ma_memtoreg(ma_cu_memtoreg),
+    //.i_ma_rdest(ma_rdest),
+    //.o_ma_en(ma_en),
+//
+    //.i_wb_regwrite(wb_cu_regwrite),
+    //.i_wb_rdest(wb_rdest)
   );
 
 endmodule

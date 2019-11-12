@@ -22,9 +22,9 @@
       "rst_clk_wiz_100M": "",
       "tb_clk_gen_0": "",
       "core_wrapper_0": "",
-      "core_top_wrapper_0": "",
       "data_mem_ctrl": "",
-      "data_mem": ""
+      "data_mem": "",
+      "core_top_wrapper_0": ""
     },
     "components": {
       "axi_interconnect_0": {
@@ -378,22 +378,10 @@
           }
         },
         "interface_nets": {
-          "s01_couplers_to_xbar": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "s01_couplers/M_AXI",
-              "xbar/S01_AXI"
-            ]
-          },
-          "m00_couplers_to_axi_interconnect_0": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           },
           "axi_interconnect_0_to_s01_couplers": {
@@ -402,10 +390,22 @@
               "s01_couplers/S_AXI"
             ]
           },
-          "s00_couplers_to_xbar": {
+          "s01_couplers_to_xbar": {
             "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
+              "s01_couplers/M_AXI",
+              "xbar/S01_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_axi_interconnect_0": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
             ]
           },
           "xbar_to_m00_couplers": {
@@ -469,11 +469,14 @@
           "Assume_Synchronous_Clk": {
             "value": "true"
           },
+          "Coe_File": {
+            "value": "../../../asm/rv32i_compliance.coe"
+          },
           "Enable_B": {
             "value": "Use_ENB_Pin"
           },
           "Load_Init_File": {
-            "value": "false"
+            "value": "true"
           },
           "Memory_Type": {
             "value": "Dual_Port_ROM"
@@ -524,6 +527,40 @@
       "core_wrapper_0": {
         "vlnv": "xilinx.com:user:core_wrapper:1.0",
         "xci_name": "tb_core_top_core_wrapper_0_1"
+      },
+      "data_mem_ctrl": {
+        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+        "xci_name": "tb_core_top_axi_bram_ctrl_0_1"
+      },
+      "data_mem": {
+        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
+        "xci_name": "tb_core_top_blk_mem_gen_0_1",
+        "parameters": {
+          "Assume_Synchronous_Clk": {
+            "value": "true"
+          },
+          "Enable_B": {
+            "value": "Use_ENB_Pin"
+          },
+          "Load_Init_File": {
+            "value": "false"
+          },
+          "Memory_Type": {
+            "value": "Dual_Port_ROM"
+          },
+          "Port_A_Write_Rate": {
+            "value": "0"
+          },
+          "Port_B_Clock": {
+            "value": "100"
+          },
+          "Port_B_Enable_Rate": {
+            "value": "100"
+          },
+          "Use_RSTB_Pin": {
+            "value": "true"
+          }
+        }
       },
       "core_top_wrapper_0": {
         "vlnv": "xilinx.com:module_ref:core_top_wrapper:1.0",
@@ -745,40 +782,6 @@
             "right": "0"
           }
         }
-      },
-      "data_mem_ctrl": {
-        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
-        "xci_name": "tb_core_top_axi_bram_ctrl_0_1"
-      },
-      "data_mem": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "tb_core_top_blk_mem_gen_0_1",
-        "parameters": {
-          "Assume_Synchronous_Clk": {
-            "value": "true"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Load_Init_File": {
-            "value": "false"
-          },
-          "Memory_Type": {
-            "value": "Dual_Port_ROM"
-          },
-          "Port_A_Write_Rate": {
-            "value": "0"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
       }
     },
     "interface_nets": {
@@ -786,24 +789,6 @@
         "interface_ports": [
           "axi_interconnect_0/M00_AXI",
           "instr_mem_ctrl/S_AXI"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTB": {
-        "interface_ports": [
-          "instr_mem/BRAM_PORTB",
-          "instr_mem_ctrl/BRAM_PORTB"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
-        "interface_ports": [
-          "instr_mem/BRAM_PORTA",
-          "instr_mem_ctrl/BRAM_PORTA"
-        ]
-      },
-      "core_wrapper_0_m_data": {
-        "interface_ports": [
-          "core_wrapper_0/m_data",
-          "axi_interconnect_0/S00_AXI"
         ]
       },
       "core_wrapper_0_m_instr": {
@@ -824,10 +809,28 @@
           "data_mem/BRAM_PORTB"
         ]
       },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "instr_mem/BRAM_PORTA",
+          "instr_mem_ctrl/BRAM_PORTA"
+        ]
+      },
       "data_mem_ctrl_BRAM_PORTA": {
         "interface_ports": [
           "data_mem_ctrl/BRAM_PORTA",
           "data_mem/BRAM_PORTA"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTB": {
+        "interface_ports": [
+          "instr_mem/BRAM_PORTB",
+          "instr_mem_ctrl/BRAM_PORTB"
+        ]
+      },
+      "core_wrapper_0_m_data": {
+        "interface_ports": [
+          "core_wrapper_0/m_data",
+          "axi_interconnect_0/S00_AXI"
         ]
       }
     },
@@ -843,9 +846,9 @@
           "axi_interconnect_0/S01_ACLK",
           "core_wrapper_0/m_data_aclk",
           "core_wrapper_0/m_instr_aclk",
-          "core_top_wrapper_0/i_aclk",
           "data_mem_ctrl/s_axi_aclk",
-          "axi_interconnect_0/M01_ACLK"
+          "axi_interconnect_0/M01_ACLK",
+          "core_top_wrapper_0/i_aclk"
         ]
       },
       "clk_wiz_locked": {
@@ -864,9 +867,9 @@
           "axi_interconnect_0/S01_ARESETN",
           "core_wrapper_0/m_data_aresetn",
           "core_wrapper_0/m_instr_aresetn",
-          "core_top_wrapper_0/i_areset_n",
           "data_mem_ctrl/s_axi_aresetn",
-          "axi_interconnect_0/M01_ARESETN"
+          "axi_interconnect_0/M01_ARESETN",
+          "core_top_wrapper_0/i_areset_n"
         ]
       },
       "tb_clk_gen_0_o_clk": {

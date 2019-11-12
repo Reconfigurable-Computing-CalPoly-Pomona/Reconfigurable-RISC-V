@@ -131,7 +131,7 @@ module instr_fetch #(
         o_pc <= pc_fetch;
         o_pcplus4 <= pcplus4;
         pc_fetch <= pc;
-        cache_req <= 1;
+        cache_req <= i_en;
       end else if (i_en) begin
         cache_req <= 1;
       end else begin

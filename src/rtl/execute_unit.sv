@@ -115,7 +115,7 @@ module execute_unit(
   input t_aluop i_cu_aluop,
 
   // Determines the source of operator A for the alu
-  input logic i_cu_alu_srca,
+  input logic [1:0] i_cu_alu_srca,
 
   // Determines the source of operator B for the alu
   input logic i_cu_alu_srcb,
@@ -194,7 +194,7 @@ module execute_unit(
   logic cu_memwrite;
 
   // Determines the source of operator A for the alu
-  logic cu_alu_srca;
+  logic [1:0] cu_alu_srca;
 
   // Determines the source of operator B for the alu
   logic cu_alu_srcb;
@@ -292,9 +292,11 @@ module execute_unit(
 
     // Assign operator A
     unique case(cu_alu_srca)
-      'b0: alu_op_a = op_a;
+      'b00: alu_op_a = op_a;
       // For AUIPC instruction
-      'b1: alu_op_a = pc;
+      'b01: alu_op_a = pc;
+      // For LUI instruction
+      'b10: alu_op_a = 0;
       default: alu_op_a = 'x;
     endcase
 

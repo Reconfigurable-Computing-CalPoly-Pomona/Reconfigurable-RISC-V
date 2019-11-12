@@ -210,8 +210,9 @@ proc create_root_design { parentCell } {
   set instr_mem [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 instr_mem ]
   set_property -dict [ list \
    CONFIG.Assume_Synchronous_Clk {true} \
+   CONFIG.Coe_File {../../../asm/rv32i_compliance.coe} \
    CONFIG.Enable_B {Use_ENB_Pin} \
-   CONFIG.Load_Init_File {false} \
+   CONFIG.Load_Init_File {true} \
    CONFIG.Memory_Type {Dual_Port_ROM} \
    CONFIG.Port_A_Write_Rate {0} \
    CONFIG.Port_B_Clock {100} \

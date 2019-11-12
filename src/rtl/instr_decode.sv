@@ -74,15 +74,15 @@ module instr_decode(
   input logic signed [DATA_SIZE - 1:0] i_fdata_ma,
 
   // The source address for port A
-  logic [$clog2(NUM_REGS) - 1:0] o_rs1,
+  output logic [$clog2(NUM_REGS) - 1:0] o_rs1,
 
   // The source address for port B
-  logic [$clog2(NUM_REGS) - 1:0] o_rs2,
+  output logic [$clog2(NUM_REGS) - 1:0] o_rs2,
 
   // The data obtained from forward/register file register a
   output logic signed [DATA_SIZE - 1:0] o_rd1,
 
-  // The data obtained from forward/register file register a
+  // The data obtained from forward/register file register b
   output logic signed [DATA_SIZE - 1:0] o_rd2,
 
   // The destination register
@@ -113,7 +113,7 @@ module instr_decode(
   output t_aluop o_cu_aluop,
 
   // Determines the source of operator A for the alu
-  output logic o_cu_alu_srca,
+  output logic [1:0] o_cu_alu_srca,
 
   // Determines the source of operator B for the alu
   output logic o_cu_alu_srcb,
@@ -138,19 +138,10 @@ module instr_decode(
 );
 
   // The register file which holds the registers
-  logic [$clog2(NUM_REGS) - 1:0][DATA_SIZE - 1:0] reg_file;
+  logic [NUM_REGS - 1:0][DATA_SIZE - 1:0] reg_file;
 
   // The registered instruction from fetch
   logic [INST_SIZE - 1:0] instruction;
-
-  // The registered program counter plus 4
-  logic [INST_SIZE - 1:0] pcplus4;
-
-  // The registered source address for register A
-  logic [$clog2(NUM_REGS) - 1:0] rs1;
-
-  // The registered source address for register A
-  logic [$clog2(NUM_REGS) - 1:0] rs2;
 
   // The registered destination address
   logic [4:0] rd;
@@ -206,7 +197,6 @@ module instr_decode(
   // This is also where a branch predictor could deliver its prediction
   assign o_branch_valid = opcode == JAL;
 
-
   // Convert to opcode enumeration
   always_comb begin : op_enumerate
     unique case(instruction[6:0])
@@ -235,9 +225,20 @@ module instr_decode(
   // Multiplex the read data between the forwarded data and the register file
   always_comb begin : proc_forwarding
 
-    // Assign operator A
+    // Assign operator A, needs to be moved up one cycle
     unique case(i_forward_a)
-      'b00: o_rd1 = reg_file[rs1];
+      'b00: o_rd1 = reg_file[o_rs1];
+//      'b00: begin
+//        // Perform "register file forwarding"
+//        if (i_wb && i_wb_addr == o_rs1) begin
+//          // Forward incoming write
+//          o_rd1 = i_wb_data;
+//        end else begin
+//          // Read register file
+//          o_rd1 = reg_file[o_rs1];
+//        end
+//      end
+
       'b01: o_rd1 = i_fdata_ma;
       'b10: o_rd1 = i_wb_data;
       default: o_rd1 = 'x;
@@ -245,7 +246,18 @@ module instr_decode(
 
     // Assign operator B
     unique case(i_forward_b)
-      'b00: o_rd2 = reg_file[rs2];
+      'b00: o_rd2 = reg_file[o_rs2];
+
+//        // Perform "register file forwarding"
+//        if (i_wb && i_wb_addr == o_rs2) begin
+//          // Forward incoming write
+//          o_rd2 = i_wb_data;
+//        end else begin
+//          // Read register file
+//          o_rd2 = reg_file[o_rs2];
+//        end
+//      end
+
       'b01: o_rd2 = i_fdata_ma;
       'b10: o_rd2 = i_wb_data;
       default: o_rd2 = 'x;
@@ -281,13 +293,11 @@ module instr_decode(
 
   // Create a register file which holds register zero + GPRs
   // If data is received from the WB stage, it gets written and immediately forwarded
-  always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_regfile
-    if(~i_areset_n) begin
-      // Register zero is held to zero during reset
-      reg_file[0] <= 0;
-    end else begin
-      // Write to the register when write back is valid, unless it is r0
-      if (i_wb_addr != 0 && i_wb) reg_file[i_wb_addr] <= i_wb_data; 
-    end
+  always_ff @(posedge i_aclk) begin : proc_regfile
+    // Write to the register when write back is valid, unless it is r0
+    if (i_wb) reg_file[i_wb_addr] <= i_wb_data;
+
+    // Register zero is held to zero always
+    reg_file[0] <= 0;
   end
 endmodule
