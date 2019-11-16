@@ -101,7 +101,7 @@ package multicore_pkg;
   typedef enum logic [2:0] {
     RDCYCLE    = 'b000,
     RDCYCLEH   = 'b001,
-    RDTIME    = 'b010,
+    RDTIME     = 'b010,
     RDTIMEH    = 'b011,
     RDINSTRET  = 'b100,
     RDINSTRETH = 'b101,

@@ -116,7 +116,7 @@ module instr_decode(
   output logic [1:0] o_cu_alu_srca,
 
   // Determines the source of operator B for the alu
-  output logic o_cu_alu_srcb,
+  output logic [1:0] o_cu_alu_srcb,
 
   // Indicates if the branch comparison unit, ALU, or system unit should be used in the execute stage
   output t_exe_unit o_cu_exe_unit,
@@ -228,17 +228,6 @@ module instr_decode(
     // Assign operator A, needs to be moved up one cycle
     unique case(i_forward_a)
       'b00: o_rd1 = reg_file[o_rs1];
-//      'b00: begin
-//        // Perform "register file forwarding"
-//        if (i_wb && i_wb_addr == o_rs1) begin
-//          // Forward incoming write
-//          o_rd1 = i_wb_data;
-//        end else begin
-//          // Read register file
-//          o_rd1 = reg_file[o_rs1];
-//        end
-//      end
-
       'b01: o_rd1 = i_fdata_ma;
       'b10: o_rd1 = i_wb_data;
       default: o_rd1 = 'x;
@@ -247,17 +236,6 @@ module instr_decode(
     // Assign operator B
     unique case(i_forward_b)
       'b00: o_rd2 = reg_file[o_rs2];
-
-//        // Perform "register file forwarding"
-//        if (i_wb && i_wb_addr == o_rs2) begin
-//          // Forward incoming write
-//          o_rd2 = i_wb_data;
-//        end else begin
-//          // Read register file
-//          o_rd2 = reg_file[o_rs2];
-//        end
-//      end
-
       'b01: o_rd2 = i_fdata_ma;
       'b10: o_rd2 = i_wb_data;
       default: o_rd2 = 'x;
@@ -266,8 +244,7 @@ module instr_decode(
   end
 
   // Assign the predicted branch or jal address to go back to the fetch state
-  assign o_branch_addr = o_pcplus4 + (o_immediate << 2);
-
+  assign o_branch_addr = o_pc + o_immediate;
 
   // Latch the instruction from the fetch stage, as long as the enable is asserted
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_instr

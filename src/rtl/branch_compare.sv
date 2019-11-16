@@ -31,20 +31,13 @@ module branch_compare(
 );
 
   always_comb begin : proc_compare
-
     unique case(i_funct)
-      // BEQ
-      'b000: o_true = i_r1 == i_r2;
-      // BNE
-      'b001: o_true = i_r1 != i_r2;
-      // BLT
-      'b100: o_true = i_r1 < i_r2;
-      // BGE
-      'b101: o_true = i_r1 >= i_r2;
-      // BLTU
-      'b110: o_true = $unsigned(i_r1) < $unsigned(i_r2);
-      // BGEU
-      'b111: o_true = $unsigned(i_r1) >= $unsigned(i_r2);
+      BEQ: o_true = i_r1 == i_r2;
+      BNE: o_true = i_r1 != i_r2;
+      BLT: o_true = i_r1 < i_r2;
+      BGE: o_true = i_r1 >= i_r2;
+      BLTU: o_true = $unsigned(i_r1) < $unsigned(i_r2);
+      BGEU: o_true = $unsigned(i_r1) >= $unsigned(i_r2);
       default: o_true = 0;
     endcase
   end

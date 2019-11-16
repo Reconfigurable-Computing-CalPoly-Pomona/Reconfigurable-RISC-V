@@ -34,7 +34,7 @@ module control_unit(
   output logic o_memaccess,
   output t_aluop o_aluop,
   output logic [1:0] o_alu_srca,
-  output logic o_alu_srcb,
+  output logic [1:0] o_alu_srcb,
   output logic o_jalr,
   output t_brop o_brop,
   output t_sysop o_sysop,
@@ -130,9 +130,9 @@ module control_unit(
       ALC_R: o_alu_srcb = 0;
       BRANCHES: o_alu_srcb = 1;
       LUI: o_alu_srcb = 1;
-      AUIPC: o_alu_srcb = 0;
-      JAL: o_alu_srcb = 0;
-      JALR: o_alu_srcb = 0;
+      AUIPC: o_alu_srcb = 1;
+      JAL: o_alu_srcb = 'x;
+      JALR: o_alu_srcb = 1;
       SYNCH: o_alu_srcb = 'x;
       SYSTEM: o_alu_srcb = 'x;
       default: o_alu_srcb = 'x;

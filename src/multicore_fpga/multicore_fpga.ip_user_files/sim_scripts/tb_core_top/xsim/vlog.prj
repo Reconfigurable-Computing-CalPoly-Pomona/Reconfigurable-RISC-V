@@ -9,8 +9,8 @@ verilog xil_defaultlib --include "../../../../../test/tb_core_top/ipshared/85a3"
 "../../../bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v" \
 "../../../bd/tb_core_top/ipshared/0cc6/hdl/core_wrapper_v1_0.v" \
 "../../../bd/tb_core_top/ip/tb_core_top_core_wrapper_0_1/sim/tb_core_top_core_wrapper_0_1.v" \
-"../../../bd/tb_core_top/sim/tb_core_top.v" \
 "../../../bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_1/sim/tb_core_top_blk_mem_gen_0_1.v" \
+"../../../bd/tb_core_top/sim/tb_core_top.v" \
 
 verilog xil_defaultlib "glbl.v"
 

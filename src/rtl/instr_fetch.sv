@@ -83,6 +83,9 @@ module instr_fetch #(
   // The instruction is available from the rest of the cache
   logic cache_valid;
 
+  // When a branch is valid, the output of the cache becomes invalid until it receives the new branch address
+  logic cache_invalidate;
+
 
   /////////////////////////////////////////////
   // Instruction Cache
@@ -105,7 +108,7 @@ module instr_fetch #(
     // Program counter stimulus
     .i_addr(pc_fetch),
     // Indicates that o_instruction is valid
-    .o_instr_valid(o_instr_valid),
+    .o_instr_valid(cache_valid),
     // The instruction obtained from the cache DUT
     .o_instruction(o_instruction)
   );
@@ -116,6 +119,9 @@ module instr_fetch #(
   // Multiplexer decides if decode address should be taken or next instruction
   assign pc = i_branch_valid ? i_branch_addr : pcplus4;
 
+  // The instruction is valid as soon as it comes out of the cache, unless the data is invalid due to a jump or branch
+  assign o_instr_valid = cache_valid & ~cache_invalidate;
+
   // Enables the decode stage to use the address in its next decode
   // If left invalid, then the decode stage should disable by using No-Ops as its decode
   //assign o_instr_valid = cache_valid & ~i_branch_valid;
@@ -125,8 +131,31 @@ module instr_fetch #(
     if(~i_areset_n) begin
       cache_req <= 0;
       pc_fetch <= PC_BASE_ADDR;
+      cache_invalidate <= 0;
     end else begin
+
+      // Enable reading from the cache whenever the pipeline is not stalled
+      cache_req <= i_en;
+
       // Program counter only increments when cache is ready and pipeline is not stalled
+      // If there is an occurance of a branch becoming valid, the PC will be set to a new value and will attempt to access the cache
+      if ((i_en && cache_ready && cache_req) || i_branch_valid) begin
+        pc_fetch <= pc;
+      end
+
+      // There is a new address for the program counter, the cache won't know this until its transaction completes, so it must be invalidated until it becomes available again
+      if (i_branch_valid) begin
+        cache_invalidate <= 1;
+      end else if (cache_ready) begin
+        cache_invalidate <= 0;
+      end
+
+      // Register the program counter that was last used to fetch the data to send for use in other stages
+      if (cache_ready && cache_req) begin
+        o_pc <= pc_fetch;
+        o_pcplus4 <= pcplus4;
+      end
+      /*
       if (cache_ready && cache_req) begin
         o_pc <= pc_fetch;
         o_pcplus4 <= pcplus4;
@@ -137,6 +166,7 @@ module instr_fetch #(
       end else begin
         cache_req <= 0;
       end
+      */
 
     end
   end

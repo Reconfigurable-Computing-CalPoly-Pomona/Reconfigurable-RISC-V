@@ -47,7 +47,7 @@ module system_exe_unit #(
   logic [63:0] time_cnt;
 
   // Counter to determine when the time_cnt should increment
-  logic [$clog2(TIME_CNT_PER) - 1:0]subtime_cnt;
+  logic [$clog2(TIME_CNT_PER) - 1:0] subtime_cnt;
 
   // Increment time next cycle
   logic time_cnt_incr;
@@ -79,7 +79,7 @@ module system_exe_unit #(
     unique case(i_op)
       RDCYCLE    : o_result = cycle_cnt[31:0];
       RDCYCLEH   : o_result = cycle_cnt[63:32];
-      RDTIMEH    : o_result = time_cnt[31:0];
+      RDTIME     : o_result = time_cnt[31:0];
       RDTIMEH    : o_result = time_cnt[63:32];
       RDINSTRET  : o_result = instret_cnt[31:0];
       RDINSTRETH : o_result = instret_cnt[63:32];

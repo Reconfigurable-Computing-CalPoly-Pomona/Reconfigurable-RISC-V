@@ -88,7 +88,7 @@ module core_top #(
   logic exe_cu_memaccess;
   t_aluop exe_cu_aluop;
   logic [1:0] exe_cu_alu_srca;
-  logic exe_cu_alu_srcb;
+  logic [1:0] exe_cu_alu_srcb;
   t_exe_unit exe_cu_exe_unit;
   t_brop exe_cu_brop;
   t_sysop exe_cu_sysop;

@@ -118,7 +118,7 @@ module execute_unit(
   input logic [1:0] i_cu_alu_srca,
 
   // Determines the source of operator B for the alu
-  input logic i_cu_alu_srcb,
+  input logic [1:0] i_cu_alu_srcb,
 
   // Indicates if the branch comparison unit should be used in the execute stage
   input t_exe_unit i_cu_exe_unit,
@@ -197,7 +197,7 @@ module execute_unit(
   logic [1:0] cu_alu_srca;
 
   // Determines the source of operator B for the alu
-  logic cu_alu_srcb;
+  logic [1:0] cu_alu_srcb;
 
   // Indicates that the branch comparison was true
   logic branch_true;
@@ -219,9 +219,6 @@ module execute_unit(
 
   // The immediate data from the decode stage
   logic signed [DATA_SIZE - 1:0] immediate;
-
-  // The calculated jump and link address
-  logic [INST_SIZE - 1:0] jalr_addr;
 
   // The data obtained from forward/register file register a
   logic signed [DATA_SIZE - 1:0] op_b;
@@ -284,7 +281,7 @@ module execute_unit(
       'b10: op_b = i_wb_op;
       default: op_b = 'x;
     endcase
-  
+
   end
 
   // Determines the ALU operators
@@ -293,7 +290,7 @@ module execute_unit(
     // Assign operator A
     unique case(cu_alu_srca)
       'b00: alu_op_a = op_a;
-      // For AUIPC instruction
+      // For AUIPC instruction, the PC is needed to be added to the upper immediate
       'b01: alu_op_a = pc;
       // For LUI instruction
       'b10: alu_op_a = 0;
@@ -302,11 +299,13 @@ module execute_unit(
 
     // Assign operator B
     unique case(cu_alu_srcb)
-      'b0: alu_op_b = op_b;
-      'b1: alu_op_b = immediate;
+      // Use register value
+      'b00: alu_op_b = op_b;
+      // Use immediate or shift amount, in the case of shift
+      'b01: alu_op_b = (cu_aluop == SRL || cu_aluop == SRA) ? immediate[4:0] : immediate;
       default: alu_op_b = 'x;
     endcase
-  
+
   end
 
   // Returns the output result from the execution units
@@ -315,12 +314,9 @@ module execute_unit(
   // The write data to go to the data memory
   assign o_exe_wdata = alu_op_b;
 
-  // The jump and link calculation unit
-  assign jalr_addr = immediate;
-
   // The branch address/valid will take either the branch (if correct and valid) or JALR address
   assign o_branch_valid = (branch_true & (cu_exe_unit == BRANCH)) | cu_jalr;
-  assign o_branch_addr = (cu_exe_unit == BRANCH) ? branch_addr : jalr_addr;
+  assign o_branch_addr = (cu_exe_unit == BRANCH) ? branch_addr : o_exe_calc;
 
   // Processes pipeline registers that should be reset
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_register
@@ -362,6 +358,5 @@ module execute_unit(
     o_id_rs1 <= i_id_rs1;
     o_id_rs2 <= i_id_rs2;
   end
-  
 
 endmodule

@@ -99,6 +99,7 @@ module writeback(
     cu_memtoreg <= i_cu_memtoreg;
     mem_data <= i_mem_data;
     exe_data <= i_exe_data;
+    pcplus4 <= i_pcplus4;
     o_rdest <= i_rdest;
   end
 

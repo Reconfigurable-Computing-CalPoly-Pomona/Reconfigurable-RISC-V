@@ -157,18 +157,7 @@ module hazard_unit(
 
   // TODO
   assign o_fetch_en = 1;
-  assign o_decode_en = i_fetch_instr_valid;
-
-  // Disable fetch and decode stage when forwarding cannot be performed
-  //always_comb begin : proc_en
-//
-  //  assign o_fetch_en = 1;
-  //  assign o_decode_en = 1;
-//
-  //  if (i_decode_rs1 == i_exe_rs1 && i_ma_regwrite)
-//
-  //  end
-  //end
+  assign o_decode_en = i_fetch_instr_valid & ~o_br_valid;
 
   // Decode stage forwarding - Mux A
   always_comb begin : proc_decode_fwd_a

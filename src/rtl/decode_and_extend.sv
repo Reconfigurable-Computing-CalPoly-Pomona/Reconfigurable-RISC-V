@@ -40,14 +40,14 @@ module decode_and_extend(
   // Decode and sign extend, depending on opcode
   always_comb begin : proc_dextend
     unique case(i_op)
-      LOADS:    o_immediate = i_instr[31:20];
-      STORES:   o_immediate = {i_instr[31:25], i_instr[11:7]};
-      ALC_I:    o_immediate = i_instr[31:20];
-      BRANCHES: o_immediate = {i_instr[31], i_instr[7], i_instr[30:25], i_instr[11:8], 1'b0};
-      LUI:      o_immediate = {i_instr[31:12], 12'h0};
-      AUIPC:    o_immediate = {i_instr[31:12], 12'h0};
-      JAL:      o_immediate = {i_instr[31], i_instr[19:12], i_instr[20], i_instr[30:21], 1'b0};
-      JALR:     o_immediate = i_instr[31:20];
+      LOADS:    o_immediate = $signed(i_instr[31:20]);
+      STORES:   o_immediate = $signed({i_instr[31:25], i_instr[11:7]});
+      ALC_I:    o_immediate = $signed(i_instr[31:20]);
+      BRANCHES: o_immediate = $signed({i_instr[31], i_instr[7], i_instr[30:25], i_instr[11:8], 1'b0});
+      LUI:      o_immediate = $signed({i_instr[31:12], 12'h0});
+      AUIPC:    o_immediate = $signed({i_instr[31:12], 12'h0});
+      JAL:      o_immediate = $signed({i_instr[31], i_instr[19:12], i_instr[20], i_instr[30:21], 1'b0});
+      JALR:     o_immediate = $signed(i_instr[31:20]);
       
       // If the immediate is not used, set to be don't care
       default:  o_immediate = 'x;
