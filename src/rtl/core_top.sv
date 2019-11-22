@@ -55,6 +55,8 @@ module core_top #(
   logic fetch_en;
   logic exe_en;
   logic ma_en;
+  logic decode_flush;
+  logic exe_flush;
   logic fetch_branch_valid;
   logic [31:0] fetch_branch_addr;
 
@@ -116,6 +118,7 @@ module core_top #(
 
   // Memory access to hazard
   logic ma_to_hazard_cache_ready;
+  logic ma_to_hazard_store;
 
   // Memory access to write back
   logic [31:0] wb_pcplus4;
@@ -124,6 +127,9 @@ module core_top #(
   logic [1:0] wb_cu_memtoreg;
   logic [DATA_SIZE - 1:0] wb_mem_data;
   logic [DATA_SIZE - 1:0] wb_exe_data;
+
+  // Forward data from hazard/memory access to EXE/Decode
+  logic [DATA_SIZE - 1:0] ma_fwd;
 
   // Writeback to decode
   logic decode_cu_regwrite;
@@ -135,7 +141,7 @@ module core_top #(
     .PC_BASE_ADDR(PC_BASE_ADDR),
     .ADDR_SIZE(32),
     .CACHE_SIZE(INST_CACHE_SIZE),
-    .BLK_PER_SET(INST_ASSOCIATIVITY)
+    .BLK_PER_SET(1)
   ) fetch_unit (
     .i_aclk(i_aclk),
     .i_areset_n(i_areset_n),
@@ -157,6 +163,7 @@ module core_top #(
     .i_areset_n(i_areset_n),
 
     .i_en(decode_en),
+    .i_flush(decode_flush),
 
     .i_instruction(decode_instruction),
     .i_pc(decode_pc),
@@ -172,7 +179,7 @@ module core_top #(
 
     .i_forward_a(hazard_to_decode_forward_a),
     .i_forward_b(hazard_to_decode_forward_b),
-    .i_fdata_ma(wb_exe_data),
+    .i_fdata_ma(ma_fwd),
 
     .o_rd1(exe_rd1),
     .o_rd2(exe_rd2),
@@ -201,6 +208,7 @@ module core_top #(
     .i_areset_n(i_areset_n),
 
     .i_en(exe_en),
+    .i_flush(exe_flush),
 
     .i_pc(exe_pc),
     .i_pcplus4(exe_pcplus4),
@@ -221,7 +229,7 @@ module core_top #(
     .i_id_rs2(decode_to_hazard_rs2),
     .o_id_rs1(exe_to_hazard_rs1),
     .o_id_rs2(exe_to_hazard_rs2),
-    .i_ma_op(wb_exe_data),
+    .i_ma_op(ma_fwd),
     .i_wb_op(decode_wreg),
 
     .i_immediate(exe_immediate),
@@ -278,6 +286,7 @@ module core_top #(
     .o_cu_regwrite(wb_cu_regwrite),
     .i_cu_memtoreg(ma_cu_memtoreg),
     .o_cu_memtoreg(wb_cu_memtoreg),
+    .o_mem_we(ma_to_hazard_store),
 
     .o_mem_data(wb_mem_data),
     .o_exe_data(wb_exe_data),
@@ -306,9 +315,6 @@ module core_top #(
 
   // The hazard unit, which handles forwarding and pipeline control
   hazard_unit #() hazard_unit(
-    .i_aclk(i_aclk),
-    .i_areset_n(i_areset_n),
-
     .o_br_addr(fetch_branch_addr),
     .o_br_valid(fetch_branch_valid),
     .o_fetch_en(fetch_en),
@@ -322,6 +328,7 @@ module core_top #(
     .o_decode_fwd_a(hazard_to_decode_forward_a),
     .o_decode_fwd_b(hazard_to_decode_forward_b),
     .o_decode_en(decode_en),
+    .o_decode_flush(decode_flush),
 
     .i_execute_br_addr(execute_to_hazard_branch_addr),
     .i_execute_br_valid(execute_to_hazard_branch_valid),
@@ -330,26 +337,22 @@ module core_top #(
     .o_exe_fwd_a(hazard_to_exe_forward_a),
     .o_exe_fwd_b(hazard_to_exe_forward_b),
     .o_exe_en(exe_en),
+    .o_exe_flush(exe_flush),
 
     .i_ma_cache_ready(ma_to_hazard_cache_ready),
+    .i_ma_store(ma_to_hazard_store),
     .i_ma_memaccess(ma_cu_memaccess),
     .i_ma_regwrite(wb_cu_regwrite),
     .i_ma_memtoreg(wb_cu_memtoreg),
     .i_ma_rdest(wb_rdest),
     .o_ma_en(ma_en),
-    
+    .i_ma_exe_data(wb_exe_data),
+    .i_ma_mem_data(wb_mem_data),
+    .i_ma_pcplus4(wb_pcplus4),
+    .o_ma_fwd(ma_fwd),
+
     .i_wb_regwrite(decode_cu_regwrite),
     .i_wb_rdest(decode_rdest)
-
-    //.i_ma_cache_ready(ma_to_hazard_cache_ready),
-    //.i_ma_memaccess(ma_cu_memaccess),
-    //.i_ma_regwrite(ma_cu_regwrite),
-    //.i_ma_memtoreg(ma_cu_memtoreg),
-    //.i_ma_rdest(ma_rdest),
-    //.o_ma_en(ma_en),
-//
-    //.i_wb_regwrite(wb_cu_regwrite),
-    //.i_wb_rdest(wb_rdest)
   );
 
 endmodule

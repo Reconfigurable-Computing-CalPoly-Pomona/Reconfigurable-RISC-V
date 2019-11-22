@@ -30,7 +30,7 @@ module instruction_cache #(
   // The size of the cache desired in bytes
   parameter CACHE_SIZE = 2**14,
   // Associativity factor (1- Direct Mapped, N - N way set associative)
-  parameter BLK_PER_SET = 2
+  parameter BLK_PER_SET = 1
 )
 (
   // System clock and reset
@@ -130,6 +130,7 @@ module instruction_cache #(
         // Valid + Tag + Data payload
         .DATA_WIDTH(CACHE_WIDTH)
       ) instr_cache_set (
+      /*
         .i_clk(i_aclk),
         .i_addr_a(cache_addr),
         .i_data_a(wline),
@@ -139,6 +140,14 @@ module instruction_cache #(
         .i_data_b('0),
         .i_we_b('0),
         .o_data_b()
+      */
+        .i_clk(i_aclk),
+        .i_en(1),
+        .i_we(we[g]),
+        .i_addr(cache_addr),
+        .i_data(wline),
+        
+        .o_data(rline[g])
       );
     end : way_gen
   endgenerate
@@ -183,7 +192,7 @@ module instruction_cache #(
     .o_wlru(wlru)
   );
 
-
+  /*
   // Generate a RAM to store only the Pseudo-LRU bits
   generate begin : plru_ram
     if (BLK_PER_SET > 1) begin
@@ -206,5 +215,6 @@ module instruction_cache #(
     end
   end : plru_ram
   endgenerate
+  */
 
 endmodule

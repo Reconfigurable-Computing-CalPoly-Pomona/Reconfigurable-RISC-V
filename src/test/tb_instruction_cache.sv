@@ -38,7 +38,7 @@ module tb_instruction_cache();
   localparam CACHE_SIZE = 2**14;
 
   // The associativity to test
-  localparam BLK_PER_SET = 2;
+  localparam BLK_PER_SET = 1;
 
   /////////////////////////////////////////////////////////////////
   // Local parameters for instruction cache test

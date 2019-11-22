@@ -33,8 +33,10 @@ module execute_unit(
   input logic i_areset_n,
 
   // Enables the incoming instruction from the ID stage as valid
-  // If this is low, then NoOPs are used
   input logic i_en,
+
+  // Flushes this stage, creating No-Ops as a result
+  input logic i_flush,
 
   // The address of the current program counter for this stage, used for AUIPC in this stage
   input logic [INST_SIZE - 1:0] i_pc,
@@ -312,7 +314,7 @@ module execute_unit(
   assign o_exe_calc = (cu_exe_unit == SYSTEM_UNIT) ? sys_calc : alu_calc;
 
   // The write data to go to the data memory
-  assign o_exe_wdata = alu_op_b;
+  assign o_exe_wdata = op_b;
 
   // The branch address/valid will take either the branch (if correct and valid) or JALR address
   assign o_branch_valid = (branch_true & (cu_exe_unit == BRANCH)) | cu_jalr;
@@ -324,39 +326,41 @@ module execute_unit(
       {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
       cu_exe_unit <= ALU;
     end else begin
-      if (i_en) begin
+      if (i_flush) begin
+        {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
+        cu_exe_unit <= ALU;
+      end else if (i_en) begin
         cu_exe_unit <= i_cu_exe_unit;
         cu_jalr <= i_cu_jalr;
         o_cu_regwrite <= i_cu_regwrite;
         o_cu_memwrite <= i_cu_memwrite;
         o_cu_memaccess <= i_cu_memaccess;
-      end else begin
-        {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
-        cu_exe_unit <= ALU;
       end
     end
   end
 
   // Processes pipeline registers that do not need to be reset
   always_ff @(posedge i_aclk) begin : proc_register_no_rst
-    pc <= i_pc;
-    pcplus4 <= i_pcplus4;
-    branch_addr <= i_branch_addr;
-    immediate <= i_immediate;
-    id_op1 <= i_id_op1;
-    id_op2 <= i_id_op2;
-    cu_brop <= i_cu_brop;
-    cu_aluop <= i_cu_aluop;
-    cu_sysop <= i_cu_sysop;
-    cu_alu_srca <= i_cu_alu_srca;
-    cu_alu_srcb <= i_cu_alu_srcb;
-    o_cu_memtoreg <= i_cu_memtoreg;
-    o_rdest <= i_rdest;
-    o_pcplus4 <= i_pcplus4;
-    o_ldop <= i_ldop;
-    o_sop <= i_sop;
-    o_id_rs1 <= i_id_rs1;
-    o_id_rs2 <= i_id_rs2;
+    if (i_en) begin
+      pc <= i_pc;
+      pcplus4 <= i_pcplus4;
+      branch_addr <= i_branch_addr;
+      immediate <= i_immediate;
+      id_op1 <= i_id_op1;
+      id_op2 <= i_id_op2;
+      cu_brop <= i_cu_brop;
+      cu_aluop <= i_cu_aluop;
+      cu_sysop <= i_cu_sysop;
+      cu_alu_srca <= i_cu_alu_srca;
+      cu_alu_srcb <= i_cu_alu_srcb;
+      o_cu_memtoreg <= i_cu_memtoreg;
+      o_rdest <= i_rdest;
+      o_pcplus4 <= i_pcplus4;
+      o_ldop <= i_ldop;
+      o_sop <= i_sop;
+      o_id_rs1 <= i_id_rs1;
+      o_id_rs2 <= i_id_rs2;
+    end
   end
 
 endmodule

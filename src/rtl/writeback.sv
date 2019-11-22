@@ -25,10 +25,10 @@ import multicore_pkg::*;
 
 module writeback(
   // System clock
-  logic i_aclk,
+  input logic i_aclk,
 
   // Asynchronous reset
-  logic i_areset_n,
+  input logic i_areset_n,
 
   // The write back destination
   input logic [$clog2(NUM_REGS) - 1:0] i_rdest,

@@ -39,7 +39,7 @@ module tb_data_cache();
   localparam CACHE_SIZE = 2**14;
 
   // The associativity to test
-  localparam BLK_PER_SET = 1;
+  localparam BLK_PER_SET = 2;
 
   /////////////////////////////////////////////////////////////////
   // Local parameters for data cache test
@@ -268,6 +268,7 @@ module tb_data_cache();
         end
       end 
       axi.r.valid = 0;
+      #1
       wait(data_valid == 1);
       #1
       if (~req_store) begin

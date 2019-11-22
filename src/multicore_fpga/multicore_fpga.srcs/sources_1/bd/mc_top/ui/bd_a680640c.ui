@@ -2,53 +2,89 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port ddr3_cas_n -pg 1 -y 170 -defaultsOSRD
-preplace port ddr3_we_n -pg 1 -y 190 -defaultsOSRD
-preplace port ddr3_reset_n -pg 1 -y 230 -defaultsOSRD
 preplace port ddr_clock -pg 1 -y 390 -defaultsOSRD
-preplace port ddr3_ras_n -pg 1 -y 390 -defaultsOSRD
-preplace port reset -pg 1 -y 180 -defaultsOSRD
-preplace portBus ddr3_addr -pg 1 -y -220 -defaultsOSRD
-preplace portBus ddr3_dqs_n -pg 1 -y 100 -defaultsOSRD
-preplace portBus ddr3_odt -pg 1 -y -240 -defaultsOSRD
-preplace portBus ddr3_ck_n -pg 1 -y 260 -defaultsOSRD
-preplace portBus ddr3_dqs_p -pg 1 -y -180 -defaultsOSRD
-preplace portBus ddr3_ck_p -pg 1 -y -160 -defaultsOSRD
-preplace portBus ddr3_cs_n -pg 1 -y -140 -defaultsOSRD
-preplace portBus ddr3_dm -pg 1 -y 510 -defaultsOSRD
-preplace portBus ddr3_ba -pg 1 -y 140 -defaultsOSRD
-preplace portBus ddr3_cke -pg 1 -y 470 -defaultsOSRD
-preplace portBus ddr3_dq -pg 1 -y 60 -defaultsOSRD
-preplace inst inv_ff_0 -pg 1 -lvl 3 -y 480 -defaultsOSRD
-preplace inst mig_7series_0 -pg 1 -lvl 5 -y 240 -defaultsOSRD
-preplace inst axi_interconnect -pg 1 -lvl 4 -y 200 -defaultsOSRD
-preplace inst jtag_master -pg 1 -lvl 2 -y 340 -defaultsOSRD
-preplace inst reset_bridge_wrapper_0 -pg 1 -lvl 2 -y 170 -defaultsOSRD
-preplace netloc mig_7series_0_ddr3_cs_n 1 5 1 1730
-preplace netloc ddr_clock_1 1 0 5 NJ 390 -40J 420 360J 390 N 390 1030
-preplace netloc mig_7series_0_ui_addn_clk_0 1 4 2 1050 510 1640
-preplace netloc inv_ff_0_o_reset_n 1 1 4 -20J 410 NJ 410 650 320 1040
-preplace netloc reset_bridge_wrapper_0_o_areset_n 1 2 3 360 80 N 80 1050
-preplace netloc mig_7series_0_ddr3_odt 1 5 1 1690
-preplace netloc mig_7series_0_ddr3_dm 1 5 1 1670
-preplace netloc jtag_axi_0_M_AXI 1 2 2 370 140 N
-preplace netloc mig_7series_0_ddr3_ras_n 1 5 1 1720
-preplace netloc mig_7series_0_ddr3_ck_n 1 5 1 N
-preplace netloc mig_7series_0_ddr3_addr 1 5 1 1670
-preplace netloc mig_7series_0_ddr3_reset_n 1 5 1 1710
-preplace netloc mig_7series_0_ddr3_ck_p 1 5 1 1700
-preplace netloc mig_7series_0_ddr3_we_n 1 5 1 1740
-preplace netloc mig_7series_0_ui_clk_sync_rst 1 2 4 360 550 NJ 550 N 550 1660
-preplace netloc aclk 1 1 5 -30 430 370 400 640J 500 N 500 1650
-preplace netloc mig_7series_0_ddr3_cas_n 1 5 1 1710
-preplace netloc Net1 1 5 1 N
-preplace netloc Net 1 5 1 N
-preplace netloc axi_interconnect_M00_AXI 1 4 1 N
-preplace netloc Net2 1 5 1 1680
-preplace netloc mig_7series_0_ddr3_cke 1 5 1 1680
-preplace netloc mig_7series_0_ddr3_ba 1 5 1 N
-preplace netloc reset_1 1 0 2 NJ 180 N
-levelinfo -pg 1 -250 -60 260 540 880 1510 1760 -top -260 -bot 1610
+preplace port uart -pg 1 -y 530 -defaultsOSRD
+preplace port reset_n -pg 1 -y 180 -defaultsOSRD
+preplace inst data_mem_ctrl -pg 1 -lvl 3 -y 3550 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 3 -y 800 -defaultsOSRD
+preplace inst core_wrapper_0 -pg 1 -lvl 3 -y 4600 -defaultsOSRD
+preplace inst instr_mem -pg 1 -lvl 3 -y 1180 -defaultsOSRD
+preplace inst instr_mem_ctrl -pg 1 -lvl 3 -y 3690 -defaultsOSRD
+preplace inst data_mem -pg 1 -lvl 3 -y 1300 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 4 -y 550 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 3 -y 1030 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y 3100 -defaultsOSRD
+preplace inst jtag_master -pg 1 -lvl 1 -y 840 -defaultsOSRD
+preplace inst core_top_wrapper_0 -pg 1 -lvl 3 -y 4130 -defaultsOSRD
+preplace netloc data_mem_ctrl_BRAM_PORTB 1 2 2 1390 1400 1930
+preplace netloc core_top_wrapper_0_o_instr_wlast 1 1 3 240 4450 1380 3440 1840
+preplace netloc core_top_wrapper_0_o_data_araddr 1 1 3 560 4210 1050 3240 2160
+preplace netloc clk_wiz_locked 1 2 2 1390 730 1820
+preplace netloc core_top_wrapper_0_o_instr_wdata 1 1 3 230 4440 1360 3430 1860
+preplace netloc core_top_wrapper_0_o_instr_bready 1 1 3 250 4430 1350 3410 1880
+preplace netloc axi_interconnect_0_S00_AXI_rdata 1 1 2 450 4140 N
+preplace netloc ddr_clock_1 1 0 3 NJ 390 NJ 390 1230
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 2 2 1360 1370 2030
+preplace netloc core_top_wrapper_0_o_data_bready 1 1 3 440 4320 1210 3350 2140
+preplace netloc axi_interconnect_0_S01_AXI_wready 1 1 2 520 4200 N
+preplace netloc axi_interconnect_0_M02_AXI 1 2 2 1040J 710 1820
+preplace netloc core_wrapper_0_m_instr 1 1 3 580 4060 1170 3470 1950
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 2 2 1370 1380 2020
+preplace netloc core_top_wrapper_0_o_instr_awlen 1 1 3 580 2140 N 2140 1920
+preplace netloc core_top_wrapper_0_o_instr_arvalid 1 1 3 320 2110 N 2110 2060
+preplace netloc axi_interconnect_0_S01_AXI_rvalid 1 1 2 590 4260 N
+preplace netloc axi_interconnect_0_S01_AXI_rlast 1 1 2 570 4280 N
+preplace netloc axi_interconnect_0_S01_AXI_bvalid 1 1 2 530 4220 N
+preplace netloc core_top_wrapper_0_o_instr_awvalid 1 1 3 220 4420 1340 3400 1820
+preplace netloc core_top_wrapper_0_o_instr_arsize 1 1 3 270 4410 1330 3390 1850
+preplace netloc core_top_wrapper_0_o_data_wvalid 1 1 3 330 4380 1310 3380 1980
+preplace netloc core_top_wrapper_0_o_data_wstrb 1 1 3 320 4360 1130 3230 2180
+preplace netloc axi_interconnect_0_S01_AXI_bresp 1 1 2 480 4240 N
+preplace netloc axi_interconnect_0_S00_AXI_wready 1 1 2 380 4110 1260
+preplace netloc jtag_master_M_AXI 1 1 1 190
+preplace netloc core_top_wrapper_0_o_data_awaddr 1 1 3 310 2100 N 2100 2190
+preplace netloc core_top_wrapper_0_o_data_arburst 1 1 3 500 4290 1150 3310 2070
+preplace netloc axi_interconnect_0_S01_AXI_rdata 1 1 2 540 4300 N
+preplace netloc axi_interconnect_0_S00_AXI_arready 1 1 2 490 4070 1190
+preplace netloc axi_interconnect_0_S01_AXI_awready 1 1 2 510 4160 N
+preplace netloc axi_interconnect_0_S00_AXI_awready 1 1 2 370 4080 1180
+preplace netloc core_top_wrapper_0_o_instr_awburst 1 1 3 370 2130 N 2130 1910
+preplace netloc core_top_wrapper_0_o_instr_awaddr 1 1 3 430 2120 N 2120 1990
+preplace netloc core_top_wrapper_0_o_instr_arlen 1 1 3 260 4400 1240 3290 1900
+preplace netloc core_top_wrapper_0_o_data_rready 1 1 3 550 4330 1250 3360 2130
+preplace netloc core_top_wrapper_0_o_data_arsize 1 1 3 620 4150 1100 3330 2050
+preplace netloc axi_interconnect_0_S00_AXI_bresp 1 1 2 420 4090 1280
+preplace netloc S00_AXI_awsize_1 1 1 3 330 2090 N 2090 2010
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 1190
+preplace netloc axi_uartlite_0_UART 1 4 1 2440
+preplace netloc core_top_wrapper_0_o_instr_araddr 1 1 3 290 4370 1110 3200 2000
+preplace netloc core_top_wrapper_0_o_data_wlast 1 1 3 350 4350 1290 3370 2040
+preplace netloc core_top_wrapper_0_o_data_awburst 1 1 3 410 4250 1060 3250 2110
+preplace netloc core_top_wrapper_0_o_data_arvalid 1 1 3 610 4190 1140 3340 1960
+preplace netloc axi_interconnect_0_S01_AXI_arready 1 1 2 630 4180 N
+preplace netloc axi_interconnect_0_M01_AXI 1 2 1 1180
+preplace netloc core_top_wrapper_0_o_instr_wstrb 1 1 3 210 4470 1390 3450 1830
+preplace netloc core_top_wrapper_0_o_instr_arburst 1 1 3 300 4390 1200 3280 1890
+preplace netloc core_top_wrapper_0_o_data_wdata 1 1 3 340 4340 1080 3220 2200
+preplace netloc core_top_wrapper_0_o_data_awvalid 1 1 3 390 4270 1040 3210 2150
+preplace netloc core_top_wrapper_0_o_data_awsize 1 1 3 310 4310 1120 3270 2080
+preplace netloc core_wrapper_0_m_data 1 1 3 360 4050 1160 3460 1970
+preplace netloc core_top_wrapper_0_o_data_awlen 1 1 3 400 4230 1070 3260 2120
+preplace netloc reset_1 1 0 3 NJ 180 N 180 1380
+preplace netloc data_mem_ctrl_BRAM_PORTA 1 2 2 1380 1390 1940
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 0 4 -20 3750 180 4500 1230 930 2200
+preplace netloc core_top_wrapper_0_o_unused 1 1 3 200 4490 1320 3300 2170
+preplace netloc core_top_wrapper_0_o_instr_wvalid 1 1 3 380 2150 N 2150 2090
+preplace netloc core_top_wrapper_0_o_instr_rready 1 1 3 280 4460 1370 3420 1870
+preplace netloc core_top_wrapper_0_o_data_arlen 1 1 3 600 4170 1090 3320 2100
+preplace netloc clk_wiz_clk_out1 1 0 4 -30 3730 190 4480 1220 720 2190
+preplace netloc axi_interconnect_0_S00_AXI_rvalid 1 1 2 470 4130 1300
+preplace netloc axi_interconnect_0_S00_AXI_rlast 1 1 2 460 4120 N
+preplace netloc axi_interconnect_0_S00_AXI_bvalid 1 1 2 430 4100 1270
+levelinfo -pg 1 -50 80 870 1650 2330 2470 -top -2810 -bot 6990
 "
 }
-0
+{
+   "da_axi4_cnt":"1",
+   "da_clkrst_cnt":"1"
+}

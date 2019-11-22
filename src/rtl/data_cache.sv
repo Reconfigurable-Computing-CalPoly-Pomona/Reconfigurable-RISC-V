@@ -109,7 +109,10 @@ module data_cache #(
   /////////////////////////////////////////////////////////////////
 
   // The write enable for each way in case a miss occurs
-  logic [BLK_PER_SET - 1:0] we;
+  logic [BLK_PER_SET - 1:0] cache_we;
+
+  // The enable for each way
+  logic [BLK_PER_SET - 1:0] cache_en;
 
   // The address to look up into each way for a particular TAG
   // As associativity increases, this address will fanout to more WAYs
@@ -147,6 +150,7 @@ module data_cache #(
         // Valid + Tag + Data payload
         .DATA_WIDTH(CACHE_WIDTH)
       ) data_cache_set (
+      /*
         .i_clk(i_aclk),
         .i_addr_a(cache_raddr),
         .i_data_a('0),
@@ -156,6 +160,13 @@ module data_cache #(
         .i_data_b(wline),
         .i_we_b(we[g]),
         .o_data_b()
+      */
+        .i_clk(i_aclk),
+        .i_en(cache_en[g]),
+        .i_we(cache_we[g]),
+        .i_addr(cache_raddr),
+        .i_data(wline),
+        .o_data(rline[g])
       );
     end
   endgenerate
@@ -180,6 +191,7 @@ module data_cache #(
     .i_addr(i_addr),
     .i_store_data(i_store_data),
     .i_sop(i_sop),
+    .i_ldop(i_ldop),
     .i_req(i_req),
     .i_req_write(i_req_write),
     .o_req_ready(o_req_ready),
@@ -189,7 +201,8 @@ module data_cache #(
     .o_raddr(cache_raddr),
 
     // Write to caches
-    .o_we(we),
+    .o_we_cache(cache_we),
+    .o_re_cache(cache_en),
     .o_line(wline),
     .o_waddr(cache_waddr),
     .o_lru_addr(lru_addr),
@@ -214,6 +227,7 @@ module data_cache #(
         // Valid + Tag + Data payload
         .DATA_WIDTH(BLK_PER_SET)
       ) plru_cache (
+/*
         .i_clk(i_aclk),
         .i_addr_a(cache_raddr),
         .i_data_a('0),
@@ -223,6 +237,13 @@ module data_cache #(
         .i_data_b(wlru),
         .i_we_b(we_lru),
         .o_data_b()
+*/
+        .i_clk(i_aclk),
+        .i_en(1),
+        .i_we(we_lru),
+        .i_addr(cache_raddr),
+        .i_data(wlru),
+        .o_data(rlru)
       );
     end
   end

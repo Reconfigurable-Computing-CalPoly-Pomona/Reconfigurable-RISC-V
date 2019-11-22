@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../bd/mc_top/ip/mc_top_data_mem_ctrl_0/sim/mc_top_data_mem_ctrl_0.vhd" \
+"../../../bd/mc_top/ip/mc_top_instr_mem_ctrl_0/sim/mc_top_instr_mem_ctrl_0.vhd" \
+"../../../bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/sim/mc_top_rst_clk_wiz_100M_0.vhd" \
+"../../../bd/mc_top/ip/mc_top_axi_uartlite_0_0/sim/mc_top_axi_uartlite_0_0.vhd" \
+
+nosort

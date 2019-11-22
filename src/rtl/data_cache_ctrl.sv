@@ -50,9 +50,6 @@ module data_cache_ctrl #(
   // The size and sign of the data to read
   input t_ldop i_ldop,
 
-  // The byte strobe to accompany the store data
-  input logic [3:0] i_wstrb,
-
   // Request from memory access stage
   input logic i_req,
 
@@ -63,7 +60,10 @@ module data_cache_ctrl #(
   input [BLK_PER_SET - 1:0][CACHE_WIDTH - 1:0] i_line,
 
   // Write to each individual way
-  output logic [BLK_PER_SET - 1:0] o_we,
+  output logic [BLK_PER_SET - 1:0] o_we_cache,
+
+  // Read from each individual way
+  output logic [BLK_PER_SET - 1:0] o_re_cache,
 
   // The output valid + tag + payload for cache
   output [CACHE_WIDTH - 1:0] o_line,
@@ -172,11 +172,19 @@ module data_cache_ctrl #(
   // The registered data during the request, which will be written to the cache during a store
   logic [DATA_SIZE - 1:0] store_data;
 
+  // The data accessed from the cache
+  logic [INST_SIZE - 1:0] data;
+
+  // Indicates the combinatoral data is valid
+  logic data_valid;
+
   // The index bits, which is used  
   always_ff @(posedge i_clk or negedge i_areset_n) begin : proc_seq_ff
     if(~i_areset_n) begin
       curr_state <= FLUSH;
       address <= 0;
+      o_data_valid <= 0;
+      o_data <= 0;
     end else begin
       curr_state <= next_state;
 
@@ -196,22 +204,26 @@ module data_cache_ctrl #(
           store_data <= i_store_data;
           store_size <= i_sop;
           load_operation <= i_ldop;
-          write = i_req_write;
+          write <= i_req_write;
+          if (i_req) o_data_valid <= 0;
         end
         CHK_TAG: begin
           // Reset the block index to zero in order to perform a read if a miss occurs
+          o_data <= data;
           if (miss) begin
             address <= 0;
           end else begin
-            address <= i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-            tag <= i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
-            index <= i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-            word <= i_addr[WORD_BITS + OFFSET - 1:OFFSET];
-            offset <= i_addr[OFFSET - 1:0];
-            store_data <= i_store_data;
-            store_size <= i_sop;
-            load_operation <= i_ldop;
-            write = i_req_write;
+            //address <= i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+            //tag <= i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
+            //index <= i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+            //word <= i_addr[WORD_BITS + OFFSET - 1:OFFSET];
+            //offset <= i_addr[OFFSET - 1:0];
+            //store_data <= i_store_data;
+            //store_size <= i_sop;
+            //load_operation <= i_ldop;
+            //write <= i_req_write;
+            o_data_valid <= data_valid;
+            
           end
         end
         WB_W: begin
@@ -243,8 +255,7 @@ module data_cache_ctrl #(
         // Determine if a hit has occured by reading the BRAM
         // If a hit has occured and a request is available, stay in the check tag state
         // Otherwise, go back to idle.
-        if (~miss && ~i_req) next_state = IDLE;
-        else if (~miss) next_state = CHK_TAG;
+        if (~miss) next_state = IDLE;
         else next_state = CHK_DIRTY;
       WB_W: if (axi.w.last && axi.wready) next_state = WB_B;
       WB_B: if (axi.b.valid) next_state = MISS_AR;
@@ -265,27 +276,27 @@ module data_cache_ctrl #(
 
   // If no hit occurs on any of the ways, set the miss bit
   assign miss = ~|hit;
-  //assign dirty = cache_rline.dirty;
   
   // Assign the line data structure to be equal to the input data
   assign cache_rline = i_line;
   assign o_line = cache_wline;
 
   always_comb begin : proc_comb
-    // By default, don't write to the cache
-    o_we = 0;
+    // By default, don't enable writes or read from the cache
+    o_we_cache = 0;
+    o_re_cache = 0;
     hit = 0;
     o_we_lru = 0;
     o_wlru = i_rlru;
-    o_data_valid = 0;
+    data_valid = 0;
     o_req_ready = 0;
-    o_data = 'x;
+    //o_data = 'x;
     cache_wline = 'x;
     // Default AXI
     axi.aw = 'x;
     axi.w = 'x;
-    // Set the appropriate index
-    o_raddr = i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+
+    o_raddr = index;
     o_waddr = index;
     o_lru_addr = index;
 
@@ -311,28 +322,33 @@ module data_cache_ctrl #(
     unique case(curr_state)
       FLUSH: begin
         // Set all of the way caches to be not valid
-        o_we = '1;
+        o_we_cache = '1;
         o_we_lru = 1;
+        o_re_cache = '1;
         cache_wline.dirty = 0;
         cache_wline.valid = 0;
         // Reset the LRU bits
         o_wlru = 0;
+        o_raddr = address;
         o_waddr = address;
         o_lru_addr = address;
       end
       IDLE: begin
         // Enable each of the way caches
         o_req_ready = 1;
+        o_raddr = i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+        o_re_cache = '1;
       end
       CHK_TAG: begin
         // Check the TAG bits in parallel for each way
         // Verify the Tag and valid bit
         for(int r=0; r < BLK_PER_SET; r++) begin
           // Compare the valid bit and the cache tag, compare to address tag
+          o_re_cache[r] = 1;
           if (cache_rline[r].valid && cache_rline[r].tag == tag) begin
             hit[r] = 1;
             line_sel = cache_rline[r];
-            o_data_valid = 1;
+            data_valid = 1;
             // Reset the PLRU table if it is full
             if (i_rlru == '1) o_wlru = 0;
             // Mark the bit as recently used
@@ -342,22 +358,24 @@ module data_cache_ctrl #(
             // Choose the data to load from the cache (Word, Half, or Byte) and sign
             unique case(load_operation)
               // Sign extend 8 bit assignment
-              LB: o_data = {{(DATA_SIZE - 8){line_sel.data[word][8*offset + 7]}}, line_sel.data[word][8*offset +: 8]};
+              LB: data = $signed(line_sel.data[word][8*offset +: 8]);
               // Sign extend 16 bit assignmnet
-              LH: o_data = {{(DATA_SIZE - 16){line_sel.data[word][16*(offset >> 1) + 15]}}, line_sel.data[word][16*(offset >> 1) +: 16]};
+              LH: data = $signed(line_sel.data[word][8*offset +: 16]);
               // Whole word assignment
-              LW: o_data = line_sel.data[word];
+              LW: data = line_sel.data[word];
               // Extend with zeros
-              LBU: o_data = line_sel.data[word][8*offset +: 8];
+              LBU: data = line_sel.data[word][8*offset +: 8];
               // Extend with zeros
-              LHU: o_data = line_sel.data[word][16*(offset >> 1) +: 16];
-              default: o_data = line_sel.data[word];
+              LHU: data = line_sel.data[word][16*offset +: 16];
+              default: data = line_sel.data[word];
             endcase;
 
             // If this is a hit, and it's a write command last cycle, write
             // to the cache and make it dirty
             if (write) begin
-              o_we[r] = 1;
+              //o_req_ready = 0;
+              //o_re_cache[r] = 0;
+              o_we_cache[r] = 1;
               cache_wline.dirty = 1;
               cache_wline.valid = 1;
               // Default the cache line to be equal to its current value
@@ -367,7 +385,7 @@ module data_cache_ctrl #(
               // Choose the data to store to the cache (Word, Half, or Byte)
               unique case(store_size)
                 SB: cache_wline.data[word][8*offset +: 8] = store_data[7:0];
-                SH: cache_wline.data[word][16*(offset >> 1) +: 16] = store_data[15:0];
+                SH: cache_wline.data[word][8*offset +: 16] = store_data[15:0];
                 SW: cache_wline.data[word] = store_data;
                 default: cache_wline.data[word] = store_data;
               endcase;
@@ -376,11 +394,18 @@ module data_cache_ctrl #(
 
           end
         end
-        o_req_ready = o_data_valid;
+        //o_req_ready = o_data_valid;
+
+        // Set the appropriate index
+        //if (o_req_ready && i_req) begin
+        //  o_raddr = i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
+        //end
+
       end
       CHK_DIRTY: begin
         axi.aw.valid = cache_rline[lru].dirty;
         axi.ar.valid = ~cache_rline[lru].dirty;
+        o_re_cache = '1;
       end
       WB_W: begin
         // Perform the write back of the block that will be replaced
@@ -388,19 +413,22 @@ module data_cache_ctrl #(
         axi.w.data = cache_rline[lru].data[address[WORD_BITS - 1:0]];
         if (address == WORDS_PER_LINE - 1) axi.w.last = 1;
         o_raddr = index;
+        o_re_cache = '1;
       end
       WB_B: begin
         // Receive the write response
         axi.bready = 1;
+        o_re_cache = '1;
       end
       MISS_AR: begin
         // Wait for AR to be ready
         axi.ar.valid = 1;
+        o_re_cache = '1;
       end
 
       MISS_R: begin
         // The write enable to the way that has been selected based on LRU
-        o_we[lru] = 1;
+        o_we_cache[lru] = 1;
 
         cache_wline.dirty = 0;
         cache_wline.valid = 1;
@@ -411,6 +439,7 @@ module data_cache_ctrl #(
         o_waddr = index;
         // Accept reads in this state
         axi.rready = 1;
+        o_re_cache = '1;
       end
       default:;
     endcase

@@ -1,0 +1,165 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Nov 21 21:18:01 2019
+| Host         : Drew running 64-bit major release  (build 9200)
+| Command      : report_drc -file mc_top_wrapper_drc_routed.rpt -pb mc_top_wrapper_drc_routed.pb -rpx mc_top_wrapper_drc_routed.rpx
+| Design       : mc_top_wrapper
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Fully Routed
+------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 25
++-----------+----------+----------------------------+------------+
+| Rule      | Severity | Description                | Violations |
++-----------+----------+----------------------------+------------+
+| CHECK-3   | Warning  | Report rule limit reached  | 1          |
+| PDRC-153  | Warning  | Gated clock check          | 1          |
+| REQP-1840 | Warning  | RAMB18 async control check | 20         |
+| RTSTAT-10 | Warning  | No routable loads          | 1          |
+| REQP-181  | Advisory | writefirst                 | 2          |
++-----------+----------+----------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CHECK-3#1 Warning
+Report rule limit reached  
+REQP-1840 rule limit reached: 20 violations have been found.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2_n_0 is a gated clock net sourced by a combinational pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2/O, cell mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+REQP-1840#1 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#2 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#3 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#4 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#5 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#6 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#7 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#8 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#9 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#10 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#11 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#12 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#13 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#14 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#15 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#16 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#17 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#18 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#19 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1840#20 Warning
+RAMB18 async control check  
+The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+38 net(s) have no routable loads. The problem bus(es) and/or net(s) are mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ENA_I, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0] (the first 15 of 36 listed).
+Related violations: <none>
+
+REQP-181#1 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+REQP-181#2 Advisory
+writefirst  
+Synchronous clocking is detected for BRAM (mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+

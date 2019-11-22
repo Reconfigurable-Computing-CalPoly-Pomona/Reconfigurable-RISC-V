@@ -30,22 +30,36 @@ module ram
   input logic i_clk,
 
   // Port A
-  input logic [$clog2(DEPTH) - 1:0] i_addr_a,
-  input logic [DATA_WIDTH - 1:0] i_data_a,
-  input logic i_we_a,
-  output logic [DATA_WIDTH - 1:0] o_data_a,
+  input logic i_we,
+  input logic i_en,
+  input logic [$clog2(DEPTH) - 1:0] i_addr,
+  input logic [DATA_WIDTH - 1:0] i_data,
+  output logic [DATA_WIDTH - 1:0] o_data
 
+/*
   // Port B
   input logic [$clog2(DEPTH) - 1:0] i_addr_b,
   input logic [DATA_WIDTH - 1:0] i_data_b,
   input logic i_we_b,
   output logic [DATA_WIDTH - 1:0] o_data_b
-
+*/
 );
 
   // The memory, which may be generated using block RAM or distributed RAM
   logic [DATA_WIDTH - 1:0] mem [0:DEPTH - 1];
 
+  always_ff @(posedge i_clk) begin : proc_ram
+    if (i_en) begin
+      // During write first mode, the write occurs before reading out the data
+      if (i_we) begin
+        mem[i_addr] <= i_data;
+        o_data <= i_data;
+      end else begin
+        o_data <= mem[i_addr]; 
+      end
+    end
+  end
+  /*
   // Port A
   always_ff @(posedge i_clk) begin : proc_port_a
 
@@ -72,5 +86,6 @@ module ram
     end
 
   end
+  */
 
 endmodule

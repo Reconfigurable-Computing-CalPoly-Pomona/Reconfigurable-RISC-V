@@ -11,63 +11,63 @@ set_property -dict { PACKAGE_PIN R2    IOSTANDARD SSTL135 } [get_ports { ddr_clo
 create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_ports ddr_clock]
 
 # Board reset
-set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS33} [get_ports reset]
+set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS33} [get_ports reset_n]
 
 ## DDR
-set_property -dict {PACKAGE_PIN K2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[0]}]
-set_property -dict {PACKAGE_PIN K3 IOSTANDARD SSTL135} [get_ports {ddr3_dq[1]}]
-set_property -dict {PACKAGE_PIN L4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[2]}]
-set_property -dict {PACKAGE_PIN M6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[3]}]
-set_property -dict {PACKAGE_PIN K6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[4]}]
-set_property -dict {PACKAGE_PIN M4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[5]}]
-set_property -dict {PACKAGE_PIN L5 IOSTANDARD SSTL135} [get_ports {ddr3_dq[6]}]
-set_property -dict {PACKAGE_PIN L6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[7]}]
-set_property -dict {PACKAGE_PIN N4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[8]}]
-set_property -dict {PACKAGE_PIN R1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[9]}]
-set_property -dict {PACKAGE_PIN N1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[10]}]
-set_property -dict {PACKAGE_PIN N5 IOSTANDARD SSTL135} [get_ports {ddr3_dq[11]}]
-set_property -dict {PACKAGE_PIN M2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[12]}]
-set_property -dict {PACKAGE_PIN P1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[13]}]
-set_property -dict {PACKAGE_PIN M1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[14]}]
-set_property -dict {PACKAGE_PIN P2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[15]}]
-
-set_property -dict {PACKAGE_PIN K4 IOSTANDARD SSTL135} [get_ports {ddr3_dm[0]}]
-set_property -dict {PACKAGE_PIN M3 IOSTANDARD SSTL135} [get_ports {ddr3_dm[1]}]
-
-set_property -dict {PACKAGE_PIN K1 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_p[0]}]
-set_property -dict {PACKAGE_PIN L1 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_n[0]}]
-set_property -dict {PACKAGE_PIN N3 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_p[1]}]
-set_property -dict {PACKAGE_PIN N2 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_n[1]}]
-
-set_property -dict {PACKAGE_PIN U6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[13]}]
-set_property -dict {PACKAGE_PIN R6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[12]}]
-set_property -dict {PACKAGE_PIN T5 IOSTANDARD SSTL135} [get_ports {ddr3_addr[11]}]
-set_property -dict {PACKAGE_PIN P6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[10]}]
-set_property -dict {PACKAGE_PIN V7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[9]}]
-set_property -dict {PACKAGE_PIN U7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[8]}]
-set_property -dict {PACKAGE_PIN T6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[7]}]
-set_property -dict {PACKAGE_PIN V6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[6]}]
-set_property -dict {PACKAGE_PIN R7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[5]}]
-set_property -dict {PACKAGE_PIN T3 IOSTANDARD SSTL135} [get_ports {ddr3_addr[4]}]
-set_property -dict {PACKAGE_PIN V4 IOSTANDARD SSTL135} [get_ports {ddr3_addr[3]}]
-set_property -dict {PACKAGE_PIN V2 IOSTANDARD SSTL135} [get_ports {ddr3_addr[2]}]
-set_property -dict {PACKAGE_PIN R4 IOSTANDARD SSTL135} [get_ports {ddr3_addr[1]}]
-set_property -dict {PACKAGE_PIN U2 IOSTANDARD SSTL135} [get_ports {ddr3_addr[0]}]
-
-set_property -dict {PACKAGE_PIN U3 IOSTANDARD SSTL135} [get_ports {ddr3_ba[2]}]
-set_property -dict {PACKAGE_PIN T1 IOSTANDARD SSTL135} [get_ports {ddr3_ba[1]}]
-set_property -dict {PACKAGE_PIN V5 IOSTANDARD SSTL135} [get_ports {ddr3_ba[0]}]
-
-set_property -dict {PACKAGE_PIN R5 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_ck_p[0]}]
-set_property -dict {PACKAGE_PIN T4 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_ck_n[0]}]
-
-set_property -dict {PACKAGE_PIN U1 IOSTANDARD SSTL135} [get_ports ddr3_ras_n]
-set_property -dict {PACKAGE_PIN V3 IOSTANDARD SSTL135} [get_ports ddr3_cas_n]
-set_property -dict {PACKAGE_PIN P7 IOSTANDARD SSTL135} [get_ports ddr3_we_n]
-set_property -dict {PACKAGE_PIN J6 IOSTANDARD SSTL135} [get_ports ddr3_reset_n]
-set_property -dict {PACKAGE_PIN T2 IOSTANDARD SSTL135} [get_ports {ddr3_cke[0]}]
-set_property -dict {PACKAGE_PIN P5 IOSTANDARD SSTL135} [get_ports {ddr3_odt[0]}]
-set_property -dict {PACKAGE_PIN R3 IOSTANDARD SSTL135} [get_ports {ddr3_cs_n[0]}]
+#set_property -dict {PACKAGE_PIN K2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[0]}]
+#set_property -dict {PACKAGE_PIN K3 IOSTANDARD SSTL135} [get_ports {ddr3_dq[1]}]
+#set_property -dict {PACKAGE_PIN L4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[2]}]
+#set_property -dict {PACKAGE_PIN M6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[3]}]
+#set_property -dict {PACKAGE_PIN K6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[4]}]
+#set_property -dict {PACKAGE_PIN M4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[5]}]
+#set_property -dict {PACKAGE_PIN L5 IOSTANDARD SSTL135} [get_ports {ddr3_dq[6]}]
+#set_property -dict {PACKAGE_PIN L6 IOSTANDARD SSTL135} [get_ports {ddr3_dq[7]}]
+#set_property -dict {PACKAGE_PIN N4 IOSTANDARD SSTL135} [get_ports {ddr3_dq[8]}]
+#set_property -dict {PACKAGE_PIN R1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[9]}]
+#set_property -dict {PACKAGE_PIN N1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[10]}]
+#set_property -dict {PACKAGE_PIN N5 IOSTANDARD SSTL135} [get_ports {ddr3_dq[11]}]
+#set_property -dict {PACKAGE_PIN M2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[12]}]
+#set_property -dict {PACKAGE_PIN P1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[13]}]
+#set_property -dict {PACKAGE_PIN M1 IOSTANDARD SSTL135} [get_ports {ddr3_dq[14]}]
+#set_property -dict {PACKAGE_PIN P2 IOSTANDARD SSTL135} [get_ports {ddr3_dq[15]}]
+#
+#set_property -dict {PACKAGE_PIN K4 IOSTANDARD SSTL135} [get_ports {ddr3_dm[0]}]
+#set_property -dict {PACKAGE_PIN M3 IOSTANDARD SSTL135} [get_ports {ddr3_dm[1]}]
+#
+#set_property -dict {PACKAGE_PIN K1 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_p[0]}]
+#set_property -dict {PACKAGE_PIN L1 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_n[0]}]
+#set_property -dict {PACKAGE_PIN N3 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_p[1]}]
+#set_property -dict {PACKAGE_PIN N2 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_dqs_n[1]}]
+#
+#set_property -dict {PACKAGE_PIN U6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[13]}]
+#set_property -dict {PACKAGE_PIN R6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[12]}]
+#set_property -dict {PACKAGE_PIN T5 IOSTANDARD SSTL135} [get_ports {ddr3_addr[11]}]
+#set_property -dict {PACKAGE_PIN P6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[10]}]
+#set_property -dict {PACKAGE_PIN V7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[9]}]
+#set_property -dict {PACKAGE_PIN U7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[8]}]
+#set_property -dict {PACKAGE_PIN T6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[7]}]
+#set_property -dict {PACKAGE_PIN V6 IOSTANDARD SSTL135} [get_ports {ddr3_addr[6]}]
+#set_property -dict {PACKAGE_PIN R7 IOSTANDARD SSTL135} [get_ports {ddr3_addr[5]}]
+#set_property -dict {PACKAGE_PIN T3 IOSTANDARD SSTL135} [get_ports {ddr3_addr[4]}]
+#set_property -dict {PACKAGE_PIN V4 IOSTANDARD SSTL135} [get_ports {ddr3_addr[3]}]
+#set_property -dict {PACKAGE_PIN V2 IOSTANDARD SSTL135} [get_ports {ddr3_addr[2]}]
+#set_property -dict {PACKAGE_PIN R4 IOSTANDARD SSTL135} [get_ports {ddr3_addr[1]}]
+#set_property -dict {PACKAGE_PIN U2 IOSTANDARD SSTL135} [get_ports {ddr3_addr[0]}]
+#
+#set_property -dict {PACKAGE_PIN U3 IOSTANDARD SSTL135} [get_ports {ddr3_ba[2]}]
+#set_property -dict {PACKAGE_PIN T1 IOSTANDARD SSTL135} [get_ports {ddr3_ba[1]}]
+#set_property -dict {PACKAGE_PIN V5 IOSTANDARD SSTL135} [get_ports {ddr3_ba[0]}]
+#
+#set_property -dict {PACKAGE_PIN R5 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_ck_p[0]}]
+#set_property -dict {PACKAGE_PIN T4 IOSTANDARD DIFF_SSTL135} [get_ports {ddr3_ck_n[0]}]
+#
+#set_property -dict {PACKAGE_PIN U1 IOSTANDARD SSTL135} [get_ports ddr3_ras_n]
+#set_property -dict {PACKAGE_PIN V3 IOSTANDARD SSTL135} [get_ports ddr3_cas_n]
+#set_property -dict {PACKAGE_PIN P7 IOSTANDARD SSTL135} [get_ports ddr3_we_n]
+#set_property -dict {PACKAGE_PIN J6 IOSTANDARD SSTL135} [get_ports ddr3_reset_n]
+#set_property -dict {PACKAGE_PIN T2 IOSTANDARD SSTL135} [get_ports {ddr3_cke[0]}]
+#set_property -dict {PACKAGE_PIN P5 IOSTANDARD SSTL135} [get_ports {ddr3_odt[0]}]
+#set_property -dict {PACKAGE_PIN R3 IOSTANDARD SSTL135} [get_ports {ddr3_cs_n[0]}]
 
 ## Switches
 #set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { sw[0] }]; #IO_L20N_T3_A19_15 Sch=sw[0]
@@ -136,8 +136,8 @@ set_property -dict {PACKAGE_PIN R3 IOSTANDARD SSTL135} [get_ports {ddr3_cs_n[0]}
 #set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { jd[7] }]; #IO_L24P_T3_A01_D17_14 Sch=jd10/ck_io[26]
 
 ## USB-UART Interface
-#set_property -dict { PACKAGE_PIN R12   IOSTANDARD LVCMOS33 } [get_ports { uart_rxd_out }]; #IO_25_14 Sch=uart_rxd_out
-#set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { uart_txd_in }]; #IO_L24N_T3_A00_D16_14 Sch=uart_txd_in
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
+set_property -dict {PACKAGE_PIN R12 IOSTANDARD LVCMOS33} [get_ports uart_txd]
 
 ## ChipKit Outer Digital Header
 #set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { ck_io0 }]; #IO_0_14 Sch=ck_io[0]

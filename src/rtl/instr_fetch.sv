@@ -86,6 +86,15 @@ module instr_fetch #(
   // When a branch is valid, the output of the cache becomes invalid until it receives the new branch address
   logic cache_invalidate;
 
+  // Indicates there is an instruction waiting to be sent to the decode stage after the stall is lifted
+  logic instr_stalled_valid;
+
+  // The registered instruction enabled whenever a stall occurs
+  logic [INST_SIZE - 1:0] instr_stalled;
+
+  // The instruction from the to cache to be sent to the decode stage
+  logic [INST_SIZE - 1:0] cache_instr;
+
 
   /////////////////////////////////////////////
   // Instruction Cache
@@ -110,7 +119,7 @@ module instr_fetch #(
     // Indicates that o_instruction is valid
     .o_instr_valid(cache_valid),
     // The instruction obtained from the cache DUT
-    .o_instruction(o_instruction)
+    .o_instruction(cache_instr)
   );
 
   // Program counter is incremented by four
@@ -120,38 +129,47 @@ module instr_fetch #(
   assign pc = i_branch_valid ? i_branch_addr : pcplus4;
 
   // The instruction is valid as soon as it comes out of the cache, unless the data is invalid due to a jump or branch
-  assign o_instr_valid = cache_valid & ~cache_invalidate;
+  assign o_instr_valid = (instr_stalled_valid | cache_valid) & ~cache_invalidate;
 
-  // Enables the decode stage to use the address in its next decode
-  // If left invalid, then the decode stage should disable by using No-Ops as its decode
-  //assign o_instr_valid = cache_valid & ~i_branch_valid;
+  // The instruction to the decode stage takes the stored instruction if coming out of a stall, otherwise it takes the instruction directly from the cache
+  assign o_instruction = instr_stalled_valid ? instr_stalled : cache_instr;
+
+  // Enable reading from the cache whenever not stalled
+  assign cache_req = i_en;
 
   // Update the program counter register controlling cache access
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_pc
     if(~i_areset_n) begin
-      cache_req <= 0;
+      //cache_req <= 0;
       pc_fetch <= PC_BASE_ADDR;
       cache_invalidate <= 0;
     end else begin
 
-      // Enable reading from the cache whenever the pipeline is not stalled
-      cache_req <= i_en;
+      
+      //cache_req <= i_en;
+
+      if (~i_en && o_instr_valid) begin
+        instr_stalled <= o_instruction;
+        instr_stalled_valid <= 1;
+      end else if (i_en) begin
+        instr_stalled_valid <= 0;
+      end
 
       // Program counter only increments when cache is ready and pipeline is not stalled
       // If there is an occurance of a branch becoming valid, the PC will be set to a new value and will attempt to access the cache
-      if ((i_en && cache_ready && cache_req) || i_branch_valid) begin
+      if ((i_en && cache_ready && cache_req) || (i_en && i_branch_valid)) begin
         pc_fetch <= pc;
       end
 
       // There is a new address for the program counter, the cache won't know this until its transaction completes, so it must be invalidated until it becomes available again
-      if (i_branch_valid) begin
+      if (i_branch_valid && i_en) begin
         cache_invalidate <= 1;
       end else if (cache_ready) begin
         cache_invalidate <= 0;
       end
 
       // Register the program counter that was last used to fetch the data to send for use in other stages
-      if (cache_ready && cache_req) begin
+      if (i_en && cache_ready && cache_req) begin
         o_pc <= pc_fetch;
         o_pcplus4 <= pcplus4;
       end

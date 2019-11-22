@@ -225,8 +225,11 @@ module instr_cache_ctrl #(
     o_instruction = 'x;
     cache_wline = 'x;
     // Default AXI
-    axi.aw = 'x;
-    axi.w = 'x;
+    axi.aw.addr = 0;
+    axi.aw.len = 0;
+    axi.aw.size = 2;
+    axi.aw.burst = INCR;
+    axi.w = 0;
     // Set the appropriate index
     o_addr = i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
     o_lru_addr = index;

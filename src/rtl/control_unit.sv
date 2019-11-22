@@ -124,7 +124,7 @@ module control_unit(
   // Determines what data will source port B of the ALU (registers(0) or immediate(1))
   always_comb begin : proc_alu_srcb
     unique case(i_op)
-      LOADS: o_alu_srcb = 0;
+      LOADS: o_alu_srcb = 1;
       STORES: o_alu_srcb = 1;
       ALC_I: o_alu_srcb = 1;
       ALC_R: o_alu_srcb = 0;
@@ -154,6 +154,7 @@ module control_unit(
           'b101: o_aluop = i_funct7[5] ? SRA : SRL;
           'b110: o_aluop = OR;
           'b111: o_aluop = AND;
+          default: o_aluop = ADD;
         endcase 
       end
       ALC_R: begin
@@ -166,6 +167,7 @@ module control_unit(
           'b101: o_aluop = i_funct7[5] ? SRA : SRL;
           'b110: o_aluop = OR;
           'b111: o_aluop = AND;
+          default: o_aluop = ADD;
         endcase
       end
       LUI: o_aluop = ADD;

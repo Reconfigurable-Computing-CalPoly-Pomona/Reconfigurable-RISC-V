@@ -1,4 +1,4 @@
-verilog xil_defaultlib --include "../../../../../test/tb_core_top/ipshared/85a3" --include "../../../../../test/tb_core_top/ipshared/ec67/hdl" \
+verilog xil_defaultlib --include "../../../../multicore_fpga.srcs/sim_1/bd/tb_core_top/ipshared/85a3" --include "../../../../multicore_fpga.srcs/sim_1/bd/tb_core_top/ipshared/ec67/hdl" \
 "../../../bd/tb_core_top/ip/tb_core_top_blk_mem_gen_0_0/sim/tb_core_top_blk_mem_gen_0_0.v" \
 "../../../bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0_clk_wiz.v" \
 "../../../bd/tb_core_top/ip/tb_core_top_clk_wiz_0/tb_core_top_clk_wiz_0.v" \

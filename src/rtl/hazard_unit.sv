@@ -23,11 +23,6 @@
 import multicore_pkg::*;
 
 module hazard_unit(
-  // System clock
-  input logic i_aclk,
-
-  // Asynchronous reset
-  input logic i_areset_n,
 
   ///////////////////////////////
   // Instruction unit
@@ -76,8 +71,11 @@ module hazard_unit(
   // 10 - Forward write back stage
   output logic [1:0] o_decode_fwd_b,
 
-  // Enables the decode unit, when disabled, No-Ops are used
+  // Enables the decode unit, when disabled, no new instructions will be obtained
   output logic o_decode_en,
+
+  // Flushes the decode unit, replacing incoming instruction with No-Op
+  output logic o_decode_flush,
 
   ///////////////////////////////
   // Execution Unit   
@@ -107,8 +105,11 @@ module hazard_unit(
   // 10 - Forward write back stage
   output logic [1:0] o_exe_fwd_b,
 
-  // Enables the execution unit, when disabled, No-Ops are used
+  // Enables the execution unit, when disabled, the internal state and instruction of the execute stage will be held
   output logic o_exe_en,
+
+  // Flushes the execution unit, causing No-Op instruction to be output
+  output logic o_exe_flush,
 
   ///////////////////////////////
   // Memory Access
@@ -129,8 +130,23 @@ module hazard_unit(
   // The write back destination for the memory access unit
   input logic [$clog2(NUM_REGS) -1:0] i_ma_rdest,
 
+  // Indicates the last request for the cache (Read or store)
+  input logic i_ma_store,
+
   // Enables the memory access unit
   output logic o_ma_en,
+
+  // The data from the memory access unit that was calculated from the ALU unit
+  input logic [DATA_SIZE - 1:0] i_ma_exe_data,
+
+  // The data from the cache of the memory access unit
+  input logic [DATA_SIZE - 1:0] i_ma_mem_data,
+
+  // The pcplus4 data from the memory access unit
+  input logic [INST_SIZE - 1:0] i_ma_pcplus4,
+
+  // The data to be used for forwarding from the memory access unit
+  output logic [DATA_SIZE - 1:0] o_ma_fwd,
 
   ///////////////////////////////
   // Write back
@@ -149,21 +165,28 @@ module hazard_unit(
   assign o_br_valid = i_execute_br_valid | i_decode_br_valid;
   assign o_br_addr  = i_execute_br_valid ? i_execute_br_addr : i_decode_br_addr;
 
-  // Disables the memory access unit only when there is a data access request, but the cache is not ready
-  assign o_ma_en = (i_ma_memaccess & i_ma_cache_ready) | ~i_ma_memaccess;
+  // In case of a store, disables the memory access unit only when there is a data access request, but the cache is not ready
+  // In the case of a load, if the data memory is not ready, then the data has not been found and may be needed by other instructions, so a stall will occur
+  //assign o_ma_en = i_ma_store ? ((i_ma_memaccess & i_ma_cache_ready) | ~i_ma_memaccess) : i_ma_cache_ready;
+  assign o_ma_en = i_ma_cache_ready;
 
   // Flushes the execute stage when a branch has been mispredicted
-  assign o_exe_en = i_decode_pc == i_execute_br_addr || ~i_execute_br_valid;
+  //assign o_exe_en = i_decode_pc == i_execute_br_addr || ~i_execute_br_valid;
 
   // TODO
-  assign o_fetch_en = 1;
-  assign o_decode_en = i_fetch_instr_valid & ~o_br_valid;
+  assign o_fetch_en = o_ma_en;
+  assign o_decode_en = o_ma_en;
+  assign o_exe_en = o_ma_en;
+  //assign o_decode_en = i_fetch_instr_valid & ~o_br_valid;
+
+  assign o_decode_flush = ~i_fetch_instr_valid | o_br_valid;
+  assign o_exe_flush = i_decode_pc != i_execute_br_addr && i_execute_br_valid;
 
   // Decode stage forwarding - Mux A
   always_comb begin : proc_decode_fwd_a
 
     // Determine the forwarding logic, either take the data from the decode stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_decode_rs1 && i_decode_rs1 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_decode_rs1 && i_decode_rs1 != 0 && i_ma_regwrite) begin //&& (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the decode stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_decode_fwd_a = 'b01;
     end else if (i_wb_rdest == i_decode_rs1 && i_decode_rs1 != 0 && i_wb_regwrite) begin
@@ -179,7 +202,7 @@ module hazard_unit(
   always_comb begin : proc_decode_fwd_b
 
     // Determine the forwarding logic, either take the data from the decode stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_decode_rs2 && i_decode_rs2 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_decode_rs2 && i_decode_rs2 != 0 && i_ma_regwrite) begin //&& (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the decode stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_decode_fwd_b = 'b01;
     end else if (i_wb_rdest == i_decode_rs2 && i_decode_rs2 != 0 && i_wb_regwrite) begin
@@ -195,7 +218,7 @@ module hazard_unit(
   always_comb begin : proc_exe_fwd_a
 
     // Determine the forwarding logic, either take the data from the execute stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_exe_rs1 && i_exe_rs1 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_exe_rs1 && i_exe_rs1 != 0 && i_ma_regwrite) begin //&& (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the execute stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_exe_fwd_a = 'b01;
     end else if (i_wb_rdest == i_exe_rs1 && i_exe_rs1 != 0 && i_wb_regwrite) begin
@@ -211,7 +234,7 @@ module hazard_unit(
   always_comb begin : proc_exe_fwd_b
 
     // Determine the forwarding logic, either take the data from the execute stage(no forward), memory access, or writeback
-    if (i_ma_rdest == i_exe_rs2 && i_exe_rs2 != 0 && i_ma_regwrite && (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
+    if (i_ma_rdest == i_exe_rs2 && i_exe_rs2 != 0 && i_ma_regwrite) begin //&& (i_ma_memtoreg == 'b00 || i_ma_memtoreg == 'b10)) begin
       // The register in the execute stage matches the register in the memory access stage and the instruction in the MA stage is writing to a register with ALU or PCPLUS4 data
       o_exe_fwd_b = 'b01;
     end else if (i_wb_rdest == i_exe_rs2 && i_exe_rs2 != 0 && i_wb_regwrite) begin
@@ -221,6 +244,16 @@ module hazard_unit(
       // No forwarding will occur for this port
       o_exe_fwd_b = 0;
     end
+  end
+
+  // Multiplex the possible register writes from the memory access stage to get the data to forward
+  always_comb begin : proc_fwd_ma
+    unique case (i_ma_memtoreg)
+      'b00: o_ma_fwd = i_ma_exe_data;
+      'b01: o_ma_fwd = i_ma_mem_data;
+      'b10: o_ma_fwd = i_ma_pcplus4;
+      default: o_ma_fwd = 'x;
+    endcase;
   end
 
 endmodule

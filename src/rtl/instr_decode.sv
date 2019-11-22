@@ -31,8 +31,11 @@ module instr_decode(
   // Asynchronous reset
   input logic i_areset_n,
 
-  // Enables or disables the decode from the hazard unit. Disabling will cause No-Ops to be inserted
+  // Enables or disables the decode from the hazard unit. Disabling will cause instruction to be held until enabled
   input logic i_en,
+
+  // Enabling will cause No-Ops to be inserted
+  input logic i_flush,
 
   // The instruction to return to the instruction fetch stage
   input logic [INST_SIZE - 1:0] i_instruction,
@@ -254,18 +257,22 @@ module instr_decode(
       instruction[6:0] <= NOOP_CODE;
     end else begin
       if (i_en) begin
-        instruction <= i_instruction;
-      end else begin
-        instruction <= 0;
-        instruction[6:0] <= NOOP_CODE;
+        if (i_flush) begin
+          instruction <= 0;
+          instruction[6:0] <= NOOP_CODE;
+        end else begin
+          instruction <= i_instruction;
+        end
       end
     end
   end
 
   // Register the pc + 4 address
   always_ff @(posedge i_aclk) begin : proc_pcplus4
-    o_pcplus4 <= i_pcplus4;
-    o_pc <= i_pc;
+    if (i_en) begin
+      o_pcplus4 <= i_pcplus4;
+      o_pc <= i_pc;
+    end
   end
 
   // Create a register file which holds register zero + GPRs

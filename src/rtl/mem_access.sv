@@ -30,10 +30,10 @@ module mem_access#(
   parameter BLK_PER_SET = 2
 )(
   // System clock
-  logic i_aclk,
+  input logic i_aclk,
 
   // Asynchronous reset
-  logic i_areset_n,
+  input logic i_areset_n,
 
   // AXI Master Passthrough from cache
   axi_inf.master axi,
@@ -84,6 +84,9 @@ module mem_access#(
 
   // Pipelined control signal to determine if pc, mem, or alu output will go to the register file
   output logic [1:0] o_cu_memtoreg,
+
+  // Indicates the last instruction to be sent to the data cache (Store or Load indicator) for hazard
+  output logic o_mem_we,
 
   // Write back signals
 
@@ -149,6 +152,7 @@ module mem_access#(
       o_exe_data    <= i_exe_out;
       o_rdest       <= i_rdest;
       o_cu_memtoreg <= i_cu_memtoreg;
+      o_mem_we      <= i_mem_we;
     end
   end
 
