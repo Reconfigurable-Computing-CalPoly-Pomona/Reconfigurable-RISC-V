@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sun Nov 17 20:55:46 2019
+// Date        : Sat Nov 23 19:35:04 2019
 // Host        : Drew running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0_sim_netlist.v
+//               C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0_sim_netlist.v
 // Design      : mc_top_instr_mem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -77,7 +77,7 @@ module mc_top_instr_mem_0
   (* C_AXI_SLAVE_TYPE = "0" *) 
   (* C_AXI_TYPE = "1" *) 
   (* C_BYTE_SIZE = "8" *) 
-  (* C_COMMON_CLK = "1" *) 
+  (* C_COMMON_CLK = "0" *) 
   (* C_COUNT_18K_BRAM = "0" *) 
   (* C_COUNT_36K_BRAM = "1" *) 
   (* C_CTRL_ECC_ALGO = "NONE" *) 
@@ -219,6 +219,7 @@ module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
     rsta_busy,
     rstb_busy,
     clka,
+    clkb,
     addra,
     addrb,
     rsta,
@@ -230,6 +231,7 @@ module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
   output rsta_busy;
   output rstb_busy;
   input clka;
+  input clkb;
   input [9:0]addra;
   input [9:0]addrb;
   input rsta;
@@ -240,6 +242,7 @@ module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
   wire [9:0]addra;
   wire [9:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
@@ -253,6 +256,7 @@ module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
+        .clkb(clkb),
         .douta(douta),
         .doutb(doutb),
         .ena(ena),
@@ -270,6 +274,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
     rsta_busy,
     rstb_busy,
     clka,
+    clkb,
     addra,
     addrb,
     rsta,
@@ -281,6 +286,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   output rsta_busy;
   output rstb_busy;
   input clka;
+  input clkb;
   input [9:0]addra;
   input [9:0]addrb;
   input rsta;
@@ -293,16 +299,21 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   wire ENB_dly;
   wire ENB_dly_D;
   wire POR_A;
+  wire POR_B;
+  wire [4:0]RSTB_SHFT_REG;
   wire \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3_n_0 ;
   wire \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ;
+  wire \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3_n_0 ;
   wire [9:0]addra;
   wire [9:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
   wire enb;
   wire [1:1]p_0_in;
+  wire p_1_out;
   wire p_3_out;
   wire ram_rstram_a;
   wire ram_rstram_a_busy__0;
@@ -332,7 +343,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   FDRE #(
     .INIT(1'b0)) 
     \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_D_reg 
-       (.C(clka),
+       (.C(clkb),
         .CE(1'b1),
         .D(ENB_dly),
         .Q(ENB_dly_D),
@@ -340,7 +351,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   FDRE #(
     .INIT(1'b0)) 
     \SAFETY_CKT_GEN.ENB_NO_REG.ENB_dly_reg 
-       (.C(clka),
+       (.C(clkb),
         .CE(1'b1),
         .D(ram_rstram_b),
         .Q(ENB_dly),
@@ -358,6 +369,20 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
         .CE(1'b1),
         .D(p_3_out),
         .Q(POR_A),
+        .R(1'b0));
+  LUT2 #(
+    .INIT(4'h6)) 
+    \SAFETY_CKT_GEN.POR_B_i_1 
+       (.I0(RSTB_SHFT_REG[0]),
+        .I1(RSTB_SHFT_REG[4]),
+        .O(p_1_out));
+  FDRE #(
+    .INIT(1'b0)) 
+    \SAFETY_CKT_GEN.POR_B_reg 
+       (.C(clkb),
+        .CE(1'b1),
+        .D(p_1_out),
+        .Q(POR_B),
         .R(1'b0));
   FDRE \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg 
        (.C(clka),
@@ -394,8 +419,37 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
         .D(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3_n_0 ),
         .Q(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ),
         .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[0] 
+       (.C(clkb),
+        .CE(1'b1),
+        .D(1'b1),
+        .Q(RSTB_SHFT_REG[0]),
+        .R(1'b0));
+  (* srl_bus_name = "U0/\inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/SAFETY_CKT_GEN.RSTB_SHFT_REG_reg " *) 
+  (* srl_name = "U0/\inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3 " *) 
+  SRL16E #(
+    .INIT(16'h0000)) 
+    \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3 
+       (.A0(1'b0),
+        .A1(1'b1),
+        .A2(1'b0),
+        .A3(1'b0),
+        .CE(1'b1),
+        .CLK(clkb),
+        .D(RSTB_SHFT_REG[0]),
+        .Q(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[4] 
+       (.C(clkb),
+        .CE(1'b1),
+        .D(\SAFETY_CKT_GEN.RSTB_SHFT_REG_reg[3]_srl3_n_0 ),
+        .Q(RSTB_SHFT_REG[4]),
+        .R(1'b0));
   FDRE \SAFETY_CKT_GEN.nSPRAM_RST_BUSY.RSTB_BUSY_NO_REG.RSTB_BUSY_reg 
-       (.C(clka),
+       (.C(clkb),
         .CE(1'b1),
         .D(ram_rstram_b_busy__0),
         .Q(rstb_busy),
@@ -404,9 +458,11 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
        (.ENA_dly_D(ENA_dly_D),
         .ENB_dly_D(ENB_dly_D),
         .POR_A(POR_A),
+        .POR_B(POR_B),
         .addra(addra),
         .addrb(addrb),
         .clka(clka),
+        .clkb(clkb),
         .douta(douta),
         .doutb(doutb),
         .ena(ena),
@@ -426,7 +482,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   LUT4 #(
     .INIT(16'hFFFE)) 
     ram_rstram_b_busy
-       (.I0(POR_A),
+       (.I0(POR_B),
         .I1(rstb),
         .I2(ENB_dly),
         .I3(ENB_dly_D),
@@ -440,6 +496,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
     ram_rstram_a,
     ram_rstram_b,
     clka,
+    clkb,
     addra,
     addrb,
     rsta,
@@ -447,6 +504,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
     ENA_dly_D,
     ena,
     rstb,
+    POR_B,
     ENB_dly_D,
     enb);
   output [31:0]douta;
@@ -454,6 +512,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
   output ram_rstram_a;
   output ram_rstram_b;
   input clka;
+  input clkb;
   input [9:0]addra;
   input [9:0]addrb;
   input rsta;
@@ -461,6 +520,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
   input ENA_dly_D;
   input ena;
   input rstb;
+  input POR_B;
   input ENB_dly_D;
   input enb;
 
@@ -477,9 +537,11 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
   wire ENB_I;
   wire ENB_dly_D;
   wire POR_A;
+  wire POR_B;
   wire [9:0]addra;
   wire [9:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
@@ -518,35 +580,35 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
     .INITP_0D(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_0E(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INITP_0F(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_00(256'h0DEAD69700800513000015B7FFFFF63701CE8E930DEADEB700007F3700008FB7),
-    .INIT_01(256'h00200113001000930030001326CE1C6341FF0E3328BE906341EF8EB329D69463),
-    .INIT_02(256'h004142B300600F930040021324A21C6300418233004082330040021300300193),
-    .INIT_03(256'h227E966302300E1300600E93004163B3226F1E6301000F1301214313245F9463),
-    .INIT_04(256'h20AD166300300D1300F1F513209D9C6300100D930011F4B3228E12630201E413),
-    .INIT_05(256'h1ECF166380000F3701E296131EBF9C63004295B35A0F8F9300003FB735A00293),
-    .INIT_06(256'h1CC0966301FF56131CBF9A630042D5B303500F9335A002931ED2926300029693),
-    .INIT_07(256'h1ABD9663403F56131BB59A63403F55B3F0000DB7008002931CDF1263000F5693),
-    .INIT_08(256'h005327B318E098630062A7330070039340408333404002B31AD012634042D693),
-    .INIT_09(256'h0043299316091863FFD3291317109C63FFF2A893181810630013283318079463),
-    .INIT_0A(256'h140A96630802BA93140A1A6300463A33141A1E6300C23A33FFFFF63716199463),
-    .INIT_0B(256'hC0002A730E8006EF12359A630E80056F121B9E637FFABB93140B126300563B13),
-    .INIT_0C(256'h765435370CA2066300400513C8202CF3C0202C73C8102BF3C0102B73C8002AF3),
-    .INIT_0D(256'h0000573729868693765436B7A98606137654C637A9858593FEDCC5B721050513),
-    .INIT_0E(256'h1084049300001437EEF88893DEADC8B75678081301234837076007934BA70713),
-    .INIT_0F(256'h00442A830B45186300042A0300B4042300B4122300A4242300A4222300A42023),
-    .INIT_10(256'h0104A2230987986300B40C0309771C6300541B830B6690630B56126300842B03),
-    .INIT_11(256'h00002FB707A8186307989A6307881C63000C0D130084AC830044AC030114A423),
-    .INIT_12(256'h00050667002085B305800D6F010FA823010FA623010FA423010FA223010FA023),
-    .INIT_13(256'h02B5C66303000FEF0015C463FFF0059303C00FEF002194630432026300068767),
-    .INIT_14(256'h00C00FEF0015F4630015EA6301800FEF00B064630205D06302400FEF00B5D463),
-    .INIT_15(256'h00000000000000000000000000000000000000EF000000EFEF9FFD6F0041F463),
-    .INIT_16(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_17(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_18(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_19(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_1A(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_1B(256'h0000000000000000000000000000000000000000000000000000000000000000),
-    .INIT_1C(256'h0000000000000000000000000000000000000000000000000000000000000000),
+    .INIT_00(256'h000015B7FFFFF637024E8E930DEADEB701F420230000143700007F3700008FB7),
+    .INIT_01(256'h003000132ECE166341FF0E332EBE9A6341EF8EB32FD69E630DEAD69700800513),
+    .INIT_02(256'h004002132CA21663004182330040823300400213003001930020011300100093),
+    .INIT_03(256'h00600E93004163B32A6F186301000F13012143132A5F9E63004142B300600F93),
+    .INIT_04(256'h00F1F513289D966300100D930011F4B3288E1C630201E4132A7E906302300E13),
+    .INIT_05(256'h01E2961326BF9663004295B35A0F8F9300003FB735A0029328AD106300300D13),
+    .INIT_06(256'h24BF94630042D5B303500F9335A0029324D29C630002969326CF106380000F37),
+    .INIT_07(256'h23B59463403F55B3F0000DB70080029322DF1C63000F569324C0906301FF5613),
+    .INIT_08(256'h0062A7330070039340408333404002B320D01C634042D69322BD9063403F5613),
+    .INIT_09(256'hFFD329131F109663FFF2A8931E181A63001328331E079E63005327B320E09263),
+    .INIT_0A(256'h1C0A146300463A331C1A186300C23A33FFFFF6371C199E63004329931E091263),
+    .INIT_0B(256'h1A35946313C0056F1A1B98637FFABB931A0B1C6300563B131C0A90630802BA93),
+    .INIT_0C(256'h00400513C8202CF3C0202C73C8102BF3C0102B73C8002AF3C0002A7313C006EF),
+    .INIT_0D(256'h765436B7A98606137654C637A9858593FEDCC5B7210505137654353712A20063),
+    .INIT_0E(256'hEEF88893DEADC8B75678081301234837076007934BA707130000573729868693),
+    .INIT_0F(256'h00042A0300B4042300B4122300A4242300A4222300A420231084049300001437),
+    .INIT_10(256'h00B40C031177166300541B8311669A6311561C6300842B0300442A8313451263),
+    .INIT_11(256'h0F9894630F881663000C0D130084AC830044AC030114A4230104A22311879263),
+    .INIT_12(256'h765435370AC00D6F03C00D6F02B4242302A4222301142223010420230FA81263),
+    .INIT_13(256'h0B0A146302842B8302442B0300442A8300042A03A9858593FEDCC5B721050513),
+    .INIT_14(256'hFE219AE3C80021F3C00020F3C80021730C800D6F09759E630AAB10630B1A9263),
+    .INIT_15(256'h0006876700050667002085B3000D00670022222300122023FF82021300002237),
+    .INIT_16(256'h00B5D46304B5C66305000FEF0015C463FFF0059305C00FEF0021946306320263),
+    .INIT_17(256'h0241F46302C00FEF0015F4630215EA6303800FEF00B064630405D06304400FEF),
+    .INIT_18(256'hFEB51CE3004585930005AD83000115B70045051300015537000044B7EA5FFD6F),
+    .INIT_19(256'h0000AE37F00E8E9300006EB7F00F0F1300002F37A11F8F93FA120FB7000D0D67),
+    .INIT_1A(256'h00002F37A55F8F93DA55EFB7FD5FF0EF000E2023000EA02301FF2023F00E0E13),
+    .INIT_1B(256'h000E2023000EA02301FF2023F00E0E130000AE37F00E8E9300006EB7F00F0F13),
+    .INIT_1C(256'h00000000000000000000000000000000000000000000000000000000FD5FF0EF),
     .INIT_1D(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_1E(256'h0000000000000000000000000000000000000000000000000000000000000000),
     .INIT_1F(256'h0000000000000000000000000000000000000000000000000000000000000000),
@@ -681,7 +743,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
         .CASCADEOUTA(\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_CASCADEOUTA_UNCONNECTED ),
         .CASCADEOUTB(\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_CASCADEOUTB_UNCONNECTED ),
         .CLKARDCLK(clka),
-        .CLKBWRCLK(clka),
+        .CLKBWRCLK(clkb),
         .DBITERR(\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DBITERR_UNCONNECTED ),
         .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .DIBDI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
@@ -728,7 +790,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper_init
     .INIT(4'hE)) 
     \DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_i_4 
        (.I0(rstb),
-        .I1(POR_A),
+        .I1(POR_B),
         .O(ram_rstram_b));
 endmodule
 
@@ -739,6 +801,7 @@ module mc_top_instr_mem_0_blk_mem_gen_top
     rsta_busy,
     rstb_busy,
     clka,
+    clkb,
     addra,
     addrb,
     rsta,
@@ -750,6 +813,7 @@ module mc_top_instr_mem_0_blk_mem_gen_top
   output rsta_busy;
   output rstb_busy;
   input clka;
+  input clkb;
   input [9:0]addra;
   input [9:0]addrb;
   input rsta;
@@ -760,6 +824,7 @@ module mc_top_instr_mem_0_blk_mem_gen_top
   wire [9:0]addra;
   wire [9:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
@@ -773,6 +838,7 @@ module mc_top_instr_mem_0_blk_mem_gen_top
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
+        .clkb(clkb),
         .douta(douta),
         .doutb(doutb),
         .ena(ena),
@@ -785,7 +851,7 @@ endmodule
 
 (* C_ADDRA_WIDTH = "32" *) (* C_ADDRB_WIDTH = "32" *) (* C_ALGORITHM = "1" *) 
 (* C_AXI_ID_WIDTH = "4" *) (* C_AXI_SLAVE_TYPE = "0" *) (* C_AXI_TYPE = "1" *) 
-(* C_BYTE_SIZE = "8" *) (* C_COMMON_CLK = "1" *) (* C_COUNT_18K_BRAM = "0" *) 
+(* C_BYTE_SIZE = "8" *) (* C_COMMON_CLK = "0" *) (* C_COUNT_18K_BRAM = "0" *) 
 (* C_COUNT_36K_BRAM = "1" *) (* C_CTRL_ECC_ALGO = "NONE" *) (* C_DEFAULT_DATA = "0" *) 
 (* C_DISABLE_WARN_BHV_COLL = "0" *) (* C_DISABLE_WARN_BHV_RANGE = "0" *) (* C_ELABORATION_DIR = "./" *) 
 (* C_ENABLE_32BIT_ADDRESS = "1" *) (* C_EN_DEEPSLEEP_PIN = "0" *) (* C_EN_ECC_PIPE = "0" *) 
@@ -941,6 +1007,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2
   wire [31:0]addra;
   wire [31:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
@@ -1074,6 +1141,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2
        (.addra(addra[11:2]),
         .addrb(addrb[11:2]),
         .clka(clka),
+        .clkb(clkb),
         .douta(douta),
         .doutb(doutb),
         .ena(ena),
@@ -1091,6 +1159,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth
     rsta_busy,
     rstb_busy,
     clka,
+    clkb,
     addra,
     addrb,
     rsta,
@@ -1102,6 +1171,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth
   output rsta_busy;
   output rstb_busy;
   input clka;
+  input clkb;
   input [9:0]addra;
   input [9:0]addrb;
   input rsta;
@@ -1112,6 +1182,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth
   wire [9:0]addra;
   wire [9:0]addrb;
   wire clka;
+  wire clkb;
   wire [31:0]douta;
   wire [31:0]doutb;
   wire ena;
@@ -1125,6 +1196,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
+        .clkb(clkb),
         .douta(douta),
         .doutb(doutb),
         .ena(ena),

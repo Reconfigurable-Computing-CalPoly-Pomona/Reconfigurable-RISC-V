@@ -170,14 +170,10 @@ module hazard_unit(
   //assign o_ma_en = i_ma_store ? ((i_ma_memaccess & i_ma_cache_ready) | ~i_ma_memaccess) : i_ma_cache_ready;
   assign o_ma_en = i_ma_cache_ready;
 
-  // Flushes the execute stage when a branch has been mispredicted
-  //assign o_exe_en = i_decode_pc == i_execute_br_addr || ~i_execute_br_valid;
-
-  // TODO
+  // Enable whenever there is not a stall accessing memory
   assign o_fetch_en = o_ma_en;
   assign o_decode_en = o_ma_en;
   assign o_exe_en = o_ma_en;
-  //assign o_decode_en = i_fetch_instr_valid & ~o_br_valid;
 
   assign o_decode_flush = ~i_fetch_instr_valid | o_br_valid;
   assign o_exe_flush = i_decode_pc != i_execute_br_addr && i_execute_br_valid;

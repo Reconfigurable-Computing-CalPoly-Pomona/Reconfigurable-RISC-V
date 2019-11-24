@@ -130,6 +130,9 @@ module data_cache_ctrl #(
   // The index which determines which index of the cache RAM will contain the value
   logic [INDEX_BITS - 1:0] index;
 
+  // Most signficant bits of address within the tag. Used for writing to memory
+  logic [TAG_BITS - 1:0] cached_tag;
+
   // The index that determines the particular word within the line that is sent as the instruction
   logic [WORD_BITS - 1:0] word;
 
@@ -162,9 +165,6 @@ module data_cache_ctrl #(
 
   // When high, none of the way caches have received a tag hit
   logic miss;
-
-  // Assigned to the read dirty bit
-  logic dirty;
 
   // Registers if the transaction is a store or not
   logic write;
@@ -210,6 +210,10 @@ module data_cache_ctrl #(
         CHK_TAG: begin
           // Reset the block index to zero in order to perform a read if a miss occurs
           o_data <= data;
+
+          // Register the value of the tag to write to memory in case it is dirty
+          cached_tag <= cache_rline[lru].tag;
+
           if (miss) begin
             address <= 0;
           end else begin
@@ -308,7 +312,7 @@ module data_cache_ctrl #(
     axi.ar.addr = 0;
     axi.ar.addr[$size(axi.ar.addr) - 1:WORD_BITS + OFFSET] = {tag, index};
     axi.aw.addr = 0;
-    axi.aw.addr[$size(axi.aw.addr) - 1:WORD_BITS + OFFSET] = {tag, index};
+    axi.aw.addr[$size(axi.aw.addr) - 1:WORD_BITS + OFFSET] = {cached_tag, index};
     // The length of the burst will be equal to the size of the block
     axi.ar.len = WORDS_PER_LINE - 1;
     axi.aw.len = WORDS_PER_LINE - 1;

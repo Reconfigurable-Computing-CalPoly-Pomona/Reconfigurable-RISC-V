@@ -163,7 +163,6 @@ proc create_root_design { parentCell } {
 
 
   # Create interface ports
-  set uart [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 uart ]
 
   # Create ports
   set ddr_clock [ create_bd_port -dir I -type clk ddr_clock ]
@@ -179,21 +178,19 @@ proc create_root_design { parentCell } {
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
   set_property -dict [ list \
    CONFIG.ENABLE_ADVANCED_OPTIONS {1} \
-   CONFIG.NUM_MI {3} \
+   CONFIG.NUM_MI {2} \
    CONFIG.NUM_SI {3} \
  ] $axi_interconnect_0
-
-  # Create instance: axi_uartlite_0, and set properties
-  set axi_uartlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0 ]
-  set_property -dict [ list \
-   CONFIG.C_BAUDRATE {115200} \
-   CONFIG.UARTLITE_BOARD_INTERFACE {usb_uart} \
-   CONFIG.USE_BOARD_FLOW {true} \
- ] $axi_uartlite_0
 
   # Create instance: clk_wiz, and set properties
   set clk_wiz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz ]
   set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {226.435} \
+   CONFIG.CLKOUT1_PHASE_ERROR {236.795} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {75.000} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {40.125} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {13.375} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {4} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
  ] $clk_wiz
@@ -218,11 +215,12 @@ proc create_root_design { parentCell } {
    CONFIG.Assume_Synchronous_Clk {true} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Load_Init_File {false} \
-   CONFIG.Memory_Type {Dual_Port_ROM} \
-   CONFIG.Port_A_Write_Rate {0} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Port_A_Write_Rate {50} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
-   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Use_Byte_Write_Enable {true} \
    CONFIG.Use_RSTB_Pin {true} \
  ] $data_mem
 
@@ -232,7 +230,7 @@ proc create_root_design { parentCell } {
   # Create instance: instr_mem, and set properties
   set instr_mem [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 instr_mem ]
   set_property -dict [ list \
-   CONFIG.Assume_Synchronous_Clk {true} \
+   CONFIG.Assume_Synchronous_Clk {false} \
    CONFIG.Coe_File {../../../../../../../test/asm/rv32i_compliance.coe} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Load_Init_File {true} \
@@ -240,6 +238,7 @@ proc create_root_design { parentCell } {
    CONFIG.Port_A_Write_Rate {0} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {0} \
    CONFIG.Use_Byte_Write_Enable {false} \
    CONFIG.Use_RSTB_Pin {true} \
  ] $instr_mem
@@ -263,8 +262,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTB [get_bd_intf_pins instr_mem/BRAM_PORTB] [get_bd_intf_pins instr_mem_ctrl/BRAM_PORTB]
   connect_bd_intf_net -intf_net axi_interconnect_0_M00_AXI [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins instr_mem_ctrl/S_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_0_M01_AXI [get_bd_intf_pins axi_interconnect_0/M01_AXI] [get_bd_intf_pins data_mem_ctrl/S_AXI]
-  connect_bd_intf_net -intf_net axi_interconnect_0_M02_AXI [get_bd_intf_pins axi_interconnect_0/M02_AXI] [get_bd_intf_pins axi_uartlite_0/S_AXI]
-  connect_bd_intf_net -intf_net axi_uartlite_0_UART [get_bd_intf_ports uart] [get_bd_intf_pins axi_uartlite_0/UART]
   connect_bd_intf_net -intf_net core_wrapper_0_m_data [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins core_wrapper_0/m_data]
   connect_bd_intf_net -intf_net core_wrapper_0_m_instr [get_bd_intf_pins axi_interconnect_0/S01_AXI] [get_bd_intf_pins core_wrapper_0/m_instr]
   connect_bd_intf_net -intf_net data_mem_ctrl_BRAM_PORTA [get_bd_intf_pins data_mem/BRAM_PORTA] [get_bd_intf_pins data_mem_ctrl/BRAM_PORTA]
@@ -289,7 +286,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_interconnect_0_S01_AXI_rlast [get_bd_pins axi_interconnect_0/S01_AXI_rlast] [get_bd_pins core_top_wrapper_0/i_data_rlast]
   connect_bd_net -net axi_interconnect_0_S01_AXI_rvalid [get_bd_pins axi_interconnect_0/S01_AXI_rvalid] [get_bd_pins core_top_wrapper_0/i_data_rvalid]
   connect_bd_net -net axi_interconnect_0_S01_AXI_wready [get_bd_pins axi_interconnect_0/S01_AXI_wready] [get_bd_pins core_top_wrapper_0/i_data_wready]
-  connect_bd_net -net clk_wiz_clk_out1 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/M02_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins core_top_wrapper_0/i_aclk] [get_bd_pins core_wrapper_0/m_data_aclk] [get_bd_pins core_wrapper_0/m_instr_aclk] [get_bd_pins data_mem_ctrl/s_axi_aclk] [get_bd_pins instr_mem_ctrl/s_axi_aclk] [get_bd_pins jtag_master/aclk] [get_bd_pins rst_clk_wiz_100M/slowest_sync_clk]
+  connect_bd_net -net clk_wiz_clk_out1 [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/M01_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins axi_interconnect_0/S02_ACLK] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins core_top_wrapper_0/i_aclk] [get_bd_pins core_wrapper_0/m_data_aclk] [get_bd_pins core_wrapper_0/m_instr_aclk] [get_bd_pins data_mem_ctrl/s_axi_aclk] [get_bd_pins instr_mem_ctrl/s_axi_aclk] [get_bd_pins jtag_master/aclk] [get_bd_pins rst_clk_wiz_100M/slowest_sync_clk]
   connect_bd_net -net clk_wiz_locked [get_bd_pins clk_wiz/locked] [get_bd_pins rst_clk_wiz_100M/dcm_locked]
   connect_bd_net -net core_top_wrapper_0_o_data_araddr [get_bd_pins axi_interconnect_0/S01_AXI_araddr] [get_bd_pins core_top_wrapper_0/o_data_araddr]
   connect_bd_net -net core_top_wrapper_0_o_data_arburst [get_bd_pins axi_interconnect_0/S01_AXI_arburst] [get_bd_pins core_top_wrapper_0/o_data_arburst]
@@ -325,16 +322,13 @@ proc create_root_design { parentCell } {
   connect_bd_net -net core_top_wrapper_0_o_unused [get_bd_pins axi_interconnect_0/S00_AXI_arcache] [get_bd_pins axi_interconnect_0/S00_AXI_arid] [get_bd_pins axi_interconnect_0/S00_AXI_arlock] [get_bd_pins axi_interconnect_0/S00_AXI_arprot] [get_bd_pins axi_interconnect_0/S00_AXI_arqos] [get_bd_pins axi_interconnect_0/S00_AXI_aruser] [get_bd_pins axi_interconnect_0/S00_AXI_awcache] [get_bd_pins axi_interconnect_0/S00_AXI_awid] [get_bd_pins axi_interconnect_0/S00_AXI_awlock] [get_bd_pins axi_interconnect_0/S00_AXI_awprot] [get_bd_pins axi_interconnect_0/S00_AXI_awuser] [get_bd_pins axi_interconnect_0/S00_AXI_wuser] [get_bd_pins axi_interconnect_0/S01_AXI_arcache] [get_bd_pins axi_interconnect_0/S01_AXI_arid] [get_bd_pins axi_interconnect_0/S01_AXI_arlock] [get_bd_pins axi_interconnect_0/S01_AXI_arprot] [get_bd_pins axi_interconnect_0/S01_AXI_arqos] [get_bd_pins axi_interconnect_0/S01_AXI_aruser] [get_bd_pins axi_interconnect_0/S01_AXI_awcache] [get_bd_pins axi_interconnect_0/S01_AXI_awid] [get_bd_pins axi_interconnect_0/S01_AXI_awlock] [get_bd_pins axi_interconnect_0/S01_AXI_awprot] [get_bd_pins axi_interconnect_0/S01_AXI_awqos] [get_bd_pins axi_interconnect_0/S01_AXI_awuser] [get_bd_pins axi_interconnect_0/S01_AXI_wuser] [get_bd_pins core_top_wrapper_0/o_unused] [get_bd_pins core_wrapper_0/m_data_init_axi_txn] [get_bd_pins core_wrapper_0/m_instr_init_axi_txn]
   connect_bd_net -net ddr_clock_1 [get_bd_ports ddr_clock] [get_bd_pins clk_wiz/clk_in1]
   connect_bd_net -net reset_1 [get_bd_ports reset_n] [get_bd_pins clk_wiz/resetn] [get_bd_pins rst_clk_wiz_100M/ext_reset_in]
-  connect_bd_net -net rst_clk_wiz_100M_peripheral_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins core_top_wrapper_0/i_areset_n] [get_bd_pins core_wrapper_0/m_data_aresetn] [get_bd_pins core_wrapper_0/m_instr_aresetn] [get_bd_pins data_mem_ctrl/s_axi_aresetn] [get_bd_pins instr_mem_ctrl/s_axi_aresetn] [get_bd_pins jtag_master/aresetn] [get_bd_pins rst_clk_wiz_100M/peripheral_aresetn]
+  connect_bd_net -net rst_clk_wiz_100M_peripheral_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins core_top_wrapper_0/i_areset_n] [get_bd_pins core_wrapper_0/m_data_aresetn] [get_bd_pins core_wrapper_0/m_instr_aresetn] [get_bd_pins data_mem_ctrl/s_axi_aresetn] [get_bd_pins instr_mem_ctrl/s_axi_aresetn] [get_bd_pins jtag_master/aresetn] [get_bd_pins rst_clk_wiz_100M/peripheral_aresetn]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00001000 -offset 0x00002000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x00002000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x00001000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
   create_bd_addr_seg -range 0x00001000 -offset 0x00001000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
   create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
   create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00002000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x00001000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
   create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
 

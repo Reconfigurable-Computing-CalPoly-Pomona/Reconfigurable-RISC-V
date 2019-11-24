@@ -3,6 +3,8 @@
 
 # XDC: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc
 
+# XDC: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc
+
 # Block Designs: bd/mc_top/mc_top.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top || ORIG_REF_NAME==mc_top} -quiet] -quiet
 
@@ -38,11 +40,5 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_instr_me
 
 # IP: bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_rst_clk_wiz_100M_0 || ORIG_REF_NAME==mc_top_rst_clk_wiz_100M_0} -quiet] -quiet
-
-# IP: bd/mc_top/ip/mc_top_axi_uartlite_0_0/mc_top_axi_uartlite_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_axi_uartlite_0_0 || ORIG_REF_NAME==mc_top_axi_uartlite_0_0} -quiet] -quiet
-
-# IP: bd/mc_top/ip/mc_top_auto_pc_0/mc_top_auto_pc_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_auto_pc_0 || ORIG_REF_NAME==mc_top_auto_pc_0} -quiet] -quiet
 
 # XDC: bd/mc_top/mc_top_ooc.xdc

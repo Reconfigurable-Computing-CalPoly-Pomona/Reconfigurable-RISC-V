@@ -15,15 +15,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2470333333fs"></ZoomStartTime>
-      <ZoomEndTime time="4470333334fs"></ZoomEndTime>
-      <Cursor1Time time="4137000000fs"></Cursor1Time>
+      <ZoomStartTime time="37811250000fs"></ZoomStartTime>
+      <ZoomEndTime time="37819800001fs"></ZoomEndTime>
+      <Cursor1Time time="37814100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="247"></NameColumnWidth>
-      <ValueColumnWidth column_width="214"></ValueColumnWidth>
+      <ValueColumnWidth column_width="210"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="35" />
    <wvobject fp_name="group131" type="group">
       <obj_property name="label">Core Top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -303,6 +303,7 @@
    <wvobject fp_name="group151" type="group">
       <obj_property name="label">Fetch</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/i_aclk" type="logic">
          <obj_property name="ElementShortName">i_aclk</obj_property>
          <obj_property name="ObjectShortName">i_aclk</obj_property>
@@ -991,14 +992,6 @@
    <wvobject fp_name="group336" type="group">
       <obj_property name="label">Hazard</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_aclk" type="logic">
-         <obj_property name="ElementShortName">i_aclk</obj_property>
-         <obj_property name="ObjectShortName">i_aclk</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/i_areset_n" type="logic">
-         <obj_property name="ElementShortName">i_areset_n</obj_property>
-         <obj_property name="ObjectShortName">i_areset_n</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/hazard_unit/o_br_addr" type="array">
          <obj_property name="ElementShortName">o_br_addr[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_br_addr[31:0]</obj_property>
@@ -1151,17 +1144,21 @@
    <wvobject fp_name="group359" type="group">
       <obj_property name="label">AXI Data</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/aw" type="array">
          <obj_property name="ElementShortName">aw</obj_property>
          <obj_property name="ObjectShortName">aw</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/ar" type="array">
          <obj_property name="ElementShortName">ar</obj_property>
          <obj_property name="ObjectShortName">ar</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/w" type="array">
          <obj_property name="ElementShortName">w</obj_property>
          <obj_property name="ObjectShortName">w</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/r" type="array">
          <obj_property name="ElementShortName">r</obj_property>
@@ -1232,10 +1229,6 @@
          <obj_property name="ElementShortName">o_data[31:0]</obj_property>
          <obj_property name="ObjectShortName">o_data[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/we" type="array">
-         <obj_property name="ElementShortName">we[1:0]</obj_property>
-         <obj_property name="ObjectShortName">we[1:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_raddr" type="array">
          <obj_property name="ElementShortName">cache_raddr[7:0]</obj_property>
          <obj_property name="ObjectShortName">cache_raddr[7:0]</obj_property>
@@ -1271,7 +1264,6 @@
       <wvobject fp_name="group1014" type="group">
          <obj_property name="label">CTRL</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/i_addr" type="array">
             <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
             <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
@@ -1288,10 +1280,6 @@
             <obj_property name="ElementShortName">i_ldop[2:0]</obj_property>
             <obj_property name="ObjectShortName">i_ldop[2:0]</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/i_wstrb" type="array">
-            <obj_property name="ElementShortName">i_wstrb[3:0]</obj_property>
-            <obj_property name="ObjectShortName">i_wstrb[3:0]</obj_property>
-         </wvobject>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/i_req" type="logic">
             <obj_property name="ElementShortName">i_req</obj_property>
             <obj_property name="ObjectShortName">i_req</obj_property>
@@ -1303,10 +1291,6 @@
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/i_line" type="array">
             <obj_property name="ElementShortName">i_line[1:0][276:0]</obj_property>
             <obj_property name="ObjectShortName">i_line[1:0][276:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/o_we" type="array">
-            <obj_property name="ElementShortName">o_we[1:0]</obj_property>
-            <obj_property name="ObjectShortName">o_we[1:0]</obj_property>
          </wvobject>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/o_line" type="array">
             <obj_property name="ElementShortName">o_line[276:0]</obj_property>
@@ -1408,10 +1392,6 @@
             <obj_property name="ElementShortName">miss</obj_property>
             <obj_property name="ObjectShortName">miss</obj_property>
          </wvobject>
-         <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/dirty" type="logic">
-            <obj_property name="ElementShortName">dirty</obj_property>
-            <obj_property name="ObjectShortName">dirty</obj_property>
-         </wvobject>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/write" type="logic">
             <obj_property name="ElementShortName">write</obj_property>
             <obj_property name="ObjectShortName">write</obj_property>
@@ -1421,5 +1401,105 @@
             <obj_property name="ObjectShortName">store_data[31:0]</obj_property>
          </wvobject>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/data_mem_ctrl/U0/s_axi_ctrl_awready" type="logic">
+      <obj_property name="ElementShortName">s_axi_ctrl_awready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_ctrl_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/data_mem_ctrl/U0/s_axi_ctrl_wready" type="logic">
+      <obj_property name="ElementShortName">s_axi_ctrl_wready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_ctrl_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/data_mem_ctrl/s_axi_awready" type="logic">
+      <obj_property name="ElementShortName">s_axi_awready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/data_mem_ctrl/s_axi_wready" type="logic">
+      <obj_property name="ElementShortName">s_axi_wready</obj_property>
+      <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M00_AXI_awvalid" type="logic">
+      <obj_property name="ElementShortName">M00_AXI_awvalid</obj_property>
+      <obj_property name="ObjectShortName">M00_AXI_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M00_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">M00_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">M00_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M01_AXI_awvalid" type="logic">
+      <obj_property name="ElementShortName">M01_AXI_awvalid</obj_property>
+      <obj_property name="ObjectShortName">M01_AXI_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_awvalid" type="logic">
+      <obj_property name="ElementShortName">S00_AXI_awvalid</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">S00_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S01_AXI_awvalid" type="logic">
+      <obj_property name="ElementShortName">S01_AXI_awvalid</obj_property>
+      <obj_property name="ObjectShortName">S01_AXI_awvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_awready" type="logic">
+      <obj_property name="ElementShortName">S00_AXI_awready</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_wready" type="logic">
+      <obj_property name="ElementShortName">S00_AXI_wready</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S01_AXI_awready" type="logic">
+      <obj_property name="ElementShortName">S01_AXI_awready</obj_property>
+      <obj_property name="ObjectShortName">S01_AXI_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M00_AXI_awready" type="logic">
+      <obj_property name="ElementShortName">M00_AXI_awready</obj_property>
+      <obj_property name="ObjectShortName">M00_AXI_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M00_AXI_wready" type="logic">
+      <obj_property name="ElementShortName">M00_AXI_wready</obj_property>
+      <obj_property name="ObjectShortName">M00_AXI_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M01_AXI_awready" type="logic">
+      <obj_property name="ElementShortName">M01_AXI_awready</obj_property>
+      <obj_property name="ObjectShortName">M01_AXI_awready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M01_AXI_wready" type="logic">
+      <obj_property name="ElementShortName">M01_AXI_wready</obj_property>
+      <obj_property name="ObjectShortName">M01_AXI_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S01_AXI_wready" type="logic">
+      <obj_property name="ElementShortName">S01_AXI_wready</obj_property>
+      <obj_property name="ObjectShortName">S01_AXI_wready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M00_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">M00_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">M00_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">S00_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M01_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">M01_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">M01_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S01_AXI_wvalid" type="logic">
+      <obj_property name="ElementShortName">S01_AXI_wvalid</obj_property>
+      <obj_property name="ObjectShortName">S01_AXI_wvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S00_AXI_awaddr" type="array">
+      <obj_property name="ElementShortName">S00_AXI_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S00_AXI_awaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/M01_AXI_awaddr" type="array">
+      <obj_property name="ElementShortName">M01_AXI_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M01_AXI_awaddr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/axi_interconnect_0/S01_AXI_awaddr" type="array">
+      <obj_property name="ElementShortName">S01_AXI_awaddr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S01_AXI_awaddr[31:0]</obj_property>
    </wvobject>
 </wave_config>

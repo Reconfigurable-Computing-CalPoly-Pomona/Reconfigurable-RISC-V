@@ -326,15 +326,17 @@ module execute_unit(
       {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
       cu_exe_unit <= ALU;
     end else begin
-      if (i_flush) begin
-        {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
-        cu_exe_unit <= ALU;
-      end else if (i_en) begin
-        cu_exe_unit <= i_cu_exe_unit;
-        cu_jalr <= i_cu_jalr;
-        o_cu_regwrite <= i_cu_regwrite;
-        o_cu_memwrite <= i_cu_memwrite;
-        o_cu_memaccess <= i_cu_memaccess;
+      if (i_en) begin
+        if (i_flush) begin
+          {cu_jalr, o_cu_regwrite, o_cu_memwrite, o_cu_memaccess} <= 0;
+          cu_exe_unit <= ALU;
+        end else begin
+          cu_exe_unit <= i_cu_exe_unit;
+          cu_jalr <= i_cu_jalr;
+          o_cu_regwrite <= i_cu_regwrite;
+          o_cu_memwrite <= i_cu_memwrite;
+          o_cu_memaccess <= i_cu_memaccess;
+        end
       end
     end
   end

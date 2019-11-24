@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1574399417">
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1574566380">
   <File Type="PA-TCL" Name="mc_top_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mc_top_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mc_top_wrapper_reports.tcl"/>
@@ -179,6 +179,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/jtag_to_axi/jtag_to_axi.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/jtag_to_axi/hdl/jtag_to_axi_wrapper.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../rtl/reset_bridge.sv">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -238,6 +254,12 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../constraints/jtag_to_axi.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TargetConstrsFile" Val="$PPRDIR/../constraints/fpga.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
@@ -253,6 +275,12 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="mc_top_instr_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_data_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_instr_mem_ctrl_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mc_top_core_top_wrapper_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_instr_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_data_mem_ctrl_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_instr_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_axi_gpio_0_0"/>
 </GenRun>

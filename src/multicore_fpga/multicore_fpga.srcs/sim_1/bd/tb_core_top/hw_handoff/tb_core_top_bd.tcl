@@ -197,11 +197,12 @@ proc create_root_design { parentCell } {
    CONFIG.Assume_Synchronous_Clk {true} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Load_Init_File {false} \
-   CONFIG.Memory_Type {Dual_Port_ROM} \
-   CONFIG.Port_A_Write_Rate {0} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Port_A_Write_Rate {50} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
-   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Use_Byte_Write_Enable {true} \
    CONFIG.Use_RSTB_Pin {true} \
  ] $data_mem
 

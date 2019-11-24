@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sun Nov 17 19:13:24 2019
+// Date        : Sat Nov 23 12:05:20 2019
 // Host        : Drew running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top mc_top_core_wrapper_0_0 -prefix
 //               mc_top_core_wrapper_0_0_ mc_top_core_wrapper_0_0_sim_netlist.v
@@ -4801,8 +4801,8 @@ module mc_top_core_wrapper_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_instr RLAST" *) input m_instr_rlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_instr RUSER" *) input [0:0]m_instr_ruser;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_instr RVALID" *) input m_instr_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_instr RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_instr, WIZ_DATA_WIDTH 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 1, ARUSER_WIDTH 1, WUSER_WIDTH 1, RUSER_WIDTH 1, BUSER_WIDTH 1, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_instr_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_instr_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_instr_CLK, ASSOCIATED_BUSIF m_instr, ASSOCIATED_RESET m_instr_aresetn, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *) input m_instr_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_instr RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_instr, WIZ_DATA_WIDTH 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 75000000, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 1, ARUSER_WIDTH 1, WUSER_WIDTH 1, RUSER_WIDTH 1, BUSER_WIDTH 1, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_instr_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_instr_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_instr_CLK, ASSOCIATED_BUSIF m_instr, ASSOCIATED_RESET m_instr_aresetn, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *) input m_instr_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_instr_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_instr_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input m_instr_aresetn;
   input m_instr_init_axi_txn;
   output m_instr_txn_done;
@@ -4848,8 +4848,8 @@ module mc_top_core_wrapper_0_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_data RLAST" *) input m_data_rlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_data RUSER" *) input [0:0]m_data_ruser;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_data RVALID" *) input m_data_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_data RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_data, WIZ_DATA_WIDTH 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 1, ARUSER_WIDTH 1, WUSER_WIDTH 1, RUSER_WIDTH 1, BUSER_WIDTH 1, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_data_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_data_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_data_CLK, ASSOCIATED_BUSIF m_data, ASSOCIATED_RESET m_data_aresetn, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *) input m_data_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 m_data RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_data, WIZ_DATA_WIDTH 32, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 75000000, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 1, ARUSER_WIDTH 1, WUSER_WIDTH 1, RUSER_WIDTH 1, BUSER_WIDTH 1, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) output m_data_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_data_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_data_CLK, ASSOCIATED_BUSIF m_data, ASSOCIATED_RESET m_data_aresetn, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *) input m_data_aclk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 m_data_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_data_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input m_data_aresetn;
   input m_data_init_axi_txn;
   output m_data_txn_done;

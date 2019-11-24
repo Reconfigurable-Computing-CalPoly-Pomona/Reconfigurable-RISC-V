@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Thu Nov 21 18:46:52 2019
+//Date        : Sat Nov 23 17:34:14 2019
 //Host        : Drew running 64-bit major release  (build 9200)
 //Command     : generate_target tb_core_top.bd
 //Design      : tb_core_top
@@ -1296,14 +1296,18 @@ module tb_core_top
   wire [0:0]core_wrapper_0_m_instr_WUSER;
   wire [11:0]data_mem_ctrl_BRAM_PORTA_ADDR;
   wire data_mem_ctrl_BRAM_PORTA_CLK;
+  wire [31:0]data_mem_ctrl_BRAM_PORTA_DIN;
   wire [31:0]data_mem_ctrl_BRAM_PORTA_DOUT;
   wire data_mem_ctrl_BRAM_PORTA_EN;
   wire data_mem_ctrl_BRAM_PORTA_RST;
+  wire [3:0]data_mem_ctrl_BRAM_PORTA_WE;
   wire [11:0]data_mem_ctrl_BRAM_PORTB_ADDR;
   wire data_mem_ctrl_BRAM_PORTB_CLK;
+  wire [31:0]data_mem_ctrl_BRAM_PORTB_DIN;
   wire [31:0]data_mem_ctrl_BRAM_PORTB_DOUT;
   wire data_mem_ctrl_BRAM_PORTB_EN;
   wire data_mem_ctrl_BRAM_PORTB_RST;
+  wire [3:0]data_mem_ctrl_BRAM_PORTB_WE;
   wire [0:0]rst_clk_wiz_100M_peripheral_aresetn;
   wire tb_clk_gen_0_o_areset;
   wire tb_clk_gen_0_o_areset_n;
@@ -1579,12 +1583,16 @@ module tb_core_top
         .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,data_mem_ctrl_BRAM_PORTB_ADDR}),
         .clka(data_mem_ctrl_BRAM_PORTA_CLK),
         .clkb(data_mem_ctrl_BRAM_PORTB_CLK),
+        .dina(data_mem_ctrl_BRAM_PORTA_DIN),
+        .dinb(data_mem_ctrl_BRAM_PORTB_DIN),
         .douta(data_mem_ctrl_BRAM_PORTA_DOUT),
         .doutb(data_mem_ctrl_BRAM_PORTB_DOUT),
         .ena(data_mem_ctrl_BRAM_PORTA_EN),
         .enb(data_mem_ctrl_BRAM_PORTB_EN),
         .rsta(data_mem_ctrl_BRAM_PORTA_RST),
-        .rstb(data_mem_ctrl_BRAM_PORTB_RST));
+        .rstb(data_mem_ctrl_BRAM_PORTB_RST),
+        .wea(data_mem_ctrl_BRAM_PORTA_WE),
+        .web(data_mem_ctrl_BRAM_PORTB_WE));
   tb_core_top_axi_bram_ctrl_0_1 data_mem_ctrl
        (.bram_addr_a(data_mem_ctrl_BRAM_PORTA_ADDR),
         .bram_addr_b(data_mem_ctrl_BRAM_PORTB_ADDR),
@@ -1596,6 +1604,10 @@ module tb_core_top
         .bram_rddata_b(data_mem_ctrl_BRAM_PORTB_DOUT),
         .bram_rst_a(data_mem_ctrl_BRAM_PORTA_RST),
         .bram_rst_b(data_mem_ctrl_BRAM_PORTB_RST),
+        .bram_we_a(data_mem_ctrl_BRAM_PORTA_WE),
+        .bram_we_b(data_mem_ctrl_BRAM_PORTB_WE),
+        .bram_wrdata_a(data_mem_ctrl_BRAM_PORTA_DIN),
+        .bram_wrdata_b(data_mem_ctrl_BRAM_PORTB_DIN),
         .s_axi_aclk(clk_wiz_clk_out1),
         .s_axi_araddr(axi_interconnect_0_M01_AXI_ARADDR[11:0]),
         .s_axi_arburst(axi_interconnect_0_M01_AXI_ARBURST),

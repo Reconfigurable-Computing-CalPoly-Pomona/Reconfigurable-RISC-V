@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="tb_core_top" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1574399388"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1574399388"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1574399388"/>
-    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1574399388"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1574559926"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1574559926"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1574559926"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1574559926"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\tb_core_top_axi_interconnect_0_0\tb_core_top_axi_interconnect_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_interconnect_0"/>

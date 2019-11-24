@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="mc_top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574399412"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574399412"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574399412"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574399412"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574566376"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574566376"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574566376"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574566376"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\mc_top_jtag_axi_0_0\mc_top_jtag_axi_0_0.xci" Type="IP">
         <Instance HierarchyPath="jtag_master"/>
@@ -95,14 +95,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\mc_top_axi_uartlite_0_0\mc_top_axi_uartlite_0_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_uartlite_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="synth\mc_top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -112,14 +104,6 @@
       <File Name="sim\mc_top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\mc_top_auto_pc_0\mc_top_auto_pc_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_interconnect_0/m02_couplers/auto_pc"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="mc_top_ooc.xdc" Type="XDC">

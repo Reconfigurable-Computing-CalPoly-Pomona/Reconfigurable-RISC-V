@@ -109,7 +109,7 @@ module mc_top_core_top_wrapper_0_0 (
   o_unused
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_aclk, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME i_aclk, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 i_aclk CLK" *)
 input wire i_aclk;
 input wire i_areset_n;

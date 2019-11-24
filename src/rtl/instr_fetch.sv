@@ -140,13 +140,9 @@ module instr_fetch #(
   // Update the program counter register controlling cache access
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_pc
     if(~i_areset_n) begin
-      //cache_req <= 0;
       pc_fetch <= PC_BASE_ADDR;
       cache_invalidate <= 0;
     end else begin
-
-      
-      //cache_req <= i_en;
 
       if (~i_en && o_instr_valid) begin
         instr_stalled <= o_instruction;
@@ -173,18 +169,6 @@ module instr_fetch #(
         o_pc <= pc_fetch;
         o_pcplus4 <= pcplus4;
       end
-      /*
-      if (cache_ready && cache_req) begin
-        o_pc <= pc_fetch;
-        o_pcplus4 <= pcplus4;
-        pc_fetch <= pc;
-        cache_req <= i_en;
-      end else if (i_en) begin
-        cache_req <= 1;
-      end else begin
-        cache_req <= 0;
-      end
-      */
 
     end
   end
