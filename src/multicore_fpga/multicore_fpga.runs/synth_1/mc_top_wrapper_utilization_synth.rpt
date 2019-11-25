@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Nov 23 19:35:54 2019
+| Date         : Sun Nov 24 17:07:12 2019
 | Host         : Drew running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mc_top_wrapper_utilization_synth.rpt -pb mc_top_wrapper_utilization_synth.pb
 | Design       : mc_top_wrapper
@@ -160,7 +160,9 @@ Table of Contents
 | mc_top_jtag_axi_0_0         |    1 |
 | mc_top_instr_mem_ctrl_0     |    1 |
 | mc_top_instr_mem_0          |    1 |
+| mc_top_data_mem_ctrl_1      |    1 |
 | mc_top_data_mem_ctrl_0      |    1 |
+| mc_top_data_mem_1           |    1 |
 | mc_top_data_mem_0           |    1 |
 | mc_top_core_wrapper_0_0     |    1 |
 | mc_top_core_top_wrapper_0_0 |    1 |

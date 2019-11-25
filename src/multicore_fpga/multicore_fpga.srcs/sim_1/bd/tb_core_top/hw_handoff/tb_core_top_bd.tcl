@@ -196,13 +196,10 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.Assume_Synchronous_Clk {true} \
    CONFIG.Enable_B {Use_ENB_Pin} \
-   CONFIG.Load_Init_File {false} \
    CONFIG.Memory_Type {True_Dual_Port_RAM} \
-   CONFIG.Port_A_Write_Rate {50} \
    CONFIG.Port_B_Clock {100} \
    CONFIG.Port_B_Enable_Rate {100} \
    CONFIG.Port_B_Write_Rate {50} \
-   CONFIG.Use_Byte_Write_Enable {true} \
    CONFIG.Use_RSTB_Pin {true} \
  ] $data_mem
 
@@ -213,7 +210,7 @@ proc create_root_design { parentCell } {
   set instr_mem [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 instr_mem ]
   set_property -dict [ list \
    CONFIG.Assume_Synchronous_Clk {true} \
-   CONFIG.Coe_File {../../../../../../../test/asm/rv32i_compliance.coe} \
+   CONFIG.Coe_File {../../../../../../../test/asm/median/median.coe} \
    CONFIG.Enable_B {Use_ENB_Pin} \
    CONFIG.Load_Init_File {true} \
    CONFIG.Memory_Type {Dual_Port_ROM} \
@@ -311,8 +308,8 @@ proc create_root_design { parentCell } {
   # Create address segments
   create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
   create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00001000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00001000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_axi_bram_ctrl_1_Mem0
+  create_bd_addr_seg -range 0x00010000 -offset 0x00100000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
+  create_bd_addr_seg -range 0x00010000 -offset 0x00100000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
 
 
   # Restore current instance

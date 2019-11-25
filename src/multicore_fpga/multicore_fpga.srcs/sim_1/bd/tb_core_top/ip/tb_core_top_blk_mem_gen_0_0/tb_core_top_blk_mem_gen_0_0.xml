@@ -1458,11 +1458,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Nov 24 01:34:15 UTC 2019</spirit:value>
+            <spirit:value>Mon Nov 25 00:04:56 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5003c793</spirit:value>
+            <spirit:value>9:07b648ea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1478,11 +1478,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Nov 24 01:34:15 UTC 2019</spirit:value>
+            <spirit:value>Mon Nov 25 00:04:56 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:5003c793</spirit:value>
+            <spirit:value>9:07b648ea</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1497,11 +1497,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Nov 24 01:34:16 UTC 2019</spirit:value>
+            <spirit:value>Mon Nov 25 00:04:57 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f521ee08</spirit:value>
+            <spirit:value>9:557af997</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1517,11 +1517,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Nov 24 01:34:16 UTC 2019</spirit:value>
+            <spirit:value>Mon Nov 25 00:04:57 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:f521ee08</spirit:value>
+            <spirit:value>9:557af997</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -3992,7 +3992,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Coe_File</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coe_File" spirit:order="39">../../../../../../../test/asm/rv32i_compliance.coe</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Coe_File" spirit:order="39">../../../../../../../test/asm/median/median.coe</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

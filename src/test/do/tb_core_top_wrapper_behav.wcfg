@@ -15,13 +15,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="37811250000fs"></ZoomStartTime>
-      <ZoomEndTime time="37819800001fs"></ZoomEndTime>
-      <Cursor1Time time="37814100000fs"></Cursor1Time>
+      <ZoomStartTime time="1720070000fs"></ZoomStartTime>
+      <ZoomEndTime time="1730510001fs"></ZoomEndTime>
+      <Cursor1Time time="1727330000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="247"></NameColumnWidth>
-      <ValueColumnWidth column_width="210"></ValueColumnWidth>
+      <ValueColumnWidth column_width="206"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="35" />
    <wvobject fp_name="group131" type="group">
@@ -384,6 +384,7 @@
    <wvobject fp_name="group199" type="group">
       <obj_property name="label">Decode</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/i_aclk" type="logic">
          <obj_property name="ElementShortName">i_aclk</obj_property>
          <obj_property name="ObjectShortName">i_aclk</obj_property>
@@ -527,6 +528,7 @@
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/reg_file" type="array">
          <obj_property name="ElementShortName">reg_file[31:0][31:0]</obj_property>
          <obj_property name="ObjectShortName">reg_file[31:0][31:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/instruction" type="array">
          <obj_property name="ElementShortName">instruction[31:0]</obj_property>
@@ -564,6 +566,7 @@
    <wvobject fp_name="group267" type="group">
       <obj_property name="label">Execute</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/i_aclk" type="logic">
          <obj_property name="ElementShortName">i_aclk</obj_property>
          <obj_property name="ObjectShortName">i_aclk</obj_property>
@@ -832,6 +835,7 @@
    <wvobject fp_name="group291" type="group">
       <obj_property name="label">Memory Access</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/i_aclk" type="logic">
          <obj_property name="ElementShortName">i_aclk</obj_property>
          <obj_property name="ObjectShortName">i_aclk</obj_property>
@@ -928,6 +932,7 @@
    <wvobject fp_name="group307" type="group">
       <obj_property name="label">Writeback</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_aclk" type="logic">
          <obj_property name="ElementShortName">i_aclk</obj_property>
          <obj_property name="ObjectShortName">i_aclk</obj_property>
@@ -935,6 +940,10 @@
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_areset_n" type="logic">
          <obj_property name="ElementShortName">i_areset_n</obj_property>
          <obj_property name="ObjectShortName">i_areset_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_en" type="logic">
+         <obj_property name="ElementShortName">i_en</obj_property>
+         <obj_property name="ObjectShortName">i_en</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/wb_unit/i_rdest" type="array">
          <obj_property name="ElementShortName">i_rdest[4:0]</obj_property>
@@ -1144,7 +1153,6 @@
    <wvobject fp_name="group359" type="group">
       <obj_property name="label">AXI Data</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/axi_data/aw" type="array">
          <obj_property name="ElementShortName">aw</obj_property>
          <obj_property name="ObjectShortName">aw</obj_property>
@@ -1264,6 +1272,7 @@
       <wvobject fp_name="group1014" type="group">
          <obj_property name="label">CTRL</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/i_addr" type="array">
             <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
             <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
@@ -1363,6 +1372,33 @@
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline" type="array">
             <obj_property name="ElementShortName">cache_rline[1:0]</obj_property>
             <obj_property name="ObjectShortName">cache_rline[1:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[1]" type="array">
+               <obj_property name="ElementShortName">[1]</obj_property>
+               <obj_property name="ObjectShortName">[1]</obj_property>
+               <obj_property name="isExpanded"></obj_property>
+               <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[1].dirty" type="logic">
+                  <obj_property name="ElementShortName">.dirty</obj_property>
+                  <obj_property name="ObjectShortName">.dirty</obj_property>
+               </wvobject>
+               <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[1].valid" type="logic">
+                  <obj_property name="ElementShortName">.valid</obj_property>
+                  <obj_property name="ObjectShortName">.valid</obj_property>
+               </wvobject>
+               <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[1].tag" type="array">
+                  <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+                  <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+               </wvobject>
+               <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[1].data" type="array">
+                  <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+                  <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+                  <obj_property name="isExpanded"></obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_rline[0]" type="array">
+               <obj_property name="ElementShortName">[0]</obj_property>
+               <obj_property name="ObjectShortName">[0]</obj_property>
+            </wvobject>
          </wvobject>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/line_sel" type="array">
             <obj_property name="ElementShortName">line_sel</obj_property>
@@ -1371,6 +1407,24 @@
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_wline" type="array">
             <obj_property name="ElementShortName">cache_wline</obj_property>
             <obj_property name="ObjectShortName">cache_wline</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_wline.dirty" type="logic">
+               <obj_property name="ElementShortName">.dirty</obj_property>
+               <obj_property name="ObjectShortName">.dirty</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_wline.valid" type="logic">
+               <obj_property name="ElementShortName">.valid</obj_property>
+               <obj_property name="ObjectShortName">.valid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_wline.tag" type="array">
+               <obj_property name="ElementShortName">.tag[18:0]</obj_property>
+               <obj_property name="ObjectShortName">.tag[18:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/cache_wline.data" type="array">
+               <obj_property name="ElementShortName">.data[7:0][31:0]</obj_property>
+               <obj_property name="ObjectShortName">.data[7:0][31:0]</obj_property>
+               <obj_property name="isExpanded"></obj_property>
+            </wvobject>
          </wvobject>
          <wvobject fp_name="/tb_core_top_wrapper/tb_core_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/store_size" type="array">
             <obj_property name="ElementShortName">store_size[1:0]</obj_property>

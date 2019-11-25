@@ -13,7 +13,7 @@
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTA.MEM_SIZE">4096</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTA.MEM_WIDTH">32</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTA.READ_LATENCY">1</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTA.READ_WRITE_MODE">READ_ONLY</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTA.READ_WRITE_MODE">WRITE_ONLY</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTB.MEM_ECC">NONE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTB.MEM_SIZE">4096</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.BRAM_PORTB.MEM_WIDTH">32</spirit:configurableElementValue>

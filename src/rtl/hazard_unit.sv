@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -152,6 +151,9 @@ module hazard_unit(
   // Write back
   ///////////////////////////////
 
+  // Enables the write back stage
+  output logic o_wb_en,
+
   // Indicates the write back stage will write into the register file
   input logic i_wb_regwrite,
 
@@ -174,6 +176,7 @@ module hazard_unit(
   assign o_fetch_en = o_ma_en;
   assign o_decode_en = o_ma_en;
   assign o_exe_en = o_ma_en;
+  assign o_wb_en = o_ma_en;
 
   assign o_decode_flush = ~i_fetch_instr_valid | o_br_valid;
   assign o_exe_flush = i_decode_pc != i_execute_br_addr && i_execute_br_valid;

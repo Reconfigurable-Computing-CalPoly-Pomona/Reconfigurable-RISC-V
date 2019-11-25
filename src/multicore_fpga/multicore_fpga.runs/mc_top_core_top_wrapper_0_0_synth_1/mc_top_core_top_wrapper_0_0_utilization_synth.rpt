@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Nov 23 17:48:49 2019
+| Date         : Sun Nov 24 16:40:52 2019
 | Host         : Drew running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mc_top_core_top_wrapper_0_0_utilization_synth.rpt -pb mc_top_core_top_wrapper_0_0_utilization_synth.pb
 | Design       : mc_top_core_top_wrapper_0_0
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3556 |     0 |     32600 | 10.91 |
-|   LUT as Logic             | 3517 |     0 |     32600 | 10.79 |
+| Slice LUTs*                | 3557 |     0 |     32600 | 10.91 |
+|   LUT as Logic             | 3518 |     0 |     32600 | 10.79 |
 |   LUT as Memory            |   39 |     0 |      9600 |  0.41 |
 |     LUT as Distributed RAM |    8 |     0 |           |       |
 |     LUT as Shift Register  |   31 |     0 |           |       |
@@ -156,7 +156,7 @@ Table of Contents
 | FDCE     |  284 |        Flop & Latch |
 | LUT4     |  264 |                 LUT |
 | CARRY4   |   91 |          CarryLogic |
-| LUT2     |   73 |                 LUT |
+| LUT2     |   74 |                 LUT |
 | LDCE     |   32 |        Flop & Latch |
 | SRL16E   |   31 |  Distributed Memory |
 | RAMB18E1 |   24 |        Block Memory |

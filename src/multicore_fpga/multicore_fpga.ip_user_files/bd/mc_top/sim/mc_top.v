@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Nov 23 17:46:05 2019
+//Date        : Sun Nov 24 16:38:24 2019
 //Host        : Drew running 64-bit major release  (build 9200)
 //Command     : generate_target mc_top.bd
 //Design      : mc_top
@@ -535,18 +535,14 @@ module mc_top
   wire [2:0]S00_AXI_awsize_1;
   wire [11:0]axi_bram_ctrl_0_BRAM_PORTA_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTA_CLK;
-  wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DIN;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTA_DOUT;
   wire axi_bram_ctrl_0_BRAM_PORTA_EN;
   wire axi_bram_ctrl_0_BRAM_PORTA_RST;
-  wire [3:0]axi_bram_ctrl_0_BRAM_PORTA_WE;
   wire [11:0]axi_bram_ctrl_0_BRAM_PORTB_ADDR;
   wire axi_bram_ctrl_0_BRAM_PORTB_CLK;
-  wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DIN;
   wire [31:0]axi_bram_ctrl_0_BRAM_PORTB_DOUT;
   wire axi_bram_ctrl_0_BRAM_PORTB_EN;
   wire axi_bram_ctrl_0_BRAM_PORTB_RST;
-  wire [3:0]axi_bram_ctrl_0_BRAM_PORTB_WE;
   wire [31:0]axi_interconnect_0_M00_AXI_ARADDR;
   wire [1:0]axi_interconnect_0_M00_AXI_ARBURST;
   wire [3:0]axi_interconnect_0_M00_AXI_ARCACHE;
@@ -678,14 +674,14 @@ module mc_top
   wire [5:0]core_wrapper_0_m_instr_RID;
   wire [1:0]core_wrapper_0_m_instr_RRESP;
   wire [0:0]core_wrapper_0_m_instr_RUSER;
-  wire [11:0]data_mem_ctrl_BRAM_PORTA_ADDR;
+  wire [15:0]data_mem_ctrl_BRAM_PORTA_ADDR;
   wire data_mem_ctrl_BRAM_PORTA_CLK;
   wire [31:0]data_mem_ctrl_BRAM_PORTA_DIN;
   wire [31:0]data_mem_ctrl_BRAM_PORTA_DOUT;
   wire data_mem_ctrl_BRAM_PORTA_EN;
   wire data_mem_ctrl_BRAM_PORTA_RST;
   wire [3:0]data_mem_ctrl_BRAM_PORTA_WE;
-  wire [11:0]data_mem_ctrl_BRAM_PORTB_ADDR;
+  wire [15:0]data_mem_ctrl_BRAM_PORTB_ADDR;
   wire data_mem_ctrl_BRAM_PORTB_CLK;
   wire [31:0]data_mem_ctrl_BRAM_PORTB_DIN;
   wire [31:0]data_mem_ctrl_BRAM_PORTB_DOUT;
@@ -1031,8 +1027,8 @@ module mc_top
         .m_instr_rvalid(1'b0),
         .m_instr_wready(1'b0));
   mc_top_data_mem_0 data_mem
-       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,data_mem_ctrl_BRAM_PORTA_ADDR}),
-        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,data_mem_ctrl_BRAM_PORTB_ADDR}),
+       (.addra({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,data_mem_ctrl_BRAM_PORTA_ADDR}),
+        .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,data_mem_ctrl_BRAM_PORTB_ADDR}),
         .clka(data_mem_ctrl_BRAM_PORTA_CLK),
         .clkb(data_mem_ctrl_BRAM_PORTB_CLK),
         .dina(data_mem_ctrl_BRAM_PORTA_DIN),
@@ -1061,7 +1057,7 @@ module mc_top
         .bram_wrdata_a(data_mem_ctrl_BRAM_PORTA_DIN),
         .bram_wrdata_b(data_mem_ctrl_BRAM_PORTB_DIN),
         .s_axi_aclk(clk_wiz_clk_out1),
-        .s_axi_araddr(axi_interconnect_0_M01_AXI_ARADDR[11:0]),
+        .s_axi_araddr(axi_interconnect_0_M01_AXI_ARADDR[15:0]),
         .s_axi_arburst(axi_interconnect_0_M01_AXI_ARBURST),
         .s_axi_arcache(axi_interconnect_0_M01_AXI_ARCACHE),
         .s_axi_aresetn(rst_clk_wiz_100M_peripheral_aresetn),
@@ -1072,7 +1068,7 @@ module mc_top
         .s_axi_arready(axi_interconnect_0_M01_AXI_ARREADY),
         .s_axi_arsize(axi_interconnect_0_M01_AXI_ARSIZE),
         .s_axi_arvalid(axi_interconnect_0_M01_AXI_ARVALID),
-        .s_axi_awaddr(axi_interconnect_0_M01_AXI_AWADDR[11:0]),
+        .s_axi_awaddr(axi_interconnect_0_M01_AXI_AWADDR[15:0]),
         .s_axi_awburst(axi_interconnect_0_M01_AXI_AWBURST),
         .s_axi_awcache(axi_interconnect_0_M01_AXI_AWCACHE),
         .s_axi_awid(axi_interconnect_0_M01_AXI_AWID),
@@ -1102,16 +1098,12 @@ module mc_top
         .addrb({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_bram_ctrl_0_BRAM_PORTB_ADDR}),
         .clka(axi_bram_ctrl_0_BRAM_PORTA_CLK),
         .clkb(axi_bram_ctrl_0_BRAM_PORTB_CLK),
-        .dina(axi_bram_ctrl_0_BRAM_PORTA_DIN),
-        .dinb(axi_bram_ctrl_0_BRAM_PORTB_DIN),
         .douta(axi_bram_ctrl_0_BRAM_PORTA_DOUT),
         .doutb(axi_bram_ctrl_0_BRAM_PORTB_DOUT),
         .ena(axi_bram_ctrl_0_BRAM_PORTA_EN),
         .enb(axi_bram_ctrl_0_BRAM_PORTB_EN),
         .rsta(axi_bram_ctrl_0_BRAM_PORTA_RST),
-        .rstb(axi_bram_ctrl_0_BRAM_PORTB_RST),
-        .wea(axi_bram_ctrl_0_BRAM_PORTA_WE),
-        .web(axi_bram_ctrl_0_BRAM_PORTB_WE));
+        .rstb(axi_bram_ctrl_0_BRAM_PORTB_RST));
   mc_top_instr_mem_ctrl_0 instr_mem_ctrl
        (.bram_addr_a(axi_bram_ctrl_0_BRAM_PORTA_ADDR),
         .bram_addr_b(axi_bram_ctrl_0_BRAM_PORTB_ADDR),
@@ -1123,10 +1115,6 @@ module mc_top
         .bram_rddata_b(axi_bram_ctrl_0_BRAM_PORTB_DOUT),
         .bram_rst_a(axi_bram_ctrl_0_BRAM_PORTA_RST),
         .bram_rst_b(axi_bram_ctrl_0_BRAM_PORTB_RST),
-        .bram_we_a(axi_bram_ctrl_0_BRAM_PORTA_WE),
-        .bram_we_b(axi_bram_ctrl_0_BRAM_PORTB_WE),
-        .bram_wrdata_a(axi_bram_ctrl_0_BRAM_PORTA_DIN),
-        .bram_wrdata_b(axi_bram_ctrl_0_BRAM_PORTB_DIN),
         .s_axi_aclk(clk_wiz_clk_out1),
         .s_axi_araddr(axi_interconnect_0_M00_AXI_ARADDR[11:0]),
         .s_axi_arburst(axi_interconnect_0_M00_AXI_ARBURST),

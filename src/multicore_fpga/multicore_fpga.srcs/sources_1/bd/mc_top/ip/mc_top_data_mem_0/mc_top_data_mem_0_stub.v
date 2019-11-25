@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Nov 22 20:52:11 2019
+// Date        : Sun Nov 24 16:41:39 2019
 // Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top mc_top_data_mem_0 -prefix
-//               mc_top_data_mem_0_ jtag_to_axi_data_mem_0_stub.v
-// Design      : jtag_to_axi_data_mem_0
+// Command     : write_verilog -force -mode synth_stub
+//               C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0_stub.v
+// Design      : mc_top_data_mem_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1
 // --------------------------------------------------------------------------------

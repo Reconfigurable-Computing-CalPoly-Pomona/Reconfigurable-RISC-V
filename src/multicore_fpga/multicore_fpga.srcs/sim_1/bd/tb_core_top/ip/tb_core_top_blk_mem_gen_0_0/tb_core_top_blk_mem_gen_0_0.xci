@@ -172,7 +172,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Assume_Synchronous_Clk">true</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Byte_Size">8</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CTRL_ECC_ALGO">NONE</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Coe_File">../../../../../../../test/asm/rv32i_compliance.coe</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Coe_File">../../../../../../../test/asm/median/median.coe</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Collision_Warnings">ALL</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Component_Name">tb_core_top_blk_mem_gen_0_0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Disable_Collision_Warnings">false</spirit:configurableElementValue>

@@ -127,6 +127,7 @@ module core_top #(
   logic [1:0] wb_cu_memtoreg;
   logic [DATA_SIZE - 1:0] wb_mem_data;
   logic [DATA_SIZE - 1:0] wb_exe_data;
+  logic wb_en;
 
   // Forward data from hazard/memory access to EXE/Decode
   logic [DATA_SIZE - 1:0] ma_fwd;
@@ -299,6 +300,8 @@ module core_top #(
     .i_aclk(i_aclk),
     .i_areset_n(i_areset_n),
 
+    .i_en(wb_en),
+
     .i_rdest(wb_rdest),
     .o_rdest(decode_rdest),
 
@@ -352,7 +355,8 @@ module core_top #(
     .o_ma_fwd(ma_fwd),
 
     .i_wb_regwrite(decode_cu_regwrite),
-    .i_wb_rdest(decode_rdest)
+    .i_wb_rdest(decode_rdest),
+    .o_wb_en(wb_en)
   );
 
 endmodule

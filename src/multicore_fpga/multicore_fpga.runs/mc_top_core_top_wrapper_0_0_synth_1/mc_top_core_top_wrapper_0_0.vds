@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Nov 23 17:47:02 2019
-# Process ID: 5472
+# Start of session at: Sun Nov 24 16:38:46 2019
+# Process ID: 644
 # Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1
 # Command line: vivado.exe -log mc_top_core_top_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_core_top_wrapper_0_0.tcl
 # Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.vds
@@ -13,7 +13,6 @@ source mc_top_core_top_wrapper_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 278.637 ; gain = 24.875
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
 Current IP cache path is c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip 
 Command: synth_design -top mc_top_core_top_wrapper_0_0 -part xc7s50csga324-1 -mode out_of_context
@@ -21,9 +20,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13476 
+INFO: Helper process launched with PID 7072 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 395.902 ; gain = 105.547
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 396.016 ; gain = 105.996
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mc_top_core_top_wrapper_0_0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/synth/mc_top_core_top_wrapper_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'core_top_wrapper' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/verilog_wrappers/core_top_wrapper.v:25]
@@ -85,8 +84,8 @@ WARNING: [Synth 8-3848] Net rlru in module/entity instruction_cache does not hav
 INFO: [Synth 8-6155] done synthesizing module 'instruction_cache' (3#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instruction_cache.sv:27]
 WARNING: [Synth 8-5788] Register instr_stalled_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:135]
 WARNING: [Synth 8-5788] Register instr_stalled_valid_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:132]
-WARNING: [Synth 8-5788] Register o_pc_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:173]
-WARNING: [Synth 8-5788] Register o_pcplus4_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:174]
+WARNING: [Synth 8-5788] Register o_pc_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:169]
+WARNING: [Synth 8-5788] Register o_pcplus4_reg in module instr_fetch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:170]
 INFO: [Synth 8-6155] done synthesizing module 'instr_fetch' (4#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_fetch.sv:27]
 INFO: [Synth 8-6157] synthesizing module 'instr_decode' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/instr_decode.sv:27]
 INFO: [Synth 8-6157] synthesizing module 'decode_and_extend' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/decode_and_extend.sv:25]
@@ -133,7 +132,7 @@ INFO: [Synth 8-294] found qualifier unique on case statement: implementing as pa
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:280]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:293]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:303]
-WARNING: [Synth 8-6014] Unused sequential element pcplus4_reg was removed.  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:360]
+WARNING: [Synth 8-6014] Unused sequential element pcplus4_reg was removed.  [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:348]
 INFO: [Synth 8-6155] done synthesizing module 'execute_unit' (11#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/execute_unit.sv:28]
 INFO: [Synth 8-6157] synthesizing module 'mem_access' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/mem_access.sv:24]
 	Parameter ADDR_SIZE bound to: 32 - type: integer 
@@ -187,11 +186,11 @@ INFO: [Synth 8-6155] done synthesizing module 'data_cache_ctrl' (12#1) [C:/Users
 INFO: [Synth 8-6155] done synthesizing module 'data_cache' (13#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/data_cache.sv:27]
 INFO: [Synth 8-6155] done synthesizing module 'mem_access' (14#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/mem_access.sv:24]
 INFO: [Synth 8-6157] synthesizing module 'writeback' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/writeback.sv:26]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/writeback.sv:80]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/writeback.sv:83]
 INFO: [Synth 8-6155] done synthesizing module 'writeback' (15#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/writeback.sv:26]
-INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:25]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:251]
-INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (16#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:24]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (16#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/hazard_unit.sv:24]
 INFO: [Synth 8-6155] done synthesizing module 'core_top' (17#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/core_top.sv:27]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:200]
 INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:210]
@@ -261,7 +260,7 @@ WARNING: [Synth 8-3331] design instr_cache_ctrl has unconnected port axi\.wready
 WARNING: [Synth 8-3331] design instr_cache_ctrl has unconnected port i_addr[1]
 WARNING: [Synth 8-3331] design instr_cache_ctrl has unconnected port i_addr[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 458.121 ; gain = 167.766
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 458.633 ; gain = 168.613
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -279,10 +278,10 @@ WARNING: [Synth 8-3295] tying undriven pin core_top_inst:axi_data\.r[resp][0] to
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 458.121 ; gain = 167.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 458.633 ; gain = 168.613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 458.121 ; gain = 167.766
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 458.633 ; gain = 168.613
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -291,29 +290,29 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 791.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 790.707 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 791.160 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 790.707 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.349 . Memory (MB): peak = 795.930 ; gain = 4.770
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 794.836 ; gain = 4.129
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 795.930 ; gain = 505.574
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 794.836 ; gain = 504.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 795.930 ; gain = 505.574
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 794.836 ; gain = 504.816
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 795.930 ; gain = 505.574
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 794.836 ; gain = 504.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'instr_cache_ctrl'
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
@@ -389,7 +388,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using enco
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'data_cache_ctrl'
 WARNING: [Synth 8-327] inferring latch for variable 'data_reg' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/rtl/data_cache_ctrl.sv:365]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 795.930 ; gain = 505.574
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 794.836 ; gain = 504.816
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -798,7 +797,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/cor
 INFO: [Synth 8-3886] merging instance 'inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_pcplus4_reg[0]' (FDE) to 'inst/core_top_intf_wrapper_inst/core_top_inst/decode_unit/o_pc_reg[0]'
 INFO: [Synth 8-3886] merging instance 'inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/o_pcplus4_reg[0]' (FDE) to 'inst/core_top_intf_wrapper_inst/core_top_inst/exe_unit/pc_reg[0]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 803.125 ; gain = 512.770
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:14 . Memory (MB): peak = 813.438 ; gain = 523.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -884,13 +883,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:07 . Memory (MB): peak = 803.125 ; gain = 512.770
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:16 ; elapsed = 00:01:31 . Memory (MB): peak = 813.438 ; gain = 523.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:09 . Memory (MB): peak = 803.125 ; gain = 512.770
+Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:32 . Memory (MB): peak = 813.438 ; gain = 523.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -974,7 +973,7 @@ INFO: [Synth 8-6837] The timing for the instance inst/core_top_intf_wrapper_inst
 INFO: [Synth 8-6837] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-6837] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:04 ; elapsed = 00:01:12 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:01:36 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -998,7 +997,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:06 ; elapsed = 00:01:14 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:01:38 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1011,7 +1010,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:14 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:01:38 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1023,25 +1022,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:39 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:39 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:39 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:39 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1073,7 +1072,7 @@ Report Cell Usage:
 +------+----------+------+
 |1     |CARRY4    |    91|
 |2     |LUT1      |     6|
-|3     |LUT2      |    73|
+|3     |LUT2      |    74|
 |4     |LUT3      |   380|
 |5     |LUT4      |   264|
 |6     |LUT5      |  1170|
@@ -1093,10 +1092,10 @@ Report Instance Areas:
 +------+-----------------------------------------+----------------------+------+
 |      |Instance                                 |Module                |Cells |
 +------+-----------------------------------------+----------------------+------+
-|1     |top                                      |                      |  6503|
-|2     |  inst                                   |core_top_wrapper      |  6503|
-|3     |    core_top_intf_wrapper_inst           |core_top_intf_wrapper |  6503|
-|4     |      core_top_inst                      |core_top              |  6503|
+|1     |top                                      |                      |  6504|
+|2     |  inst                                   |core_top_wrapper      |  6504|
+|3     |    core_top_intf_wrapper_inst           |core_top_intf_wrapper |  6504|
+|4     |      core_top_inst                      |core_top              |  6504|
 |5     |        decode_unit                      |instr_decode          |  2098|
 |6     |        exe_unit                         |execute_unit          |  1619|
 |7     |          alu_exe                        |alu                   |   113|
@@ -1113,20 +1112,20 @@ Report Instance Areas:
 |18    |            \plru_ram.plru_cache         |ram__parameterized1   |     9|
 |19    |            \way_gen[0].data_cache_set   |ram__parameterized0   |   659|
 |20    |            \way_gen[1].data_cache_set   |ram__parameterized0_0 |   133|
-|21    |        wb_unit                          |writeback             |   169|
+|21    |        wb_unit                          |writeback             |   170|
 +------+-----------------------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:01:15 . Memory (MB): peak = 904.934 ; gain = 614.578
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:39 . Memory (MB): peak = 909.148 ; gain = 619.129
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 16 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 904.934 ; gain = 276.770
-Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:01:16 . Memory (MB): peak = 904.934 ; gain = 614.578
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:23 . Memory (MB): peak = 909.148 ; gain = 282.926
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:40 . Memory (MB): peak = 909.148 ; gain = 619.129
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 747 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 904.934 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 909.148 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 34 instances were transformed.
   LD => LDCE: 32 instances
@@ -1135,15 +1134,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 397 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:21 . Memory (MB): peak = 904.934 ; gain = 626.297
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 904.934 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:28 ; elapsed = 00:01:44 . Memory (MB): peak = 909.148 ; gain = 630.926
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 909.148 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 20 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 904.934 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 909.148 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mc_top_core_top_wrapper_0_0_utilization_synth.rpt -pb mc_top_core_top_wrapper_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 17:48:51 2019...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 24 16:40:55 2019...

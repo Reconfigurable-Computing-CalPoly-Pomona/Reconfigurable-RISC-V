@@ -41,4 +41,10 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_instr_me
 # IP: bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_rst_clk_wiz_100M_0 || ORIG_REF_NAME==mc_top_rst_clk_wiz_100M_0} -quiet] -quiet
 
+# IP: bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_data_mem_ctrl_1 || ORIG_REF_NAME==mc_top_data_mem_ctrl_1} -quiet] -quiet
+
+# IP: bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==mc_top_data_mem_1 || ORIG_REF_NAME==mc_top_data_mem_1} -quiet] -quiet
+
 # XDC: bd/mc_top/mc_top_ooc.xdc

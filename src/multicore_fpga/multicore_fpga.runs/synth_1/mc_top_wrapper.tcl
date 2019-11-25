@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
-set_param xicom.use_bs_reader 1
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7s50csga324-1
 
@@ -37,6 +35,7 @@ update_ip_catalog
 set_property ip_output_repo c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/rv32i_compliance.coe
+add_files c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/median/median.coe
 read_verilog -library xil_defaultlib C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v
 add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc]
@@ -54,6 +53,8 @@ set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Docu
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

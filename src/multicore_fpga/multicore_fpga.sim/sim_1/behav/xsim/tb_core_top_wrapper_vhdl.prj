@@ -2,7 +2,7 @@
 vhdl xil_defaultlib  \
 "../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_axi_bram_ctrl_0_0/sim/tb_core_top_axi_bram_ctrl_0_0.vhd" \
 "../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_rst_clk_wiz_100M_0/sim/tb_core_top_rst_clk_wiz_100M_0.vhd" \
-"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_axi_bram_ctrl_0_1/sim/tb_core_top_axi_bram_ctrl_0_1.vhd" \
+"../../../../multicore_fpga.ip_user_files/bd/tb_core_top/ip/tb_core_top_axi_bram_ctrl_0_2/sim/tb_core_top_axi_bram_ctrl_0_2.vhd" \
 
 # Do not sort compile order
 nosort

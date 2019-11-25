@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="mc_top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574566376"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574566376"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574566376"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574566376"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574643914"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574643914"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574643914"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574643914"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\mc_top_jtag_axi_0_0\mc_top_jtag_axi_0_0.xci" Type="IP">
         <Instance HierarchyPath="jtag_master"/>
@@ -104,6 +104,22 @@
       <File Name="sim\mc_top.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\mc_top_data_mem_ctrl_1\mc_top_data_mem_ctrl_1.xci" Type="IP">
+        <Instance HierarchyPath="spare_memory"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\mc_top_data_mem_1\mc_top_data_mem_1.xci" Type="IP">
+        <Instance HierarchyPath="spare_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="mc_top_ooc.xdc" Type="XDC">

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Nov 23 19:39:47 2019
+| Date             : Sun Nov 24 17:11:39 2019
 | Host             : Drew running 64-bit major release  (build 9200)
 | Command          : report_power -file mc_top_wrapper_power_routed.rpt -pb mc_top_wrapper_power_summary_routed.pb -rpx mc_top_wrapper_power_routed.rpx
 | Design           : mc_top_wrapper
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.297        |
+| Total On-Chip Power (W)  | 0.313        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.227        |
-| Device Static (W)        | 0.070        |
+| Dynamic (W)              | 0.241        |
+| Device Static (W)        | 0.071        |
 | Effective TJA (C/W)      | 4.9          |
 | Max Ambient (C)          | 83.5         |
 | Junction Temperature (C) | 26.5         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.015 |        9 |       --- |             --- |
-| Slice Logic              |     0.018 |    14199 |       --- |             --- |
-|   LUT as Logic           |     0.017 |     5983 |     32600 |           18.35 |
-|   F7/F8 Muxes            |    <0.001 |      704 |     32600 |            2.16 |
-|   Register               |    <0.001 |     5468 |     65200 |            8.39 |
-|   CARRY4                 |    <0.001 |      121 |      8150 |            1.48 |
+| Clocks                   |     0.014 |        9 |       --- |             --- |
+| Slice Logic              |     0.018 |    15540 |       --- |             --- |
+|   LUT as Logic           |     0.017 |     6577 |     32600 |           20.17 |
+|   F7/F8 Muxes            |    <0.001 |      708 |     32600 |            2.17 |
+|   Register               |    <0.001 |     5991 |     65200 |            9.19 |
+|   CARRY4                 |    <0.001 |      122 |      8150 |            1.50 |
 |   LUT as Distributed RAM |    <0.001 |      736 |      9600 |            7.67 |
-|   LUT as Shift Register  |    <0.001 |       40 |      9600 |            0.42 |
-|   Others                 |     0.000 |      329 |       --- |             --- |
-| Signals                  |     0.032 |    11357 |       --- |             --- |
-| Block RAM                |     0.041 |       17 |        75 |           22.67 |
+|   LUT as Shift Register  |    <0.001 |       46 |      9600 |            0.48 |
+|   Others                 |     0.000 |      435 |       --- |             --- |
+| Signals                  |     0.035 |    12335 |       --- |             --- |
+| Block RAM                |     0.052 |       48 |        75 |           64.00 |
 | MMCM                     |     0.122 |        1 |         5 |           20.00 |
 | I/O                      |    <0.001 |        2 |       210 |            0.95 |
-| Static Power             |     0.070 |          |           |                 |
-| Total                    |     0.297 |          |           |                 |
+| Static Power             |     0.071 |          |           |                 |
+| Total                    |     0.313 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.114 |       0.103 |      0.011 |
+| Vccint    |       1.000 |     0.127 |       0.116 |      0.011 |
 | Vccaux    |       1.800 |     0.080 |       0.068 |      0.013 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -85,7 +85,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.003 |      0.001 |
+| Vccbram   |       1.000 |     0.005 |       0.004 |      0.001 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
 +-----------+-------------+-----------+-------------+------------+
 
@@ -149,23 +149,29 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| mc_top_wrapper           |     0.227 |
+| mc_top_wrapper           |     0.241 |
 |   dbg_hub                |     0.002 |
 |     inst                 |     0.002 |
 |       BSCANID.u_xsdbm_id |     0.002 |
-|   mc_top_i               |     0.225 |
-|     axi_interconnect_0   |     0.002 |
-|       xbar               |     0.002 |
+|   mc_top_i               |     0.239 |
+|     axi_interconnect_0   |     0.003 |
+|       xbar               |     0.003 |
 |     clk_wiz              |     0.122 |
 |       inst               |     0.122 |
-|     core_top_wrapper_0   |     0.090 |
-|       inst               |     0.090 |
+|     core_top_wrapper_0   |     0.091 |
+|       inst               |     0.091 |
+|     data_mem             |     0.005 |
+|       U0                 |     0.005 |
 |     data_mem_ctrl        |     0.002 |
 |       U0                 |     0.002 |
 |     instr_mem_ctrl       |     0.001 |
 |       U0                 |     0.001 |
 |     jtag_master          |     0.007 |
 |       inst               |     0.007 |
+|     spare_mem            |     0.006 |
+|       U0                 |     0.006 |
+|     spare_memory         |     0.002 |
+|       U0                 |     0.002 |
 +--------------------------+-----------+
 
 

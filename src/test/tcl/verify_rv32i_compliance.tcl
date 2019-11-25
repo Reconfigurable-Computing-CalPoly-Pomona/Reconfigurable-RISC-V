@@ -1,8 +1,8 @@
 # Contains the script for verifying the rv32i_compliance program
 
 # Set the status memory location and the time memory location
-set STATUS [expr 0x1f00]
-set TIME_ADDR [expr 0x1ff8]
+set STATUS [expr 0x101f00]
+set TIME_ADDR [expr 0x101ff8]
 set CLOCK_SPEED [expr {1.0 / (75 * 10 ** 6)}]
 
 proc write_mem {address value} {
@@ -23,7 +23,7 @@ proc read_mem {address} {
 puts "Waiting for RISC V RV32i Compliance Test to complete..."
 
 set x "NOREAD"
-while {$x != "0xda55da55" && $x != "0xfa11fa11"} {
+while {$x != "0xda550001" && $x != "0xfa110001"} {
   set x [read_mem [format 0x%x $STATUS]]
 }
 
@@ -39,7 +39,7 @@ set cycles [expr $cycles + ($cyclesh << 32)]
 # Find the time in seconds, based on the clock speed
 set time [expr $cycles * $CLOCK_SPEED]
 
-if {$x == "0xda55da55"} {
+if {$x == "0xda550001"} {
   puts "Passed test!"
   puts "Number of processor cycles was $cycles."
   puts "Total time of execution was $time seconds."

@@ -279,7 +279,7 @@ module instr_decode(
   // If data is received from the WB stage, it gets written and immediately forwarded
   always_ff @(posedge i_aclk) begin : proc_regfile
     // Write to the register when write back is valid, unless it is r0
-    if (i_wb) reg_file[i_wb_addr] <= i_wb_data;
+    if (i_wb && i_en) reg_file[i_wb_addr] <= i_wb_data;
 
     // Register zero is held to zero always
     reg_file[0] <= 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1574566380">
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1574643922">
   <File Type="PA-TCL" Name="mc_top_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="mc_top_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mc_top_wrapper_reports.tcl"/>
@@ -241,6 +241,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../test/asm/median/median.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="mc_top_wrapper"/>
@@ -281,6 +287,8 @@
   <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_instr_mem_0"/>
   <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_data_mem_ctrl_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="mc_top_instr_mem_0"/>
   <BlockFileSet Type="BlockSrcs" Name="jtag_to_axi_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_data_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mc_top_data_mem_ctrl_0"/>
 </GenRun>

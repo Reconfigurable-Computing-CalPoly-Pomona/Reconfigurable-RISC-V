@@ -30,6 +30,9 @@ module writeback(
   // Asynchronous reset
   input logic i_areset_n,
 
+  // Enables the write back registers
+  input logic i_en,
+
   // The write back destination
   input logic [$clog2(NUM_REGS) - 1:0] i_rdest,
 
@@ -90,17 +93,19 @@ module writeback(
     if(~i_areset_n) begin
       o_cu_regwrite <= 0;
     end else begin
-      o_cu_regwrite <= i_cu_regwrite;
+      if (i_en) o_cu_regwrite <= i_cu_regwrite;
     end
   end
 
   // Pipeline registers
   always_ff @(posedge i_aclk) begin : pipeline_ff
-    cu_memtoreg <= i_cu_memtoreg;
-    mem_data <= i_mem_data;
-    exe_data <= i_exe_data;
-    pcplus4 <= i_pcplus4;
-    o_rdest <= i_rdest;
+    if (i_en) begin
+      cu_memtoreg <= i_cu_memtoreg;
+      mem_data <= i_mem_data;
+      exe_data <= i_exe_data;
+      pcplus4 <= i_pcplus4;
+      o_rdest <= i_rdest;
+    end
   end
 
 endmodule
