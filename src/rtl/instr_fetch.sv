@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: Ben Kueffler
@@ -141,6 +140,9 @@ module instr_fetch #(
   always_ff @(posedge i_aclk or negedge i_areset_n) begin : proc_pc
     if(~i_areset_n) begin
       pc_fetch <= PC_BASE_ADDR;
+      o_pc <= PC_BASE_ADDR;
+      o_pcplus4 <= PC_BASE_ADDR + 4;
+      instr_stalled_valid <= 0;
       cache_invalidate <= 0;
     end else begin
 

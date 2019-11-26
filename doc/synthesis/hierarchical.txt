@@ -1,0 +1,49 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Nov 25 21:19:08 2019
+| Host         : Drew running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -cells mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst
+| Design       : mc_top_wrapper
+| Device       : 7s50csga324-1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|              Instance              |                       Module                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| core_top_inst                      |              mc_top_core_top_wrapper_0_0_core_top |       3525 |       3501 |       8 |   16 | 1929 |      0 |     24 |            0 |
+|   core_top_inst                    |              mc_top_core_top_wrapper_0_0_core_top |       3525 |       3501 |       8 |   16 | 1929 |      0 |     24 |            0 |
+|     decode_unit                    |          mc_top_core_top_wrapper_0_0_instr_decode |        749 |        749 |       0 |    0 | 1068 |      0 |      0 |            0 |
+|     exe_unit                       |          mc_top_core_top_wrapper_0_0_execute_unit |       1046 |       1030 |       0 |   16 |  340 |      0 |      0 |            0 |
+|       (exe_unit)                   |          mc_top_core_top_wrapper_0_0_execute_unit |        804 |        788 |       0 |   16 |  201 |      0 |      0 |            0 |
+|       alu_exe                      |                   mc_top_core_top_wrapper_0_0_alu |         84 |         84 |       0 |    0 |    0 |      0 |      0 |            0 |
+|       br_compare                   |        mc_top_core_top_wrapper_0_0_branch_compare |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
+|       sys_unit                     |       mc_top_core_top_wrapper_0_0_system_exe_unit |        158 |        158 |       0 |    0 |  139 |      0 |      0 |            0 |
+|     fetch_unit                     |           mc_top_core_top_wrapper_0_0_instr_fetch |        468 |        468 |       0 |    0 |  176 |      0 |      8 |            0 |
+|       (fetch_unit)                 |           mc_top_core_top_wrapper_0_0_instr_fetch |         11 |         11 |       0 |    0 |  129 |      0 |      0 |            0 |
+|       instr_cache                  |     mc_top_core_top_wrapper_0_0_instruction_cache |        457 |        457 |       0 |    0 |   47 |      0 |      8 |            0 |
+|         cache_controller           |      mc_top_core_top_wrapper_0_0_instr_cache_ctrl |        355 |        355 |       0 |    0 |   47 |      0 |      0 |            0 |
+|         way_gen[0].instr_cache_set |                   mc_top_core_top_wrapper_0_0_ram |        102 |        102 |       0 |    0 |    0 |      0 |      8 |            0 |
+|     hazard_unit                    |           mc_top_core_top_wrapper_0_0_hazard_unit |         32 |         32 |       0 |    0 |    0 |      0 |      0 |            0 |
+|     mem_access_unit                |            mc_top_core_top_wrapper_0_0_mem_access |       1164 |       1156 |       8 |    0 |  241 |      0 |     16 |            0 |
+|       (mem_access_unit)            |            mc_top_core_top_wrapper_0_0_mem_access |          2 |          2 |       0 |    0 |   72 |      0 |      0 |            0 |
+|       dcache                       |            mc_top_core_top_wrapper_0_0_data_cache |       1162 |       1154 |       8 |    0 |  169 |      0 |     16 |            0 |
+|         cache_controller           |       mc_top_core_top_wrapper_0_0_data_cache_ctrl |        579 |        579 |       0 |    0 |  167 |      0 |      0 |            0 |
+|         plru_ram.plru_cache        |   mc_top_core_top_wrapper_0_0_ram__parameterized1 |         12 |          4 |       8 |    0 |    2 |      0 |      0 |            0 |
+|         way_gen[0].data_cache_set  |   mc_top_core_top_wrapper_0_0_ram__parameterized0 |        480 |        480 |       0 |    0 |    0 |      0 |      8 |            0 |
+|         way_gen[1].data_cache_set  | mc_top_core_top_wrapper_0_0_ram__parameterized0_0 |         91 |         91 |       0 |    0 |    0 |      0 |      8 |            0 |
+|     wb_unit                        |             mc_top_core_top_wrapper_0_0_writeback |         66 |         66 |       0 |    0 |  104 |      0 |      0 |            0 |
++------------------------------------+---------------------------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

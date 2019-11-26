@@ -217,17 +217,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_xbar_0/mc_top_xbar_0.xci">
-          <Proxy FileSetName="mc_top_xbar_0"/>
+        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0.xci">
+          <Proxy FileSetName="mc_top_data_mem_ctrl_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_data_mem_0/mc_top_data_mem_0.xci">
           <Proxy FileSetName="mc_top_data_mem_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0.xci">
-          <Proxy FileSetName="mc_top_data_mem_ctrl_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0.xci">
-          <Proxy FileSetName="mc_top_core_top_wrapper_0_0"/>
+        <CompFileExtendedInfo CompFileName="mc_top.bd" FileRelPathName="ip/mc_top_xbar_0/mc_top_xbar_0.xci">
+          <Proxy FileSetName="mc_top_xbar_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/mc_top/hdl/mc_top_wrapper.v">
@@ -247,17 +244,17 @@
         <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_xbar_0/jtag_to_axi_xbar_0.xci">
           <Proxy FileSetName="jtag_to_axi_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_instr_mem_ctrl_0/jtag_to_axi_instr_mem_ctrl_0.xci">
-          <Proxy FileSetName="jtag_to_axi_instr_mem_ctrl_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_data_mem_0/jtag_to_axi_data_mem_0.xci">
-          <Proxy FileSetName="jtag_to_axi_data_mem_0"/>
+        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_data_mem_ctrl_0/jtag_to_axi_data_mem_ctrl_0.xci">
+          <Proxy FileSetName="jtag_to_axi_data_mem_ctrl_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_instr_mem_0/jtag_to_axi_instr_mem_0.xci">
           <Proxy FileSetName="jtag_to_axi_instr_mem_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_data_mem_ctrl_0/jtag_to_axi_data_mem_ctrl_0.xci">
-          <Proxy FileSetName="jtag_to_axi_data_mem_ctrl_0"/>
+        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_data_mem_0/jtag_to_axi_data_mem_0.xci">
+          <Proxy FileSetName="jtag_to_axi_data_mem_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_instr_mem_ctrl_0/jtag_to_axi_instr_mem_ctrl_0.xci">
+          <Proxy FileSetName="jtag_to_axi_instr_mem_ctrl_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="jtag_to_axi.bd" FileRelPathName="ip/jtag_to_axi_axi_gpio_0_0/jtag_to_axi_axi_gpio_0_0.xci">
           <Proxy FileSetName="jtag_to_axi_axi_gpio_0_0"/>
@@ -303,12 +300,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../test/asm/rv32i_compliance.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/bd/ddr3/ddr3.bd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -318,6 +309,12 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../test/asm/median/median.coe">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../test/asm/rv32i_compliance/rv32i_compliance.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -461,12 +458,6 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="mc_top_core_top_wrapper_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mc_top_core_top_wrapper_0_0">
-      <Config>
-        <Option Name="TopModule" Val="mc_top_core_top_wrapper_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="mc_top_data_mem_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mc_top_data_mem_0">
       <Config>
         <Option Name="TopModule" Val="mc_top_data_mem_0"/>
@@ -564,20 +555,7 @@
     </Run>
     <Run Id="mc_top_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="mc_top_xbar_0" Part="xc7s50csga324-1" ConstrsSet="mc_top_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mc_top_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="mc_top_core_top_wrapper_0_0_synth_1" Type="Ft3:Synth" SrcSet="mc_top_core_top_wrapper_0_0" Part="xc7s50csga324-1" ConstrsSet="mc_top_core_top_wrapper_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mc_top_core_top_wrapper_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -586,9 +564,7 @@
     </Run>
     <Run Id="mc_top_data_mem_0_synth_1" Type="Ft3:Synth" SrcSet="mc_top_data_mem_0" Part="xc7s50csga324-1" ConstrsSet="mc_top_data_mem_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mc_top_data_mem_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -597,9 +573,7 @@
     </Run>
     <Run Id="mc_top_data_mem_ctrl_0_synth_1" Type="Ft3:Synth" SrcSet="mc_top_data_mem_ctrl_0" Part="xc7s50csga324-1" ConstrsSet="mc_top_data_mem_ctrl_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mc_top_data_mem_ctrl_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -721,27 +695,7 @@
     </Run>
     <Run Id="mc_top_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mc_top_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mc_top_xbar_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="mc_top_core_top_wrapper_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mc_top_core_top_wrapper_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mc_top_core_top_wrapper_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -757,9 +711,7 @@
     </Run>
     <Run Id="mc_top_data_mem_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mc_top_data_mem_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mc_top_data_mem_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -775,9 +727,7 @@
     </Run>
     <Run Id="mc_top_data_mem_ctrl_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mc_top_data_mem_ctrl_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mc_top_data_mem_ctrl_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

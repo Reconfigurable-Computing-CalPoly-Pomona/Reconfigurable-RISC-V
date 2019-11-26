@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7s50csga324-1
 
@@ -34,8 +36,8 @@ set_property ip_repo_paths c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V
 update_ip_catalog
 set_property ip_output_repo c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/rv32i_compliance.coe
-add_files c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/median/median.coe
+add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/median/median.coe
+add_files c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/rv32i_compliance/rv32i_compliance.coe
 read_verilog -library xil_defaultlib C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v
 add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc]

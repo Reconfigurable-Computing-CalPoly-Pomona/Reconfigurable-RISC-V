@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="mc_top" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1574643914"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1574643914"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1574643914"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1574643914"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1574745922"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1574745922"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1574745922"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1574745922"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\mc_top_jtag_axi_0_0\mc_top_jtag_axi_0_0.xci" Type="IP">
         <Instance HierarchyPath="jtag_master"/>

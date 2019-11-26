@@ -8,13 +8,6 @@ set CLOCK_SPEED [expr {1.0 / (75 * 10 ** 6)}]
 # Number of milliseconds per second
 set MS [expr 1000]
 
-proc write_mem {address value} {
-    set address [string range $address 2 [expr {[string length $address]-1}]]
-    create_hw_axi_txn -quiet -force wr_tx [get_hw_axis hw_axi_1] -address $address -data $value -len 1 -size 32 -type write
-    run_hw_axi -quiet wr_tx
-    delete_hw_axi_txn [get_hw_axi_txns *]
-}
- 
 proc read_mem {address} {
     set address [string range $address 2 [expr {[string length $address]-1}]]
     create_hw_axi_txn -quiet -force rd_tx [get_hw_axis hw_axi_1] -address $address -len 1 -size 32 -type read
