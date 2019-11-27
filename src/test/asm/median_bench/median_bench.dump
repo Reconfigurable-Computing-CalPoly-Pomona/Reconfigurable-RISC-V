@@ -1,0 +1,124 @@
+
+median_bench.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00200137          	lui	sp,0x200
+   4:	10010113          	addi	sp,sp,256 # 200100 <SAMPLE_BASE>
+   8:	010000ef          	jal	ra,18 <median>
+   c:	09c00d6f          	jal	s10,a8 <timer>
+  10:	0bc00d6f          	jal	s10,cc <cache_flush1>
+  14:	0fc00d6f          	jal	s10,110 <pass>
+
+00000018 <median>:
+  18:	00100237          	lui	tp,0x100
+  1c:	10420213          	addi	tp,tp,260 # 100104 <OUT_BASE+0x4>
+  20:	0010f2b7          	lui	t0,0x10f
+  24:	b5c28293          	addi	t0,t0,-1188 # 10eb5c <OUT_BASE+0xea5c>
+  28:	00100337          	lui	t1,0x100
+  2c:	10030313          	addi	t1,t1,256 # 100100 <OUT_BASE>
+  30:	00012583          	lw	a1,0(sp)
+  34:	00412603          	lw	a2,4(sp)
+  38:	00b32023          	sw	a1,0(t1)
+  3c:	00200137          	lui	sp,0x200
+  40:	10410113          	addi	sp,sp,260 # 200104 <SAMPLE_BASE+0x4>
+
+00000044 <median_shift>:
+  44:	00058513          	mv	a0,a1
+  48:	00060593          	mv	a1,a2
+  4c:	00412603          	lw	a2,4(sp)
+  50:	02a5c263          	blt	a1,a0,74 <a_greater_b>
+
+00000054 <a_less_b>:
+  54:	00b64663          	blt	a2,a1,60 <alb_b_greater_c>
+
+00000058 <alb_b_less_c>:
+  58:	00b22023          	sw	a1,0(tp) # 0 <_start>
+  5c:	0380006f          	j	94 <med_incr>
+
+00000060 <alb_b_greater_c>:
+  60:	00a64663          	blt	a2,a0,6c <alb_bgc_a_greater_c>
+
+00000064 <alb_bgc_c_greater_a>:
+  64:	00c22023          	sw	a2,0(tp) # 0 <_start>
+  68:	02c0006f          	j	94 <med_incr>
+
+0000006c <alb_bgc_a_greater_c>:
+  6c:	00a22023          	sw	a0,0(tp) # 0 <_start>
+  70:	0240006f          	j	94 <med_incr>
+
+00000074 <a_greater_b>:
+  74:	00b64c63          	blt	a2,a1,8c <agb_b_greater_c>
+
+00000078 <agb_b_less_c>:
+  78:	00a64663          	blt	a2,a0,84 <agb_cgb_a_greater_c>
+
+0000007c <agb_cgb_c_greater_a>:
+  7c:	00a22023          	sw	a0,0(tp) # 0 <_start>
+  80:	0140006f          	j	94 <med_incr>
+
+00000084 <agb_cgb_a_greater_c>:
+  84:	00c22023          	sw	a2,0(tp) # 0 <_start>
+  88:	00c0006f          	j	94 <med_incr>
+
+0000008c <agb_b_greater_c>:
+  8c:	00b22023          	sw	a1,0(tp) # 0 <_start>
+  90:	0040006f          	j	94 <med_incr>
+
+00000094 <med_incr>:
+  94:	00420213          	addi	tp,tp,4 # 4 <_start+0x4>
+  98:	00410113          	addi	sp,sp,4
+  9c:	fa5244e3          	blt	tp,t0,44 <median_shift>
+  a0:	00c22023          	sw	a2,0(tp) # 0 <_start>
+  a4:	00008067          	ret
+
+000000a8 <timer>:
+  a8:	c8002173          	rdcycleh	sp
+  ac:	c00020f3          	rdcycle	ra
+  b0:	c80021f3          	rdcycleh	gp
+  b4:	fe219ae3          	bne	gp,sp,a8 <timer>
+  b8:	00100237          	lui	tp,0x100
+  bc:	00420213          	addi	tp,tp,4 # 100004 <TIME_MEM>
+  c0:	00122023          	sw	ra,0(tp) # 0 <_start>
+  c4:	00222223          	sw	sp,4(tp) # 4 <_start+0x4>
+  c8:	000d0067          	jr	s10
+
+000000cc <cache_flush1>:
+  cc:	000044b7          	lui	s1,0x4
+  d0:	10004537          	lui	a0,0x10004
+  d4:	00450513          	addi	a0,a0,4 # 10004004 <INVALID_BASE+0x4004>
+  d8:	100005b7          	lui	a1,0x10000
+
+000000dc <cache_flush2>:
+  dc:	0005ad83          	lw	s11,0(a1) # 10000000 <INVALID_BASE>
+  e0:	00458593          	addi	a1,a1,4
+  e4:	feb51ce3          	bne	a0,a1,dc <cache_flush2>
+  e8:	000d0d67          	jalr	s10,s10
+
+000000ec <fail>:
+  ec:	fa110fb7          	lui	t6,0xfa110
+  f0:	002f8f93          	addi	t6,t6,2 # fa110002 <INVALID_BASE+0xea110002>
+  f4:	00100f37          	lui	t5,0x100
+  f8:	00104eb7          	lui	t4,0x104
+  fc:	00108e37          	lui	t3,0x108
+ 100:	01ff2023          	sw	t6,0(t5) # 100000 <MEM_BASE>
+ 104:	000ea003          	lw	zero,0(t4) # 104000 <OUT_BASE+0x3f00>
+ 108:	000e2003          	lw	zero,0(t3) # 108000 <OUT_BASE+0x7f00>
+ 10c:	fe1ff0ef          	jal	ra,ec <fail>
+
+00000110 <pass>:
+ 110:	da550fb7          	lui	t6,0xda550
+ 114:	002f8f93          	addi	t6,t6,2 # da550002 <INVALID_BASE+0xca550002>
+ 118:	00100f37          	lui	t5,0x100
+ 11c:	00104eb7          	lui	t4,0x104
+ 120:	00108e37          	lui	t3,0x108
+ 124:	01ff2023          	sw	t6,0(t5) # 100000 <MEM_BASE>
+ 128:	000ea003          	lw	zero,0(t4) # 104000 <OUT_BASE+0x3f00>
+ 12c:	000e2003          	lw	zero,0(t3) # 108000 <OUT_BASE+0x7f00>
+ 130:	fe1ff0ef          	jal	ra,110 <pass>
+ 134:	0040006f          	j	138 <done>
+
+00000138 <done>:
+ 138:	0000006f          	j	138 <done>

@@ -1,0 +1,264 @@
+
+rv32i_compliance.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00008fb7          	lui	t6,0x8
+   4:	00007f37          	lui	t5,0x7
+   8:	00100437          	lui	s0,0x100
+   c:	01f42023          	sw	t6,0(s0) # 100000 <MEM_BASE>
+  10:	0deadeb7          	lui	t4,0xdead
+  14:	024e8e93          	addi	t4,t4,36 # dead024 <INVALID_BASE+0xcfad024>
+  18:	fffff637          	lui	a2,0xfffff
+  1c:	000015b7          	lui	a1,0x1
+  20:	00800513          	li	a0,8
+  24:	0dead697          	auipc	a3,0xdead
+  28:	2fd69e63          	bne	a3,t4,324 <fail>
+  2c:	41ef8eb3          	sub	t4,t6,t5
+  30:	2ebe9a63          	bne	t4,a1,324 <fail>
+  34:	41ff0e33          	sub	t3,t5,t6
+  38:	2ece1663          	bne	t3,a2,324 <fail>
+  3c:	00300013          	li	zero,3
+  40:	00100093          	li	ra,1
+  44:	00200113          	li	sp,2
+  48:	00300193          	li	gp,3
+  4c:	00400213          	li	tp,4
+  50:	00408233          	add	tp,ra,tp
+  54:	00418233          	add	tp,gp,tp
+  58:	2ca21663          	bne	tp,a0,324 <fail>
+  5c:	00400213          	li	tp,4
+  60:	00600f93          	li	t6,6
+  64:	004142b3          	xor	t0,sp,tp
+  68:	2a5f9e63          	bne	t6,t0,324 <fail>
+  6c:	01214313          	xori	t1,sp,18
+  70:	01000f13          	li	t5,16
+  74:	2a6f1863          	bne	t5,t1,324 <fail>
+  78:	004163b3          	or	t2,sp,tp
+  7c:	00600e93          	li	t4,6
+  80:	02300e13          	li	t3,35
+  84:	2a7e9063          	bne	t4,t2,324 <fail>
+  88:	0201e413          	ori	s0,gp,32
+  8c:	288e1c63          	bne	t3,s0,324 <fail>
+  90:	0011f4b3          	and	s1,gp,ra
+  94:	00100d93          	li	s11,1
+  98:	289d9663          	bne	s11,s1,324 <fail>
+  9c:	00f1f513          	andi	a0,gp,15
+  a0:	00300d13          	li	s10,3
+  a4:	28ad1063          	bne	s10,a0,324 <fail>
+  a8:	35a00293          	li	t0,858
+  ac:	00003fb7          	lui	t6,0x3
+  b0:	5a0f8f93          	addi	t6,t6,1440 # 35a0 <_end+0x3214>
+  b4:	004295b3          	sll	a1,t0,tp
+  b8:	26bf9663          	bne	t6,a1,324 <fail>
+  bc:	01e29613          	slli	a2,t0,0x1e
+  c0:	80000f37          	lui	t5,0x80000
+  c4:	26cf1063          	bne	t5,a2,324 <fail>
+  c8:	00029693          	slli	a3,t0,0x0
+  cc:	24d29c63          	bne	t0,a3,324 <fail>
+  d0:	35a00293          	li	t0,858
+  d4:	03500f93          	li	t6,53
+  d8:	0042d5b3          	srl	a1,t0,tp
+  dc:	24bf9463          	bne	t6,a1,324 <fail>
+  e0:	01ff5613          	srli	a2,t5,0x1f
+  e4:	24c09063          	bne	ra,a2,324 <fail>
+  e8:	000f5693          	srli	a3,t5,0x0
+  ec:	22df1c63          	bne	t5,a3,324 <fail>
+  f0:	00800293          	li	t0,8
+  f4:	f0000db7          	lui	s11,0xf0000
+  f8:	403f55b3          	sra	a1,t5,gp
+  fc:	23b59463          	bne	a1,s11,324 <fail>
+ 100:	403f5613          	srai	a2,t5,0x3
+ 104:	22bd9063          	bne	s11,a1,324 <fail>
+ 108:	4042d693          	srai	a3,t0,0x4
+ 10c:	20d01c63          	bne	zero,a3,324 <fail>
+ 110:	404002b3          	neg	t0,tp
+ 114:	40408333          	sub	t1,ra,tp
+ 118:	00700393          	li	t2,7
+ 11c:	0062a733          	slt	a4,t0,t1
+ 120:	20e09263          	bne	ra,a4,324 <fail>
+ 124:	005327b3          	slt	a5,t1,t0
+ 128:	1e079e63          	bnez	a5,324 <fail>
+ 12c:	00132833          	slt	a6,t1,ra
+ 130:	1e181a63          	bne	a6,ra,324 <fail>
+ 134:	fff2a893          	slti	a7,t0,-1
+ 138:	1f109663          	bne	ra,a7,324 <fail>
+ 13c:	ffd32913          	slti	s2,t1,-3
+ 140:	1e091263          	bnez	s2,324 <fail>
+ 144:	00432993          	slti	s3,t1,4
+ 148:	1c199e63          	bne	s3,ra,324 <fail>
+ 14c:	fffff637          	lui	a2,0xfffff
+ 150:	00c23a33          	sltu	s4,tp,a2
+ 154:	1c1a1863          	bne	s4,ra,324 <fail>
+ 158:	00463a33          	sltu	s4,a2,tp
+ 15c:	1c0a1463          	bnez	s4,324 <fail>
+ 160:	0802ba93          	sltiu	s5,t0,128
+ 164:	1c0a9063          	bnez	s5,324 <fail>
+ 168:	00563b13          	sltiu	s6,a2,5
+ 16c:	1a0b1c63          	bnez	s6,324 <fail>
+ 170:	7ffabb93          	sltiu	s7,s5,2047
+ 174:	1a1b9863          	bne	s7,ra,324 <fail>
+ 178:	13c0056f          	jal	a0,2b4 <jal0>
+ 17c:	1a359463          	bne	a1,gp,324 <fail>
+ 180:	13c006ef          	jal	a3,2bc <jal1>
+ 184:	c0002a73          	rdcycle	s4
+ 188:	c8002af3          	rdcycleh	s5
+ 18c:	c0102b73          	rdtime	s6
+ 190:	c8102bf3          	rdtimeh	s7
+ 194:	c0202c73          	rdinstret	s8
+ 198:	c8202cf3          	rdinstreth	s9
+ 19c:	00400513          	li	a0,4
+ 1a0:	12a20063          	beq	tp,a0,2c0 <beq0>
+
+000001a4 <br_return>:
+ 1a4:	76543537          	lui	a0,0x76543
+ 1a8:	21050513          	addi	a0,a0,528 # 76543210 <INVALID_BASE+0x75643210>
+ 1ac:	fedcc5b7          	lui	a1,0xfedcc
+ 1b0:	a9858593          	addi	a1,a1,-1384 # fedcba98 <INVALID_BASE+0xfdecba98>
+ 1b4:	7654c637          	lui	a2,0x7654c
+ 1b8:	a9860613          	addi	a2,a2,-1384 # 7654ba98 <INVALID_BASE+0x7564ba98>
+ 1bc:	765436b7          	lui	a3,0x76543
+ 1c0:	29868693          	addi	a3,a3,664 # 76543298 <INVALID_BASE+0x75643298>
+ 1c4:	00005737          	lui	a4,0x5
+ 1c8:	4ba70713          	addi	a4,a4,1210 # 54ba <CACHE_SIZE+0x14ba>
+ 1cc:	07600793          	li	a5,118
+ 1d0:	01234837          	lui	a6,0x1234
+ 1d4:	56780813          	addi	a6,a6,1383 # 1234567 <INVALID_BASE+0x334567>
+ 1d8:	deadc8b7          	lui	a7,0xdeadc
+ 1dc:	eef88893          	addi	a7,a7,-273 # deadbeef <INVALID_BASE+0xddbdbeef>
+ 1e0:	00100437          	lui	s0,0x100
+ 1e4:	10840493          	addi	s1,s0,264 # 100108 <MEM_BASE+0x108>
+ 1e8:	00a42023          	sw	a0,0(s0)
+ 1ec:	00a42223          	sw	a0,4(s0)
+ 1f0:	00a42423          	sw	a0,8(s0)
+ 1f4:	00b41223          	sh	a1,4(s0)
+ 1f8:	00b40423          	sb	a1,8(s0)
+ 1fc:	00042a03          	lw	s4,0(s0)
+ 200:	13451263          	bne	a0,s4,324 <fail>
+ 204:	00442a83          	lw	s5,4(s0)
+ 208:	00842b03          	lw	s6,8(s0)
+ 20c:	11561c63          	bne	a2,s5,324 <fail>
+ 210:	11669a63          	bne	a3,s6,324 <fail>
+ 214:	00541b83          	lh	s7,5(s0)
+ 218:	11771663          	bne	a4,s7,324 <fail>
+ 21c:	00b40c03          	lb	s8,11(s0)
+ 220:	11879263          	bne	a5,s8,324 <fail>
+ 224:	0104a223          	sw	a6,4(s1)
+ 228:	0114a423          	sw	a7,8(s1)
+ 22c:	0044ac03          	lw	s8,4(s1)
+ 230:	0084ac83          	lw	s9,8(s1)
+ 234:	000c0d13          	mv	s10,s8
+ 238:	0f881663          	bne	a6,s8,324 <fail>
+ 23c:	0f989463          	bne	a7,s9,324 <fail>
+ 240:	0fa81263          	bne	a6,s10,324 <fail>
+ 244:	01042023          	sw	a6,0(s0)
+ 248:	01142223          	sw	a7,4(s0)
+ 24c:	02a42223          	sw	a0,36(s0)
+ 250:	02b42423          	sw	a1,40(s0)
+ 254:	03c00d6f          	jal	s10,290 <timer>
+ 258:	0ac00d6f          	jal	s10,304 <cache_flush1>
+ 25c:	76543537          	lui	a0,0x76543
+ 260:	21050513          	addi	a0,a0,528 # 76543210 <INVALID_BASE+0x75643210>
+ 264:	fedcc5b7          	lui	a1,0xfedcc
+ 268:	a9858593          	addi	a1,a1,-1384 # fedcba98 <INVALID_BASE+0xfdecba98>
+ 26c:	00042a03          	lw	s4,0(s0)
+ 270:	00442a83          	lw	s5,4(s0)
+ 274:	02442b03          	lw	s6,36(s0)
+ 278:	02842b83          	lw	s7,40(s0)
+ 27c:	0b0a1463          	bne	s4,a6,324 <fail>
+ 280:	0b1a9263          	bne	s5,a7,324 <fail>
+ 284:	0aab1063          	bne	s6,a0,324 <fail>
+ 288:	09759e63          	bne	a1,s7,324 <fail>
+ 28c:	0c800d6f          	jal	s10,354 <pass>
+
+00000290 <timer>:
+ 290:	c8002173          	rdcycleh	sp
+ 294:	c00020f3          	rdcycle	ra
+ 298:	c80021f3          	rdcycleh	gp
+ 29c:	fe219ae3          	bne	gp,sp,290 <timer>
+ 2a0:	00102237          	lui	tp,0x102
+ 2a4:	ff820213          	addi	tp,tp,-8 # 101ff8 <TIME_MEM>
+ 2a8:	00122023          	sw	ra,0(tp) # 0 <_start>
+ 2ac:	00222223          	sw	sp,4(tp) # 4 <_start+0x4>
+ 2b0:	000d0067          	jr	s10
+
+000002b4 <jal0>:
+ 2b4:	002085b3          	add	a1,ra,sp
+ 2b8:	00050667          	jalr	a2,a0
+
+000002bc <jal1>:
+ 2bc:	00068767          	jalr	a4,a3
+
+000002c0 <beq0>:
+ 2c0:	06320263          	beq	tp,gp,324 <fail>
+ 2c4:	00219463          	bne	gp,sp,2cc <bne0>
+ 2c8:	05c00fef          	jal	t6,324 <fail>
+
+000002cc <bne0>:
+ 2cc:	fff00593          	li	a1,-1
+ 2d0:	0015c463          	blt	a1,ra,2d8 <blt0>
+ 2d4:	05000fef          	jal	t6,324 <fail>
+
+000002d8 <blt0>:
+ 2d8:	04b5c663          	blt	a1,a1,324 <fail>
+ 2dc:	00b5d463          	ble	a1,a1,2e4 <bge0>
+ 2e0:	04400fef          	jal	t6,324 <fail>
+
+000002e4 <bge0>:
+ 2e4:	0405d063          	bgez	a1,324 <fail>
+ 2e8:	00b06463          	bltu	zero,a1,2f0 <bltu0>
+ 2ec:	03800fef          	jal	t6,324 <fail>
+
+000002f0 <bltu0>:
+ 2f0:	0215ea63          	bltu	a1,ra,324 <fail>
+ 2f4:	0015f463          	bleu	ra,a1,2fc <bgeu0>
+ 2f8:	02c00fef          	jal	t6,324 <fail>
+
+000002fc <bgeu0>:
+ 2fc:	0241f463          	bleu	tp,gp,324 <fail>
+ 300:	ea5ffd6f          	jal	s10,1a4 <br_return>
+
+00000304 <cache_flush1>:
+ 304:	000044b7          	lui	s1,0x4
+ 308:	00f04537          	lui	a0,0xf04
+ 30c:	00450513          	addi	a0,a0,4 # f04004 <INVALID_BASE+0x4004>
+ 310:	00f005b7          	lui	a1,0xf00
+
+00000314 <cache_flush2>:
+ 314:	0005ad83          	lw	s11,0(a1) # f00000 <INVALID_BASE>
+ 318:	00458593          	addi	a1,a1,4
+ 31c:	feb51ce3          	bne	a0,a1,314 <cache_flush2>
+ 320:	000d0d67          	jalr	s10,s10
+
+00000324 <fail>:
+ 324:	fa110fb7          	lui	t6,0xfa110
+ 328:	001f8f93          	addi	t6,t6,1 # fa110001 <INVALID_BASE+0xf9210001>
+ 32c:	00102f37          	lui	t5,0x102
+ 330:	f00f0f13          	addi	t5,t5,-256 # 101f00 <STATUS_MEM>
+ 334:	00106eb7          	lui	t4,0x106
+ 338:	f00e8e93          	addi	t4,t4,-256 # 105f00 <TIME_MEM+0x3f08>
+ 33c:	0010ae37          	lui	t3,0x10a
+ 340:	f00e0e13          	addi	t3,t3,-256 # 109f00 <TIME_MEM+0x7f08>
+ 344:	01ff2023          	sw	t6,0(t5)
+ 348:	000ea023          	sw	zero,0(t4)
+ 34c:	000e2023          	sw	zero,0(t3)
+ 350:	fd5ff0ef          	jal	ra,324 <fail>
+
+00000354 <pass>:
+ 354:	da550fb7          	lui	t6,0xda550
+ 358:	001f8f93          	addi	t6,t6,1 # da550001 <INVALID_BASE+0xd9650001>
+ 35c:	00102f37          	lui	t5,0x102
+ 360:	f00f0f13          	addi	t5,t5,-256 # 101f00 <STATUS_MEM>
+ 364:	00106eb7          	lui	t4,0x106
+ 368:	f00e8e93          	addi	t4,t4,-256 # 105f00 <TIME_MEM+0x3f08>
+ 36c:	0010ae37          	lui	t3,0x10a
+ 370:	f00e0e13          	addi	t3,t3,-256 # 109f00 <TIME_MEM+0x7f08>
+ 374:	01ff2023          	sw	t6,0(t5)
+ 378:	000ea023          	sw	zero,0(t4)
+ 37c:	000e2023          	sw	zero,0(t3)
+ 380:	fd5ff0ef          	jal	ra,354 <pass>
+ 384:	0040006f          	j	388 <done>
+
+00000388 <done>:
+ 388:	0000006f          	j	388 <done>

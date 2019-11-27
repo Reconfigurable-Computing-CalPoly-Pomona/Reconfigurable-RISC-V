@@ -23,6 +23,7 @@
 !*.v
 !*.sv
 !*.bd
+!*.m
 !*.edif
 #########
 #IP files
@@ -68,9 +69,11 @@
 #Do NOT ignore *.xdc files
 !*.xdc
 #########
-#TCL - files
+# Script files
 #########
 !*.tcl
+!*.py
+!*.bat
 #########
 #Journal - files
 #########
@@ -84,8 +87,22 @@
 #########
 #C-files
 #########
+!*.s
 !*.c
 !*.h
 !*.elf
 !*.bmm
 !*.xmp
+!*.ld
+!*.hex
+!*.dump
+########
+# Build
+########
+!*.bit
+########
+# Documents
+########
+!*.PNG
+!*.docx
+!*.doc

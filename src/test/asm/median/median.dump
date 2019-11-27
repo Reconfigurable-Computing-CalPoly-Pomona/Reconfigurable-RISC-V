@@ -1,0 +1,201 @@
+
+median.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00100137          	lui	sp,0x100
+   4:	10010113          	addi	sp,sp,256 # 100100 <SAMPLE_BASE>
+   8:	00400513          	li	a0,4
+   c:	00600593          	li	a1,6
+  10:	00700613          	li	a2,7
+  14:	fff00693          	li	a3,-1
+  18:	03b00713          	li	a4,59
+  1c:	01e00793          	li	a5,30
+  20:	03a00813          	li	a6,58
+  24:	03a00893          	li	a7,58
+  28:	03b00913          	li	s2,59
+  2c:	fe200993          	li	s3,-30
+  30:	00400a13          	li	s4,4
+  34:	fea00a93          	li	s5,-22
+  38:	02800b13          	li	s6,40
+  3c:	02100b93          	li	s7,33
+  40:	00000c13          	li	s8,0
+  44:	06600c93          	li	s9,102
+  48:	00a12023          	sw	a0,0(sp)
+  4c:	00b12223          	sw	a1,4(sp)
+  50:	00c12423          	sw	a2,8(sp)
+  54:	00d12623          	sw	a3,12(sp)
+  58:	00e12823          	sw	a4,16(sp)
+  5c:	00f12a23          	sw	a5,20(sp)
+  60:	01012c23          	sw	a6,24(sp)
+  64:	01112e23          	sw	a7,28(sp)
+  68:	03212023          	sw	s2,32(sp)
+  6c:	03312223          	sw	s3,36(sp)
+  70:	03412423          	sw	s4,40(sp)
+  74:	03512623          	sw	s5,44(sp)
+  78:	03612823          	sw	s6,48(sp)
+  7c:	03712a23          	sw	s7,52(sp)
+  80:	03812c23          	sw	s8,56(sp)
+  84:	03912e23          	sw	s9,60(sp)
+  88:	0d8000ef          	jal	ra,160 <median>
+  8c:	16000d6f          	jal	s10,1ec <timer>
+  90:	18000d6f          	jal	s10,210 <cache_flush1>
+  94:	00400513          	li	a0,4
+  98:	00600593          	li	a1,6
+  9c:	00600613          	li	a2,6
+  a0:	00700693          	li	a3,7
+  a4:	01e00713          	li	a4,30
+  a8:	03a00793          	li	a5,58
+  ac:	03a00813          	li	a6,58
+  b0:	03a00893          	li	a7,58
+  b4:	03a00913          	li	s2,58
+  b8:	00400993          	li	s3,4
+  bc:	fea00a13          	li	s4,-22
+  c0:	00400a93          	li	s5,4
+  c4:	02100b13          	li	s6,33
+  c8:	02100b93          	li	s7,33
+  cc:	02100c13          	li	s8,33
+  d0:	06600c93          	li	s9,102
+  d4:	00101237          	lui	tp,0x101
+  d8:	03c20213          	addi	tp,tp,60 # 10103c <OUT_BASE+0x3c>
+  dc:	fc422d03          	lw	s10,-60(tp) # ffffffc4 <INVALID_BASE+0xefffffc4>
+  e0:	14ad1863          	bne	s10,a0,230 <fail>
+  e4:	fc822d03          	lw	s10,-56(tp) # ffffffc8 <INVALID_BASE+0xefffffc8>
+  e8:	14bd1463          	bne	s10,a1,230 <fail>
+  ec:	fcc22d03          	lw	s10,-52(tp) # ffffffcc <INVALID_BASE+0xefffffcc>
+  f0:	14cd1063          	bne	s10,a2,230 <fail>
+  f4:	fd022d03          	lw	s10,-48(tp) # ffffffd0 <INVALID_BASE+0xefffffd0>
+  f8:	12dd1c63          	bne	s10,a3,230 <fail>
+  fc:	fd422d03          	lw	s10,-44(tp) # ffffffd4 <INVALID_BASE+0xefffffd4>
+ 100:	12ed1863          	bne	s10,a4,230 <fail>
+ 104:	fd822d03          	lw	s10,-40(tp) # ffffffd8 <INVALID_BASE+0xefffffd8>
+ 108:	12fd1463          	bne	s10,a5,230 <fail>
+ 10c:	fdc22d03          	lw	s10,-36(tp) # ffffffdc <INVALID_BASE+0xefffffdc>
+ 110:	130d1063          	bne	s10,a6,230 <fail>
+ 114:	fe022d03          	lw	s10,-32(tp) # ffffffe0 <INVALID_BASE+0xefffffe0>
+ 118:	111d1c63          	bne	s10,a7,230 <fail>
+ 11c:	fe422d03          	lw	s10,-28(tp) # ffffffe4 <INVALID_BASE+0xefffffe4>
+ 120:	112d1863          	bne	s10,s2,230 <fail>
+ 124:	fe822d03          	lw	s10,-24(tp) # ffffffe8 <INVALID_BASE+0xefffffe8>
+ 128:	113d1463          	bne	s10,s3,230 <fail>
+ 12c:	fec22d03          	lw	s10,-20(tp) # ffffffec <INVALID_BASE+0xefffffec>
+ 130:	114d1063          	bne	s10,s4,230 <fail>
+ 134:	ff022d03          	lw	s10,-16(tp) # fffffff0 <INVALID_BASE+0xeffffff0>
+ 138:	0f5d1c63          	bne	s10,s5,230 <fail>
+ 13c:	ff422d03          	lw	s10,-12(tp) # fffffff4 <INVALID_BASE+0xeffffff4>
+ 140:	0f6d1863          	bne	s10,s6,230 <fail>
+ 144:	ff822d03          	lw	s10,-8(tp) # fffffff8 <INVALID_BASE+0xeffffff8>
+ 148:	0f7d1463          	bne	s10,s7,230 <fail>
+ 14c:	ffc22d03          	lw	s10,-4(tp) # fffffffc <INVALID_BASE+0xeffffffc>
+ 150:	0f8d1063          	bne	s10,s8,230 <fail>
+ 154:	00022d03          	lw	s10,0(tp) # 0 <_start>
+ 158:	0d9d1c63          	bne	s10,s9,230 <fail>
+ 15c:	0f800d6f          	jal	s10,254 <pass>
+
+00000160 <median>:
+ 160:	00101237          	lui	tp,0x101
+ 164:	00420213          	addi	tp,tp,4 # 101004 <OUT_BASE+0x4>
+ 168:	001012b7          	lui	t0,0x101
+ 16c:	03c28293          	addi	t0,t0,60 # 10103c <OUT_BASE+0x3c>
+ 170:	00101337          	lui	t1,0x101
+ 174:	00012583          	lw	a1,0(sp)
+ 178:	00412603          	lw	a2,4(sp)
+ 17c:	00b32023          	sw	a1,0(t1) # 101000 <OUT_BASE>
+ 180:	00100137          	lui	sp,0x100
+ 184:	10410113          	addi	sp,sp,260 # 100104 <SAMPLE_BASE+0x4>
+
+00000188 <median_shift>:
+ 188:	00058513          	mv	a0,a1
+ 18c:	00060593          	mv	a1,a2
+ 190:	00412603          	lw	a2,4(sp)
+ 194:	02a5c263          	blt	a1,a0,1b8 <a_greater_b>
+
+00000198 <a_less_b>:
+ 198:	00b64663          	blt	a2,a1,1a4 <alb_b_greater_c>
+
+0000019c <alb_b_less_c>:
+ 19c:	00b22023          	sw	a1,0(tp) # 0 <_start>
+ 1a0:	0380006f          	j	1d8 <med_incr>
+
+000001a4 <alb_b_greater_c>:
+ 1a4:	00a64663          	blt	a2,a0,1b0 <alb_bgc_a_greater_c>
+
+000001a8 <alb_bgc_c_greater_a>:
+ 1a8:	00c22023          	sw	a2,0(tp) # 0 <_start>
+ 1ac:	02c0006f          	j	1d8 <med_incr>
+
+000001b0 <alb_bgc_a_greater_c>:
+ 1b0:	00a22023          	sw	a0,0(tp) # 0 <_start>
+ 1b4:	0240006f          	j	1d8 <med_incr>
+
+000001b8 <a_greater_b>:
+ 1b8:	00b64c63          	blt	a2,a1,1d0 <agb_b_greater_c>
+
+000001bc <agb_b_less_c>:
+ 1bc:	00a64663          	blt	a2,a0,1c8 <agb_cgb_a_greater_c>
+
+000001c0 <agb_cgb_c_greater_a>:
+ 1c0:	00a22023          	sw	a0,0(tp) # 0 <_start>
+ 1c4:	0140006f          	j	1d8 <med_incr>
+
+000001c8 <agb_cgb_a_greater_c>:
+ 1c8:	00c22023          	sw	a2,0(tp) # 0 <_start>
+ 1cc:	00c0006f          	j	1d8 <med_incr>
+
+000001d0 <agb_b_greater_c>:
+ 1d0:	00b22023          	sw	a1,0(tp) # 0 <_start>
+ 1d4:	0040006f          	j	1d8 <med_incr>
+
+000001d8 <med_incr>:
+ 1d8:	00420213          	addi	tp,tp,4 # 4 <_start+0x4>
+ 1dc:	00410113          	addi	sp,sp,4
+ 1e0:	fa5244e3          	blt	tp,t0,188 <median_shift>
+ 1e4:	00c22023          	sw	a2,0(tp) # 0 <_start>
+ 1e8:	00008067          	ret
+
+000001ec <timer>:
+ 1ec:	c8002173          	rdcycleh	sp
+ 1f0:	c00020f3          	rdcycle	ra
+ 1f4:	c80021f3          	rdcycleh	gp
+ 1f8:	fe219ae3          	bne	gp,sp,1ec <timer>
+ 1fc:	00100237          	lui	tp,0x100
+ 200:	00420213          	addi	tp,tp,4 # 100004 <TIME_MEM>
+ 204:	00122023          	sw	ra,0(tp) # 0 <_start>
+ 208:	00222223          	sw	sp,4(tp) # 4 <_start+0x4>
+ 20c:	000d0067          	jr	s10
+
+00000210 <cache_flush1>:
+ 210:	000044b7          	lui	s1,0x4
+ 214:	10004537          	lui	a0,0x10004
+ 218:	00450513          	addi	a0,a0,4 # 10004004 <INVALID_BASE+0x4004>
+ 21c:	100005b7          	lui	a1,0x10000
+
+00000220 <cache_flush2>:
+ 220:	0005ad83          	lw	s11,0(a1) # 10000000 <INVALID_BASE>
+ 224:	00458593          	addi	a1,a1,4
+ 228:	feb51ce3          	bne	a0,a1,220 <cache_flush2>
+ 22c:	000d0d67          	jalr	s10,s10
+
+00000230 <fail>:
+ 230:	fa110fb7          	lui	t6,0xfa110
+ 234:	002f8f93          	addi	t6,t6,2 # fa110002 <INVALID_BASE+0xea110002>
+ 238:	00100f37          	lui	t5,0x100
+ 23c:	00104eb7          	lui	t4,0x104
+ 240:	00108e37          	lui	t3,0x108
+ 244:	01ff2023          	sw	t6,0(t5) # 100000 <MEM_BASE>
+ 248:	000ea003          	lw	zero,0(t4) # 104000 <OUT_BASE+0x3000>
+ 24c:	000e2003          	lw	zero,0(t3) # 108000 <OUT_BASE+0x7000>
+ 250:	fe1ff0ef          	jal	ra,230 <fail>
+
+00000254 <pass>:
+ 254:	da550fb7          	lui	t6,0xda550
+ 258:	002f8f93          	addi	t6,t6,2 # da550002 <INVALID_BASE+0xca550002>
+ 25c:	00100f37          	lui	t5,0x100
+ 260:	00104eb7          	lui	t4,0x104
+ 264:	00108e37          	lui	t3,0x108
+ 268:	01ff2023          	sw	t6,0(t5) # 100000 <MEM_BASE>
+ 26c:	000ea003          	lw	zero,0(t4) # 104000 <OUT_BASE+0x3000>
+ 270:	000e2003          	lw	zero,0(t3) # 108000 <OUT_BASE+0x7000>
+ 274:	fe1ff0ef          	jal	ra,254 <pass>
