@@ -1,4 +1,3 @@
-# RISC-V-Multicore
-An implementation of a RISC V multicore processor targeting FPGAs.
+# Reconfigurable RISC V
 
-Currently, a single core is implemeneted along with software tests.
+Implementation of configurable RISC V processor targeting FPGA applications.
