@@ -235,7 +235,7 @@ module control_unit(
   // If a JALR instruction is decoded, then it will be taken during the execution stage
   assign o_jalr = i_op == JALR;
 
-  // Assign which bytes will be written in the memory access state
+  // Assign which bytes will be written in the memory access stage
   always_comb begin : proc_load_types
     unique case(i_funct3)
       'b000: o_ldop = LB;

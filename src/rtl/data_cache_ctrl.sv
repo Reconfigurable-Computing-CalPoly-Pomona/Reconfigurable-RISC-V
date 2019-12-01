@@ -217,17 +217,7 @@ module data_cache_ctrl #(
           if (miss) begin
             address <= 0;
           end else begin
-            //address <= i_addr[$clog2(CACHE_DEPTH) + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-            //tag <= i_addr[TAG_BITS + INDEX_BITS + WORD_BITS + OFFSET - 1:INDEX_BITS + WORD_BITS + OFFSET];
-            //index <= i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-            //word <= i_addr[WORD_BITS + OFFSET - 1:OFFSET];
-            //offset <= i_addr[OFFSET - 1:0];
-            //store_data <= i_store_data;
-            //store_size <= i_sop;
-            //load_operation <= i_ldop;
-            //write <= i_req_write;
             o_data_valid <= data_valid;
-            
           end
         end
         WB_W: begin
@@ -257,8 +247,7 @@ module data_cache_ctrl #(
         if (i_req) next_state = CHK_TAG;
       CHK_TAG:
         // Determine if a hit has occured by reading the BRAM
-        // If a hit has occured and a request is available, stay in the check tag state
-        // Otherwise, go back to idle.
+        // During a hit, return to idle. If a miss occurs, the cache has to transition to check the dirty bits.
         if (~miss) next_state = IDLE;
         else next_state = CHK_DIRTY;
       WB_W: if (axi.w.last && axi.wready) next_state = WB_B;
@@ -294,7 +283,6 @@ module data_cache_ctrl #(
     o_wlru = i_rlru;
     data_valid = 0;
     o_req_ready = 0;
-    //o_data = 'x;
     cache_wline = 'x;
     // Default AXI
     axi.aw = 'x;
@@ -377,8 +365,6 @@ module data_cache_ctrl #(
             // If this is a hit, and it's a write command last cycle, write
             // to the cache and make it dirty
             if (write) begin
-              //o_req_ready = 0;
-              //o_re_cache[r] = 0;
               o_we_cache[r] = 1;
               cache_wline.dirty = 1;
               cache_wline.valid = 1;
@@ -398,12 +384,6 @@ module data_cache_ctrl #(
 
           end
         end
-        //o_req_ready = o_data_valid;
-
-        // Set the appropriate index
-        //if (o_req_ready && i_req) begin
-        //  o_raddr = i_addr[INDEX_BITS + WORD_BITS + OFFSET - 1:WORD_BITS + OFFSET];
-        //end
 
       end
       CHK_DIRTY: begin

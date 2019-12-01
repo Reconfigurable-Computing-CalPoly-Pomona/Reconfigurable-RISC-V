@@ -170,7 +170,6 @@ module instr_decode(
   decode_and_extend #() dsign_extend(
     .i_instr(instruction),
     .i_op(opcode),
-    .i_jalr_reg(o_rd1),
     .o_immediate(o_immediate)
   );
 

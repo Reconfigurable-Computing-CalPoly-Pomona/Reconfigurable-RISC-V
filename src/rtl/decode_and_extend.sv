@@ -29,9 +29,6 @@ module decode_and_extend(
   // The opcode as apart of the instruction
   input t_opcode i_op,
 
-  // The register used in the jump and link register instruction
-  input logic signed [DATA_SIZE - 1:0] i_jalr_reg,
-
   // The output immediate value
   output logic signed [DATA_SIZE - 1:0] o_immediate
 

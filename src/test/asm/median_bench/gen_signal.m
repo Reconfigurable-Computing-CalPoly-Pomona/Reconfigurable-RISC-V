@@ -22,11 +22,16 @@ d = 2 * sin(2 * pi * w * (k / n));
 % Noisy Signal
 xa = int32(1000 * (d + randn([1,n]) * sqrt(var)))';
 
+% Start a wall-clock timer
+tic();
+
 % Perform median filter for verification
 xf = medfilt1(xa, 3);
 
-length(xf)
+% Record the time it took to perform the median filter
+elapsed_time = toc();
 
+printf("Medfilt1 process time: %f ms.\n", elapsed_time * 1000);
 save gen_signal.txt xa -ascii;
 save verif_signal.txt xf -ascii;
 
