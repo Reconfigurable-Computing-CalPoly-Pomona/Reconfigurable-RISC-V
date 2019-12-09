@@ -4,11 +4,11 @@ Implementation of configurable RISC V processor targeting FPGA applications.
 
 **Supervising Professor:** 
 
-1. Mohamed El-Hadedy: Assistant Professor in Electrical and Computer Engineering at CalPoly, Pomona  
+**1. Mohamed El-Hadedy:** Assistant Professor in Electrical and Computer Engineering at CalPoly, Pomona  
 
 **Collaborators:**
-1. Wen-Mei Hwu:  Director of Center for Cognitive Computing System Research and Walter J. Sanders III-AMD Endowed Chair Professor in Elecrical and Computer Engineering at UIUC 
-2. Jinjun Xiong: Director of Center for Cognitive Computing System Research and Adjunct Research Professor at UIUC  
+**1. Wen-Mei Hwu:**  Director of Center for Cognitive Computing System Research and Walter J. Sanders III-AMD Endowed Chair Professor in Elecrical and Computer Engineering at UIUC 
+**2. Jinjun Xiong:** Director of Center for Cognitive Computing System Research and Adjunct Research Professor at UIUC  
 
 
 ### Project Sponsors:
