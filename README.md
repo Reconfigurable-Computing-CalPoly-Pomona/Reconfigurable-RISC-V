@@ -8,9 +8,9 @@ Implementation of configurable RISC V processor targeting FPGA applications.
 
 **Collaborators:**
 
-**1. Wen-Mei Hwu:**  Director of Center for Cognitive Computing System Research and Walter J. Sanders III-AMD Endowed Chair Professor in Elecrical and Computer Engineering at UIUC 
+**1. Wen-Mei Hwu:**  Director of Center for Cognitive Computing Systems Research and Walter J. Sanders III-AMD Endowed Chair Professor in Elecrical and Computer Engineering at UIUC 
 
-**2. Jinjun Xiong:** Director of Center for Cognitive Computing System Research and Adjunct Research Professor at UIUC  
+**2. Jinjun Xiong:** Director of Center for Cognitive Computing Systems Research and Adjunct Research Professor at UIUC  
 
 
 ### Project Sponsors:
