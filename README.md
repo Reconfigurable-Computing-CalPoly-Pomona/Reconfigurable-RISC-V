@@ -16,4 +16,5 @@ Implementation of configurable RISC V processor targeting FPGA applications.
 ### Project Sponsors:
 
 1. [Xilinx](https://www.xilinx.com/)
-2. [IBM-Illinois Center for Cognitive Computing Systems Research](https://www.c3sr.com/)
+2. [IBM](https://www.ibm.com)
+3. [IBM-Illinois Center for Cognitive Computing Systems Research](https://www.c3sr.com/)
