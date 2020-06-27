@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -100,11 +100,11 @@ ARCHITECTURE mc_top_rst_clk_wiz_100M_0_arch OF mc_top_rst_clk_wiz_100M_0 IS
     );
   END COMPONENT proc_sys_reset;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF mc_top_rst_clk_wiz_100M_0_arch: ARCHITECTURE IS "proc_sys_reset,Vivado 2018.3";
+  ATTRIBUTE X_CORE_INFO OF mc_top_rst_clk_wiz_100M_0_arch: ARCHITECTURE IS "proc_sys_reset,Vivado 2020.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF mc_top_rst_clk_wiz_100M_0_arch : ARCHITECTURE IS "mc_top_rst_clk_wiz_100M_0,proc_sys_reset,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF mc_top_rst_clk_wiz_100M_0_arch: ARCHITECTURE IS "mc_top_rst_clk_wiz_100M_0,proc_sys_reset,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=proc_sys_reset,x_ipVersion=5.0,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=spartan7,C_EXT_RST_WIDTH=4,C_AUX_RST_WIDTH=4,C_EXT_RESET_HIGH=0,C_AUX_RESET_HIGH=0,C_NUM_BUS_RST=1,C_NUM_PERP_RST=1,C_NUM_INTERCONNECT_ARESETN=1,C_NUM_PERP_ARESETN=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF mc_top_rst_clk_wiz_100M_0_arch: ARCHITECTURE IS "mc_top_rst_clk_wiz_100M_0,proc_sys_reset,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=proc_sys_reset,x_ipVersion=5.0,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=spartan7,C_EXT_RST_WIDTH=4,C_AUX_RST_WIDTH=4,C_EXT_RESET_HIGH=0,C_AUX_RESET_HIGH=0,C_NUM_BUS_RST=1,C_NUM_PERP_RST=1,C_NUM_INTERCONNECT_ARESETN=1,C_NUM_PERP_ARESETN=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF peripheral_aresetn: SIGNAL IS "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0";

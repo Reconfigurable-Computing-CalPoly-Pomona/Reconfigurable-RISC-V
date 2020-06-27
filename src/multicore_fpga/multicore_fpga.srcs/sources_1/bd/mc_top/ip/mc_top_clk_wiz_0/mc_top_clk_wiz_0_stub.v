@@ -1,10 +1,10 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Nov 22 16:56:07 2019
-// Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top mc_top_clk_wiz_0 -prefix
-//               mc_top_clk_wiz_0_ mc_top_clk_wiz_0_stub.v
+// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+// Date        : Fri Jun 26 17:52:12 2020
+// Host        : DESKTOP-N84G71E running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_stub.v
 // Design      : mc_top_clk_wiz_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1

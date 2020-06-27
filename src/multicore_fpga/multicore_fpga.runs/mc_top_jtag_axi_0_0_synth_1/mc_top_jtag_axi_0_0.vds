@@ -1,0 +1,437 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 17:50:16 2020
+# Process ID: 31068
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1
+# Command line: vivado.exe -log mc_top_jtag_axi_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_jtag_axi_0_0.tcl
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/mc_top_jtag_axi_0_0.vds
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mc_top_jtag_axi_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
+Command: synth_design -top mc_top_jtag_axi_0_0 -part xc7s50csga324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20852
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1036.746 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mc_top_jtag_axi_0_0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/synth/mc_top_jtag_axi_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray' [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray' (10#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray__parameterized2' [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray__parameterized2' (33#1) [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:284]
+WARNING: [Synth 8-7071] port 'sl_iport0' of module 'jtag_axi_v1_2_11_jtag_axi' is unconnected for instance 'inst' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/synth/mc_top_jtag_axi_0_0.v:191]
+WARNING: [Synth 8-7071] port 'sl_oport0' of module 'jtag_axi_v1_2_11_jtag_axi' is unconnected for instance 'inst' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/synth/mc_top_jtag_axi_0_0.v:191]
+WARNING: [Synth 8-7023] instance 'inst' of module 'jtag_axi_v1_2_11_jtag_axi' has 41 connections declared, but only 39 given [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/synth/mc_top_jtag_axi_0_0.v:191]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_jtag_axi_0_0' (39#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/synth/mc_top_jtag_axi_0_0.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1234.797 ; gain = 198.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1234.797 ; gain = 198.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1234.797 ; gain = 198.051
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.165 . Memory (MB): peak = 1234.797 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/dont_touch.xdc]
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mc_top_jtag_axi_0_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mc_top_jtag_axi_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1249.316 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1249.930 ; gain = 0.613
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /rd_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/\gconvfifo.rf /\grf.rf /\gntv_or_sync_fifo.gcx.clkx /wr_pntr_cdc_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'jtag_axi_v1_2_11_cmd_decode'
+INFO: [Synth 8-802] inferred FSM for state register 'wr_done_state_reg' in module 'jtag_axi_v1_2_11_jtag_axi_engine'
+INFO: [Synth 8-802] inferred FSM for state register 'rd_done_state_reg' in module 'jtag_axi_v1_2_11_jtag_axi_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+            READ_TX_FIFO |                             0001 |                             0001
+             AXI_WR_ADDR |                             0010 |                             0010
+             AXI_WR_DATA |                             0100 |                             0100
+         AXI_WR_RESPONSE |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'jtag_axi_v1_2_11_write_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'jtag_axi_v1_2_11_read_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+           READ_CMD_FIFO |                               01 |                               01
+         AXI_TRANSACTION |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'jtag_axi_v1_2_11_cmd_decode'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                RDQ_IDLE |                              001 |                              001
+             RDQ_CMD_CNT |                              010 |                              010
+            RDQ_DONE_CNT |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'rd_done_state_reg' in module 'jtag_axi_v1_2_11_jtag_axi_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                WRQ_IDLE |                              001 |                              001
+             WRQ_CMD_CNT |                              010 |                              010
+            WRQ_DONE_CNT |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'wr_done_state_reg' in module 'jtag_axi_v1_2_11_jtag_axi_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                READ_AXI |                             0001 |                             0001
+             AXI_RD_ADDR |                             0010 |                             0010
+             AXI_RD_DATA |                             0100 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'jtag_axi_v1_2_11_read_axi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 7     
+	   2 Input    3 Bit       Adders := 2     
++---XORs : 
+	   2 Input     10 Bit         XORs := 4     
+	   2 Input      4 Bit         XORs := 4     
+	   2 Input      1 Bit         XORs := 166   
++---Registers : 
+	              128 Bit    Registers := 1     
+	               64 Bit    Registers := 10    
+	               32 Bit    Registers := 8     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 11    
+	               10 Bit    Registers := 26    
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 34    
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 152   
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 3     
+	   5 Input    9 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 6     
+	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 27    
+	   3 Input    2 Bit        Muxes := 2     
+	   5 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 50    
+	   3 Input    1 Bit        Muxes := 15    
+	   4 Input    1 Bit        Muxes := 29    
+	   5 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|Module Name | RTL Object                                                                                                | Inference      | Size (Depth x Width) | Primitives                  | 
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|inst        | jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 1 K x 32             | RAM64X1D x 32	RAM64M x 160	 | 
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|Module Name | RTL Object                                                                                                | Inference      | Size (Depth x Width) | Primitives                  | 
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+|inst        | jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 1 K x 32             | RAM64X1D x 32	RAM64M x 160	 | 
++------------+-----------------------------------------------------------------------------------------------------------+----------------+----------------------+-----------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3295] tying undriven pin jtag_axi_engine_u/wr_cmd_fifowren_axi_ff_inferred:in0 to constant 0
+INFO: [Synth 8-3295] tying undriven pin jtag_axi_engine_u/rd_cmd_fifowren_axi_ff_inferred:in0 to constant 0
+INFO: [Synth 8-3295] tying undriven pin jtag_axi_engine_u/wr_cmd_fifowren_axi_ff3_inferred:in0 to constant 0
+INFO: [Synth 8-3295] tying undriven pin jtag_axi_engine_u/rd_cmd_fifowren_axi_ff3_inferred:in0 to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[36] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[35] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[34] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[33] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[32] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[31] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[30] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[29] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[28] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[27] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[26] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[25] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[24] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[23] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[22] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[21] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[20] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[19] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[18] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[17] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[16] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[15] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[14] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[13] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[12] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[11] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[10] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[9] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[8] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[7] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[6] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[5] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[4] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[3] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[2] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0
+INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:59 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name               | RTL Name                                                                                                                                                                                                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|jtag_axi_v1_2_11_jtag_axi | jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[4]     | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|jtag_axi_v1_2_11_jtag_axi | jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[4] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |    18|
+|2     |LUT2     |   119|
+|3     |LUT3     |   112|
+|4     |LUT4     |   126|
+|5     |LUT5     |    90|
+|6     |LUT6     |   304|
+|7     |MUXCY    |    40|
+|8     |MUXF7    |    64|
+|9     |MUXF8    |    32|
+|10    |RAM64M   |   160|
+|11    |RAM64X1D |    32|
+|12    |RAMB36E1 |     3|
+|14    |SRL16E   |     2|
+|15    |FDRE     |  1790|
+|16    |FDSE     |    12|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:56 . Memory (MB): peak = 1249.930 ; gain = 198.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1249.930 ; gain = 213.184
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1249.930 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 331 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1249.930 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 208 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 16 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 160 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 1249.930 ; gain = 213.184
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/mc_top_jtag_axi_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mc_top_jtag_axi_0_0, cache-ID = 5b19734e83e85be0
+INFO: [Coretcl 2-1174] Renamed 100 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_jtag_axi_0_0_synth_1/mc_top_jtag_axi_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mc_top_jtag_axi_0_0_utilization_synth.rpt -pb mc_top_jtag_axi_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 17:51:30 2020...

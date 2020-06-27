@@ -16,6 +16,58 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+namespace eval ::optrace {
+  variable script "C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper.tcl"
+  variable category "vivado_impl"
+}
+
+# Try to connect to running dispatch if we haven't done so already.
+# This code assumes that the Tcl interpreter is not using threads,
+# since the ::dispatch::connected variable isn't mutex protected.
+if {![info exists ::dispatch::connected]} {
+  namespace eval ::dispatch {
+    variable connected false
+    if {[llength [array get env XILINX_CD_CONNECT_ID]] > 0} {
+      set result "true"
+      if {[catch {
+        if {[lsearch -exact [package names] DispatchTcl] < 0} {
+          set result [load librdi_cd_clienttcl[info sharedlibextension]] 
+        }
+        if {$result eq "false"} {
+          puts "WARNING: Could not load dispatch client library"
+        }
+        set connect_id [ ::dispatch::init_client -mode EXISTING_SERVER ]
+        if { $connect_id eq "" } {
+          puts "WARNING: Could not initialize dispatch client"
+        } else {
+          puts "INFO: Dispatch client connection id - $connect_id"
+          set connected true
+        }
+      } catch_res]} {
+        puts "WARNING: failed to connect to dispatch server - $catch_res"
+      }
+    }
+  }
+}
+if {$::dispatch::connected} {
+  # Remove the dummy proc if it exists.
+  if { [expr {[llength [info procs ::OPTRACE]] > 0}] } {
+    rename ::OPTRACE ""
+  }
+  proc ::OPTRACE { task action {tags {} } } {
+    ::vitis_log::op_trace "$task" $action -tags $tags -script $::optrace::script -category $::optrace::category
+  }
+  # dispatch is generic. We specifically want to attach logging.
+  ::vitis_log::connect_client
+} else {
+  # Add dummy proc if it doesn't exist.
+  if { [expr {[llength [info procs ::OPTRACE]] == 0}] } {
+    proc ::OPTRACE {{arg1 \"\" } {arg2 \"\"} {arg3 \"\" } {arg4 \"\"} {arg5 \"\" } {arg6 \"\"}} {
+        # Do nothing
+    }
+  }
+}
+
 proc start_step { step } {
   set stopFile ".stop.rst"
   if {[file isfile .stop.rst]} {
@@ -33,6 +85,8 @@ proc start_step { step } {
   if { [string equal $platform unix] } {
     if { [info exist ::env(HOSTNAME)] } {
       set host $::env(HOSTNAME)
+    } elseif { [info exist ::env(HOST)] } {
+      set host $::env(HOST)
     }
   } else {
     if { [info exist ::env(COMPUTERNAME)] } {
@@ -60,36 +114,52 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
 
+OPTRACE "Implementation" START { ROLLUP_1 }
+OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 2
+OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7s50csga324-1
   set_property board_part digilentinc.com:arty-s7-50:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.xpr [current_project]
-  set_property ip_repo_paths C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0 [current_project]
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
+  set_property webtalk.parent_dir C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/wt [current_project]
+  set_property parent.project_path C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.xpr [current_project]
+  set_property ip_repo_paths C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0 [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.dcp
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
+  add_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
   set_param project.isImplRun false
-  read_xdc C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc
-  read_xdc C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc
+OPTRACE "read constraints: implementation" START { }
+  read_xdc C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc
+  read_xdc C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
   set_param project.isImplRun true
   link_design -top mc_top_wrapper -part xc7s50csga324-1
+OPTRACE "link_design" END { }
   set_param project.isImplRun false
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
+OPTRACE "init_design_reports" START { REPORT }
+OPTRACE "init_design_reports" END { }
+OPTRACE "init_design_write_hwdef" START { }
   write_hwdef -force -file mc_top_wrapper.hwdef
+OPTRACE "init_design_write_hwdef" END { }
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -100,13 +170,25 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+OPTRACE "Phase: Init Design" END { }
+OPTRACE "Phase: Opt Design" START { ROLLUP_AUTO }
 start_step opt_design
 set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
+OPTRACE "read constraints: opt_design" START { }
+OPTRACE "read constraints: opt_design" END { }
+OPTRACE "opt_design" START { }
   opt_design 
+OPTRACE "opt_design" END { }
+OPTRACE "read constraints: opt_design_post" START { }
+OPTRACE "read constraints: opt_design_post" END { }
+OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
   write_checkpoint -force mc_top_wrapper_opt.dcp
+OPTRACE "Opt Design: write_checkpoint" END { }
+OPTRACE "opt_design reports" START { REPORT }
   create_report "impl_1_opt_report_drc_0" "report_drc -file mc_top_wrapper_drc_opted.rpt -pb mc_top_wrapper_drc_opted.pb -rpx mc_top_wrapper_drc_opted.rpx"
+OPTRACE "opt_design reports" END { }
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -117,18 +199,32 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+OPTRACE "Phase: Opt Design" END { }
+OPTRACE "Phase: Place Design" START { ROLLUP_AUTO }
 start_step place_design
 set ACTIVE_STEP place_design
 set rc [catch {
   create_msg_db place_design.pb
+OPTRACE "read constraints: place_design" START { }
+OPTRACE "read constraints: place_design" END { }
   if { [llength [get_debug_cores -quiet] ] > 0 }  { 
+OPTRACE "implement_debug_core" START { }
     implement_debug_core 
+OPTRACE "implement_debug_core" END { }
   } 
+OPTRACE "place_design" START { }
   place_design 
+OPTRACE "place_design" END { }
+OPTRACE "read constraints: place_design_post" START { }
+OPTRACE "read constraints: place_design_post" END { }
+OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
   write_checkpoint -force mc_top_wrapper_placed.dcp
+OPTRACE "Place Design: write_checkpoint" END { }
+OPTRACE "place_design reports" START { REPORT }
   create_report "impl_1_place_report_io_0" "report_io -file mc_top_wrapper_io_placed.rpt"
   create_report "impl_1_place_report_utilization_0" "report_utilization -file mc_top_wrapper_utilization_placed.rpt -pb mc_top_wrapper_utilization_placed.pb"
   create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file mc_top_wrapper_control_sets_placed.rpt"
+OPTRACE "place_design reports" END { }
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -139,12 +235,23 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+OPTRACE "Phase: Place Design" END { }
+OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
+OPTRACE "read constraints: route_design" START { }
+OPTRACE "read constraints: route_design" END { }
+OPTRACE "route_design" START { }
   route_design 
+OPTRACE "route_design" END { }
+OPTRACE "read constraints: route_design_post" START { }
+OPTRACE "read constraints: route_design_post" END { }
+OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
   write_checkpoint -force mc_top_wrapper_routed.dcp
+OPTRACE "Route Design: write_checkpoint" END { }
+OPTRACE "route_design reports" START { REPORT }
   create_report "impl_1_route_report_drc_0" "report_drc -file mc_top_wrapper_drc_routed.rpt -pb mc_top_wrapper_drc_routed.pb -rpx mc_top_wrapper_drc_routed.rpx"
   create_report "impl_1_route_report_methodology_0" "report_methodology -file mc_top_wrapper_methodology_drc_routed.rpt -pb mc_top_wrapper_methodology_drc_routed.pb -rpx mc_top_wrapper_methodology_drc_routed.rpx"
   create_report "impl_1_route_report_power_0" "report_power -file mc_top_wrapper_power_routed.rpt -pb mc_top_wrapper_power_summary_routed.pb -rpx mc_top_wrapper_power_routed.rpx"
@@ -153,7 +260,11 @@ set rc [catch {
   create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file mc_top_wrapper_incremental_reuse_routed.rpt"
   create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file mc_top_wrapper_clock_utilization_routed.rpt"
   create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file mc_top_wrapper_bus_skew_routed.rpt -pb mc_top_wrapper_bus_skew_routed.pb -rpx mc_top_wrapper_bus_skew_routed.rpx"
+OPTRACE "route_design reports" END { }
+OPTRACE "route_design misc" START { }
   close_msg_db -file route_design.pb
+OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
+OPTRACE "route_design write_checkpoint" END { }
 } RESULT]
 if {$rc} {
   write_checkpoint -force mc_top_wrapper_routed_error.dcp
@@ -164,23 +275,6 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force mc_top_wrapper.mmi }
-  write_bitstream -force mc_top_wrapper.bit 
-  catch { write_sysdef -hwdef mc_top_wrapper.hwdef -bitfile mc_top_wrapper.bit -meminfo mc_top_wrapper.mmi -file mc_top_wrapper.sysdef }
-  catch {write_debug_probes -quiet -force mc_top_wrapper}
-  catch {file copy -force mc_top_wrapper.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
-  unset ACTIVE_STEP 
-}
-
+OPTRACE "route_design misc" END { }
+OPTRACE "Phase: Route Design" END { }
+OPTRACE "Implementation" END { }

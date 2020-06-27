@@ -1,10 +1,10 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Nov 22 16:56:08 2019
-// Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top mc_top_rst_clk_wiz_100M_0 -prefix
-//               mc_top_rst_clk_wiz_100M_0_ mc_top_rst_clk_wiz_100M_0_stub.v
+// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+// Date        : Fri Jun 26 17:52:19 2020
+// Host        : DESKTOP-N84G71E running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_stub.v
 // Design      : mc_top_rst_clk_wiz_100M_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "proc_sys_reset,Vivado 2018.3" *)
+(* x_core_info = "proc_sys_reset,Vivado 2020.1" *)
 module mc_top_rst_clk_wiz_100M_0(slowest_sync_clk, ext_reset_in, aux_reset_in, 
   mb_debug_sys_rst, dcm_locked, mb_reset, bus_struct_reset, peripheral_reset, 
   interconnect_aresetn, peripheral_aresetn)

@@ -1,18 +1,18 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Nov 22 20:52:11 2019
-// Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top mc_top_instr_mem_0 -prefix
-//               mc_top_instr_mem_0_ jtag_to_axi_data_mem_0_sim_netlist.v
-// Design      : jtag_to_axi_data_mem_0
+// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+// Date        : Fri Jun 26 17:51:39 2020
+// Host        : DESKTOP-N84G71E running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0_sim_netlist.v
+// Design      : mc_top_instr_mem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7s50csga324-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "jtag_to_axi_data_mem_0,blk_mem_gen_v8_4_2,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_2,Vivado 2018.3" *) 
+(* CHECK_LICENSE_TYPE = "mc_top_instr_mem_0,blk_mem_gen_v8_4_4,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_4_4,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
 module mc_top_instr_mem_0
    (clka,
@@ -157,8 +157,9 @@ module mc_top_instr_mem_0
   (* C_WRITE_WIDTH_A = "32" *) 
   (* C_WRITE_WIDTH_B = "32" *) 
   (* C_XDEVICEFAMILY = "spartan7" *) 
+  (* KEEP_HIERARCHY = "soft" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
-  mc_top_instr_mem_0_blk_mem_gen_v8_4_2 U0
+  mc_top_instr_mem_0_blk_mem_gen_v8_4_4 U0
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -224,6 +225,7 @@ module mc_top_instr_mem_0
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
    (douta,
     doutb,
@@ -290,6 +292,7 @@ module mc_top_instr_mem_0_blk_mem_gen_generic_cstr
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module mc_top_instr_mem_0_blk_mem_gen_prim_width
    (douta,
     doutb,
@@ -327,6 +330,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   wire ENB_dly;
   wire ENB_dly_D;
   wire POR_A;
+  wire POR_A0;
   wire \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg[3]_srl3_n_0 ;
   wire \SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ;
   wire [9:0]addra;
@@ -339,7 +343,6 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
   wire ena;
   wire enb;
   wire [1:1]p_0_in;
-  wire p_3_out;
   wire ram_rstram_a;
   wire ram_rstram_a_busy__0;
   wire ram_rstram_b;
@@ -388,13 +391,13 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
     \SAFETY_CKT_GEN.POR_A_i_1 
        (.I0(p_0_in),
         .I1(\SAFETY_CKT_GEN.RSTA_SHFT_REG_reg_n_0_[4] ),
-        .O(p_3_out));
+        .O(POR_A0));
   FDRE #(
     .INIT(1'b0)) 
     \SAFETY_CKT_GEN.POR_A_reg 
        (.C(clka),
         .CE(1'b1),
-        .D(p_3_out),
+        .D(POR_A0),
         .Q(POR_A),
         .R(1'b0));
   FDRE \SAFETY_CKT_GEN.RSTA_BUSY_NO_REG.RSTA_BUSY_reg 
@@ -475,6 +478,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_width
         .O(ram_rstram_b_busy__0));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper
    (douta,
     doutb,
@@ -785,6 +789,7 @@ module mc_top_instr_mem_0_blk_mem_gen_prim_wrapper
         .O(ram_rstram_b));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module mc_top_instr_mem_0_blk_mem_gen_top
    (douta,
     doutb,
@@ -876,8 +881,8 @@ endmodule
 (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "1024" *) 
 (* C_WRITE_DEPTH_B = "1024" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "spartan7" *) 
-(* downgradeipidentifiedwarnings = "yes" *) 
-module mc_top_instr_mem_0_blk_mem_gen_v8_4_2
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
+module mc_top_instr_mem_0_blk_mem_gen_v8_4_4
    (clka,
     rsta,
     ena,
@@ -1142,7 +1147,7 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2
   assign sbiterr = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth inst_blk_mem_gen
+  mc_top_instr_mem_0_blk_mem_gen_v8_4_4_synth inst_blk_mem_gen
        (.addra(addra[11:2]),
         .addrb(addrb[11:2]),
         .clka(clka),
@@ -1160,7 +1165,8 @@ module mc_top_instr_mem_0_blk_mem_gen_v8_4_2
         .web(web));
 endmodule
 
-module mc_top_instr_mem_0_blk_mem_gen_v8_4_2_synth
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
+module mc_top_instr_mem_0_blk_mem_gen_v8_4_4_synth
    (douta,
     doutb,
     rsta_busy,
@@ -1233,12 +1239,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -1251,6 +1260,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -1278,6 +1288,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -1291,6 +1302,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

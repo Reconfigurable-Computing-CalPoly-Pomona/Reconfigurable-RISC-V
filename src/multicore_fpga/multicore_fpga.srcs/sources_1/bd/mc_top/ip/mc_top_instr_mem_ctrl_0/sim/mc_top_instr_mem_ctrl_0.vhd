@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:axi_bram_ctrl:4.1
--- IP Revision: 0
+-- IP Revision: 3
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY axi_bram_ctrl_v4_1_0;
-USE axi_bram_ctrl_v4_1_0.axi_bram_ctrl;
+LIBRARY axi_bram_ctrl_v4_1_3;
+USE axi_bram_ctrl_v4_1_3.axi_bram_ctrl;
 
 ENTITY mc_top_instr_mem_ctrl_0 IS
   PORT (
@@ -127,7 +127,6 @@ ARCHITECTURE mc_top_instr_mem_ctrl_0_arch OF mc_top_instr_mem_ctrl_0 IS
       C_S_AXI_SUPPORTS_NARROW_BURST : INTEGER;
       C_SINGLE_PORT_BRAM : INTEGER;
       C_FAMILY : STRING;
-      C_SELECT_XPM : INTEGER;
       C_READ_LATENCY : INTEGER;
       C_RD_CMD_OPTIMIZATION : INTEGER;
       C_S_AXI_CTRL_ADDR_WIDTH : INTEGER;
@@ -225,7 +224,7 @@ ARCHITECTURE mc_top_instr_mem_ctrl_0_arch OF mc_top_instr_mem_ctrl_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF bram_we_a: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORTA WE";
   ATTRIBUTE X_INTERFACE_INFO OF bram_en_a: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
   ATTRIBUTE X_INTERFACE_INFO OF bram_clk_a: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF bram_rst_a: SIGNAL IS "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 4096, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE READ_ONLY, READ_LATENCY 1";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF bram_rst_a: SIGNAL IS "XIL_INTERFACENAME BRAM_PORTA, MASTER_TYPE BRAM_CTRL, MEM_SIZE 4096, MEM_WIDTH 32, MEM_ECC NONE, READ_WRITE_MODE WRITE_ONLY, READ_LATENCY 1";
   ATTRIBUTE X_INTERFACE_INFO OF bram_rst_a: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORTA RST";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI RREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI RVALID";
@@ -266,7 +265,7 @@ ARCHITECTURE mc_top_instr_mem_ctrl_0_arch OF mc_top_instr_mem_ctrl_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI AWID";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME RSTIF, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 RSTIF RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME CLKIF, ASSOCIATED_BUSIF S_AXI:S_AXI_CTRL, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME CLKIF, ASSOCIATED_BUSIF S_AXI:S_AXI_CTRL, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 75000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 CLKIF CLK";
 BEGIN
   U0 : axi_bram_ctrl
@@ -281,7 +280,6 @@ BEGIN
       C_S_AXI_SUPPORTS_NARROW_BURST => 0,
       C_SINGLE_PORT_BRAM => 0,
       C_FAMILY => "spartan7",
-      C_SELECT_XPM => 1,
       C_READ_LATENCY => 1,
       C_RD_CMD_OPTIMIZATION => 0,
       C_S_AXI_CTRL_ADDR_WIDTH => 32,

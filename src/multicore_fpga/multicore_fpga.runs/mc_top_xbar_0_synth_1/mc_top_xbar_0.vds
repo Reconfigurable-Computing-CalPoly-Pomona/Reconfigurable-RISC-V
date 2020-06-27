@@ -1,31 +1,33 @@
 #-----------------------------------------------------------
-# Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
-# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Nov 24 17:05:26 2019
-# Process ID: 12436
-# Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 17:51:32 2020
+# Process ID: 30076
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1
 # Command line: vivado.exe -log mc_top_xbar_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_xbar_0.tcl
-# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.vds
-# Journal file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1\vivado.jou
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.vds
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source mc_top_xbar_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip 
+Current IP cache path is c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
 Command: synth_design -top mc_top_xbar_0 -part xc7s50csga324-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15088 
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 29164
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 404.113 ; gain = 104.594
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.430 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'mc_top_xbar_0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/synth/mc_top_xbar_0.v:59]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_axi_crossbar' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_xbar_0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/synth/mc_top_xbar_0.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_axi_crossbar' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
 	Parameter C_FAMILY bound to: spartan7 - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 3 - type: integer 
 	Parameter C_NUM_MASTER_SLOTS bound to: 3 - type: integer 
@@ -50,8 +52,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_axi_crossbar' [c:
 	Parameter C_S_AXI_SINGLE_THREAD bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
 	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
-	Parameter C_M_AXI_WRITE_ISSUING bound to: 96'b000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
-	Parameter C_M_AXI_READ_ISSUING bound to: 96'b000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_WRITE_ISSUING bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_READ_ISSUING bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
 	Parameter C_S_AXI_ARB_PRIORITY bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_M_AXI_SECURE bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_CONNECTIVITY_MODE bound to: 1 - type: integer 
@@ -74,7 +76,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_axi_crossbar' [c:
 	Parameter P_LEN bound to: 8 - type: integer 
 	Parameter P_LOCK bound to: 1 - type: integer 
 	Parameter P_FAMILY bound to: rtl - type: string 
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_crossbar' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2239]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_crossbar' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:2239]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 3 - type: integer 
 	Parameter C_NUM_MASTER_SLOTS bound to: 3 - type: integer 
@@ -103,15 +105,15 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_crossbar' [c:/Use
 	Parameter C_S_AXI_SINGLE_THREAD bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
 	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
-	Parameter C_M_AXI_WRITE_ISSUING bound to: 96'b000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
-	Parameter C_M_AXI_READ_ISSUING bound to: 96'b000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_WRITE_ISSUING bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_READ_ISSUING bound to: 96'b000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
 	Parameter C_S_AXI_ARB_PRIORITY bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_M_AXI_SECURE bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_M_AXI_ERR_MODE bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
 	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
-	Parameter C_W_ISSUE_WIDTH bound to: 128'b00000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_R_ISSUE_WIDTH bound to: 128'b00000000000000000000000000000000000000000000000000000000000000110000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_W_ISSUE_WIDTH bound to: 128'b00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_R_ISSUE_WIDTH bound to: 128'b00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter C_W_ACCEPT_WIDTH bound to: 96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter C_R_ACCEPT_WIDTH bound to: 96'b000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
 	Parameter C_DEBUG bound to: 1 - type: integer 
@@ -139,10 +141,10 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_crossbar' [c:/Use
 	Parameter P_M_AXI_READ_CONNECTIVITY bound to: 128'b11111111111111111111111111111111000000000000000000000000000001110000000000000000000000000000011100000000000000000000000000000111 
 	Parameter P_S_AXI_WRITE_CONNECTIVITY bound to: 96'b111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 
 	Parameter P_S_AXI_READ_CONNECTIVITY bound to: 96'b111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 
-	Parameter P_M_AXI_READ_ISSUING bound to: 128'b00000000000000000000000000000001000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
-	Parameter P_M_AXI_WRITE_ISSUING bound to: 128'b00000000000000000000000000000001000000000000000000000000000010000000000000000000000000000000001000000000000000000000000000000010 
+	Parameter P_M_AXI_READ_ISSUING bound to: 128'b00000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter P_M_AXI_WRITE_ISSUING bound to: 128'b00000000000000000000000000000001000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
 	Parameter P_DECERR bound to: 2'b11 
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 0 - type: integer 
 	Parameter C_DIR bound to: 1 - type: integer 
@@ -180,7 +182,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor' [c
 	Parameter P_NUM_ID_VAL bound to: 2 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_decoder' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_addr_decoder' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_TARGETS bound to: 3 - type: integer 
 	Parameter C_NUM_TARGETS_LOG bound to: 2 - type: integer 
@@ -194,35 +196,35 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_decoder' [c:
 	Parameter C_TARGET_QUAL bound to: 4'b0111 
 	Parameter C_RESOLUTION bound to: 2 - type: integer 
 	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b000000000000000000000000000000 
 	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
 	Parameter C_FAMILY bound to: rtl - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (1#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (2#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (1#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (2#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b000000000001000000000000000000 
 	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (2#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (2#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_VALUE bound to: 30'b000000000010000000000000000000 
 	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
 	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
 	Parameter C_NUM_LUT bound to: 5 - type: integer 
 	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (2#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_addr_decoder' (3#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (2#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_addr_decoder' (3#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -234,34 +236,30 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo' [
 	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
 	Parameter P_ALMOSTFULL bound to: 2'b10 
 	Parameter P_NUM_REPS bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_ndeep_srl' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_ndeep_srl' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_A_WIDTH bound to: 2 - type: integer 
 	Parameter P_SRLASIZE bound to: 5 - type: integer 
 	Parameter P_SRLDEPTH bound to: 32 - type: integer 
 	Parameter P_NUMSRLS bound to: 1 - type: integer 
 	Parameter P_SHIFT_DEPTH bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_ndeep_srl' (4#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:750]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:789]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo' (5#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_arbiter_resp' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:1025]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_ndeep_srl' (4#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo' (5#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_arbiter_resp' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:1025]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_S bound to: 4 - type: integer 
 	Parameter C_NUM_S_LOG bound to: 2 - type: integer 
 	Parameter C_GRANT_ENC bound to: 1 - type: integer 
 	Parameter C_GRANT_HOT bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_arbiter_resp' (6#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:1025]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_arbiter_resp' (6#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:1025]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 42 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (7#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor' (8#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (7#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor' (8#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 0 - type: integer 
 	Parameter C_DIR bound to: 0 - type: integer 
@@ -299,26 +297,24 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__pa
 	Parameter P_NUM_ID_VAL bound to: 2 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 4 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 10 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (8#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized0' (8#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_splitter' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (8#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized0' (8#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_splitter' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
 	Parameter C_NUM_M bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_splitter' (9#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_wdata_router' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4736]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_splitter' (9#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_wdata_router' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4736]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
 	Parameter C_NUM_MASTER_SLOTS bound to: 4 - type: integer 
 	Parameter C_SELECT_WIDTH bound to: 3 - type: integer 
 	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
 	Parameter P_FIFO_DEPTH_LOG bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 3 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -333,10 +329,10 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fif
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo' (10#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_wdata_router' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4736]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo' (10#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_wdata_router' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4736]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 1 - type: integer 
 	Parameter C_DIR bound to: 1 - type: integer 
@@ -374,10 +370,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__pa
 	Parameter P_NUM_ID_VAL bound to: 2 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized1' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized2' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized1' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized2' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 1 - type: integer 
 	Parameter C_DIR bound to: 0 - type: integer 
@@ -415,10 +409,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__pa
 	Parameter P_NUM_ID_VAL bound to: 2 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized2' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized3' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized2' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized3' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 2 - type: integer 
 	Parameter C_DIR bound to: 1 - type: integer 
@@ -456,10 +448,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__pa
 	Parameter P_NUM_ID_VAL bound to: 16 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized3' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized4' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized3' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized4' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_SI bound to: 2 - type: integer 
 	Parameter C_DIR bound to: 0 - type: integer 
@@ -497,10 +487,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_si_transactor__pa
 	Parameter P_NUM_ID_VAL bound to: 16 - type: integer 
 	Parameter P_NUM_THREADS bound to: 2 - type: integer 
 	Parameter P_M_SECURE_MASK bound to: 3'b000 
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4346]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_si_transactor__parameterized4' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_decoder__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_si_transactor__parameterized4' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3800]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_addr_decoder__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_TARGETS bound to: 3 - type: integer 
 	Parameter C_NUM_TARGETS_LOG bound to: 2 - type: integer 
@@ -514,8 +502,8 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_decoder__par
 	Parameter C_TARGET_QUAL bound to: 4'b0111 
 	Parameter C_RESOLUTION bound to: 0 - type: integer 
 	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_addr_decoder__parameterized0' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_addr_decoder__parameterized0' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -527,17 +515,15 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__p
 	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
 	Parameter P_ALMOSTFULL bound to: 2'b10 
 	Parameter P_NUM_REPS bound to: 1 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:750]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:789]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized0' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_wdata_mux' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo__parameterized0' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_wdata_mux' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 3 - type: integer 
 	Parameter C_SELECT_WIDTH bound to: 2 - type: integer 
 	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
 	Parameter P_FIFO_DEPTH_LOG bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 2 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -552,17 +538,16 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fif
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
-WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1038]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized0' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 3 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (11#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_wdata_mux' (12#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axi_register_slice' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:2637]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (11#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_wdata_mux' (12#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_21_axi_register_slice' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
 	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
@@ -579,6 +564,7 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axi_registe
 	Parameter C_REG_CONFIG_B bound to: 7 - type: integer 
 	Parameter C_REG_CONFIG_AR bound to: 0 - type: integer 
 	Parameter C_REG_CONFIG_R bound to: 1 - type: integer 
+	Parameter C_RESERVE_MODE bound to: 0 - type: integer 
 	Parameter C_NUM_SLR_CROSSINGS bound to: 0 - type: integer 
 	Parameter C_PIPELINES_MASTER_AW bound to: 0 - type: integer 
 	Parameter C_PIPELINES_MASTER_W bound to: 0 - type: integer 
@@ -673,266 +659,220 @@ INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axi_registe
 	Parameter G_AXI_RUSER_INDEX bound to: 41 - type: integer 
 	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
 	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 42 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 9 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 42 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 28 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 28 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 8 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 9 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 41 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (13#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 9 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 42 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 28 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 28 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 8 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 9 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 41 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (14#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_DATA_WIDTH bound to: 37 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice' (13#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice' (15#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_DATA_WIDTH bound to: 38 - type: integer 
 	Parameter C_REG_CONFIG bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized0' (13#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized0' (15#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_DATA_WIDTH bound to: 9 - type: integer 
 	Parameter C_REG_CONFIG bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized1' (13#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized2' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized1' (15#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized2' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_DATA_WIDTH bound to: 42 - type: integer 
 	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_18_axic_register_slice__parameterized2' (13#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:409]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
-	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
-	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
-	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
-	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
-	Parameter C_BPAYLOAD_WIDTH bound to: 9 - type: integer 
-	Parameter C_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter C_RPAYLOAD_WIDTH bound to: 42 - type: integer 
-	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
-	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
-	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
-	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
-	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
-	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
-	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
-	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
-	Parameter G_AXI_AWID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_AWQOS_INDEX bound to: 28 - type: integer 
-	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWREGION_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWUSER_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
-	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
-	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
-	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
-	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
-	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
-	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
-	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
-	Parameter G_AXI_ARID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_ARQOS_INDEX bound to: 28 - type: integer 
-	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARREGION_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARUSER_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
-	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
-	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
-	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
-	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
-	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
-	Parameter G_AXI_BID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_BUSER_INDEX bound to: 8 - type: integer 
-	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 9 - type: integer 
-	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
-	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
-	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
-	Parameter G_AXI_RID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_RUSER_INDEX bound to: 41 - type: integer 
-	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 42 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (14#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:60]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
-	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
-	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 1 - type: integer 
-	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
-	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter C_WPAYLOAD_WIDTH bound to: 38 - type: integer 
-	Parameter C_BPAYLOAD_WIDTH bound to: 9 - type: integer 
-	Parameter C_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter C_RPAYLOAD_WIDTH bound to: 42 - type: integer 
-	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
-	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
-	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
-	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
-	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
-	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
-	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
-	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
-	Parameter G_AXI_AWID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_AWQOS_INDEX bound to: 28 - type: integer 
-	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWREGION_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_AWUSER_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
-	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
-	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
-	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
-	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
-	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
-	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
-	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
-	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
-	Parameter G_AXI_ARID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_ARQOS_INDEX bound to: 28 - type: integer 
-	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARREGION_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_ARUSER_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 37 - type: integer 
-	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
-	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
-	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
-	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
-	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
-	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
-	Parameter G_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 38 - type: integer 
-	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
-	Parameter G_AXI_BID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_BUSER_INDEX bound to: 8 - type: integer 
-	Parameter G_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 9 - type: integer 
-	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
-	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
-	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
-	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
-	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
-	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
-	Parameter G_AXI_RID_WIDTH bound to: 6 - type: integer 
-	Parameter G_AXI_RUSER_INDEX bound to: 41 - type: integer 
-	Parameter G_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 42 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (15#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:474]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_18_axi_register_slice' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/cc23/hdl/axi_register_slice_v2_1_vl_rfs.v:2637]
-WARNING: [Synth 8-350] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_18_axi_register_slice' requires 93 connections, but only 92 given [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
-WARNING: [Synth 8-350] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_18_axi_register_slice' requires 93 connections, but only 92 given [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
-	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
-	Parameter C_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-	Parameter C_USE_FULL bound to: 0 - type: integer 
-	Parameter P_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-	Parameter P_EMPTY bound to: 3'b111 
-	Parameter P_ALMOSTEMPTY bound to: 3'b000 
-	Parameter P_ALMOSTFULL_TEMP bound to: 4'b1110 
-	Parameter P_ALMOSTFULL bound to: 3'b110 
-	Parameter P_NUM_REPS bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_ndeep_srl__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_A_WIDTH bound to: 3 - type: integer 
-	Parameter P_SRLASIZE bound to: 5 - type: integer 
-	Parameter P_SRLDEPTH bound to: 32 - type: integer 
-	Parameter P_NUMSRLS bound to: 1 - type: integer 
-	Parameter P_SHIFT_DEPTH bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_ndeep_srl__parameterized0' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1135]
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:750]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:789]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized1' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_wdata_mux__parameterized0' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
-	Parameter C_NUM_SLAVE_SLOTS bound to: 3 - type: integer 
-	Parameter C_SELECT_WIDTH bound to: 2 - type: integer 
-	Parameter C_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-	Parameter P_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_FIFO_WIDTH bound to: 2 - type: integer 
-	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
-	Parameter C_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-	Parameter C_USE_FULL bound to: 0 - type: integer 
-	Parameter P_FIFO_DEPTH_LOG bound to: 3 - type: integer 
-	Parameter P_EMPTY bound to: 3'b111 
-	Parameter P_ALMOSTEMPTY bound to: 3'b000 
-	Parameter P_ALMOSTFULL_TEMP bound to: 4'b1110 
-	Parameter P_ALMOSTFULL bound to: 3'b110 
-	Parameter P_NUM_REPS bound to: 1 - type: integer 
-	Parameter ZERO bound to: 2'b10 
-	Parameter ONE bound to: 2'b11 
-	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
-WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1038]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_wdata_mux__parameterized0' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
-WARNING: [Synth 8-350] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_18_axi_register_slice' requires 93 connections, but only 92 given [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized2' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_21_axic_register_slice__parameterized2' (15#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:1498]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_21_axi_register_slice' (16#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/2ef9/hdl/axi_register_slice_v2_1_vl_rfs.v:3726]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_21_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_21_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_21_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_21_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_21_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_21_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -944,17 +884,15 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__p
 	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
 	Parameter P_ALMOSTFULL bound to: 2'b10 
 	Parameter P_NUM_REPS bound to: 1 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:750]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:789]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized2' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_wdata_mux__parameterized1' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_srl_fifo__parameterized1' (16#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:698]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_wdata_mux__parameterized0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
 	Parameter C_NUM_SLAVE_SLOTS bound to: 3 - type: integer 
 	Parameter C_SELECT_WIDTH bound to: 2 - type: integer 
 	Parameter C_FIFO_DEPTH_LOG bound to: 0 - type: integer 
 	Parameter P_FIFO_DEPTH_LOG bound to: 0 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized1' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_FIFO_WIDTH bound to: 2 - type: integer 
 	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
@@ -969,12 +907,12 @@ INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fif
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
-WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:1038]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/c4fd/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_wdata_mux__parameterized1' (16#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
-WARNING: [Synth 8-350] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_18_axi_register_slice' requires 93 connections, but only 92 given [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_decerr_slave' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized1' (16#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/47c9/hdl/axi_data_fifo_v2_1_vl_rfs.v:889]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_wdata_mux__parameterized0' (16#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4561]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_21_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_21_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3122]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_decerr_slave' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
 	Parameter C_AXI_ID_WIDTH bound to: 6 - type: integer 
 	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
@@ -989,9 +927,9 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_decerr_slave' [c:
 	Parameter P_AXI4 bound to: 0 - type: integer 
 	Parameter P_AXI3 bound to: 1 - type: integer 
 	Parameter P_AXILITE bound to: 2 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3633]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_decerr_slave' (17#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_arbiter' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:423]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3633]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_decerr_slave' (17#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_22_addr_arbiter' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:423]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_NUM_S bound to: 3 - type: integer 
 	Parameter C_NUM_S_LOG bound to: 2 - type: integer 
@@ -999,175 +937,71 @@ INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_19_addr_arbiter' [c:
 	Parameter C_MESG_WIDTH bound to: 69 - type: integer 
 	Parameter C_ARB_PRIORITY bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter P_PRIO_MASK bound to: 3'b000 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 3 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 69 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (17#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (17#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
 	Parameter C_FAMILY bound to: rtl - type: string 
 	Parameter C_RATIO bound to: 3 - type: integer 
 	Parameter C_SEL_WIDTH bound to: 2 - type: integer 
 	Parameter C_DATA_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' (17#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_addr_arbiter' (18#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:423]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[3].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2997]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_crossbar' (19#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:2239]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_19_axi_crossbar' (20#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_xbar_0' (21#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/synth/mc_top_xbar_0.v:59]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[5]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[4]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[3]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[2]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[1]
-WARNING: [Synth 8-3331] design axi_infrastructure_v1_1_0_axi2vector has unconnected port s_axi_wid[0]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axic_register_slice has unconnected port ACLK
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axic_register_slice has unconnected port ARESET
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axic_register_slice__parameterized0 has unconnected port ACLK
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axic_register_slice__parameterized0 has unconnected port ARESET
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port aclk2x
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_addr_decoder has unconnected port ADDR[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_addr_decoder has unconnected port ADDR[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized4 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized4 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized3 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized3 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized2 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized2 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized1 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized1 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized0 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized0 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[17]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[16]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[15]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[14]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[13]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[12]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[11]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[10]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[9]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[8]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[17]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[16]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[15]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[14]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[13]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[12]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[11]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[10]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[9]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[8]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_axi_crossbar has unconnected port s_axi_wid[0]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' (17#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_addr_arbiter' (18#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:423]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_crossbar' (19#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:2239]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_22_axi_crossbar' (20#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/b68e/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_xbar_0' (21#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/synth/mc_top_xbar_0.v:59]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 578.832 ; gain = 279.313
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1080.500 ; gain = 56.070
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 578.832 ; gain = 279.313
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1080.500 ; gain = 56.070
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 578.832 ; gain = 279.313
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1080.500 ; gain = 56.070
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7s50csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.208 . Memory (MB): peak = 1080.500 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 822.270 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1093.773 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 824.574 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.185 . Memory (MB): peak = 825.887 ; gain = 3.617
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1106.891 ; gain = 13.117
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'gen_axi.s_axi_rvalid_i_reg' into 'gen_axi.read_cs_reg[0:0]' [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3669]
-INFO: [Synth 8-802] inferred FSM for state register 'gen_axi.write_cs_reg' in module 'axi_crossbar_v2_1_19_decerr_slave'
-INFO: [Synth 8-5546] ROM "gen_axi.read_cs" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "gen_axi.s_axi_rlast_i" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "gen_axi.s_axi_rlast_i" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo'
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "decode_address" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "decode_address0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "decode_address1" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0'
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1'
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2'
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3092]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/6c9d/hdl/axi_crossbar_v2_1_vl_rfs.v:3087]
+INFO: [Synth 8-802] inferred FSM for state register 'gen_axi.write_cs_reg' in module 'axi_crossbar_v2_1_22_decerr_slave'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized0'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized1'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1175,7 +1009,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
             P_WRITE_DATA |                              010 |                               01
             P_WRITE_RESP |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' using encoding 'one-hot' in module 'axi_crossbar_v2_1_19_decerr_slave'
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' using encoding 'one-hot' in module 'axi_crossbar_v2_1_22_decerr_slave'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1184,7 +1018,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' usin
                      TWO |                             0001 |                               01
                   iSTATE |                             0100 |                               00
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1193,7 +1027,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                      TWO |                             0001 |                               01
                   iSTATE |                             0100 |                               00
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized0'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -1202,35 +1036,18 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                      TWO |                             0001 |                               01
                   iSTATE |                             0100 |                               00
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    ZERO |                             1000 |                               10
-                     ONE |                             0010 |                               11
-                     TWO |                             0001 |                               01
-                  iSTATE |                             0100 |                               00
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_20_axic_reg_srl_fifo__parameterized1'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      8 Bit       Adders := 3     
-	   2 Input      4 Bit       Adders := 2     
-	   2 Input      3 Bit       Adders := 3     
-	   2 Input      2 Bit       Adders := 63    
-	   2 Input      1 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    2 Bit       Adders := 72    
+	   2 Input    1 Bit       Adders := 4     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 23    
 +---Registers : 
@@ -1240,305 +1057,24 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 3     
 	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 14    
-	                3 Bit    Registers := 13    
-	                2 Bit    Registers := 45    
+	                3 Bit    Registers := 11    
+	                2 Bit    Registers := 47    
 	                1 Bit    Registers := 60    
 +---Muxes : 
-	   2 Input     42 Bit        Muxes := 8     
-	   2 Input     32 Bit        Muxes := 8     
-	   2 Input     16 Bit        Muxes := 12    
-	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 29    
-	   3 Input      4 Bit        Muxes := 7     
-	   2 Input      3 Bit        Muxes := 18    
-	   2 Input      2 Bit        Muxes := 62    
-	   3 Input      2 Bit        Muxes := 12    
-	   3 Input      1 Bit        Muxes := 9     
-	   2 Input      1 Bit        Muxes := 149   
-	   4 Input      1 Bit        Muxes := 21    
+	   2 Input   42 Bit        Muxes := 8     
+	   2 Input   32 Bit        Muxes := 8     
+	   2 Input   16 Bit        Muxes := 12    
+	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 27    
+	   3 Input    4 Bit        Muxes := 7     
+	   2 Input    3 Bit        Muxes := 17    
+	   2 Input    2 Bit        Muxes := 63    
+	   3 Input    2 Bit        Muxes := 12    
+	   3 Input    1 Bit        Muxes := 9     
+	   2 Input    1 Bit        Muxes := 151   
+	   4 Input    1 Bit        Muxes := 21    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module axi_crossbar_v2_1_19_decerr_slave 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	                8 Bit    Registers := 1     
-	                6 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 9     
-	   2 Input      1 Bit        Muxes := 12    
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized2 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 3     
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized3 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 3     
-Module axi_crossbar_v2_1_19_addr_arbiter 
-Detailed RTL Component Info : 
-+---Registers : 
-	               69 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 4     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 5     
-Module axi_crossbar_v2_1_19_splitter 
-Detailed RTL Component Info : 
-+---Registers : 
-	                2 Bit    Registers := 1     
-Module axi_crossbar_v2_1_19_addr_decoder 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_arbiter_resp 
-Detailed RTL Component Info : 
-+---Registers : 
-	                4 Bit    Registers := 2     
-Module generic_baseblocks_v2_1_0_mux_enc 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
-Module axi_data_fifo_v2_1_17_axic_srl_fifo 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_si_transactor 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized0 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
-Module axi_crossbar_v2_1_19_si_transactor__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_data_fifo_v2_1_17_axic_reg_srl_fifo 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Muxes : 
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	   4 Input      1 Bit        Muxes := 3     
-Module axi_crossbar_v2_1_19_si_transactor__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_si_transactor__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_si_transactor__parameterized3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_si_transactor__parameterized4 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 5     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 4     
-	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_19_addr_decoder__parameterized0 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-Module axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 3     
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized1 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 3     
-Module axi_register_slice_v2_1_18_axic_register_slice__parameterized1 
-Detailed RTL Component Info : 
-+---Registers : 
-	                9 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
-Module axi_register_slice_v2_1_18_axic_register_slice__parameterized2 
-Detailed RTL Component Info : 
-+---Registers : 
-	               42 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     42 Bit        Muxes := 2     
-Module axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 3     
-Module axi_data_fifo_v2_1_17_axic_srl_fifo__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
-+---Registers : 
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   3 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 3     
-Module axi_crossbar_v2_1_19_crossbar 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 2     
-	   2 Input      2 Bit       Adders := 6     
-	   2 Input      1 Bit       Adders := 2     
-+---Registers : 
-	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 8     
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 12    
-	   2 Input      1 Bit        Muxes := 2     
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
@@ -1552,188 +1088,27 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "gen_axi.s_axi_rlast_i" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "gen_axi.read_cs" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port aclk2x
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[5]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[4]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[3]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[2]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[1]
-WARNING: [Synth 8-3331] design axi_register_slice_v2_1_18_axi_register_slice has unconnected port s_axi_wid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized4 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized4 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized3 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized3 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized2 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized2 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized1 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized1 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized0 has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor__parameterized0 has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor has unconnected port S_ABURST[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_si_transactor has unconnected port S_ABURST[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[17]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[16]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[11]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[10]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[9]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[8]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_AWID[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[17]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[16]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[15]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[14]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[13]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[12]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[11]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_19_crossbar has unconnected port S_AXI_WID[10]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[0].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[0].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[1].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[1].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[2].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_read.si_transactor_ar/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[2].gen_si_read.si_transactor_ar /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3886] merging instance 'axi_register_slice_v2_1_18_axi_register_slice:/r.r_pipe/aresetn_d_reg[0]' (FDR) to 'axi_register_slice_v2_1_18_axi_register_slice:/b.b_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'axi_register_slice_v2_1_18_axi_register_slice:/r.r_pipe/aresetn_d_reg[1]' (FDR) to 'axi_register_slice_v2_1_18_axi_register_slice:/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'axi_crossbar_v2_1_19_addr_arbiter:/gen_arbiter.last_rr_hot_reg[1]' (FDRE) to 'axi_crossbar_v2_1_19_addr_arbiter:/gen_arbiter.m_grant_enc_i_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[0].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[0].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[1].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[1].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[3]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[0]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[1]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[2].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[2] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[11]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[8]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[9]' (FDRE) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.si_transactor_aw/gen_multi_thread.active_region_reg[10]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[2].gen_si_write.si_transactor_aw /\gen_multi_thread.active_region_reg[10] )
-INFO: [Synth 8-3332] Sequential element (wrouter_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_19_wdata_router.
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[2]) is unused and will be removed from module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0__1.
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[2]) is unused and will be removed from module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0.
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[2]) is unused and will be removed from module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1.
-INFO: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[2]) is unused and will be removed from module axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2.
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[54]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[55]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[56]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_ar/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /addr_arbiter_ar/\gen_arbiter.m_mesg_i_reg[57] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[54]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[55]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[56]' (FDRE) to 'inst/gen_samd.crossbar_samd/addr_arbiter_aw/gen_arbiter.m_mesg_i_reg[57]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /addr_arbiter_aw/\gen_arbiter.m_mesg_i_reg[57] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_master_slots[3].reg_slice_mi /\b.b_pipe/m_payload_i_reg[8] )
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/b.b_pipe/m_payload_i_reg[0]' (FDE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/b.b_pipe/m_payload_i_reg[1]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\gen_samd.crossbar_samd /\gen_master_slots[3].reg_slice_mi /\b.b_pipe/m_payload_i_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[0].gen_si_write.wdata_router_w /\wrouter_aw_fifo/storage_data1_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[1].gen_si_write.wdata_router_w /\wrouter_aw_fifo/storage_data1_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\gen_samd.crossbar_samd /\gen_slave_slots[2].gen_si_write.wdata_router_w /\wrouter_aw_fifo/storage_data1_reg[2] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 825.887 ; gain = 526.367
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 834.102 ; gain = 534.582
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1106.891 ; gain = 82.461
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[1].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[0].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[1].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[1].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/b.b_pipe/aresetn_d_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[0].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[1].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[1].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[2].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]' (FDR) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/b.b_pipe/aresetn_d_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[1].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.wdata_mux_w/gen_wmux.wmux_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.wdata_router_w/wrouter_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.wdata_router_w/wrouter_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.wdata_router_w/wrouter_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_slave_slots[1].gen_si_write.wdata_router_w/wrouter_aw_fifo/areset_d1_reg' (FD) to 'inst/gen_samd.crossbar_samd/gen_slave_slots[2].gen_si_write.wdata_router_w/wrouter_aw_fifo/areset_d1_reg'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[32]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[33]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[2]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[3]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[4]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[9]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[10]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[11]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[12]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[14]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[15]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[22]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[23]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[25]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[26]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[27]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[28]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
-INFO: [Synth 8-3886] merging instance 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[30]' (FDSE) to 'inst/gen_samd.crossbar_samd/gen_master_slots[3].reg_slice_mi/r.r_pipe/m_payload_i_reg[31]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1140.117 ; gain = 115.688
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1750,50 +1125,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1804,7 +1166,6 @@ Dynamic Shift Register Report:
 |Module Name | RTL Name                                       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
 +------------+------------------------------------------------+--------+------------+--------+---------+--------+--------+--------+
 |dsrl        | gen_rtl_shifter.gen_inferred_srl.shift_reg_reg | 32     | 1          | 0      | 1       | 0      | 0      | 0      | 
-|dsrl__1     | gen_rtl_shifter.gen_inferred_srl.shift_reg_reg | 32     | 1          | 0      | 1       | 0      | 0      | 0      | 
 +------------+------------------------------------------------+--------+------------+--------+---------+--------+--------+--------+
 
 ---------------------------------------------------------------------------------
@@ -1824,121 +1185,41 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |LUT1    |    11|
-|2     |LUT2    |   115|
-|3     |LUT3    |   222|
-|4     |LUT4    |   120|
-|5     |LUT5    |   360|
-|6     |LUT6    |   443|
+|1     |LUT1    |     3|
+|2     |LUT2    |   116|
+|3     |LUT3    |   215|
+|4     |LUT4    |   119|
+|5     |LUT5    |   354|
+|6     |LUT6    |   446|
 |7     |MUXF7   |     3|
 |8     |SRLC32E |    14|
-|9     |FDRE    |   701|
-|10    |FDSE    |    32|
+|9     |FDRE    |   695|
+|10    |FDSE    |    33|
 +------+--------+------+
-
-Report Instance Areas: 
-+------+--------------------------------------------------------------------------+------------------------------------------------------------------+------+
-|      |Instance                                                                  |Module                                                            |Cells |
-+------+--------------------------------------------------------------------------+------------------------------------------------------------------+------+
-|1     |top                                                                       |                                                                  |  2021|
-|2     |  inst                                                                    |axi_crossbar_v2_1_19_axi_crossbar                                 |  2021|
-|3     |    \gen_samd.crossbar_samd                                               |axi_crossbar_v2_1_19_crossbar                                     |  2021|
-|4     |      addr_arbiter_ar                                                     |axi_crossbar_v2_1_19_addr_arbiter                                 |   240|
-|5     |      addr_arbiter_aw                                                     |axi_crossbar_v2_1_19_addr_arbiter_0                               |   254|
-|6     |      \gen_decerr_slave.decerr_slave_inst                                 |axi_crossbar_v2_1_19_decerr_slave                                 |    57|
-|7     |      \gen_master_slots[0].gen_mi_read.gen_rid_decoder.rid_decoder_inst   |axi_crossbar_v2_1_19_addr_decoder__parameterized0                 |     3|
-|8     |      \gen_master_slots[0].gen_mi_write.gen_bid_decoder.bid_decoder_inst  |axi_crossbar_v2_1_19_addr_decoder__parameterized0_1               |     2|
-|9     |      \gen_master_slots[0].gen_mi_write.wdata_mux_w                       |axi_crossbar_v2_1_19_wdata_mux                                    |    60|
-|10    |        \gen_wmux.wmux_aw_fifo                                            |axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0_40        |    60|
-|11    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_41                                |     2|
-|12    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_42                                |     5|
-|13    |      \gen_master_slots[0].reg_slice_mi                                   |axi_register_slice_v2_1_18_axi_register_slice                     |   176|
-|14    |        \b.b_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized1_38 |    28|
-|15    |        \r.r_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized2_39 |   148|
-|16    |      \gen_master_slots[1].gen_mi_read.gen_rid_decoder.rid_decoder_inst   |axi_crossbar_v2_1_19_addr_decoder__parameterized0_2               |     3|
-|17    |      \gen_master_slots[1].gen_mi_write.gen_bid_decoder.bid_decoder_inst  |axi_crossbar_v2_1_19_addr_decoder__parameterized0_3               |     2|
-|18    |      \gen_master_slots[1].gen_mi_write.wdata_mux_w                       |axi_crossbar_v2_1_19_wdata_mux_4                                  |    60|
-|19    |        \gen_wmux.wmux_aw_fifo                                            |axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized0           |    60|
-|20    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_36                                |     2|
-|21    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_37                                |     5|
-|22    |      \gen_master_slots[1].reg_slice_mi                                   |axi_register_slice_v2_1_18_axi_register_slice_5                   |   170|
-|23    |        \b.b_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized1_34 |    25|
-|24    |        \r.r_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized2_35 |   145|
-|25    |      \gen_master_slots[2].gen_mi_read.gen_rid_decoder.rid_decoder_inst   |axi_crossbar_v2_1_19_addr_decoder__parameterized0_6               |     3|
-|26    |      \gen_master_slots[2].gen_mi_write.gen_bid_decoder.bid_decoder_inst  |axi_crossbar_v2_1_19_addr_decoder__parameterized0_7               |     2|
-|27    |      \gen_master_slots[2].gen_mi_write.wdata_mux_w                       |axi_crossbar_v2_1_19_wdata_mux__parameterized0                    |    64|
-|28    |        \gen_wmux.wmux_aw_fifo                                            |axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized1           |    64|
-|29    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl__parameterized0                   |     2|
-|30    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl__parameterized0_33                |     5|
-|31    |      \gen_master_slots[2].reg_slice_mi                                   |axi_register_slice_v2_1_18_axi_register_slice_8                   |   179|
-|32    |        \b.b_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized1_31 |    31|
-|33    |        \r.r_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized2_32 |   148|
-|34    |      \gen_master_slots[3].gen_mi_read.gen_rid_decoder.rid_decoder_inst   |axi_crossbar_v2_1_19_addr_decoder__parameterized0_9               |     3|
-|35    |      \gen_master_slots[3].gen_mi_write.gen_bid_decoder.bid_decoder_inst  |axi_crossbar_v2_1_19_addr_decoder__parameterized0_10              |     2|
-|36    |      \gen_master_slots[3].gen_mi_write.wdata_mux_w                       |axi_crossbar_v2_1_19_wdata_mux__parameterized1                    |    25|
-|37    |        \gen_wmux.wmux_aw_fifo                                            |axi_data_fifo_v2_1_17_axic_reg_srl_fifo__parameterized2           |    25|
-|38    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_29                                |     2|
-|39    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_30                                |     4|
-|40    |      \gen_master_slots[3].reg_slice_mi                                   |axi_register_slice_v2_1_18_axi_register_slice_11                  |    67|
-|41    |        \b.b_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized1    |    27|
-|42    |        \r.r_pipe                                                         |axi_register_slice_v2_1_18_axic_register_slice__parameterized2    |    40|
-|43    |      \gen_slave_slots[0].gen_si_read.si_transactor_ar                    |axi_crossbar_v2_1_19_si_transactor                                |   100|
-|44    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp_28                              |    73|
-|45    |      \gen_slave_slots[0].gen_si_write.si_transactor_aw                   |axi_crossbar_v2_1_19_si_transactor__parameterized0                |    57|
-|46    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp_27                              |    31|
-|47    |      \gen_slave_slots[0].gen_si_write.splitter_aw_si                     |axi_crossbar_v2_1_19_splitter                                     |     6|
-|48    |      \gen_slave_slots[0].gen_si_write.wdata_router_w                     |axi_crossbar_v2_1_19_wdata_router                                 |    44|
-|49    |        wrouter_aw_fifo                                                   |axi_data_fifo_v2_1_17_axic_reg_srl_fifo_24                        |    44|
-|50    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_25                                |     3|
-|51    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_26                                |     7|
-|52    |      \gen_slave_slots[1].gen_si_read.si_transactor_ar                    |axi_crossbar_v2_1_19_si_transactor__parameterized1                |    95|
-|53    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp_23                              |    68|
-|54    |      \gen_slave_slots[1].gen_si_write.si_transactor_aw                   |axi_crossbar_v2_1_19_si_transactor__parameterized2                |    57|
-|55    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp_22                              |    31|
-|56    |      \gen_slave_slots[1].gen_si_write.splitter_aw_si                     |axi_crossbar_v2_1_19_splitter_12                                  |     6|
-|57    |      \gen_slave_slots[1].gen_si_write.wdata_router_w                     |axi_crossbar_v2_1_19_wdata_router_13                              |    40|
-|58    |        wrouter_aw_fifo                                                   |axi_data_fifo_v2_1_17_axic_reg_srl_fifo_19                        |    40|
-|59    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_20                                |     3|
-|60    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_21                                |     6|
-|61    |      \gen_slave_slots[2].gen_si_read.si_transactor_ar                    |axi_crossbar_v2_1_19_si_transactor__parameterized3                |   106|
-|62    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp_18                              |    75|
-|63    |      \gen_slave_slots[2].gen_si_write.si_transactor_aw                   |axi_crossbar_v2_1_19_si_transactor__parameterized4                |    69|
-|64    |        \gen_multi_thread.arbiter_resp_inst                               |axi_crossbar_v2_1_19_arbiter_resp                                 |    39|
-|65    |      \gen_slave_slots[2].gen_si_write.splitter_aw_si                     |axi_crossbar_v2_1_19_splitter_14                                  |     6|
-|66    |      \gen_slave_slots[2].gen_si_write.wdata_router_w                     |axi_crossbar_v2_1_19_wdata_router_15                              |    38|
-|67    |        wrouter_aw_fifo                                                   |axi_data_fifo_v2_1_17_axic_reg_srl_fifo                           |    38|
-|68    |          \gen_srls[0].gen_rep[0].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl                                   |     2|
-|69    |          \gen_srls[0].gen_rep[1].srl_nx1                                 |axi_data_fifo_v2_1_17_ndeep_srl_17                                |     5|
-|70    |      splitter_aw_mi                                                      |axi_crossbar_v2_1_19_splitter_16                                  |     4|
-+------+--------------------------------------------------------------------------+------------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 103 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 877.918 ; gain = 331.344
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 877.918 ; gain = 578.398
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:36 . Memory (MB): peak = 1144.895 ; gain = 94.074
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1144.895 ; gain = 120.465
 INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 1156.969 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 877.918 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1156.969 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-252 Infos, 132 Warnings, 0 Critical Warnings and 0 Errors encountered.
+111 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:53 . Memory (MB): peak = 877.918 ; gain = 585.289
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 877.918 ; gain = 0.000
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mc_top_xbar_0, cache-ID = 48d57cbb2440d7a5
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1156.969 ; gain = 132.539
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mc_top_xbar_0, cache-ID = 53f902cbbd702a39
 INFO: [Coretcl 2-1174] Renamed 69 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 877.918 ; gain = 0.000
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_xbar_0_synth_1/mc_top_xbar_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mc_top_xbar_0_utilization_synth.rpt -pb mc_top_xbar_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov 24 17:06:29 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 17:52:24 2020...

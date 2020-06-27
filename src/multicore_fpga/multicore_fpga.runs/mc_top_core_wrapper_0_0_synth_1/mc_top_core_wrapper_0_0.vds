@@ -1,0 +1,313 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 17:50:16 2020
+# Process ID: 33092
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_wrapper_0_0_synth_1
+# Command line: vivado.exe -log mc_top_core_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_core_wrapper_0_0.tcl
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_wrapper_0_0_synth_1/mc_top_core_wrapper_0_0.vds
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_wrapper_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mc_top_core_wrapper_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
+Command: synth_design -top mc_top_core_wrapper_0_0 -part xc7s50csga324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 32140
+WARNING: [Synth 8-2507] parameter declaration becomes local in core_wrapper_v1_0_m_instr with formal parameter declaration list [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:192]
+WARNING: [Synth 8-2507] parameter declaration becomes local in core_wrapper_v1_0_m_data with formal parameter declaration list [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:192]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.762 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mc_top_core_wrapper_0_0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/synth/mc_top_core_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'core_wrapper_v1_0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0.v:4]
+	Parameter C_m_instr_TARGET_SLAVE_BASE_ADDR bound to: 1073741824 - type: integer 
+	Parameter C_m_instr_BURST_LEN bound to: 16 - type: integer 
+	Parameter C_m_instr_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_instr_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_m_instr_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_m_instr_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_instr_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_instr_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_instr_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_instr_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_TARGET_SLAVE_BASE_ADDR bound to: 1073741824 - type: integer 
+	Parameter C_m_data_BURST_LEN bound to: 16 - type: integer 
+	Parameter C_m_data_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_m_data_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_m_data_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_m_data_BUSER_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'core_wrapper_v1_0_m_instr' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:4]
+	Parameter C_M_TARGET_SLAVE_BASE_ADDR bound to: 1073741824 - type: integer 
+	Parameter C_M_AXI_BURST_LEN bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TRANSACTIONS_NUM bound to: 4 - type: integer 
+	Parameter C_MASTER_LENGTH bound to: 12 - type: integer 
+	Parameter C_NO_BURSTS_REQ bound to: 6 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter INIT_WRITE bound to: 2'b01 
+	Parameter INIT_READ bound to: 2'b10 
+	Parameter INIT_COMPARE bound to: 2'b11 
+WARNING: [Synth 8-6104] Input port 'bit_depth' has an internal driver [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:167]
+WARNING: [Synth 8-6104] Input port 'bit_depth' has an internal driver [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:167]
+INFO: [Synth 8-226] default block is never used [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:753]
+INFO: [Synth 8-6155] done synthesizing module 'core_wrapper_v1_0_m_instr' (1#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_instr.v:4]
+INFO: [Synth 8-6157] synthesizing module 'core_wrapper_v1_0_m_data' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:4]
+	Parameter C_M_TARGET_SLAVE_BASE_ADDR bound to: 1073741824 - type: integer 
+	Parameter C_M_AXI_BURST_LEN bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_TRANSACTIONS_NUM bound to: 4 - type: integer 
+	Parameter C_MASTER_LENGTH bound to: 12 - type: integer 
+	Parameter C_NO_BURSTS_REQ bound to: 6 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter INIT_WRITE bound to: 2'b01 
+	Parameter INIT_READ bound to: 2'b10 
+	Parameter INIT_COMPARE bound to: 2'b11 
+WARNING: [Synth 8-6104] Input port 'bit_depth' has an internal driver [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:167]
+WARNING: [Synth 8-6104] Input port 'bit_depth' has an internal driver [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:167]
+INFO: [Synth 8-226] default block is never used [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:753]
+INFO: [Synth 8-6155] done synthesizing module 'core_wrapper_v1_0_m_data' (2#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0_m_data.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'core_wrapper_v1_0' (3#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ipshared/0cc6/hdl/core_wrapper_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_wrapper_0_0' (4#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/synth/mc_top_core_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1024.762 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.762 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1024.762 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1024.762 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1060.613 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1060.613 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'core_wrapper_v1_0_m_instr'
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'core_wrapper_v1_0_m_data'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+              INIT_WRITE |                               01 |                               01
+               INIT_READ |                               10 |                               10
+            INIT_COMPARE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'sequential' in module 'core_wrapper_v1_0_m_instr'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+              INIT_WRITE |                               01 |                               01
+               INIT_READ |                               10 |                               10
+            INIT_COMPARE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'sequential' in module 'core_wrapper_v1_0_m_data'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 4     
++---Registers : 
+	                7 Bit    Registers := 4     
+	                5 Bit    Registers := 4     
+	                1 Bit    Registers := 36    
++---Muxes : 
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 14    
+	   4 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    70|
+|2     |LUT1   |    22|
+|3     |LUT2   |    20|
+|4     |LUT3   |    22|
+|5     |LUT4   |    22|
+|6     |LUT5   |    16|
+|7     |LUT6   |    46|
+|8     |FDRE   |   316|
+|9     |FDSE   |     4|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1060.613 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1060.613 ; gain = 35.852
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1060.613 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 70 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1060.613 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1060.613 ; gain = 35.852
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_wrapper_0_0_synth_1/mc_top_core_wrapper_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mc_top_core_wrapper_0_0, cache-ID = be8fd9111d029553
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_wrapper_0_0_synth_1/mc_top_core_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mc_top_core_wrapper_0_0_utilization_synth.rpt -pb mc_top_core_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 17:50:50 2020...

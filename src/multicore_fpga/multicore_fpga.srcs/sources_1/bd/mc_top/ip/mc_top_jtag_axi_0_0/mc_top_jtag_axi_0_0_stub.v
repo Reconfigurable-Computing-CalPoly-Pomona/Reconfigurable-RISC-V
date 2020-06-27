@@ -1,10 +1,10 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Nov 22 16:58:30 2019
-// Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top mc_top_jtag_axi_0_0 -prefix
-//               mc_top_jtag_axi_0_0_ mc_top_jtag_axi_0_0_stub.v
+// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+// Date        : Fri Jun 26 17:51:30 2020
+// Host        : DESKTOP-N84G71E running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_stub.v
 // Design      : mc_top_jtag_axi_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "jtag_axi_v1_2_8_jtag_axi,Vivado 2018.3" *)
+(* X_CORE_INFO = "jtag_axi_v1_2_11_jtag_axi,Vivado 2020.1" *)
 module mc_top_jtag_axi_0_0(aclk, aresetn, m_axi_awid, m_axi_awaddr, 
   m_axi_awlen, m_axi_awsize, m_axi_awburst, m_axi_awlock, m_axi_awcache, m_axi_awprot, 
   m_axi_awqos, m_axi_awvalid, m_axi_awready, m_axi_wdata, m_axi_wstrb, m_axi_wlast, 

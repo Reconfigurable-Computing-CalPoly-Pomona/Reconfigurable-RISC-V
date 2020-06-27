@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:user:core_wrapper:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "core_wrapper_v1_0,Vivado 2018.3" *)
+(* X_CORE_INFO = "core_wrapper_v1_0,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "mc_top_core_wrapper_0_0,core_wrapper_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "mc_top_core_wrapper_0_0,core_wrapper_v1_0,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=core_wrapper,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_m_instr_TARGET_SLAVE_BASE_ADDR=0x40000000,C_m_instr_BURST_LEN=16,C_m_instr_ID_WIDTH=1,C_m_instr_ADDR_WIDTH=32,C_m_instr_DATA_WIDTH=32,C_m_instr_AWUSER_WIDTH=1,C_m_instr_ARUSER_WIDTH=1,C_m_instr_WUSER_WIDTH=1,C_m_instr_RUSER_WIDTH=1,C_m_instr_BUSER_WIDTH=1,C_m_data_TARGET_SLAVE_BASE_ADDR=0x\
+(* CORE_GENERATION_INFO = "mc_top_core_wrapper_0_0,core_wrapper_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=core_wrapper,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_m_instr_TARGET_SLAVE_BASE_ADDR=0x40000000,C_m_instr_BURST_LEN=16,C_m_instr_ID_WIDTH=1,C_m_instr_ADDR_WIDTH=32,C_m_instr_DATA_WIDTH=32,C_m_instr_AWUSER_WIDTH=1,C_m_instr_ARUSER_WIDTH=1,C_m_instr_WUSER_WIDTH=1,C_m_instr_RUSER_WIDTH=1,C_m_instr_BUSER_WIDTH=1,C_m_data_TARGET_SLAVE_BASE_ADDR=0x\
 40000000,C_m_data_BURST_LEN=16,C_m_data_ID_WIDTH=1,C_m_data_ADDR_WIDTH=32,C_m_data_DATA_WIDTH=32,C_m_data_AWUSER_WIDTH=1,C_m_data_ARUSER_WIDTH=1,C_m_data_WUSER_WIDTH=1,C_m_data_RUSER_WIDTH=1,C_m_data_BUSER_WIDTH=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mc_top_core_wrapper_0_0 (

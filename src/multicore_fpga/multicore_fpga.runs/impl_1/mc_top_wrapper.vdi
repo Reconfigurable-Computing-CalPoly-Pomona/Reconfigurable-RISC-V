@@ -1,115 +1,116 @@
 #-----------------------------------------------------------
-# Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
-# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov 25 16:37:52 2019
-# Process ID: 10020
-# Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 18:42:21 2020
+# Process ID: 36576
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1
 # Command line: vivado.exe -log mc_top_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mc_top_wrapper.tcl -notrace
-# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper.vdi
-# Journal file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1\vivado.jou
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper.vdi
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source mc_top_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip 
+Current IP cache path is C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
 Command: link_design -top mc_top_wrapper -part xc7s50csga324-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.dcp' for cell 'mc_top_i/clk_wiz'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0.dcp' for cell 'mc_top_i/core_top_wrapper_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0.dcp' for cell 'mc_top_i/core_wrapper_0'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0.dcp' for cell 'mc_top_i/data_mem'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0.dcp' for cell 'mc_top_i/data_mem_ctrl'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0.dcp' for cell 'mc_top_i/instr_mem'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0.dcp' for cell 'mc_top_i/instr_mem_ctrl'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0.dcp' for cell 'mc_top_i/jtag_master'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.dcp' for cell 'mc_top_i/rst_clk_wiz_100M'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1.dcp' for cell 'mc_top_i/spare_mem'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1.dcp' for cell 'mc_top_i/spare_memory'
-INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0.dcp' for cell 'mc_top_i/axi_interconnect_0/xbar'
-INFO: [Netlist 29-17] Analyzing 1138 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2018.3
 INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.dcp' for cell 'mc_top_i/clk_wiz'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0.dcp' for cell 'mc_top_i/core_top_wrapper_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0.dcp' for cell 'mc_top_i/core_wrapper_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0.dcp' for cell 'mc_top_i/data_mem'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0.dcp' for cell 'mc_top_i/data_mem_ctrl'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0.dcp' for cell 'mc_top_i/instr_mem'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0.dcp' for cell 'mc_top_i/instr_mem_ctrl'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0.dcp' for cell 'mc_top_i/jtag_master'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.dcp' for cell 'mc_top_i/rst_clk_wiz_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1.dcp' for cell 'mc_top_i/spare_mem'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1.dcp' for cell 'mc_top_i/spare_memory'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0.dcp' for cell 'mc_top_i/axi_interconnect_0/xbar'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.329 . Memory (MB): peak = 1026.711 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1126 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Chipscope 16-324] Core: mc_top_i/jtag_master UUID: f112e8a0-4521-5775-bbf9-689e6a7364aa 
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'mc_top_i/jtag_master/inst'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'mc_top_i/jtag_master/inst'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc] for cell 'mc_top_i/clk_wiz/inst'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc] for cell 'mc_top_i/clk_wiz/inst'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc] for cell 'mc_top_i/clk_wiz/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1140.488 ; gain = 474.969
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc] for cell 'mc_top_i/clk_wiz/inst'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]
-WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:139]
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'mc_top_i/jtag_master/inst'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc] for cell 'mc_top_i/jtag_master/inst'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc] for cell 'mc_top_i/clk_wiz/inst'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc] for cell 'mc_top_i/clk_wiz/inst'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc] for cell 'mc_top_i/clk_wiz/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1313.332 ; gain = 286.621
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc] for cell 'mc_top_i/clk_wiz/inst'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc] for cell 'mc_top_i/rst_clk_wiz_100M/U0'
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]
+WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:139]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:140]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:140]
+WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:140]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:73]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:73]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:73]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:74]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:74]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:75]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:75]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:76]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:76]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:87]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:88]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:139]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:139]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:140]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:140]
+WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:140]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
-Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
-Finished Sourcing Tcl File [C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1141.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1313.332 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 194 instances were transformed.
-  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 2 instances
-  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 160 instances
-  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 32 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 160 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 32 instances
 
 25 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1141.172 ; gain = 846.961
+link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1313.332 ; gain = 286.621
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
@@ -120,69 +121,70 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1141.172 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.782 . Memory (MB): peak = 1313.332 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 14294e9b2
+Ending Cache Timing Information Task | Checksum: 1bd5512f8
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.826 . Memory (MB): peak = 1141.172 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.393 . Memory (MB): peak = 1313.332 ; gain = 0.000
 
 Starting Logic Optimization Task
 
 Phase 1 Generate And Synthesize Debug Cores
 INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
 INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
-INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:xsdbm:3.0", from Vivado IP cache entry "c6f676678d23caff".
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1208.770 ; gain = 0.000
-Phase 1 Generate And Synthesize Debug Cores | Checksum: 1b489920b
+INFO: [Chipscope 16-469] Using cached IP synthesis design for IP xilinx.com:ip:xsdbm:3.0, cache-ID = b82ce39f2abde3f2.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1514.344 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 1300224b0
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 1208.770 ; gain = 16.313
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1514.344 ; gain = 34.523
 
 Phase 2 Retarget
 INFO: [Opt 31-138] Pushed 4 inverter(s) to 13 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 2 Retarget | Checksum: 1da7bc96f
+Phase 2 Retarget | Checksum: 135534f24
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:22 . Memory (MB): peak = 1209.273 ; gain = 16.816
-INFO: [Opt 31-389] Phase Retarget created 288 cells and removed 309 cells
-INFO: [Opt 31-1021] In phase Retarget, 191 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1514.344 ; gain = 34.523
+INFO: [Opt 31-389] Phase Retarget created 290 cells and removed 310 cells
+INFO: [Opt 31-1021] In phase Retarget, 45 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 3 Constant propagation | Checksum: 12ef8047c
+Phase 3 Constant propagation | Checksum: 16d7e6c54
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 1209.273 ; gain = 16.816
-INFO: [Opt 31-389] Phase Constant propagation created 55 cells and removed 605 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 185 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1514.344 ; gain = 34.523
+INFO: [Opt 31-389] Phase Constant propagation created 55 cells and removed 604 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 44 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Sweep
-Phase 4 Sweep | Checksum: 1d8221de5
+Phase 4 Sweep | Checksum: 151b2beb6
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 1209.273 ; gain = 16.816
-INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 423 cells
-INFO: [Opt 31-1021] In phase Sweep, 1124 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1514.344 ; gain = 34.523
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 425 cells
+INFO: [Opt 31-1021] In phase Sweep, 1118 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 BUFG optimization
-INFO: [Opt 31-194] Inserted BUFG mc_top_i/clk_wiz/inst/clk_out1_mc_top_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net mc_top_i/clk_wiz/inst/clk_out1_mc_top_clk_wiz_0_BUFG
+INFO: [Opt 31-194] Inserted BUFG mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2_n_0_BUFG_inst to drive 32 load(s) on clock net mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2_n_0_BUFG
 INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Phase 5 BUFG optimization | Checksum: 185e6150b
+Phase 5 BUFG optimization | Checksum: 145686929
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:25 . Memory (MB): peak = 1209.273 ; gain = 16.816
-INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1514.344 ; gain = 34.523
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 6 Shift Register Optimization
-Phase 6 Shift Register Optimization | Checksum: 257121452
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 6 Shift Register Optimization | Checksum: 145686929
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:26 . Memory (MB): peak = 1209.273 ; gain = 16.816
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1514.344 ; gain = 34.523
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 7 Post Processing Netlist
-Phase 7 Post Processing Netlist | Checksum: 2328a2ee5
+Phase 7 Post Processing Netlist | Checksum: 145686929
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1209.273 ; gain = 16.816
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1514.344 ; gain = 34.523
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 78 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 72 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
 =========================
 
@@ -190,120 +192,94 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |             288  |             309  |                                            191  |
-|  Constant propagation         |              55  |             605  |                                            185  |
-|  Sweep                        |               0  |             423  |                                           1124  |
-|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Retarget                     |             290  |             310  |                                             45  |
+|  Constant propagation         |              55  |             604  |                                             44  |
+|  Sweep                        |               0  |             425  |                                           1118  |
+|  BUFG optimization            |               1  |               0  |                                              0  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               0  |                                             78  |
+|  Post Processing Netlist      |               0  |               0  |                                             72  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1209.273 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 17f5255fc
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1514.344 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1ab1fbb23
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1209.273 ; gain = 16.816
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1514.344 ; gain = 34.523
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.019 | TNS=0.000 |
-Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 34 BRAM(s) out of a total of 60 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 34 BRAM(s) out of a total of 48 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Pwropt 34-201] Structural ODC has moved 1 WE to EN ports
-Number of BRAM Ports augmented: 66 newly gated: 1 Total Ports: 120
+Number of BRAM Ports augmented: 66 newly gated: 1 Total Ports: 96
 Number of Flops added for Enable Generation: 4
 
-Ending PowerOpt Patch Enables Task | Checksum: 267ad2ae8
+Ending PowerOpt Patch Enables Task | Checksum: 28f9a9704
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 267ad2ae8
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.715 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 28f9a9704
 
-Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1629.965 ; gain = 420.691
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1747.277 ; gain = 232.934
 
 Starting Final Cleanup Task
 
 Starting Logic Optimization Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [Opt 31-194] Inserted BUFG mc_top_i/clk_wiz/inst/clk_out1_mc_top_clk_wiz_0_BUFG_inst to drive 0 load(s) on clock net mc_top_i/clk_wiz/inst/clk_out1_mc_top_clk_wiz_0_BUFG
-INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Ending Logic Optimization Task | Checksum: 1aa54de40
+Ending Logic Optimization Task | Checksum: 1fd0b11a4
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Ending Final Cleanup Task | Checksum: 1aa54de40
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 1fd0b11a4
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] from IP C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0.xci
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] for cell 'mc_top_i/jtag_master/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc:69]
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] for cell 'mc_top_i/jtag_master/inst'
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 1aa54de40
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1fd0b11a4
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1747.277 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-63 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
+62 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:46 . Memory (MB): peak = 1629.965 ; gain = 488.793
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Writing placer database...
+opt_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.277 ; gain = 433.945
 INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_opt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1747.277 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file mc_top_wrapper_drc_opted.rpt -pb mc_top_wrapper_drc_opted.pb -rpx mc_top_wrapper_drc_opted.rpx
 Command: report_drc -file mc_top_wrapper_drc_opted.rpt -pb mc_top_wrapper_drc_opted.pb -rpx mc_top_wrapper_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_drc_opted.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Chipscope 16-240] Debug cores have already been implemented
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] from IP C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0.xci
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] for cell 'mc_top_i/jtag_master/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc:69]
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc] for cell 'mc_top_i/jtag_master/inst'
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1840 rule limit reached: 20 violations have been found.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 21 Warnings
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 Starting Placer Task
@@ -312,122 +288,138 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1519d8762
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 12ad64b22
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: eebe5f17
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 7357b2f3
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.833 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 1bd2591ce
+Phase 1.3 Build Placer Netlist Model | Checksum: 19e1c845f
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 1bd2591ce
+Phase 1.4 Constrain Clocks/Macros | Checksum: 19e1c845f
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 1bd2591ce
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 19e1c845f
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 1cacd8d71
+Phase 2.1 Floorplanning | Checksum: 1b5a4812c
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
-Phase 2.2 Physical Synthesis In Placer
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 5 LUTNM shape to break, 505 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 4, two critical 1, total 5, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 203 nets or cells. Created 5 new cells, deleted 198 existing cells and moved 0 existing cell
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-INFO: [Physopt 32-64] No nets found for fanout-optimization.
+INFO: [Physopt 32-117] Net mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/A[1] could not be optimized because driver mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/mem_reg_0_i_7 could not be replicated
+INFO: [Physopt 32-68] No nets found for critical-cell optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 4 nets or cells. Created 8 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1747.277 ; gain = 0.000
 INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
 
 
-----------------------------------------------------------------------------------------------------------------------------------------
-|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
-----------------------------------------------------------------------------------------------------------------------------------------
-|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Fanout                        |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  DSP Register                  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                         |            0  |              0  |                     0  |           0  |           6  |  00:00:00  |
-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            5  |            198  |                   203  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Cell                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            8  |              0  |                     4  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           13  |            198  |                   207  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2 Physical Synthesis In Placer | Checksum: 2353bbfca
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 9fe8431c
 
-Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 1baafda31
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 2.2 Global Placement Core | Checksum: 15ecd4231
 
-Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 15ecd4231
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:12 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1baafda31
+Phase 3.1 Commit Multi Column Macros | Checksum: 24b73c30e
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 25f587840
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: f32a1474
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:27 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 2a819c385
+Phase 3.3 Area Swap Optimization | Checksum: 6a6de45a
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:27 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 20db929db
+Phase 3.4 Pipeline Register Optimization | Checksum: 9d8907b2
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:27 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 26554e637
+Phase 3.5 Fast Optimization | Checksum: 12d92963a
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:29 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:16 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 19d823e55
+Phase 3.6 Small Shape Detail Placement | Checksum: 217c4e84f
 
-Time (s): cpu = 00:00:48 ; elapsed = 00:00:37 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 1232b4197
+Phase 3.7 Re-assign LUT pins | Checksum: 1c2fc4867
 
-Time (s): cpu = 00:00:48 ; elapsed = 00:00:38 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 20dc38195
+Phase 3.8 Pipeline Register Optimization | Checksum: 14d0f92e4
 
-Time (s): cpu = 00:00:48 ; elapsed = 00:00:38 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 20dc38195
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 14d0f92e4
 
-Time (s): cpu = 00:00:49 ; elapsed = 00:00:38 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:20 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -435,60 +427,70 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 12eb7a8c9
+Post Placement Optimization Initialization | Checksum: 1d40b0d11
 
 Phase 4.1.1.1 BUFG Insertion
-INFO: [Place 46-46] BUFG insertion identified 0 candidate nets, 0 success, 0 bufg driver replicated, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason
-Phase 4.1.1.1 BUFG Insertion | Checksum: 12eb7a8c9
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:41 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.756. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 614e5616
+Starting Physical Synthesis Task
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 614e5616
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-0.297 | TNS=-0.297 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1d72eb985
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.790 . Memory (MB): peak = 1747.277 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 25895ad12
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.818 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1d40b0d11
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:24 . Memory (MB): peak = 1747.277 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.558. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1b5ed594e
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:25 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1b5ed594e
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:25 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 614e5616
+Phase 4.2 Post Placement Cleanup | Checksum: 1b5ed594e
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:25 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 614e5616
+Phase 4.3 Placer Reporting | Checksum: 1b5ed594e
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 4.4 Final Placement Cleanup | Checksum: 1584e8ef9
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 162e6e262
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1584e8ef9
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 162e6e262
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Ending Placer Task | Checksum: 143d0bfee
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Ending Placer Task | Checksum: 9084b428
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:00:42 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.277 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
-97 Infos, 32 Warnings, 10 Critical Warnings and 0 Errors encountered.
+104 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:59 ; elapsed = 00:00:44 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1629.965 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:27 . Memory (MB): peak = 1747.277 ; gain = 0.000
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1629.965 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_placed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.775 . Memory (MB): peak = 1747.277 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file mc_top_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1629.965 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1747.277 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file mc_top_wrapper_utilization_placed.rpt -pb mc_top_wrapper_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file mc_top_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1629.965 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1747.277 ; gain = 0.000
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
@@ -500,197 +502,213 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 48202868 ConstDB: 0 ShapeSum: fbb09786 RouteDB: 0
+Checksum: PlaceDB: 573f0ff6 ConstDB: 0 ShapeSum: 3945a432 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 9f1feff1
+Phase 1 Build RT Design | Checksum: 19070ac4e
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Post Restoration Checksum: NetGraph: 92f9cc3b NumContArr: c2623b6 Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 1747.277 ; gain = 0.000
+Post Restoration Checksum: NetGraph: ff5cb55b NumContArr: 9113f6f3 Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 9f1feff1
+Phase 2.1 Create Timer | Checksum: 19070ac4e
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 1747.277 ; gain = 0.000
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 9f1feff1
+Phase 2.2 Fix Topology Constraints | Checksum: 19070ac4e
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 1751.027 ; gain = 3.750
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 9f1feff1
+Phase 2.3 Pre Route Cleanup | Checksum: 19070ac4e
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:24 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 1751.027 ; gain = 3.750
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: ba14220c
+Phase 2.4 Update Timing | Checksum: 20d1e64cb
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.056  | TNS=0.000  | WHS=-0.476 | THS=-881.694|
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:17 . Memory (MB): peak = 1778.863 ; gain = 31.586
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.775  | TNS=0.000  | WHS=-0.475 | THS=-905.852|
 
 
 Phase 2.5 Update Timing for Bus Skew
 
 Phase 2.5.1 Update Timing
-Phase 2.5.1 Update Timing | Checksum: d0e6818d
+Phase 2.5.1 Update Timing | Checksum: 1813b7836
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:33 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.056  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:21 . Memory (MB): peak = 1801.227 ; gain = 53.949
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.775  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 2.5 Update Timing for Bus Skew | Checksum: ab911565
+Phase 2.5 Update Timing for Bus Skew | Checksum: 111e5dede
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:33 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 2 Router Initialization | Checksum: 144c37149
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:22 . Memory (MB): peak = 1811.613 ; gain = 64.336
+Phase 2 Router Initialization | Checksum: 1cf2826d7
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:34 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:22 . Memory (MB): peak = 1811.613 ; gain = 64.336
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0406601 %
+  Global Horizontal Routing Utilization  = 0.0147059 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 12286
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 12244
+  Number of Partially Routed Nets     = 42
+  Number of Node Overlaps             = 36
+
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 119806748
+Phase 3 Initial Routing | Checksum: 1efd87a3b
 
-Time (s): cpu = 00:01:00 ; elapsed = 00:00:44 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:27 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 3424
- Number of Nodes with overlaps = 1076
- Number of Nodes with overlaps = 451
- Number of Nodes with overlaps = 281
- Number of Nodes with overlaps = 153
- Number of Nodes with overlaps = 56
- Number of Nodes with overlaps = 23
- Number of Nodes with overlaps = 29
- Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 3236
+ Number of Nodes with overlaps = 1035
+ Number of Nodes with overlaps = 473
+ Number of Nodes with overlaps = 286
+ Number of Nodes with overlaps = 97
+ Number of Nodes with overlaps = 58
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 11
  Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.444  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.391  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 167a6cffa
+Phase 4.1 Global Iteration 0 | Checksum: 17a56a26a
 
-Time (s): cpu = 00:01:46 ; elapsed = 00:01:14 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 4 Rip-up And Reroute | Checksum: 167a6cffa
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:52 . Memory (MB): peak = 1847.574 ; gain = 100.297
+Phase 4 Rip-up And Reroute | Checksum: 17a56a26a
 
-Time (s): cpu = 00:01:46 ; elapsed = 00:01:15 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:52 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 193264c65
+Phase 5.1.1 Update Timing | Checksum: 1830abda3
 
-Time (s): cpu = 00:01:48 ; elapsed = 00:01:16 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.523  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:54 . Memory (MB): peak = 1847.574 ; gain = 100.297
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.479  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: 1dfc1703f
+Phase 5.1 Delay CleanUp | Checksum: 12ec36284
 
-Time (s): cpu = 00:01:48 ; elapsed = 00:01:16 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:54 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1dfc1703f
+Phase 5.2 Clock Skew Optimization | Checksum: 12ec36284
 
-Time (s): cpu = 00:01:48 ; elapsed = 00:01:16 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 5 Delay and Skew Optimization | Checksum: 1dfc1703f
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:54 . Memory (MB): peak = 1847.574 ; gain = 100.297
+Phase 5 Delay and Skew Optimization | Checksum: 12ec36284
 
-Time (s): cpu = 00:01:48 ; elapsed = 00:01:16 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:54 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 23a86c8b9
+Phase 6.1.1 Update Timing | Checksum: 1d1be67f3
 
-Time (s): cpu = 00:01:50 ; elapsed = 00:01:17 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.523  | TNS=0.000  | WHS=0.013  | THS=0.000  |
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1847.574 ; gain = 100.297
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.479  | TNS=0.000  | WHS=0.018  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 20ba81cd0
+Phase 6.1 Hold Fix Iter | Checksum: 161c99ab4
 
-Time (s): cpu = 00:01:50 ; elapsed = 00:01:17 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Phase 6 Post Hold Fix | Checksum: 20ba81cd0
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1847.574 ; gain = 100.297
+Phase 6 Post Hold Fix | Checksum: 161c99ab4
 
-Time (s): cpu = 00:01:50 ; elapsed = 00:01:17 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 5.89133 %
-  Global Horizontal Routing Utilization  = 7.14315 %
+  Global Vertical Routing Utilization    = 6.22818 %
+  Global Horizontal Routing Utilization  = 7.32509 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
   Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
   Number of Unrouted Nets             = 0
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 16dc12060
+Phase 7 Route finalize | Checksum: 183a5059f
 
-Time (s): cpu = 00:01:50 ; elapsed = 00:01:17 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 16dc12060
+Phase 8 Verifying routed nets | Checksum: 183a5059f
 
-Time (s): cpu = 00:01:50 ; elapsed = 00:01:17 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:27 ; elapsed = 00:00:55 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 17ff87534
+Phase 9 Depositing Routes | Checksum: 16eb8c8c2
 
-Time (s): cpu = 00:01:52 ; elapsed = 00:01:19 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:28 ; elapsed = 00:00:56 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=0.523  | TNS=0.000  | WHS=0.013  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.479  | TNS=0.000  | WHS=0.018  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 17ff87534
+Phase 10 Post Router Timing | Checksum: 16eb8c8c2
 
-Time (s): cpu = 00:01:52 ; elapsed = 00:01:19 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:28 ; elapsed = 00:00:56 . Memory (MB): peak = 1847.574 ; gain = 100.297
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:01:52 ; elapsed = 00:01:19 . Memory (MB): peak = 1629.965 ; gain = 0.000
+Time (s): cpu = 00:01:28 ; elapsed = 00:00:56 . Memory (MB): peak = 1847.574 ; gain = 100.297
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-116 Infos, 32 Warnings, 10 Critical Warnings and 0 Errors encountered.
+123 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:55 ; elapsed = 00:01:21 . Memory (MB): peak = 1629.965 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1629.965 ; gain = 0.000
+route_design: Time (s): cpu = 00:01:30 ; elapsed = 00:00:57 . Memory (MB): peak = 1847.574 ; gain = 100.297
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1629.965 ; gain = 0.000
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1629.965 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_routed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1847.574 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file mc_top_wrapper_drc_routed.rpt -pb mc_top_wrapper_drc_routed.pb -rpx mc_top_wrapper_drc_routed.rpx
 Command: report_drc -file mc_top_wrapper_drc_routed.rpt -pb mc_top_wrapper_drc_routed.pb -rpx mc_top_wrapper_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_drc_routed.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_drc_routed.rpt.
 report_drc completed successfully
 INFO: [runtcl-4] Executing : report_methodology -file mc_top_wrapper_methodology_drc_routed.rpt -pb mc_top_wrapper_methodology_drc_routed.pb -rpx mc_top_wrapper_methodology_drc_routed.rpx
 Command: report_methodology -file mc_top_wrapper_methodology_drc_routed.rpt -pb mc_top_wrapper_methodology_drc_routed.pb -rpx mc_top_wrapper_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_methodology_drc_routed.rpt.
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/impl_1/mc_top_wrapper_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 1759.328 ; gain = 129.363
+report_methodology: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 2038.785 ; gain = 191.211
 INFO: [runtcl-4] Executing : report_power -file mc_top_wrapper_power_routed.rpt -pb mc_top_wrapper_power_summary_routed.pb -rpx mc_top_wrapper_power_routed.rpx
 Command: report_power -file mc_top_wrapper_power_routed.rpt -pb mc_top_wrapper_power_summary_routed.pb -rpx mc_top_wrapper_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-128 Infos, 32 Warnings, 10 Critical Warnings and 0 Errors encountered.
+135 Infos, 11 Warnings, 10 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1803.125 ; gain = 43.797
 INFO: [runtcl-4] Executing : report_route_status -file mc_top_wrapper_route_status.rpt -pb mc_top_wrapper_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file mc_top_wrapper_timing_summary_routed.rpt -pb mc_top_wrapper_timing_summary_routed.pb -rpx mc_top_wrapper_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
@@ -702,52 +720,4 @@ INFO: [runtcl-4] Executing : report_clock_utilization -file mc_top_wrapper_clock
 INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file mc_top_wrapper_bus_skew_routed.rpt -pb mc_top_wrapper_bus_skew_routed.pb -rpx mc_top_wrapper_bus_skew_routed.rpx
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-Command: write_bitstream -force mc_top_wrapper.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
-Running DRC as a precondition to command write_bitstream
-INFO: [IP_Flow 19-1839] IP Catalog is up to date.
-INFO: [DRC 23-27] Running DRC with 2 threads
-WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1840 rule limit reached: 20 violations have been found.
-WARNING: [DRC PDRC-153] Gated clock check: Net mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2_n_0 is a gated clock net sourced by a combinational pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2/O, cell mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/cache_controller/data_reg[31]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[10] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[6]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[11]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[11] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[7]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[12]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[12] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[8]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[13]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[1]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/FSM_sequential_curr_state_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/cache_controller/address_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1840] RAMB18 async control check: The RAMB18E1 mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 has an input control pin mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0/ADDRARDADDR[9] (net: mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/ADDRARDADDR[5]) which is driven by a register (mc_top_i/core_top_wrapper_0/inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/pc_fetch_reg[10]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC RTSTAT-10] No routable loads: 38 net(s) have no routable loads. The problem bus(es) and/or net(s) are mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ENA_I, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], mc_top_i/jtag_master/inst/jtag_axi_engine_u/rx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/tx_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0]... and (the first 15 of 36 listed).
-INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (mc_top_i/jtag_master/inst/jtag_axi_engine_u/rd_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
-INFO: [DRC REQP-181] writefirst: Synchronous clocking is detected for BRAM (mc_top_i/jtag_master/inst/jtag_axi_engine_u/wr_cmd_fifo_i/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36_NO_ECC.ram) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 23 Warnings, 2 Advisories
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./mc_top_wrapper.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-186] 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Mon Nov 25 16:42:29 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2018.3/doc/webtalk_introduction.html.
-INFO: [Common 17-83] Releasing license: Implementation
-150 Infos, 56 Warnings, 10 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:28 ; elapsed = 00:00:25 . Memory (MB): peak = 2244.750 ; gain = 431.207
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 16:42:29 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 18:45:01 2020...

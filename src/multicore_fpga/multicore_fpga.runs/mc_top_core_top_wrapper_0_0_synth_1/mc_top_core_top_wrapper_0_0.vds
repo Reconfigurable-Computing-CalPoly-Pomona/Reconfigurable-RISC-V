@@ -1,0 +1,550 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 17:51:05 2020
+# Process ID: 36996
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1
+# Command line: vivado.exe -log mc_top_core_top_wrapper_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_core_top_wrapper_0_0.tcl
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.vds
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mc_top_core_top_wrapper_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
+Command: synth_design -top mc_top_core_top_wrapper_0_0 -part xc7s50csga324-1 -mode out_of_context
+Starting synth_design
+WARNING: [IP_Flow 19-3571] IP 'mc_top_core_top_wrapper_0_0' is restricted:
+* Module reference is stale and needs refreshing.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28068
+WARNING: [Synth 8-6901] identifier 'ADDR_SIZE' is used before its declaration [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_fetch.sv:28]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1027.898 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mc_top_core_top_wrapper_0_0' [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/synth/mc_top_core_top_wrapper_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'core_top_wrapper' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_wrapper.v:25]
+	Parameter PC_BASE_ADDR bound to: 0 - type: integer 
+	Parameter INST_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter INST_ASSOCIATIVITY bound to: 2 - type: integer 
+	Parameter DATA_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter DATA_ASSOCIATIVITY bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'core_top_intf_wrapper' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:25]
+	Parameter PC_BASE_ADDR bound to: 0 - type: integer 
+	Parameter INST_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter INST_ASSOCIATIVITY bound to: 2 - type: integer 
+	Parameter DATA_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter DATA_ASSOCIATIVITY bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi_inf' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/axi_interface.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'axi_inf' (0#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/axi_interface.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'axi_inf' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/axi_interface.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'axi_inf' (0#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/axi_interface.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'core_top' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/core_top.sv:27]
+	Parameter PC_BASE_ADDR bound to: 0 - type: integer 
+	Parameter INST_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter INST_ASSOCIATIVITY bound to: 2 - type: integer 
+	Parameter DATA_CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter DATA_ASSOCIATIVITY bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'instr_fetch' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_fetch.sv:26]
+	Parameter PC_BASE_ADDR bound to: 0 - type: integer 
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter BLK_PER_SET bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'instruction_cache' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instruction_cache.sv:27]
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter BLK_PER_SET bound to: 1 - type: integer 
+	Parameter NUM_BLOCKS bound to: 512 - type: integer 
+	Parameter WAY_SIZE bound to: 16384 - type: integer 
+	Parameter INDEX_BITS bound to: 9 - type: integer 
+	Parameter TAG_BITS bound to: 18 - type: integer 
+	Parameter CACHE_DEPTH bound to: 512 - type: integer 
+	Parameter CACHE_WIDTH bound to: 275 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+	Parameter DEPTH bound to: 512 - type: integer 
+	Parameter DATA_WIDTH bound to: 275 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ram' (1#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'instr_cache_ctrl' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_cache_ctrl.sv:29]
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter BLK_PER_SET bound to: 1 - type: integer 
+	Parameter TAG_BITS bound to: 18 - type: integer 
+	Parameter INDEX_BITS bound to: 9 - type: integer 
+	Parameter CACHE_WIDTH bound to: 275 - type: integer 
+	Parameter CACHE_DEPTH bound to: 512 - type: integer 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_cache_ctrl.sv:144]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_cache_ctrl.sv:184]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_cache_ctrl.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'instr_cache_ctrl' (2#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_cache_ctrl.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_cache' (3#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instruction_cache.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'instr_fetch' (4#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_fetch.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'instr_decode' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_decode.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'decode_and_extend' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/decode_and_extend.sv:25]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/decode_and_extend.sv:39]
+INFO: [Synth 8-6155] done synthesizing module 'decode_and_extend' (5#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/decode_and_extend.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:26]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:49]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:61]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:77]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:95]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:103]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:117]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:126]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:144]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:148]
+INFO: [Synth 8-226] default block is never used [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:148]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:161]
+INFO: [Synth 8-226] default block is never used [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:161]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:181]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:183]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:186]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:206]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:224]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:240]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:252]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (6#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/control_unit.sv:26]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_decode.sv:203]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_decode.sv:230]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_decode.sv:238]
+INFO: [Synth 8-6155] done synthesizing module 'instr_decode' (7#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/instr_decode.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'execute_unit' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'branch_compare' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/branch_compare.sv:26]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/branch_compare.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'branch_compare' (8#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/branch_compare.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/alu.sv:24]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/alu.sv:32]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (9#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/alu.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'system_exe_unit' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/system_exe_unit.sv:25]
+	Parameter TIME_CNT_PER bound to: 1024 - type: integer 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/system_exe_unit.sv:79]
+INFO: [Synth 8-226] default block is never used [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/system_exe_unit.sv:79]
+INFO: [Synth 8-6155] done synthesizing module 'system_exe_unit' (10#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/system_exe_unit.sv:25]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:272]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:280]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:293]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:303]
+INFO: [Synth 8-6155] done synthesizing module 'execute_unit' (11#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/execute_unit.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'mem_access' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/mem_access.sv:24]
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter BLK_PER_SET bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'data_cache' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache.sv:27]
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 16384 - type: integer 
+	Parameter BLK_PER_SET bound to: 2 - type: integer 
+	Parameter NUM_BLOCKS bound to: 512 - type: integer 
+	Parameter WAY_SIZE bound to: 8192 - type: integer 
+	Parameter INDEX_BITS bound to: 8 - type: integer 
+	Parameter TAG_BITS bound to: 19 - type: integer 
+	Parameter CACHE_DEPTH bound to: 256 - type: integer 
+	Parameter CACHE_WIDTH bound to: 277 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram__parameterized0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter DATA_WIDTH bound to: 277 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ram__parameterized0' (11#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'ram__parameterized1' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+	Parameter DEPTH bound to: 256 - type: integer 
+	Parameter DATA_WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ram__parameterized1' (11#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/ram.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'data_cache_ctrl' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:26]
+	Parameter ADDR_SIZE bound to: 32 - type: integer 
+	Parameter BLK_PER_SET bound to: 2 - type: integer 
+	Parameter TAG_BITS bound to: 19 - type: integer 
+	Parameter INDEX_BITS bound to: 8 - type: integer 
+	Parameter CACHE_WIDTH bound to: 277 - type: integer 
+	Parameter CACHE_DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:191]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:241]
+INFO: [Synth 8-226] default block is never used [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:241]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:314]
+INFO: [Synth 8-226] default block is never used [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:314]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:351]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:376]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:351]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:376]
+INFO: [Synth 8-6155] done synthesizing module 'data_cache_ctrl' (12#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'data_cache' (13#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache.sv:27]
+INFO: [Synth 8-6155] done synthesizing module 'mem_access' (14#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/mem_access.sv:24]
+INFO: [Synth 8-6157] synthesizing module 'writeback' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/writeback.sv:26]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/writeback.sv:83]
+INFO: [Synth 8-6155] done synthesizing module 'writeback' (15#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/writeback.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/hazard_unit.sv:24]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/hazard_unit.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (16#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/hazard_unit.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'core_top' (17#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/core_top.sv:27]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:200]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:210]
+INFO: [Synth 8-6155] done synthesizing module 'core_top_intf_wrapper' (18#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_intf_wrapper.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'core_top_wrapper' (19#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/verilog_wrappers/core_top_wrapper.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_top_wrapper_0_0' (20#1) [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/synth/mc_top_core_top_wrapper_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1027.898 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1027.898 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1027.898 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 1027.898 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1067.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1069.195 ; gain = 2.102
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1069.195 ; gain = 41.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1069.195 ; gain = 41.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1069.195 ; gain = 41.297
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'instr_cache_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'data_cache_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   FLUSH |                              000 |                              000
+                    IDLE |                              001 |                              001
+                 CHK_TAG |                              010 |                              010
+                 MISS_AR |                              011 |                              011
+                  MISS_R |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'instr_cache_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   FLUSH |                              000 |                              000
+                    IDLE |                              001 |                              001
+                 CHK_TAG |                              010 |                              010
+               CHK_DIRTY |                              011 |                              011
+                    WB_W |                              100 |                              100
+                    WB_B |                              101 |                              101
+                 MISS_AR |                              110 |                              110
+                  MISS_R |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'data_cache_ctrl'
+WARNING: [Synth 8-327] inferring latch for variable 'data_reg' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/rtl/data_cache_ctrl.sv:353]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1069.195 ; gain = 41.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	              277 Bit    Registers := 2     
+	              275 Bit    Registers := 1     
+	               32 Bit    Registers := 52    
+	               19 Bit    Registers := 2     
+	               18 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 12    
++---RAMs : 
+	             137K Bit	(512 X 275 bit)          RAMs := 1     
+	              69K Bit	(256 X 277 bit)          RAMs := 2     
+	              512 Bit	(256 X 2 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 99    
+	   9 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 23    
+	  11 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 8     
+	   2 Input   19 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 4     
+	   2 Input    9 Bit        Muxes := 3     
+	   5 Input    9 Bit        Muxes := 4     
+	   6 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 2     
+	  12 Input    6 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 8     
+	   7 Input    3 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   8 Input    3 Bit        Muxes := 1     
+	  12 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	   8 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 46    
+	   5 Input    1 Bit        Muxes := 10    
+	   3 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 1     
+	   9 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 6     
+	   8 Input    1 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1073.953 ; gain = 46.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                 | RTL Object                                                                                              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg | 512 x 275(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg  | 256 x 277(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg  | 256 x 277(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object                                                                                       | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/plru_ram.plru_cache/mem_reg | Implied   | 256 x 2              | RAM256X1S x 2	 | 
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1073.953 ; gain = 46.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1073.953 ; gain = 46.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                 | RTL Object                                                                                              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg | 512 x 275(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg  | 256 x 277(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg  | 256 x 277(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 4      | 
++----------------------------+---------------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping	Report
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object                                                                                       | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/plru_ram.plru_cache/mem_reg | Implied   | 256 x 2              | RAM256X1S x 2	 | 
++----------------------------+--------------------------------------------------------------------------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/fetch_unit/instr_cache/way_gen[0].instr_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[0].data_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/dcache/way_gen[1].data_cache_set/mem_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1152.332 ; gain = 124.434
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.621 ; gain = 129.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.621 ; gain = 129.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.621 ; gain = 129.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.621 ; gain = 129.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.813 ; gain = 129.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.813 ; gain = 129.914
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++----------------------------+---------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name                 | RTL Name                                                                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++----------------------------+---------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|mc_top_core_top_wrapper_0_0 | inst/core_top_intf_wrapper_inst/core_top_inst/mem_access_unit/o_pcplus4_reg[31] | 3      | 31    | NO           | NO                 | YES               | 31     | 0       | 
++----------------------------+---------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |    91|
+|2     |LUT1      |     5|
+|3     |LUT2      |    72|
+|4     |LUT3      |   392|
+|5     |LUT4      |   274|
+|6     |LUT5      |  1156|
+|7     |LUT6      |  1925|
+|8     |MUXF7     |   597|
+|9     |MUXF8     |     1|
+|10    |RAM256X1S |     2|
+|11    |RAMB36E1  |    12|
+|12    |SRL16E    |    31|
+|13    |FDCE      |   347|
+|14    |FDPE      |     4|
+|15    |FDRE      |  1546|
+|16    |LD        |    32|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.813 ; gain = 129.914
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1157.813 ; gain = 88.617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1157.813 ; gain = 129.914
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1167.504 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 735 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1167.504 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 34 instances were transformed.
+  LD => LDCE: 32 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+140 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1167.504 ; gain = 139.605
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1174] Renamed 20 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/mc_top_core_top_wrapper_0_0_synth_1/mc_top_core_top_wrapper_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mc_top_core_top_wrapper_0_0_utilization_synth.rpt -pb mc_top_core_top_wrapper_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 17:52:02 2020...

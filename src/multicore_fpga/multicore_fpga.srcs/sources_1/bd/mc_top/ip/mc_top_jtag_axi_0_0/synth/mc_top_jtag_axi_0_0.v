@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:jtag_axi:1.2
-// IP Revision: 8
+// IP Revision: 11
 
-(* X_CORE_INFO = "jtag_axi_v1_2_8_jtag_axi,Vivado 2018.3" *)
-(* CHECK_LICENSE_TYPE = "mc_top_jtag_axi_0_0,jtag_axi_v1_2_8_jtag_axi,{}" *)
-(* CORE_GENERATION_INFO = "mc_top_jtag_axi_0_0,jtag_axi_v1_2_8_jtag_axi,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=jtag_axi,x_ipVersion=1.2,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,RD_TXN_QUEUE_LENGTH=4,WR_TXN_QUEUE_LENGTH=4,M_AXI_ID_WIDTH=4,M_AXI_ADDR_WIDTH=32,FAMILY=artix7,M_AXI_DATA_WIDTH=32,M_HAS_BURST=1,PROTOCOL=0}" *)
+(* X_CORE_INFO = "jtag_axi_v1_2_11_jtag_axi,Vivado 2020.1" *)
+(* CHECK_LICENSE_TYPE = "mc_top_jtag_axi_0_0,jtag_axi_v1_2_11_jtag_axi,{}" *)
+(* CORE_GENERATION_INFO = "mc_top_jtag_axi_0_0,jtag_axi_v1_2_11_jtag_axi,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=jtag_axi,x_ipVersion=1.2,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,RD_TXN_QUEUE_LENGTH=4,WR_TXN_QUEUE_LENGTH=4,M_AXI_ID_WIDTH=4,M_AXI_ADDR_WIDTH=32,FAMILY=artix7,M_AXI_DATA_WIDTH=32,M_HAS_BURST=1,PROTOCOL=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module mc_top_jtag_axi_0_0 (
   aclk,
@@ -96,7 +96,7 @@ module mc_top_jtag_axi_0_0 (
   m_axi_rready
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME signal_clock, ASSOCIATED_BUSIF M_AXI, ASSOCIATED_RESET aresetn, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME signal_clock, ASSOCIATED_BUSIF M_AXI, ASSOCIATED_RESET aresetn, FREQ_HZ 75000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 signal_clock CLK" *)
 input wire aclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME signal_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
@@ -179,7 +179,7 @@ ER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  jtag_axi_v1_2_8_jtag_axi #(
+  jtag_axi_v1_2_11_jtag_axi #(
     .RD_TXN_QUEUE_LENGTH(4),
     .WR_TXN_QUEUE_LENGTH(4),
     .M_AXI_ID_WIDTH(4),

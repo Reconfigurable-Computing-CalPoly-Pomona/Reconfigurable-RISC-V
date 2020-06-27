@@ -3,6 +3,58 @@
 # 
 
 set TIME_start [clock seconds] 
+namespace eval ::optrace {
+  variable script "C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.tcl"
+  variable category "vivado_synth"
+}
+
+# Try to connect to running dispatch if we haven't done so already.
+# This code assumes that the Tcl interpreter is not using threads,
+# since the ::dispatch::connected variable isn't mutex protected.
+if {![info exists ::dispatch::connected]} {
+  namespace eval ::dispatch {
+    variable connected false
+    if {[llength [array get env XILINX_CD_CONNECT_ID]] > 0} {
+      set result "true"
+      if {[catch {
+        if {[lsearch -exact [package names] DispatchTcl] < 0} {
+          set result [load librdi_cd_clienttcl[info sharedlibextension]] 
+        }
+        if {$result eq "false"} {
+          puts "WARNING: Could not load dispatch client library"
+        }
+        set connect_id [ ::dispatch::init_client -mode EXISTING_SERVER ]
+        if { $connect_id eq "" } {
+          puts "WARNING: Could not initialize dispatch client"
+        } else {
+          puts "INFO: Dispatch client connection id - $connect_id"
+          set connected true
+        }
+      } catch_res]} {
+        puts "WARNING: failed to connect to dispatch server - $catch_res"
+      }
+    }
+  }
+}
+if {$::dispatch::connected} {
+  # Remove the dummy proc if it exists.
+  if { [expr {[llength [info procs ::OPTRACE]] > 0}] } {
+    rename ::OPTRACE ""
+  }
+  proc ::OPTRACE { task action {tags {} } } {
+    ::vitis_log::op_trace "$task" $action -tags $tags -script $::optrace::script -category $::optrace::category
+  }
+  # dispatch is generic. We specifically want to attach logging.
+  ::vitis_log::connect_client
+} else {
+  # Add dummy proc if it doesn't exist.
+  if { [expr {[llength [info procs ::OPTRACE]] == 0}] } {
+    proc ::OPTRACE {{arg1 \"\" } {arg2 \"\"} {arg3 \"\" } {arg4 \"\"} {arg5 \"\" } {arg6 \"\"}} {
+        # Do nothing
+    }
+  }
+}
+
 proc create_report { reportName command } {
   set status "."
   append status $reportName ".fail"
@@ -17,48 +69,50 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
+OPTRACE "synth_1" START { ROLLUP_AUTO }
+OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/wt [current_project]
-set_property parent.project_path C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/wt [current_project]
+set_property parent.project_path C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:arty-s7-50:part0:1.0 [current_project]
-set_property ip_repo_paths c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0 [current_project]
+set_property ip_repo_paths c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0 [current_project]
 update_ip_catalog
-set_property ip_output_repo c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
+set_property ip_output_repo c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/median/median.coe
-add_files c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/test/asm/rv32i_compliance/rv32i_compliance.coe
-read_verilog -library xil_defaultlib C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v
-add_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc]
-set_property used_in_synthesis false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top_ooc.xdc]
+OPTRACE "Creating in-memory project" END { }
+OPTRACE "Adding files" START { }
+add_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/test/asm/median/median.coe
+add_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/test/asm/rv32i_compliance/rv32i_compliance.coe
+read_verilog -library xil_defaultlib C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v
+add_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top.bd
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/jtag_axi.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/constraints/mc_top_jtag_axi_0_0_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/mc_top_ooc.xdc]
 
+OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -67,23 +121,30 @@ set_property used_in_implementation false [get_files -all C:/Users/Benjamin/Docu
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc
-set_property used_in_implementation false [get_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]
+read_xdc C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc
+set_property used_in_implementation false [get_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]
 
-read_xdc C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc
-set_property used_in_implementation false [get_files C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]
+read_xdc C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc
+set_property used_in_implementation false [get_files C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
+OPTRACE "synth_design" START { }
 synth_design -top mc_top_wrapper -part xc7s50csga324-1
+OPTRACE "synth_design" END { }
 
 
+OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef mc_top_wrapper.dcp
+OPTRACE "write_checkpoint" END { }
+OPTRACE "synth reports" START { REPORT }
 create_report "synth_1_synth_report_utilization_0" "report_utilization -file mc_top_wrapper_utilization_synth.rpt -pb mc_top_wrapper_utilization_synth.pb"
+OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
+OPTRACE "synth_1" END { }

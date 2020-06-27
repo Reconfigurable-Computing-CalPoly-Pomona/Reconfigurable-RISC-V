@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="mc_top_data_mem_ctrl_0_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1574642321">
+<GenRun Id="mc_top_data_mem_ctrl_0_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1593219012">
   <File Type="PA-TCL" Name="mc_top_data_mem_ctrl_0.tcl"/>
   <File Type="REPORTS-TCL" Name="mc_top_data_mem_ctrl_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="mc_top_data_mem_ctrl_0.vds"/>
@@ -43,7 +43,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

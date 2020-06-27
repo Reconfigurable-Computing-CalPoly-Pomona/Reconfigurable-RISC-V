@@ -1,10 +1,10 @@
-// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Nov 23 12:05:20 2019
-// Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top mc_top_core_wrapper_0_0 -prefix
-//               mc_top_core_wrapper_0_0_ mc_top_core_wrapper_0_0_stub.v
+// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+// Date        : Fri Jun 26 17:50:50 2020
+// Host        : DESKTOP-N84G71E running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0_stub.v
 // Design      : mc_top_core_wrapper_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "core_wrapper_v1_0,Vivado 2018.3" *)
+(* X_CORE_INFO = "core_wrapper_v1_0,Vivado 2020.1" *)
 module mc_top_core_wrapper_0_0(m_instr_awid, m_instr_awaddr, m_instr_awlen, 
   m_instr_awsize, m_instr_awburst, m_instr_awlock, m_instr_awcache, m_instr_awprot, 
   m_instr_awqos, m_instr_awuser, m_instr_awvalid, m_instr_awready, m_instr_wdata, 

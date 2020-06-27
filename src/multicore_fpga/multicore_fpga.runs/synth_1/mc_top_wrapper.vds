@@ -1,295 +1,263 @@
 #-----------------------------------------------------------
-# Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
-# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov 25 16:37:04 2019
-# Process ID: 15316
-# Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jun 26 18:41:40 2020
+# Process ID: 22240
+# Current directory: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1
 # Command line: vivado.exe -log mc_top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mc_top_wrapper.tcl
-# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.vds
-# Journal file: C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1\vivado.jou
+# Log file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.vds
+# Journal file: C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source mc_top_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/ip_repo/core_wrapper_1.0'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/ip_repo/core_wrapper_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.cache/ip 
+Current IP cache path is c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.cache/ip 
 Command: synth_design -top mc_top_wrapper -part xc7s50csga324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 708 
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28380
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 407.363 ; gain = 106.750
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'mc_top_wrapper' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:12]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:21]
-INFO: [Synth 8-6157] synthesizing module 'mc_top' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:787]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_axi_interconnect_0_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1627]
-INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_CBXI9C' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_CBXI9C' (1#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:12]
-INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_103JL0H' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:270]
-INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_103JL0H' (2#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:270]
-INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1BO8L3N' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:528]
-INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1BO8L3N' (3#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:528]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_7RNJTT' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3358]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_7RNJTT' (4#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3358]
-INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1EDVJQO' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3665]
-INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1EDVJQO' (5#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3665]
-INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_17DY9MQ' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3972]
-INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_17DY9MQ' (6#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3972]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_xbar_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_xbar_0' (7#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_xbar_0_stub.v:6]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_buser' does not match port width (3) of module 'mc_top_xbar_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3341]
-WARNING: [Synth 8-689] width (2) of port connection 's_axi_ruser' does not match port width (3) of module 'mc_top_xbar_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3348]
-WARNING: [Synth 8-350] instance 'xbar' of module 'mc_top_xbar_0' requires 88 connections, but only 81 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3274]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_axi_interconnect_0_0' (8#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1627]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_clk_wiz_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_clk_wiz_0' (9#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_core_top_wrapper_0_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_core_top_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_top_wrapper_0_0' (10#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_core_top_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_core_wrapper_0_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_core_wrapper_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_wrapper_0_0' (11#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_core_wrapper_0_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'core_wrapper_0' of module 'mc_top_core_wrapper_0_0' requires 94 connections, but only 33 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1343]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_0' (12#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'data_mem' of module 'mc_top_data_mem_0' requires 16 connections, but only 14 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1377]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_ctrl_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_ctrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_ctrl_0' (13#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_ctrl_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_instr_mem_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_instr_mem_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_instr_mem_0' (14#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_instr_mem_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'instr_mem' of module 'mc_top_instr_mem_0' requires 16 connections, but only 14 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1444]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_instr_mem_ctrl_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_instr_mem_ctrl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_instr_mem_ctrl_0' (15#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_instr_mem_ctrl_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_jtag_axi_0_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_jtag_axi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_jtag_axi_0_0' (16#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_jtag_axi_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_rst_clk_wiz_100M_0' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_rst_clk_wiz_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_rst_clk_wiz_100M_0' (17#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_rst_clk_wiz_100M_0_stub.v:6]
-WARNING: [Synth 8-350] instance 'rst_clk_wiz_100M' of module 'mc_top_rst_clk_wiz_100M_0' requires 10 connections, but only 6 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1551]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_1' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_1' (18#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_1_stub.v:6]
-WARNING: [Synth 8-350] instance 'spare_mem' of module 'mc_top_data_mem_1' requires 16 connections, but only 14 given [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1558]
-INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_ctrl_1' [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_ctrl_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_ctrl_1' (19#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-15316-Drew/realtime/mc_top_data_mem_ctrl_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top' (20#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:787]
-INFO: [Synth 8-6155] done synthesizing module 'mc_top_wrapper' (21#1) [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:12]
-WARNING: [Synth 8-3331] design s02_couplers_imp_17DY9MQ has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design s02_couplers_imp_17DY9MQ has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design s02_couplers_imp_17DY9MQ has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design s02_couplers_imp_17DY9MQ has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design s01_couplers_imp_1EDVJQO has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design s01_couplers_imp_1EDVJQO has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design s01_couplers_imp_1EDVJQO has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design s01_couplers_imp_1EDVJQO has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design s00_couplers_imp_7RNJTT has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design s00_couplers_imp_7RNJTT has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design s00_couplers_imp_7RNJTT has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design s00_couplers_imp_7RNJTT has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design m02_couplers_imp_1BO8L3N has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m02_couplers_imp_1BO8L3N has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m02_couplers_imp_1BO8L3N has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m02_couplers_imp_1BO8L3N has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design m01_couplers_imp_103JL0H has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m01_couplers_imp_103JL0H has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m01_couplers_imp_103JL0H has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m01_couplers_imp_103JL0H has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design m00_couplers_imp_CBXI9C has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m00_couplers_imp_CBXI9C has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m00_couplers_imp_CBXI9C has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m00_couplers_imp_CBXI9C has unconnected port S_ARESETN
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M00_ACLK
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M00_ARESETN
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M01_ACLK
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M01_ARESETN
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M02_ACLK
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port M02_ARESETN
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_ACLK
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_ARESETN
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[31]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[30]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[29]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[28]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[27]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[26]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[25]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[24]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[23]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[22]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[21]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[20]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[19]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[18]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[17]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[16]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[15]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[14]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[13]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[12]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[11]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[10]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[9]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[8]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[7]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[6]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[5]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arcache[4]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[31]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[30]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[29]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[28]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[27]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[26]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[25]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[24]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[23]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[22]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[21]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[20]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[19]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[18]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[17]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[16]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[15]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[14]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[13]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[12]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[11]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[10]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[9]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[8]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[7]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[6]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[5]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[4]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[3]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[2]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arid[1]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[31]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[30]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[29]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[28]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[27]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[26]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[25]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[24]
-WARNING: [Synth 8-3331] design mc_top_axi_interconnect_0_0 has unconnected port S00_AXI_arlock[23]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6157] synthesizing module 'mc_top_wrapper' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:12]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:21]
+INFO: [Synth 8-6157] synthesizing module 'mc_top' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:787]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_axi_interconnect_0_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1639]
+INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_CBXI9C' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_CBXI9C' (1#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:12]
+INFO: [Synth 8-6157] synthesizing module 'm01_couplers_imp_103JL0H' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:270]
+INFO: [Synth 8-6155] done synthesizing module 'm01_couplers_imp_103JL0H' (2#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:270]
+INFO: [Synth 8-6157] synthesizing module 'm02_couplers_imp_1BO8L3N' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:528]
+INFO: [Synth 8-6155] done synthesizing module 'm02_couplers_imp_1BO8L3N' (3#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:528]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_7RNJTT' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3370]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_7RNJTT' (4#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3370]
+INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_1EDVJQO' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3677]
+INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_1EDVJQO' (5#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3677]
+INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_17DY9MQ' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3984]
+INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_17DY9MQ' (6#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3984]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_xbar_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_xbar_0' (7#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_xbar_0_stub.v:6]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_buser' does not match port width (3) of module 'mc_top_xbar_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3353]
+WARNING: [Synth 8-689] width (2) of port connection 's_axi_ruser' does not match port width (3) of module 'mc_top_xbar_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3360]
+WARNING: [Synth 8-7071] port 'm_axi_awregion' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_awqos' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_awuser' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_wuser' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_arregion' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_arqos' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7071] port 'm_axi_aruser' of module 'mc_top_xbar_0' is unconnected for instance 'xbar' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+WARNING: [Synth 8-7023] instance 'xbar' of module 'mc_top_xbar_0' has 88 connections declared, but only 81 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:3286]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_axi_interconnect_0_0' (8#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1639]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_clk_wiz_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_clk_wiz_0' (9#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_core_top_wrapper_0_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_core_top_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_top_wrapper_0_0' (10#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_core_top_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_core_wrapper_0_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_core_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_core_wrapper_0_0' (11#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_core_wrapper_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_instr_awid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awaddr' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awlen' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awsize' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awburst' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awlock' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awcache' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awprot' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awqos' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_awvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_wdata' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_wstrb' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_wlast' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_wvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_bready' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_araddr' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arlen' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arsize' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arburst' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arlock' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arcache' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arprot' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arqos' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_arvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_rready' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_txn_done' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_instr_error' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awaddr' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awlen' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awsize' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awburst' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awlock' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awcache' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awprot' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_awvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_wdata' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_wstrb' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_wlast' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_wvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_bready' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_araddr' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arlen' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arsize' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arburst' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arlock' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arcache' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arprot' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arqos' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_arvalid' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_rready' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_txn_done' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7071] port 'm_data_error' of module 'mc_top_core_wrapper_0_0' is unconnected for instance 'core_wrapper_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+WARNING: [Synth 8-7023] instance 'core_wrapper_0' of module 'mc_top_core_wrapper_0_0' has 94 connections declared, but only 39 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1349]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_0' (12#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'mc_top_data_mem_0' is unconnected for instance 'data_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1389]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'mc_top_data_mem_0' is unconnected for instance 'data_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1389]
+WARNING: [Synth 8-7023] instance 'data_mem' of module 'mc_top_data_mem_0' has 16 connections declared, but only 14 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1389]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_ctrl_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_ctrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_ctrl_0' (13#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_ctrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_instr_mem_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_instr_mem_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_instr_mem_0' (14#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_instr_mem_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'mc_top_instr_mem_0' is unconnected for instance 'instr_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1456]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'mc_top_instr_mem_0' is unconnected for instance 'instr_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1456]
+WARNING: [Synth 8-7023] instance 'instr_mem' of module 'mc_top_instr_mem_0' has 16 connections declared, but only 14 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1456]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_instr_mem_ctrl_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_instr_mem_ctrl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_instr_mem_ctrl_0' (15#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_instr_mem_ctrl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_jtag_axi_0_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_jtag_axi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_jtag_axi_0_0' (16#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_jtag_axi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_rst_clk_wiz_100M_0' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_rst_clk_wiz_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_rst_clk_wiz_100M_0' (17#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_rst_clk_wiz_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'mc_top_rst_clk_wiz_100M_0' is unconnected for instance 'rst_clk_wiz_100M' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1563]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'mc_top_rst_clk_wiz_100M_0' is unconnected for instance 'rst_clk_wiz_100M' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1563]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'mc_top_rst_clk_wiz_100M_0' is unconnected for instance 'rst_clk_wiz_100M' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1563]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'mc_top_rst_clk_wiz_100M_0' is unconnected for instance 'rst_clk_wiz_100M' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1563]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_100M' of module 'mc_top_rst_clk_wiz_100M_0' has 10 connections declared, but only 6 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1563]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_1' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_1' (18#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'mc_top_data_mem_1' is unconnected for instance 'spare_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1570]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'mc_top_data_mem_1' is unconnected for instance 'spare_mem' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1570]
+WARNING: [Synth 8-7023] instance 'spare_mem' of module 'mc_top_data_mem_1' has 16 connections declared, but only 14 given [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1570]
+INFO: [Synth 8-6157] synthesizing module 'mc_top_data_mem_ctrl_1' [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_ctrl_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_data_mem_ctrl_1' (19#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/.Xil/Vivado-22240-DESKTOP-N84G71E/realtime/mc_top_data_mem_ctrl_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top' (20#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:787]
+INFO: [Synth 8-6155] done synthesizing module 'mc_top_wrapper' (21#1) [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/hdl/mc_top_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 464.219 ; gain = 163.605
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 464.219 ; gain = 163.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 464.219 ; gain = 163.605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7s50csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1024.836 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_in_context.xdc] for cell 'mc_top_i/jtag_master'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_in_context.xdc] for cell 'mc_top_i/jtag_master'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0/mc_top_xbar_0_in_context.xdc] for cell 'mc_top_i/axi_interconnect_0/xbar'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0/mc_top_xbar_0_in_context.xdc] for cell 'mc_top_i/axi_interconnect_0/xbar'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc] for cell 'mc_top_i/clk_wiz'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc] for cell 'mc_top_i/clk_wiz'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_top_wrapper_0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_top_wrapper_0'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_wrapper_0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_wrapper_0'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/data_mem'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/data_mem'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/data_mem_ctrl'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/data_mem_ctrl'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0/jtag_to_axi_data_mem_0_in_context.xdc] for cell 'mc_top_i/instr_mem'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0/jtag_to_axi_data_mem_0_in_context.xdc] for cell 'mc_top_i/instr_mem'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/instr_mem_ctrl'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/instr_mem_ctrl'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_in_context.xdc] for cell 'mc_top_i/rst_clk_wiz_100M'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_in_context.xdc] for cell 'mc_top_i/rst_clk_wiz_100M'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/spare_memory'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/spare_memory'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/spare_mem'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/spare_mem'
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]
-WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:139]
-WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc:140]
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mc_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mc_top_wrapper_propImpl.xdc].
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_in_context.xdc] for cell 'mc_top_i/jtag_master'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0/mc_top_jtag_axi_0_0_in_context.xdc] for cell 'mc_top_i/jtag_master'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc] for cell 'mc_top_i/clk_wiz'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc:1]
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc:4]
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc] for cell 'mc_top_i/clk_wiz'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_top_wrapper_0'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0/mc_top_core_top_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_top_wrapper_0'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_wrapper_0'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0/mc_top_core_wrapper_0_0_in_context.xdc] for cell 'mc_top_i/core_wrapper_0'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/data_mem'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_0/mc_top_data_mem_0/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/data_mem'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/data_mem_ctrl'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_in_context.xdc:2]
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/data_mem_ctrl'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0/mc_top_instr_mem_0_in_context.xdc] for cell 'mc_top_i/instr_mem'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_0/mc_top_instr_mem_0/mc_top_instr_mem_0_in_context.xdc] for cell 'mc_top_i/instr_mem'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/instr_mem_ctrl'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_in_context.xdc:2]
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0/mc_top_instr_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/instr_mem_ctrl'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_in_context.xdc] for cell 'mc_top_i/rst_clk_wiz_100M'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0/mc_top_rst_clk_wiz_100M_0_in_context.xdc] for cell 'mc_top_i/rst_clk_wiz_100M'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/spare_memory'
+WARNING: [Vivado 12-584] No ports matched ''. [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_0_in_context.xdc:2]
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_1/mc_top_data_mem_ctrl_0_in_context.xdc] for cell 'mc_top_i/spare_memory'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/spare_mem'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_data_mem_1/mc_top_data_mem_1/mc_top_data_mem_0_in_context.xdc] for cell 'mc_top_i/spare_mem'
+Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0/mc_top_xbar_0_in_context.xdc] for cell 'mc_top_i/axi_interconnect_0/xbar'
+Finished Parsing XDC File [c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_xbar_0/mc_top_xbar_0/mc_top_xbar_0_in_context.xdc] for cell 'mc_top_i/axi_interconnect_0/xbar'
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]
+WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc:140]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mc_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mc_top_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/mc_top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:73]
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:74]
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:75]
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:76]
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:87]
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:88]
-WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:139]
-WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc:140]
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mc_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/jtag_to_axi.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mc_top_wrapper_propImpl.xdc].
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'uart_rxd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'uart_txd'. [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc:140]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mc_top_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/jtag_to_axi.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mc_top_wrapper_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/mc_top_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 749.602 ; gain = 0.000
+Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 749.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1024.836 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 749.602 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 749.602 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1024.836 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mc_top_i/data_mem' at clock pin 'clka' is different from the actual clock period '13.333', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mc_top_i/instr_mem' at clock pin 'clka' is different from the actual clock period '13.333', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mc_top_i/spare_mem' at clock pin 'clka' is different from the actual clock period '13.333', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 749.602 ; gain = 448.988
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 749.602 ; gain = 448.988
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for ddr_clock. (constraint file  c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr_clock. (constraint file  c:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc, line 4).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_AWVALID. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 251).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_WDATA[2]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 252).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_ARADDR[3]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 254).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_AWADDR[1]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 258).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_ARVALID. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 284).
-Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_WVALID. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 293).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_arvalid. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 310).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_awaddr[5]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 311).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_araddr[0]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 343).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wdata[19]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 375).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wstrb[2]. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 381).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wlast. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 385).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wvalid. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 386).
-Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_awvalid. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/constraints/fpga.xdc, line 397).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr_clock. (constraint file  c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr_clock. (constraint file  c:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/ip/mc_top_clk_wiz_0/mc_top_clk_wiz_0/mc_top_clk_wiz_0_in_context.xdc, line 6).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_AWVALID. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 251).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_WDATA[2]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 252).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_ARADDR[3]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 254).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_AWADDR[1]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 258).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_ARVALID. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 284).
+Applied set_property MARK_DEBUG = true for mc_top_i/axi_interconnect_0_M01_AXI_WVALID. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 293).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_arvalid. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 310).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_awaddr[5]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 311).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_araddr[0]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 343).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wdata[19]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 375).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wstrb[2]. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 381).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wlast. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 385).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_wvalid. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 386).
+Applied set_property MARK_DEBUG = true for mc_top_i/core_top_wrapper_0_o_data_awvalid. (constraint file  C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/constraints/fpga.xdc, line 397).
 Applied set_property DONT_TOUCH = true for mc_top_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/jtag_master. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for mc_top_i/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/axi_interconnect_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/clk_wiz. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/core_top_wrapper_0. (constraint file  auto generated constraint, line ).
@@ -301,34 +269,22 @@ Applied set_property DONT_TOUCH = true for mc_top_i/instr_mem_ctrl. (constraint 
 Applied set_property DONT_TOUCH = true for mc_top_i/rst_clk_wiz_100M. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/spare_memory. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for mc_top_i/spare_mem. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mc_top_i/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 749.602 ; gain = 448.988
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_interconnect_0'. This will prevent further optimization [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1045]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'data_mem_ctrl'. This will prevent further optimization [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1392]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'core_top_wrapper_0'. This will prevent further optimization [C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1291]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_interconnect_0'. This will prevent further optimization [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1051]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'data_mem_ctrl'. This will prevent further optimization [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1404]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'core_top_wrapper_0'. This will prevent further optimization [C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.srcs/sources_1/bd/mc_top/synth/mc_top.v:1297]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 749.602 ; gain = 448.988
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
@@ -342,55 +298,28 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 749.602 ; gain = 448.988
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1024.836 ; gain = 0.000
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/clk_wiz/clk_out1' to pin 'mc_top_i/clk_wiz/bbstub_clk_out1/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/data_mem_ctrl/bram_clk_a' to pin 'mc_top_i/data_mem_ctrl/bbstub_bram_clk_a/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/data_mem_ctrl/bram_clk_b' to pin 'mc_top_i/data_mem_ctrl/bbstub_bram_clk_b/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/instr_mem_ctrl/bram_clk_a' to pin 'mc_top_i/instr_mem_ctrl/bbstub_bram_clk_a/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/instr_mem_ctrl/bram_clk_b' to pin 'mc_top_i/instr_mem_ctrl/bbstub_bram_clk_b/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/spare_memory/bram_clk_a' to pin 'mc_top_i/spare_memory/bbstub_bram_clk_a/O'
-INFO: [Synth 8-5578] Moved timing constraint from pin 'mc_top_i/spare_memory/bram_clk_b' to pin 'mc_top_i/spare_memory/bbstub_bram_clk_b/O'
 WARNING: [Synth 8-565] redefining clock 'sys_clk_pin'
-INFO: [Synth 8-5819] Moved 7 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 772.395 ; gain = 471.781
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1025.305 ; gain = 0.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 772.543 ; gain = 471.930
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1025.453 ; gain = 0.617
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1045.758 ; gain = 20.922
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -407,50 +336,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -475,52 +391,39 @@ Report BlackBoxes:
 +------+----------------------------+----------+
 
 Report Cell Usage: 
-+------+----------------------------+------+
-|      |Cell                        |Count |
-+------+----------------------------+------+
-|1     |mc_top_clk_wiz_0            |     1|
-|2     |mc_top_core_top_wrapper_0_0 |     1|
-|3     |mc_top_core_wrapper_0_0     |     1|
-|4     |mc_top_data_mem_0           |     1|
-|5     |mc_top_data_mem_1           |     1|
-|6     |mc_top_data_mem_ctrl_0      |     1|
-|7     |mc_top_data_mem_ctrl_1      |     1|
-|8     |mc_top_instr_mem_0          |     1|
-|9     |mc_top_instr_mem_ctrl_0     |     1|
-|10    |mc_top_jtag_axi_0_0         |     1|
-|11    |mc_top_rst_clk_wiz_100M_0   |     1|
-|12    |mc_top_xbar_0               |     1|
-|13    |IBUF                        |     1|
-+------+----------------------------+------+
-
-Report Instance Areas: 
-+------+-----------------------+----------------------------+------+
-|      |Instance               |Module                      |Cells |
-+------+-----------------------+----------------------------+------+
-|1     |top                    |                            |  2189|
-|2     |  mc_top_i             |mc_top                      |  2188|
-|3     |    axi_interconnect_0 |mc_top_axi_interconnect_0_0 |   705|
-+------+-----------------------+----------------------------+------+
++------+--------------------------+------+
+|      |Cell                      |Count |
++------+--------------------------+------+
+|1     |mc_top_clk_wiz            |     1|
+|2     |mc_top_core_top_wrapper_0 |     1|
+|3     |mc_top_core_wrapper_0     |     1|
+|4     |mc_top_data_mem           |     2|
+|6     |mc_top_data_mem_ctrl      |     2|
+|8     |mc_top_instr_mem          |     1|
+|9     |mc_top_instr_mem_ctrl     |     1|
+|10    |mc_top_jtag_axi_0         |     1|
+|11    |mc_top_rst_clk_wiz_100M   |     1|
+|12    |mc_top_xbar               |     1|
+|13    |IBUF                      |     1|
++------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1050.598 ; gain = 25.762
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 767 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 783.809 ; gain = 197.813
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 783.809 ; gain = 483.195
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1050.598 ; gain = 25.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1050.598 ; gain = 25.762
 INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1062.664 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 791.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1065.613 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-68 Infos, 126 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 791.801 ; gain = 499.047
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 791.801 ; gain = 0.000
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/RISC-V-Multicore/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1065.613 ; gain = 40.777
+INFO: [Common 17-1381] The checkpoint 'C:/Users/9benj/Documents/GitHub/Reconfigurable-RISC-V/src/multicore_fpga/multicore_fpga.runs/synth_1/mc_top_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mc_top_wrapper_utilization_synth.rpt -pb mc_top_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 16:37:45 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 18:42:14 2020...

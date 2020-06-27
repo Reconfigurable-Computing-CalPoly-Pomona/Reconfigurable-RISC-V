@@ -20,12 +20,12 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2018.3
+set scripts_vivado_version 2020.1
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
    puts ""
-   catch {common::send_msg_id "BD_TCL-109" "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
+   catch {common::send_gid_msg -ssname BD::TCL -id 2041 -severity "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
 
    return 1
 }
@@ -84,10 +84,10 @@ if { ${design_name} eq "" } {
    #    4): Current design opened AND is empty AND names diff; design_name exists in project.
 
    if { $cur_design ne $design_name } {
-      common::send_msg_id "BD_TCL-001" "INFO" "Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
+      common::send_gid_msg -ssname BD::TCL -id 2001 -severity "INFO" "Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
       set design_name [get_property NAME $cur_design]
    }
-   common::send_msg_id "BD_TCL-002" "INFO" "Constructing design in IPI design <$cur_design>..."
+   common::send_gid_msg -ssname BD::TCL -id 2002 -severity "INFO" "Constructing design in IPI design <$cur_design>..."
 
 } elseif { ${cur_design} ne "" && $list_cells ne "" && $cur_design eq $design_name } {
    # USE CASES:
@@ -108,19 +108,19 @@ if { ${design_name} eq "" } {
    #    8) No opened design, design_name not in project.
    #    9) Current opened design, has components, but diff names, design_name not in project.
 
-   common::send_msg_id "BD_TCL-003" "INFO" "Currently there is no design <$design_name> in project, so creating one..."
+   common::send_gid_msg -ssname BD::TCL -id 2003 -severity "INFO" "Currently there is no design <$design_name> in project, so creating one..."
 
    create_bd_design $design_name
 
-   common::send_msg_id "BD_TCL-004" "INFO" "Making design <$design_name> as current_bd_design."
+   common::send_gid_msg -ssname BD::TCL -id 2004 -severity "INFO" "Making design <$design_name> as current_bd_design."
    current_bd_design $design_name
 
 }
 
-common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
+common::send_gid_msg -ssname BD::TCL -id 2005 -severity "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
 
 if { $nRet != 0 } {
-   catch {common::send_msg_id "BD_TCL-114" "ERROR" $errMsg}
+   catch {common::send_gid_msg -ssname BD::TCL -id 2006 -severity "ERROR" $errMsg}
    return $nRet
 }
 
@@ -144,14 +144,14 @@ proc create_root_design { parentCell } {
   # Get object for parentCell
   set parentObj [get_bd_cells $parentCell]
   if { $parentObj == "" } {
-     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
      return
   }
 
   # Make sure parentObj is hier blk
   set parentType [get_property TYPE $parentObj]
   if { $parentType ne "hier" } {
-     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
      return
   }
 
@@ -165,10 +165,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set ddr_clock [ create_bd_port -dir I -type clk ddr_clock ]
-  set_property -dict [ list \
-   CONFIG.FREQ_HZ {100000000} \
- ] $ddr_clock
+  set ddr_clock [ create_bd_port -dir I -type clk -freq_hz 100000000 ddr_clock ]
   set reset_n [ create_bd_port -dir I -type rst reset_n ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
@@ -199,10 +196,10 @@ proc create_root_design { parentCell } {
   set block_name core_top_wrapper
   set block_cell_name core_top_wrapper_0
   if { [catch {set core_top_wrapper_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2095 -severity "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $core_top_wrapper_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
   
@@ -340,21 +337,21 @@ proc create_root_design { parentCell } {
   connect_bd_net -net core_top_wrapper_0_o_instr_wlast [get_bd_pins axi_interconnect_0/S00_AXI_wlast] [get_bd_pins core_top_wrapper_0/o_instr_wlast]
   connect_bd_net -net core_top_wrapper_0_o_instr_wstrb [get_bd_pins axi_interconnect_0/S00_AXI_wstrb] [get_bd_pins core_top_wrapper_0/o_instr_wstrb]
   connect_bd_net -net core_top_wrapper_0_o_instr_wvalid [get_bd_pins axi_interconnect_0/S00_AXI_wvalid] [get_bd_pins core_top_wrapper_0/o_instr_wvalid]
-  connect_bd_net -net core_top_wrapper_0_o_unused [get_bd_pins axi_interconnect_0/S00_AXI_arcache] [get_bd_pins axi_interconnect_0/S00_AXI_arid] [get_bd_pins axi_interconnect_0/S00_AXI_arlock] [get_bd_pins axi_interconnect_0/S00_AXI_arprot] [get_bd_pins axi_interconnect_0/S00_AXI_arqos] [get_bd_pins axi_interconnect_0/S00_AXI_aruser] [get_bd_pins axi_interconnect_0/S00_AXI_awcache] [get_bd_pins axi_interconnect_0/S00_AXI_awid] [get_bd_pins axi_interconnect_0/S00_AXI_awlock] [get_bd_pins axi_interconnect_0/S00_AXI_awprot] [get_bd_pins axi_interconnect_0/S00_AXI_awuser] [get_bd_pins axi_interconnect_0/S00_AXI_wuser] [get_bd_pins axi_interconnect_0/S01_AXI_arcache] [get_bd_pins axi_interconnect_0/S01_AXI_arid] [get_bd_pins axi_interconnect_0/S01_AXI_arlock] [get_bd_pins axi_interconnect_0/S01_AXI_arprot] [get_bd_pins axi_interconnect_0/S01_AXI_arqos] [get_bd_pins axi_interconnect_0/S01_AXI_aruser] [get_bd_pins axi_interconnect_0/S01_AXI_awcache] [get_bd_pins axi_interconnect_0/S01_AXI_awid] [get_bd_pins axi_interconnect_0/S01_AXI_awlock] [get_bd_pins axi_interconnect_0/S01_AXI_awprot] [get_bd_pins axi_interconnect_0/S01_AXI_awqos] [get_bd_pins axi_interconnect_0/S01_AXI_awuser] [get_bd_pins axi_interconnect_0/S01_AXI_wuser] [get_bd_pins core_top_wrapper_0/o_unused] [get_bd_pins core_wrapper_0/m_data_init_axi_txn] [get_bd_pins core_wrapper_0/m_instr_init_axi_txn]
+  connect_bd_net -net core_top_wrapper_0_o_unused [get_bd_pins axi_interconnect_0/S00_AXI_arcache] [get_bd_pins axi_interconnect_0/S00_AXI_arid] [get_bd_pins axi_interconnect_0/S00_AXI_arlock] [get_bd_pins axi_interconnect_0/S00_AXI_arprot] [get_bd_pins axi_interconnect_0/S00_AXI_arqos] [get_bd_pins axi_interconnect_0/S00_AXI_awcache] [get_bd_pins axi_interconnect_0/S00_AXI_awid] [get_bd_pins axi_interconnect_0/S00_AXI_awlock] [get_bd_pins axi_interconnect_0/S00_AXI_awprot] [get_bd_pins axi_interconnect_0/S01_AXI_arcache] [get_bd_pins axi_interconnect_0/S01_AXI_arid] [get_bd_pins axi_interconnect_0/S01_AXI_arlock] [get_bd_pins axi_interconnect_0/S01_AXI_arprot] [get_bd_pins axi_interconnect_0/S01_AXI_arqos] [get_bd_pins axi_interconnect_0/S01_AXI_awcache] [get_bd_pins axi_interconnect_0/S01_AXI_awid] [get_bd_pins axi_interconnect_0/S01_AXI_awlock] [get_bd_pins axi_interconnect_0/S01_AXI_awprot] [get_bd_pins axi_interconnect_0/S01_AXI_awqos] [get_bd_pins core_top_wrapper_0/o_unused] [get_bd_pins core_wrapper_0/m_data_init_axi_txn] [get_bd_pins core_wrapper_0/m_instr_init_axi_txn]
   connect_bd_net -net ddr_clock_1 [get_bd_ports ddr_clock] [get_bd_pins clk_wiz/clk_in1]
   connect_bd_net -net reset_1 [get_bd_ports reset_n] [get_bd_pins clk_wiz/resetn] [get_bd_pins rst_clk_wiz_100M/ext_reset_in]
   connect_bd_net -net rst_clk_wiz_100M_peripheral_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/M01_ARESETN] [get_bd_pins axi_interconnect_0/M02_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/S01_ARESETN] [get_bd_pins axi_interconnect_0/S02_ARESETN] [get_bd_pins core_top_wrapper_0/i_areset_n] [get_bd_pins core_wrapper_0/m_data_aresetn] [get_bd_pins core_wrapper_0/m_instr_aresetn] [get_bd_pins data_mem_ctrl/s_axi_aresetn] [get_bd_pins instr_mem_ctrl/s_axi_aresetn] [get_bd_pins jtag_master/aresetn] [get_bd_pins rst_clk_wiz_100M/peripheral_aresetn] [get_bd_pins spare_memory/s_axi_aresetn]
 
   # Create address segments
-  create_bd_addr_seg -range 0x00010000 -offset 0x00100000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00010000 -offset 0x00100000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00010000 -offset 0x00200000 [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs spare_memory/S_AXI/Mem0] SEG_spare_memory_Mem0
-  create_bd_addr_seg -range 0x00010000 -offset 0x00200000 [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs spare_memory/S_AXI/Mem0] SEG_spare_memory_Mem0
-  create_bd_addr_seg -range 0x00010000 -offset 0x00100000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] SEG_data_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00001000 -offset 0x00000000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] SEG_instr_mem_ctrl_Mem0
-  create_bd_addr_seg -range 0x00010000 -offset 0x00200000 [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs spare_memory/S_AXI/Mem0] SEG_spare_memory_Mem0
+  assign_bd_address -offset 0x00100000 -range 0x00010000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00100000 -range 0x00010000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00000000 -range 0x00001000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00000000 -range 0x00001000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_instr] [get_bd_addr_segs spare_memory/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces core_wrapper_0/m_data] [get_bd_addr_segs spare_memory/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00100000 -range 0x00010000 -target_address_space [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs data_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00000000 -range 0x00001000 -target_address_space [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs instr_mem_ctrl/S_AXI/Mem0] -force
+  assign_bd_address -offset 0x00200000 -range 0x00010000 -target_address_space [get_bd_addr_spaces jtag_master/Data] [get_bd_addr_segs spare_memory/S_AXI/Mem0] -force
 
 
   # Restore current instance

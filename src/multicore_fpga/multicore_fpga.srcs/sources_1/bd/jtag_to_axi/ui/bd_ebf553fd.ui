@@ -1,36 +1,40 @@
 {
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.504638",
+   "Default View_TopLeft":"-121,-301",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port sw -pg 1 -y 500 -defaultsOSRD
-preplace port ddr_clock -pg 1 -y -120 -defaultsOSRD
-preplace port reset_n -pg 1 -y -140 -defaultsOSRD
-preplace portBus led -pg 1 -y 660 -defaultsOSRD
-preplace inst data_mem_ctrl -pg 1 -lvl 6 -y 160 -defaultsOSRD
-preplace inst clk_wiz -pg 1 -lvl 1 -y 260 -defaultsOSRD
-preplace inst instr_mem -pg 1 -lvl 6 -y 430 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 4 -y 500 -defaultsOSRD
-preplace inst instr_mem_ctrl -pg 1 -lvl 6 -y 300 -defaultsOSRD
-preplace inst data_mem -pg 1 -lvl 6 -y 30 -defaultsOSRD
-preplace inst rst_clk_wiz_100M -pg 1 -lvl 3 -y 260 -defaultsOSRD
-preplace inst jtag_master -pg 1 -lvl 2 -y 260 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 5 -y 300 -defaultsOSRD
-preplace netloc data_mem_ctrl_BRAM_PORTB 1 5 2 1470 -70 1920
-preplace netloc clk_wiz_locked 1 1 2 220J 340 470
-preplace netloc instr_mem_ctrl_BRAM_PORTA 1 5 2 1520 -50 1910
-preplace netloc ddr_clock_1 1 0 1 10J
-preplace netloc instr_mem_ctrl_BRAM_PORTB 1 5 2 1530 -40 1900
-preplace netloc axi_interconnect_0_M02_AXI 1 3 3 830 120 NJ 120 1470
-preplace netloc jtag_master_M_AXI 1 2 3 450J 160 N 160 1120
-preplace netloc axi_gpio_0_GPIO 1 4 3 NJ 470 1510J 500 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 5 1 1490
-preplace netloc axi_interconnect_0_M01_AXI 1 5 1 1510
-preplace netloc axi_gpio_0_gpio2_io_o 1 4 3 1120 660 NJ 660 NJ
+preplace port sw -pg 1 -lvl 7 -x 1940 -y 500 -defaultsOSRD
+preplace port ddr_clock -pg 1 -lvl 0 -x -10 -y -120 -defaultsOSRD
+preplace port reset_n -pg 1 -lvl 0 -x -10 -y -140 -defaultsOSRD
+preplace portBus led -pg 1 -lvl 7 -x 1940 -y 660 -defaultsOSRD
+preplace inst data_mem_ctrl -pg 1 -lvl 6 -x 1750 -y 160 -defaultsOSRD
+preplace inst instr_mem_ctrl -pg 1 -lvl 6 -x 1750 -y 300 -defaultsOSRD
+preplace inst rst_clk_wiz_100M -pg 1 -lvl 3 -x 640 -y 260 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 4 -x 980 -y 500 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 5 -x 1320 -y 300 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 1 -x 120 -y 260 -defaultsOSRD
+preplace inst data_mem -pg 1 -lvl 6 -x 1750 -y 30 -defaultsOSRD
+preplace inst instr_mem -pg 1 -lvl 6 -x 1750 -y 430 -defaultsOSRD
+preplace inst jtag_master -pg 1 -lvl 2 -x 340 -y 260 -defaultsOSRD
+preplace netloc ddr_clock_1 1 0 1 10J -120n
 preplace netloc reset_1 1 0 3 20 350 N 350 460
+preplace netloc clk_wiz_clk_out1 1 1 5 220 330 440 150 810 150 1140 140 1480
+preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 1 5 230 140 NJ 140 820 140 1120 130 1500
+preplace netloc clk_wiz_locked 1 1 2 210J 340 470
+preplace netloc axi_gpio_0_gpio2_io_o 1 4 3 1130 660 NJ 660 NJ
+preplace netloc jtag_master_M_AXI 1 2 3 450J 160 N 160 1130
+preplace netloc data_mem_ctrl_BRAM_PORTB 1 5 2 1470 -70 1920
 preplace netloc data_mem_ctrl_BRAM_PORTA 1 5 2 1540 -60 1890
-preplace netloc rst_clk_wiz_100M_peripheral_aresetn 1 1 5 240 140 NJ 140 820 140 1110 130 1500
-preplace netloc clk_wiz_clk_out1 1 1 5 230 330 440 150 810 150 1130 140 1480
-levelinfo -pg 1 -10 120 340 640 970 1320 1750 1940 -top -200 -bot 920
+preplace netloc axi_interconnect_0_M00_AXI 1 5 1 1490 140n
+preplace netloc axi_interconnect_0_M01_AXI 1 5 1 1510 280n
+preplace netloc axi_interconnect_0_M02_AXI 1 3 3 830 120 NJ 120 1470
+preplace netloc axi_gpio_0_GPIO 1 4 3 NJ 480 1510J 500 NJ
+preplace netloc instr_mem_ctrl_BRAM_PORTB 1 5 2 1530 -40 1900
+preplace netloc instr_mem_ctrl_BRAM_PORTA 1 5 2 1520 -50 1910
+levelinfo -pg 1 -10 120 340 640 980 1320 1750 1940
+pagesize -pg 1 -db -bbox -sgen -120 -200 2040 920
 "
 }
 {

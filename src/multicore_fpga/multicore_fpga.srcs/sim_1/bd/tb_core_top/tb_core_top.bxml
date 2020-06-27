@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="36">
+<Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="tb_core_top" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1574745925"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1574745925"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1574745925"/>
-    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1574745925"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1593206652"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1593206652"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1593206654"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1593206654"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\tb_core_top_axi_interconnect_0_0\tb_core_top_axi_interconnect_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_interconnect_0"/>
@@ -55,14 +55,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\tb_core_top_xbar_0\tb_core_top_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_interconnect_0/xbar"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1569251989" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\tb_core_top_core_top_wrapper_0_0\tb_core_top_core_top_wrapper_0_0.xci" Type="IP">
         <Instance HierarchyPath="core_top_wrapper_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="1574042505" IsTrackable="true" IsStatusTracked="true"/>
@@ -89,6 +81,14 @@
       </File>
       <File Name="ip\tb_core_top_blk_mem_gen_0_2\tb_core_top_blk_mem_gen_0_2.xci" Type="IP">
         <Instance HierarchyPath="data_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\tb_core_top_xbar_0\tb_core_top_xbar_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0/xbar"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

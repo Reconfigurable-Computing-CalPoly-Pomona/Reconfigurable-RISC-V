@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="36">
+<Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="ddr3" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
     <Generation Name="SYNTHESIS" State="STALE" Timestamp="1574045918"/>

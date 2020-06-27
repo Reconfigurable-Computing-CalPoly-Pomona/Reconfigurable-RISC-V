@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:axi_bram_ctrl:4.1
--- IP Revision: 0
+-- IP Revision: 3
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY axi_bram_ctrl_v4_1_0;
-USE axi_bram_ctrl_v4_1_0.axi_bram_ctrl;
+LIBRARY axi_bram_ctrl_v4_1_3;
+USE axi_bram_ctrl_v4_1_3.axi_bram_ctrl;
 
 ENTITY mc_top_data_mem_ctrl_1 IS
   PORT (
@@ -127,7 +127,6 @@ ARCHITECTURE mc_top_data_mem_ctrl_1_arch OF mc_top_data_mem_ctrl_1 IS
       C_S_AXI_SUPPORTS_NARROW_BURST : INTEGER;
       C_SINGLE_PORT_BRAM : INTEGER;
       C_FAMILY : STRING;
-      C_SELECT_XPM : INTEGER;
       C_READ_LATENCY : INTEGER;
       C_RD_CMD_OPTIMIZATION : INTEGER;
       C_S_AXI_CTRL_ADDR_WIDTH : INTEGER;
@@ -210,12 +209,12 @@ ARCHITECTURE mc_top_data_mem_ctrl_1_arch OF mc_top_data_mem_ctrl_1 IS
     );
   END COMPONENT axi_bram_ctrl;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF mc_top_data_mem_ctrl_1_arch: ARCHITECTURE IS "axi_bram_ctrl,Vivado 2018.3";
+  ATTRIBUTE X_CORE_INFO OF mc_top_data_mem_ctrl_1_arch: ARCHITECTURE IS "axi_bram_ctrl,Vivado 2020.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF mc_top_data_mem_ctrl_1_arch : ARCHITECTURE IS "mc_top_data_mem_ctrl_1,axi_bram_ctrl,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF mc_top_data_mem_ctrl_1_arch: ARCHITECTURE IS "mc_top_data_mem_ctrl_1,axi_bram_ctrl,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=0,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=16384,C_BRAM_ADDR_WIDTH=14,C_S_AXI_ADDR_WIDTH=16,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=6,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=0,C_FAMILY=spartan7,C_SELECT_XPM=1,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_" & 
-"WIDTH=32,C_S_AXI_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF mc_top_data_mem_ctrl_1_arch: ARCHITECTURE IS "mc_top_data_mem_ctrl_1,axi_bram_ctrl,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_bram_ctrl,x_ipVersion=4.1,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_BRAM_INST_MODE=EXTERNAL,C_MEMORY_DEPTH=16384,C_BRAM_ADDR_WIDTH=14,C_S_AXI_ADDR_WIDTH=16,C_S_AXI_DATA_WIDTH=32,C_S_AXI_ID_WIDTH=6,C_S_AXI_PROTOCOL=AXI4,C_S_AXI_SUPPORTS_NARROW_BURST=0,C_SINGLE_PORT_BRAM=0,C_FAMILY=spartan7,C_READ_LATENCY=1,C_RD_CMD_OPTIMIZATION=0,C_S_AXI_CTRL_ADDR_WIDTH=32,C_S_AX" & 
+"I_CTRL_DATA_WIDTH=32,C_ECC=0,C_ECC_TYPE=0,C_FAULT_INJECT=0,C_ECC_ONOFF_RESET_VALUE=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF bram_rddata_b: SIGNAL IS "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT";
@@ -273,7 +272,7 @@ ARCHITECTURE mc_top_data_mem_ctrl_1_arch OF mc_top_data_mem_ctrl_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_awid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S_AXI AWID";
   ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME RSTIF, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 RSTIF RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME CLKIF, ASSOCIATED_BUSIF S_AXI:S_AXI_CTRL, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 75000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_aclk: SIGNAL IS "XIL_INTERFACENAME CLKIF, ASSOCIATED_BUSIF S_AXI:S_AXI_CTRL, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 75000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 CLKIF CLK";
 BEGIN
   U0 : axi_bram_ctrl
@@ -288,7 +287,6 @@ BEGIN
       C_S_AXI_SUPPORTS_NARROW_BURST => 0,
       C_SINGLE_PORT_BRAM => 0,
       C_FAMILY => "spartan7",
-      C_SELECT_XPM => 1,
       C_READ_LATENCY => 1,
       C_RD_CMD_OPTIMIZATION => 0,
       C_S_AXI_CTRL_ADDR_WIDTH => 32,

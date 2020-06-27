@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2019 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -60,7 +60,7 @@ module tb_core_top_tb_clk_gen_0_0 (
   o_areset
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME o_clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN tb_core_top_tb_clk_gen_0_0_o_clk, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME o_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN tb_core_top_tb_clk_gen_0_0_o_clk, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 o_clk CLK" *)
 output wire o_clk;
 output wire o_areset_n;
